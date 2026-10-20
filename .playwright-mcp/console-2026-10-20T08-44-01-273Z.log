@@ -1,0 +1,4 @@
+[   18371ms] TypeError: state[i] is not a function
+    at http://localhost:5193/src/components/Values.jsx?t=1792485859580:116:29
+    at Array.forEach (<anonymous>)
+    at IntersectionObserver.rootMargin (http://localhost:5193/src/components/Values.jsx?t=1792485859580:113:17)

@@ -1,0 +1,366 @@
+- main [ref=f36e5]:
+  - link [ref=f36e6] [cursor=pointer]:
+    - /url: /
+  - generic [ref=f36e13]:
+    - text: Scroll to explore
+    - generic: "0"
+  - navigation [ref=f36e14]:
+    - link "Our Story" [ref=f36e15] [cursor=pointer]:
+      - /url: /#our-story
+    - link "What we stand for" [ref=f36e16] [cursor=pointer]:
+      - /url: /#what-we-stand-for
+    - link "Capabilities" [ref=f36e17] [cursor=pointer]:
+      - /url: /#capabilities
+    - link "Our Work" [ref=f36e18] [cursor=pointer]:
+      - /url: /#our-work
+    - link "Team" [ref=f36e19] [cursor=pointer]:
+      - /url: /#team
+    - generic [ref=f36e20]:
+      - link [ref=f36e21] [cursor=pointer]:
+        - /url: mailto:info@equatorcompany.com
+      - link [ref=f36e24] [cursor=pointer]:
+        - /url: https://www.linkedin.com/company/the-equator-company/
+  - generic [ref=f36e27]:
+    - heading "Enabling the Infrastructure of Change" [level=1] [ref=f36e29]: Enabling theInfrastructureof Change
+    - generic [ref=f36e30]: "Made to endure, designed to adapt: we help organizations and places deliver sustainable, resilient and profitable impact."
+  - generic [ref=f36e36]:
+    - paragraph [ref=f36e37]:
+      - generic [ref=f36e38]: Born
+      - generic [ref=f36e39]: from
+      - generic [ref=f36e40]: the
+      - generic [ref=f36e41]: merger
+      - generic [ref=f36e42]: of
+      - generic [ref=f36e43]: four
+      - generic [ref=f36e44]: companies
+      - generic [ref=f36e45]: with
+      - generic [ref=f36e46]: different
+      - generic [ref=f36e47]: skill
+      - generic [ref=f36e48]: sets,
+      - generic [ref=f36e49]: but
+      - generic [ref=f36e50]: the
+      - generic [ref=f36e51]: same
+      - generic [ref=f36e52]: shared
+      - generic [ref=f36e53]: values,
+      - generic [ref=f36e54]: expertise
+      - generic [ref=f36e55]: and
+      - generic [ref=f36e56]: decades
+      - generic [ref=f36e57]: of
+      - generic [ref=f36e58]: "experience:"
+    - generic [ref=f36e59]:
+      - link [ref=f36e61] [cursor=pointer]:
+        - /url: https://s317consulting.com/
+        - img "S317" [ref=f36e62]
+      - link [ref=f36e64] [cursor=pointer]:
+        - /url: https://www.sairdacasca.com/
+        - img "Sair da Casca" [ref=f36e65]
+      - link [ref=f36e67] [cursor=pointer]:
+        - /url: https://engidro.pt/
+        - img "Engidro" [ref=f36e68]
+      - link [ref=f36e70] [cursor=pointer]:
+        - /url: https://factorsocial.pt/
+        - img "Factor Social" [ref=f36e71]
+    - paragraph [ref=f36e72]:
+      - generic [ref=f36e73]: What
+      - generic [ref=f36e74]: emerged
+      - generic [ref=f36e75]: isn't
+      - generic [ref=f36e76]: just
+      - generic [ref=f36e77]: bigger.
+      - generic [ref=f36e78]: It
+      - generic [ref=f36e79]: is
+      - generic [ref=f36e80]: different.
+    - paragraph [ref=f36e81]:
+      - generic [ref=f36e82]: It
+      - generic [ref=f36e83]: is
+      - generic [ref=f36e84]: designed
+      - generic [ref=f36e85]: to
+      - generic [ref=f36e86]: provide
+      - generic [ref=f36e87]: a
+      - generic [ref=f36e88]: structured
+      - generic [ref=f36e89]: full-service
+      - generic [ref=f36e90]: ESG
+      - generic [ref=f36e91]: offer.
+    - paragraph [ref=f36e92]:
+      - generic [ref=f36e93]: It
+      - generic [ref=f36e94]: is
+      - generic [ref=f36e95]: a
+      - generic [ref=f36e96]: unique
+      - generic [ref=f36e97]: partner
+      - generic [ref=f36e98]: for
+      - generic [ref=f36e99]: organizations
+      - generic [ref=f36e100]: seeking
+      - generic [ref=f36e101]: change.
+    - paragraph [ref=f36e102]:
+      - generic [ref=f36e103]: And
+      - generic [ref=f36e104]: it
+      - generic [ref=f36e105]: is
+      - generic [ref=f36e106]: "here:"
+      - generic [ref=f36e107]: meet
+      - generic [ref=f36e108]: The
+      - generic [ref=f36e109]: Equator
+      - generic [ref=f36e110]: Company
+  - generic [ref=f36e111]:
+    - generic [ref=f36e112]: 1/5
+    - generic [ref=f36e114]:
+      - generic [ref=f36e116]:
+        - heading "Sustainability, made to endure" [level=2] [ref=f36e120]: Sustainability,made to endure
+        - generic [ref=f36e121]:
+          - paragraph [ref=f36e122]: We embed sustainability in the foundations of economies and communities - rooted in systems, strategies, and infrastructure that endure.
+          - paragraph [ref=f36e123]: From energy, water and wastewater infrastructure to multiyear sustainability strategies.
+      - generic [ref=f36e125]:
+        - heading "Local legitimacy, global reach" [level=2] [ref=f36e129]: Local legitimacy,global reach
+        - generic [ref=f36e130]:
+          - paragraph [ref=f36e131]: Born from a merger of different organizations, we combine the independence of each to create a more dynamic structure for all.
+          - paragraph [ref=f36e132]: Our trusted network of local partnerships across the globe aligns diverse interests, ensures delivery on the ground and delivers systemic change.
+      - generic [ref=f36e134]:
+        - heading "Vision grounded in reality" [level=2] [ref=f36e138]: Vision groundedin reality
+        - generic [ref=f36e139]:
+          - paragraph [ref=f36e140]: "Bridging ambition and execution to make transitions work, moving institutions from objectives to results. We stay close to our clients to understand their long-term vision, and deliver it:"
+          - paragraph [ref=f36e141]: from inclusive 360º waste management blueprint to decarbonization roadmaps.
+      - generic [ref=f36e143]:
+        - heading "We blend curiosity with courage" [level=2] [ref=f36e147]
+        - generic [ref=f36e148]:
+          - paragraph [ref=f36e149]: Engaging every challenge with curiosity and openness, bringing in fresh ideas and perspectives to discover real-world solutions.
+          - paragraph [ref=f36e150]: That’s how we’ve been helping turn sanitation data into better services and shaping journeys toward sustainability.
+      - generic [ref=f36e152]:
+        - heading "Making a difference and making it last" [level=2] [ref=f36e156]: Making a differenceand making it last
+        - generic [ref=f36e157]:
+          - paragraph [ref=f36e158]: "Our work doesn’t end at strategy handover or ribbon-cutting. We are committed to real-world impact: we design it, we implement it, and we monitor it."
+          - paragraph [ref=f36e159]: 45+ years of experience on and off the field have shown our transformations to be not only possible but practical.
+  - generic [ref=f36e165]:
+    - heading "Your partner for a sustainable transition" [level=2] [ref=f36e166]
+    - paragraph [ref=f36e167]: With experience and expertise in a wide range of areas, we’re here to design and implement high-impact, long-lasting change with your organization. Whatever the scale, scope, service or challenge.
+    - generic [ref=f36e168]:
+      - generic [ref=f36e169] [cursor=pointer]:
+        - heading "Sustainability Strategy" [level=3] [ref=f36e171]
+        - paragraph [ref=f36e173]: We design ESG strategies, implement financially sustainable action plans, ensure transparency and compliance, and mobilize stakeholders — driving sustainable growth, resilience, and measurable value for your business.
+      - generic [ref=f36e178] [cursor=pointer]:
+        - heading "Energy, Carbon & Biodiversity" [level=3] [ref=f36e180]
+        - paragraph [ref=f36e182]: We help you lead the energy transition. We design sustainable solutions, networks and hybrid systems, structure finance mechanisms, conduct environmental audits and support carbon credits certification.
+      - generic [ref=f36e187] [cursor=pointer]:
+        - heading "Impact & Risks" [level=3] [ref=f36e189]
+        - paragraph [ref=f36e191]: Integrate sustainability into your risk management and investment decisions. We assess impacts, compliance, and risk mitigation to strengthen your organizational resilience.
+      - generic [ref=f36e196] [cursor=pointer]:
+        - heading "Water & Sanitation" [level=3] [ref=f36e198]
+        - paragraph [ref=f36e200]: We promote sustainable investment in resilient infrastructure. We provide technical assistance, apply Nature-Based Solutions and ensure efficiency, safety and resilience in water and wastewater systems.
+      - generic [ref=f36e205] [cursor=pointer]:
+        - heading "Crisis & Communications Management" [level=3] [ref=f36e207]
+        - paragraph [ref=f36e209]: Prepare. Respond. Recover. We manage crises, reputation and communications to safeguard trust, continuity and institutional credibility.
+      - generic [ref=f36e214] [cursor=pointer]:
+        - heading "Capacity Building" [level=3] [ref=f36e216]
+        - paragraph [ref=f36e218]: "Turn knowledge into performance: we train teams, build skills and inspire leadership for a tangible application of sustainability and the green and digital transition."
+      - generic [ref=f36e223] [cursor=pointer]:
+        - heading "Social & Communities" [level=3] [ref=f36e225]
+        - paragraph [ref=f36e227]: We create human impact. We help engage communities, promote inclusion and manage sustainable and social investments that generate lasting shared value.
+      - generic [ref=f36e232] [cursor=pointer]:
+        - heading "Waste & Circular Economy" [level=3] [ref=f36e234]
+        - paragraph [ref=f36e236]: We embed circularity into core business processes and operations. We help organisations shift from linear to circular thinking — implementing circular models, reducing waste, accelerating industrial renewal and driving long-term resilience.
+      - generic [ref=f36e241] [cursor=pointer]:
+        - heading "Sustainable Finance" [level=3] [ref=f36e243]
+        - paragraph [ref=f36e245]: Beyond buzzwords, we use the EU Taxonomy, hard-number financial modeling, blended finance and ESCO models to make your business sustainable and profitable.
+  - generic [ref=f36e250]:
+    - heading "Trusted by those driving change" [level=2] [ref=f36e251]
+    - region "Gallery" [ref=f36e253]:
+      - list [ref=f36e255]:
+        - listitem [ref=f36e256]:
+          - generic [ref=f36e257] [cursor=pointer]:
+            - heading "Forests, Carbon, and Natural Capital" [level=3] [ref=f36e258]
+            - img "Forests, Carbon, and Natural Capital" [ref=f36e261]
+            - paragraph [ref=f36e267]: We support governments and companies in reforestation and conservation programs, such as the 550,000-hectare project in Malawi developed with Mamaland (Mota-Engil), which generates high-quality carbon credits. We work with E-Redes on natural capital assessment and biodiversity impact optimization, transforming ecosystems into strategic assets for a regenerative economy.
+        - listitem [ref=f36e268]:
+          - generic [ref=f36e269] [cursor=pointer]:
+            - heading "Energy and Energy Efficiency" [level=3] [ref=f36e270]
+            - img "Energy and Energy Efficiency" [ref=f36e273]
+            - paragraph [ref=f36e279]: We support EDP in developing and implementing renewable generation solutions including solar, wind and hydro, integrated with energy efficiency and e-mobility. Through the Effizency platform, we help utilities deliver more competitive and scalable products for both B2C and B2B markets. We also work on designing and implementing energy infrastructure for cities, industry and government, covering project management, carbon services, financing, marketing and market intelligence.
+        - listitem [ref=f36e280]:
+          - generic [ref=f36e281] [cursor=pointer]:
+            - heading "Consumer Goods and Social Impact" [level=3] [ref=f36e282]
+            - img "Consumer Goods and Social Impact" [ref=f36e285]
+            - paragraph [ref=f36e291]: We support leading retailers and consumer brands in creating social and environmental value. With SONAE MC, we developed the Missão Continente programme, which supports 900,000 people and was recognised with the 2023 European Excellence Award. We also work with major foundations and international organisations to design and implement social responsibility and circular economy policies across Europe, Asia and Africa.
+        - listitem [ref=f36e292]:
+          - generic [ref=f36e293] [cursor=pointer]:
+            - heading "Water, Sanitation, and Resilient Cities" [level=3] [ref=f36e294]
+            - img "Water, Sanitation, and Resilient Cities" [ref=f36e297]
+            - paragraph [ref=f36e303]: We develop climate-resilient plans and infrastructure, including the Lisbon General Drainage Plan and the Luanda Water Master Plan (2025–2045). In Portugal, we support frontier innovation in water systems. In countries such as Brazil, Angola, Mozambique, Ethiopia, Cape Verde, Malawi, Nigeria and Tanzania, we promote universal access to water and sanitation, sustainable urban drainage and integrated water resource management.
+        - listitem [ref=f36e304]:
+          - generic [ref=f36e305] [cursor=pointer]:
+            - heading "Resilience and Impact" [level=3] [ref=f36e306]
+            - img "Resilience and Impact" [ref=f36e309]
+            - paragraph [ref=f36e315]: We assess the resilience and impact of infrastructure projects across multiple sectors, analyzing climate, economic and social risks. We develop methodologies that integrate territorial vulnerability and operational continuity, guiding investment and planning decisions. For example, we have carried out climate risk assessments for critical assets such as roads, airports and ports — including the Dallas Airport — strengthening the adaptability and safety of essential infrastructure.
+      - button "Navigate to previous slide" [disabled] [ref=f36e316]
+      - button "Navigate to next slide" [ref=f36e319] [cursor=pointer]
+      - generic [ref=f36e322]: Item 1 of 5
+    - generic [ref=f36e323]: Proud member of
+  - generic [ref=f36e346]:
+    - generic [ref=f36e347]:
+      - heading "Over 45 years experience delivering impact" [level=2] [ref=f36e348]
+      - paragraph [ref=f36e349]: Our executive team brings decades of experience in diverse areas such as infrastructure, strategy, social innovation, and policy - ensuring sustainable transitions are not only possible, but practical.
+    - generic [ref=f36e350]:
+      - generic [ref=f36e352]:
+        - generic [ref=f36e353] [cursor=pointer]: Filipe de Morais Vasconcelos
+        - generic:
+          - generic:
+            - generic:
+              - img "Filipe de Morais Vasconcelos"
+            - generic: Management Team
+            - link "Linkedin":
+              - /url: https://www.linkedin.com/in/filipemoraisvasconcelos/
+      - generic [ref=f36e355]:
+        - generic [ref=f36e356] [cursor=pointer]: Miguel Feliz
+        - generic:
+          - generic:
+            - generic:
+              - img "Miguel Feliz"
+            - generic: Management Team
+            - link "Linkedin":
+              - /url: https://www.linkedin.com/in/miguelfeliz/
+      - generic [ref=f36e358]:
+        - generic [ref=f36e359] [cursor=pointer]: Nathalie Ballan
+        - generic:
+          - generic:
+            - generic:
+              - img "Nathalie Ballan"
+            - generic: Board MemberBusiness Development Division
+            - link "Linkedin":
+              - /url: https://www.linkedin.com/in/nathalieballan/
+      - generic [ref=f36e361]:
+        - generic [ref=f36e362] [cursor=pointer]: Rui Marques
+        - generic:
+          - generic:
+            - generic:
+              - img "Rui Marques"
+            - generic: Board MemberCommercial Division
+            - link "Linkedin":
+              - /url: https://www.linkedin.com/in/rui-quintas-marques-20091813/
+      - generic [ref=f36e364]:
+        - generic [ref=f36e365] [cursor=pointer]: Ana Gonçalves
+        - generic:
+          - generic:
+            - generic:
+              - img "Ana Gonçalves"
+            - generic: Operations Division
+            - link "Linkedin":
+              - /url: https://www.linkedin.com/in/anahgoncalves/
+      - generic [ref=f36e367]:
+        - generic [ref=f36e368] [cursor=pointer]: Raquel Almeida
+        - generic:
+          - generic:
+            - generic:
+              - img "Raquel Almeida"
+            - generic: Energy, Carbon & Biodiversity
+            - link "Linkedin":
+              - /url: https://www.linkedin.com/in/raquelfaalmeida/
+      - generic [ref=f36e370]:
+        - generic [ref=f36e371] [cursor=pointer]: Cláudia Tapadas
+        - generic:
+          - generic:
+            - generic:
+              - img "Cláudia Tapadas"
+            - generic: Sustainability Strategy
+            - link "Linkedin":
+              - /url: https://www.linkedin.com/in/claudiatapadas/
+      - generic [ref=f36e373]:
+        - generic [ref=f36e374] [cursor=pointer]: Dalila Antunes
+        - generic:
+          - generic:
+            - generic:
+              - img "Dalila Antunes"
+            - generic: Impact & Risks
+            - link "Linkedin":
+              - /url: https://www.linkedin.com/in/dalila-antunes-5960321/
+      - generic [ref=f36e376]:
+        - generic [ref=f36e377] [cursor=pointer]: Marta Vian Santos
+        - generic:
+          - generic:
+            - generic:
+              - img "Marta Vian Santos"
+            - generic: Social & Communities
+            - link "Linkedin":
+              - /url: https://www.linkedin.com/in/martaviansantos/
+      - generic [ref=f36e379]:
+        - generic [ref=f36e380] [cursor=pointer]: Paulo Rosa
+        - generic:
+          - generic:
+            - generic:
+              - img "Paulo Rosa"
+            - generic: Water & Sanitation
+            - link "Linkedin":
+              - /url: https://www.linkedin.com/in/paulo-rosa-9201b15/
+      - generic [ref=f36e382]:
+        - generic [ref=f36e383] [cursor=pointer]: Rita Campos
+        - generic:
+          - generic:
+            - generic:
+              - img "Rita Campos"
+            - generic: Innovation
+            - link "Linkedin":
+              - /url: https://www.linkedin.com/in/rita-campos-pt/
+      - generic [ref=f36e385]:
+        - generic [ref=f36e386] [cursor=pointer]: Teresa Cordeiro
+        - generic:
+          - generic:
+            - generic:
+              - img "Teresa Cordeiro"
+            - generic: Partnerships
+            - link "Linkedin":
+              - /url: https://www.linkedin.com/in/teresa-menezes-cordeiro-34a0095a/
+      - generic [ref=f36e388]:
+        - generic [ref=f36e389] [cursor=pointer]: António Monteiro
+        - generic:
+          - generic:
+            - generic:
+              - img "António Monteiro"
+            - generic: Industry Expert Water & Sanitation
+            - link "Linkedin":
+              - /url: https://www.linkedin.com/in/ant%C3%B3nio-jorge-monteiro-78045428/
+      - generic [ref=f36e391]:
+        - generic [ref=f36e392] [cursor=pointer]: João Guimarães
+        - generic:
+          - generic:
+            - generic:
+              - img "João Guimarães"
+            - generic: Industry Expert Water & Sanitation
+            - link "Linkedin":
+              - /url: https://www.linkedin.com/in/jo%C3%A3o-guimar%C3%A3es-60a14131/
+      - generic [ref=f36e394]:
+        - generic [ref=f36e395] [cursor=pointer]: José Palma
+        - generic:
+          - generic:
+            - generic:
+              - img "José Palma"
+            - generic: Industry Expert Circular Economy
+            - link "Linkedin":
+              - /url: https://www.linkedin.com/in/jmpalmao/
+  - generic [ref=f36e396]:
+    - heading "Let’s Build the Infrastructure of Change Together" [level=2] [ref=f36e400]
+    - generic [ref=f36e401]:
+      - link "Sign up for updates" [ref=f36e402] [cursor=pointer]:
+        - /url: https://mailchi.mp/960b9490730a/website-signup
+      - link "Follow us on LinkedIn" [ref=f36e406] [cursor=pointer]:
+        - /url: https://www.linkedin.com/company/the-equator-company/
+  - generic [ref=f36e410]:
+    - generic [ref=f36e433]:
+      - paragraph [ref=f36e434]: Interdisciplinary sustainability consultancy with 45 years of experience. Designed to provide a structured full-service ESG offer for your organisation and community.
+      - list [ref=f36e435]:
+        - listitem [ref=f36e436]:
+          - link "Rua Laura Alves 12, 1050-138 Lisboa, Portugal" [ref=f36e437] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/DhKJrr1GrcZ6ptwT7
+        - listitem [ref=f36e441]:
+          - link "info@equatorcompany.com" [ref=f36e442] [cursor=pointer]:
+            - /url: mailto:info@equatorcompany.com
+      - list [ref=f36e446]:
+        - listitem [ref=f36e447]:
+          - link "Follow us on LinkedIn" [ref=f36e448] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/the-equator-company/
+      - paragraph [ref=f36e452]: © 2026 The Equator Company.All rights reserved.
+    - generic [ref=f36e454]:
+      - link "Privacy Policy" [ref=f36e455] [cursor=pointer]:
+        - /url: /privacy-policy
+      - generic [ref=f36e456]:
+        - text: Design by
+        - link "Studio Cronica" [ref=f36e457] [cursor=pointer]:
+          - /url: https://studio-cronica.com
+  - generic [ref=f36e458]:
+    - link [ref=f36e459] [cursor=pointer]:
+      - /url: https://recuperarportugal.gov.pt/
+    - link "Project sheet" [ref=f36e460] [cursor=pointer]:
+      - /url: /Equator-PRR-Investimentos.pdf

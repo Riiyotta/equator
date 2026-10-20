@@ -1,0 +1,6 @@
+- generic [ref=f19e4]:
+  - heading "404" [level=1] [ref=f19e5]
+  - 'heading "Page not found: /this-page-does-not-exist" [level=2] [ref=f19e6]'
+  - paragraph [ref=f19e7]: "Page not found: /this-page-does-not-exist"
+  - link "Go back home" [ref=f19e9] [cursor=pointer]:
+    - /url: /

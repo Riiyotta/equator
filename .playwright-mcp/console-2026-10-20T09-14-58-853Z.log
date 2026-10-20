@@ -1,0 +1,12 @@
+[     181ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://equatorcompany.com/this-page-does-not-exist:0
+[     186ms] [ERROR] [nuxt] error caught during app initialization M6: Page not found: /this-page-does-not-exist
+    at Ga (https://equatorcompany.com/_nuxt/B2rxQMiQ.js:4:73225)
+    at K3 (https://equatorcompany.com/_nuxt/B2rxQMiQ.js:4:79310)
+    at https://equatorcompany.com/_nuxt/B2rxQMiQ.js:4:138171
+    at s (https://equatorcompany.com/_nuxt/B2rxQMiQ.js:4:71729)
+    at Object.runWithContext (https://equatorcompany.com/_nuxt/B2rxQMiQ.js:4:14480)
+    at C6 (https://equatorcompany.com/_nuxt/B2rxQMiQ.js:4:71766)
+    at https://equatorcompany.com/_nuxt/B2rxQMiQ.js:4:69748
+    at Nn.run (https://equatorcompany.com/_nuxt/B2rxQMiQ.js:2:5058)
+    at Object.runWithContext (https://equatorcompany.com/_nuxt/B2rxQMiQ.js:4:69740)
+    at https://equatorcompany.com/_nuxt/B2rxQMiQ.js:4:138149 @ https://equatorcompany.com/_nuxt/B2rxQMiQ.js:3

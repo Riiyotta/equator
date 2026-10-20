@@ -1,0 +1,18 @@
+section,category,templates,routes,Home (single long page),Legal prose,404 catch-all
+chrome.header-nav,CHROME,2,2,x,x,
+footer.main,FOOTER,2,2,x,x,
+footer.subfooter,FOOTER,2,2,x,x,
+chrome.logo-zone,CHROME,1,1,x,,
+chrome.mobile-header,CHROME,1,1,x,,
+chrome.static-logo-bar,CHROME,1,1,,x,
+intro.splash,INTRO,1,1,x,,
+intro.title,INTRO,1,1,x,,
+content.story,CONTENT,1,1,x,,
+content.values,CONTENT,1,1,x,,
+content.capabilities,CONTENT,1,1,x,,
+content.our-work,CONTENT,1,1,x,,
+content.team,CONTENT,1,1,x,,
+conversion.cta,CONVERSION,1,1,x,,
+legal.privacy-article,LEGAL,1,1,,x,
+error.not-found,ERROR,1,1,,,x
+ROUTE COUNT,,,3,1,1,1

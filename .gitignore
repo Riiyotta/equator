@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.DS_Store
+__pycache__/
+# build artifact, regenerated from design-repo/ — never commit
+design-repo.zip

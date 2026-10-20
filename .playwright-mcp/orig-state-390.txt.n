@@ -1,0 +1,57 @@
+== capabilities scrollY=8636
+closed dd0: [20,385.4,350x84] op1 bgrgb(255, 255, 255) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad5px pad0px
+closed dd1: [20,481.4,350x84] op1 bgrgb(255, 255, 255) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad5px pad0px
+closed plusPill: [294,439.4,60x30] op1 bgrgb(255, 157, 105) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, 0) font16px/normal/normal/400 rad30px 30px 0px 0px pad0px
+closed plus svg: [312,443.4,24x24] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad0px pad0px
+-- dd0 open
+dd0: [20,385.4,350x215.2] op1 bgrgb(255, 157, 105) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad5px pad0px
+dd1: [20,612.6,350x84] op1 bgrgb(255, 255, 255) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad5px pad0px
+dd2: [20,708.6,350x84] op1 bgrgb(255, 255, 255) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad5px pad0px
+plusPill: [294,540.6,60x30] op1 bgrgb(254, 184, 145) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, -30) font16px/normal/normal/400 rad30px 30px 0px 0px pad0px
+otherPill: [294,570.6,60x30] op1 bgrgb(254, 184, 145) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, -30) font16px/normal/normal/400 rad30px 30px 0px 0px pad0px
+content: [20,443.8,350x131.2] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, 0) font16px/normal/normal/400 rad0px pad0px
+content p: [20,443.8,350x131.2] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font16px/19.2px/-0.32px/400 rad0px pad0px 60px 16px 16px
+h3: [36,401.4,278x26.4] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font24px/26.4px/-0.48px/500 rad0px pad0px
+== carousel scrollY=10048.5
+  track tf matrix(1, 0, 0, 1, 0, 0) prev carousel__prev carousel__prev--disabled next carousel__next
+ after next #1
+  track tf matrix(1, 0, 0, 1, -330, 0) prev carousel__prev next carousel__next
+ after next #2
+  track tf matrix(1, 0, 0, 1, -660, 0) prev carousel__prev next carousel__next
+ after next #3
+  track tf matrix(1, 0, 0, 1, -990, 0) prev carousel__prev next carousel__next
+ after next #4
+  track tf matrix(1, 0, 0, 1, -1280, 0) prev carousel__prev next carousel__next carousel__next--disabled
+ after next #5
+  track tf matrix(1, 0, 0, 1, -1280, 0) prev carousel__prev next carousel__next carousel__next--disabled
+ after 5x prev
+  track tf matrix(1, 0, 0, 1, 0, 0) prev carousel__prev carousel__prev--disabled next carousel__next
+slide0: [20,134.1,310x380] op1 bgrgb(255, 255, 255) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad5px pad0px
+slide0 title: [36,150.1,278x52.8] op1 bgrgba(0, 0, 0, 0) colrgb(252, 248, 240) tfnone font24px/26.4px/-0.48px/500 rad0px pad0px
+s0 plusPill: [254,484.1,60x30] op1 bgrgb(200, 253, 171) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, 0) font16px/normal/normal/400 rad30px 30px 0px 0px pad0px
+next btn: [44,84.1,30x30] op1 bgrgba(0, 0, 0, 0) colrgb(0, 0, 0) tfmatrix(1, 0, 0, 1, 0, -15) font30px/normal/normal/400 rad0px pad0px
+prev btn: [14,84.1,30x30] op0.2 bgrgba(0, 0, 0, 0) colrgb(0, 0, 0) tfmatrix(1, 0, 0, 1, 0, -15) font30px/normal/normal/400 rad0px pad0px
+-- slide1 clicked class slide active
+  track tf matrix(1, 0, 0, 1, -330, 0) prev carousel__prev next carousel__next
+slide1 title: [36,150.1,278x52.8] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font24px/26.4px/-0.48px/500 rad0px pad0px
+s1 plusPill: [254,454.1,60x30] op1 bgrgb(193, 242, 163) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, -30) font16px/normal/normal/400 rad30px 30px 0px 0px pad0px
+s1 otherPill: [254,484.1,60x30] op1 bgrgb(193, 242, 163) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, -30) font16px/normal/normal/400 rad30px 30px 0px 0px pad0px
+s1 desc: [36,229.4,278x268.7] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, 0) font16px/19.2px/-0.32px/400 rad0px pad0px
+== team scrollY=11330.5
+  member2 teamMember isActiveMobile
+name2: [166.4,195.2,203.6x32] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, 0) font32px/32px/-0.96px/400 rad0px pad0px
+overlay: [0,0,390x844] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad0px pad0px
+bgCont: [0,0,0x0] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad0px pad0px
+portrait: [0,279.5,285x285] op1 bgrgb(255, 255, 255) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, 0) font16px/normal/normal/400 rad5px pad0px
+portrait img: [0,279.5,285x285] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad0px pad0px
+  pimg fit cover 50% 0% src nathalie-ballan_mobile.jpg
+role: [8,489.5,236.5x38] op1 bgrgb(200, 253, 171) colrgb(62, 32, 2) tfnone font16px/16px/-0.48px/400 rad5px pad2px 6px 4px 22px
+linkedin: [8,534.5,86x22] op1 bgrgb(252, 248, 240) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, 0) font16px/normal/-0.48px/400 rad5px pad0px
+linkedin span: [14,536.5,57.2x16] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, 0) font16px/16px/-0.48px/400 rad0px pad0px
+== cta scrollY=12501.5
+cta h2: [20,75,350x203.8] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font52px/50.96px/-1.56px/500 rad0px pad0px
+btn0: [106.5,378.8,177x40] op1 bgrgb(62, 32, 2) colrgb(252, 248, 240) tfnone font18px/40px/-0.36px/500 rad0px pad0px
+ span0: [118.5,378.8,152.6x40] op1 bgrgba(0, 0, 0, 0) colrgb(252, 248, 240) tfnone font18px/40px/-0.36px/500 rad0px pad0px
+btn1: [111,426.8,168x40] op1 bgrgb(252, 248, 240) colrgb(62, 32, 2) tfnone font16px/40px/-0.48px/400 rad0px pad0px
+ span1: [123,426.8,144.1x40] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font16px/40px/-0.48px/400 rad0px pad0px
+cloud video: [-355,8.4,1100x600] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad0px pad0px

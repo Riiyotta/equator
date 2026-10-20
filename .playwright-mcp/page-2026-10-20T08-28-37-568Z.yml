@@ -1,0 +1,103 @@
+- main [ref=f12e5]:
+  - generic:
+    - generic:
+      - link [ref=f12e6] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=f12e9]:
+        - link "Our Story" [ref=f12e10] [cursor=pointer]:
+          - /url: /#our-story
+        - link "What we stand for" [ref=f12e11] [cursor=pointer]:
+          - /url: /#what-we-stand-for
+        - link "Capabilities" [ref=f12e12] [cursor=pointer]:
+          - /url: /#capabilities
+        - link "Our Work" [ref=f12e13] [cursor=pointer]:
+          - /url: /#our-work
+        - link "Team" [ref=f12e14] [cursor=pointer]:
+          - /url: /#team
+        - generic [ref=f12e15]:
+          - link [ref=f12e16] [cursor=pointer]:
+            - /url: mailto:info@equatorcompany.com
+          - link [ref=f12e19] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/the-equator-company/
+  - article [ref=f12e22]:
+    - heading "Privacy Policy" [level=1] [ref=f12e23]
+    - generic [ref=f12e24]:
+      - paragraph [ref=f12e25]: This Privacy Policy presents the process of collecting and using personal data, as well as the safeguard and security measures adopted in the treatment of such data. S317 Consulting recognises the importance of privacy and we ask you to carefully read this Privacy Policy to know how your Personal Information will be handled when using our website. The website www.theequatorcompany.com is owned by S317 Consulting, LDA. with headquarters at Rua Laura Alves nº12, 6º andar, 1050-041 Lisboa, Portugal.
+      - paragraph [ref=f12e26]
+      - paragraph [ref=f12e27]:
+        - strong [ref=f12e28]: 1. Data collection
+      - paragraph [ref=f12e29]: Whenever it is necessary to collect personal information, the use of this information will be carried out in compliance with the applicable legislation in force for the Data Protection Policy imposed by the National Data Protection Commission (CNPD), to ensure the confidentiality and security of personal data provided.
+      - paragraph [ref=f12e30]: The collection of personal data (name, email address, telephone contact), is applicable in commercial consultations and/or service agreements. The entity responsible for the collection and processing of personal data is S317 Consulting.
+      - paragraph [ref=f12e31]
+      - paragraph [ref=f12e32]:
+        - strong [ref=f12e33]: 2. Use of the information collected
+      - paragraph [ref=f12e34]: S317 Consulting undertakes to comply with the rules of personal data processing in force in Portugal.
+      - paragraph [ref=f12e35]: The data collected data is exclusively for the use of S317 Consulting, being guaranteed the privacy and protection of the data of the users.
+      - paragraph [ref=f12e36]
+      - paragraph [ref=f12e37]:
+        - strong [ref=f12e38]: 3. Right of Access, Rectification, Cancellation, and Opposition
+      - paragraph [ref=f12e39]:
+        - text: "In accordance with the provisions of the law in force, any person may request access to their personal data, its content, as well as require its rectification, update or request its destruction, by written request addressed to S317 Consulting to the email address:"
+        - link "info@s317consulting.com" [ref=f12e40] [cursor=pointer]:
+          - /url: mailto:info@s317consulting.com
+        - text: .
+      - paragraph [ref=f12e41]
+      - paragraph [ref=f12e42]:
+        - strong [ref=f12e43]: 4. Security and Data Protection
+      - paragraph [ref=f12e44]: S317 Consulting undertakes to treat your Personal Information with the utmost privacy, confidentiality, and security and undertakes to adopt the necessary security measures to ensure the safeguarding of the personal data of users against their possible misuse or against access not authorised.
+      - paragraph [ref=f12e45]: Notwithstanding, and since the Internet is not 100% secure, S317 Consulting cannot guarantee the security of any information it disseminates online, nor be liable for any loss or damage caused to the user as a consequence of the loss of confidentiality of the information.
+      - paragraph [ref=f12e46]
+      - paragraph [ref=f12e47]:
+        - strong [ref=f12e48]: 5. Responsibility
+      - paragraph [ref=f12e49]: On this web page, users will be able to find links that take them to other web pages outside the domain of S317 Consulting servers that may themselves collect data or request personal information. This Privacy Policy does not apply to third-party sites, so you should read the Privacy Policy of the third-party sites you visit, and we are not responsible for the content and information on those same sites.
+      - paragraph [ref=f12e50]
+      - paragraph [ref=f12e51]:
+        - strong [ref=f12e52]: 5. Privacy Policy Agreement
+      - paragraph [ref=f12e53]: It is understood that the user accepts the conditions of this privacy policy when entering their data.
+      - paragraph [ref=f12e54]: We assume that the user consents to the automated processing and use of the data in accordance with the privacy conditions described in this document wData Trehen filling out the forms. If you do not accept the terms and conditions of this Privacy Policy, we ask you not to provide any personal information to S317 Consulting through this site.
+      - paragraph [ref=f12e55]
+      - paragraph [ref=f12e56]:
+        - strong [ref=f12e57]: 5. Changes to the Privacy Policy
+      - paragraph [ref=f12e58]: S317 Consulting reserves the right at any time to update or revise this Privacy Policy in order to adjust it to any legislative changes and/or other constraints. Any changes made will be published in this space, so the user should visit this area frequently to keep informed about the Privacy Policy in force.
+      - paragraph [ref=f12e59]
+      - heading "Data Treatment" [level=2] [ref=f12e60]
+      - paragraph [ref=f12e61]: "The Management determines that data processing must be subject to the following principles (data protection policy):"
+      - paragraph [ref=f12e62]: a) determination, before data collection, of the purposes for their use, as well as their conservation and elimination;
+      - paragraph [ref=f12e63]: b) identification of data subjects (personal and non-personal) and determination of their interests and rights;
+      - paragraph [ref=f12e64]: c) provision of information to the holders of personal data on the specific purposes for the use, limitation, and interruption of use, rectification and conservation, deletion of data and right of opposition, when the holders are not aware of the information;
+      - paragraph [ref=f12e65]: d) obtaining authorisation from the holder of personal data for their use, especially when they are or may be used for the purpose of offering goods and services, even if free of charge, or for analysing and controlling their behaviour;
+      - paragraph [ref=f12e66]: e) interruption of the processing of data that no longer meet the purposes for which they were collected or when requested by their holders;
+      - paragraph [ref=f12e67]: f) deletion of data when they are not used or at the request of their holders, subject to the applicable legal/fiscal permissions.
+      - paragraph [ref=f12e68]: g) data protection through logical, physical, and other security measures.
+      - paragraph [ref=f12e69]: These principles apply to data collected directly (personal and phone contacts) or indirectly (postal correspondence, own internet sites, and social networks), either in verbal and/or written forms (registration/information forms; postal mail, advertising, emails, posts, and others).
+      - paragraph [ref=f12e70]: The Management determines that all data held and kept by the organisation must be treated lawfully, loyally, and transparently, within the principles of security and responsibility referred to above in this section and in the “Information Assets”.
+      - paragraph [ref=f12e71]: "The data collected from its holders and kept by the organisation is structured accordingly to “Mapping the Value Network: Transactions”."
+      - paragraph [ref=f12e72]: The company does not appoint any Data Protection Officer, as there is no need for regular and systematic control of the data based on their nature, scope, and purpose, as well as the small scale of the data collected and stored.
+      - paragraph [ref=f12e73]: This policy was approved by the Managing Partners of S317 Consulting on March 17, 2021.
+  - generic [ref=f12e74]:
+    - generic [ref=f12e97]:
+      - paragraph [ref=f12e98]: Interdisciplinary sustainability consultancy with 45 years of experience. Designed to provide a structured full-service ESG offer for your organisation and community.
+      - list [ref=f12e99]:
+        - listitem [ref=f12e100]:
+          - link "Rua Laura Alves 12, 1050-138 Lisboa, Portugal" [ref=f12e101] [cursor=pointer]:
+            - /url: https://maps.app.goo.gl/DhKJrr1GrcZ6ptwT7
+        - listitem [ref=f12e105]:
+          - link "info@equatorcompany.com" [ref=f12e106] [cursor=pointer]:
+            - /url: mailto:info@equatorcompany.com
+      - list [ref=f12e110]:
+        - listitem [ref=f12e111]:
+          - link "Follow us on LinkedIn" [ref=f12e112] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/the-equator-company/
+      - paragraph [ref=f12e116]: © 2026 The Equator Company.All rights reserved.
+    - generic [ref=f12e118]:
+      - link "Privacy Policy" [ref=f12e119] [cursor=pointer]:
+        - /url: /privacy-policy
+      - generic [ref=f12e120]:
+        - text: Design by
+        - link "Studio Cronica" [ref=f12e121] [cursor=pointer]:
+          - /url: https://studio-cronica.com
+  - generic [ref=f12e122]:
+    - link [ref=f12e123] [cursor=pointer]:
+      - /url: https://recuperarportugal.gov.pt/
+    - link "Project sheet" [ref=f12e124] [cursor=pointer]:
+      - /url: /Equator-PRR-Investimentos.pdf

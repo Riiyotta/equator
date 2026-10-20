@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "source": "https://equatorcompany.com/ — local React clone in this folder (src/App.jsx, src/pages/*, src/components/*), measured in CLONE_SPEC.md",
+    "status": "measured-from-clone",
+    "totalRoutes": 3,
+    "totalTemplates": 3,
+    "notes": "The 404 template is a catch-all for any unknown path; it is counted as one route. Its styling is approximate and was not measured against the original's Nuxt 404."
+  },
+  "categories": {
+    "CHROME": "Site-wide header, logo and navigation furniture that frames page content",
+    "INTRO": "Full-viewport opening blocks at the top of the home page",
+    "CONTENT": "Anchored home-page content sections reachable from the main nav",
+    "CONVERSION": "Blocks whose job is to send the visitor to contact or social channels",
+    "LEGAL": "Long-form legal prose",
+    "ERROR": "Error-state page bodies",
+    "FOOTER": "Bottom-of-page contact, credit and funding blocks"
+  },
+  "sections": {
+    "chrome.logo-zone": {
+      "category": "CHROME",
+      "description": "Sticky oversized wordmark that scales from 1 to 0.6667 over the first half-screen of scroll, then locks small; clicking it scrolls to the title section.",
+      "scope": "Home only.",
+      "implementedBy": "Header.jsx > LogoZone"
+    },
+    "chrome.mobile-header": {
+      "category": "CHROME",
+      "description": "Mobile (<=768px) top bar that appears once the logo is small, with the hamburger toggling the full-screen coral menu and scroll lock.",
+      "scope": "Home only (the privacy page builds its own bar, see chrome.static-logo-bar).",
+      "implementedBy": "Header.jsx > MobileHeader"
+    },
+    "chrome.header-nav": {
+      "category": "CHROME",
+      "description": "Desktop nav with the five in-page anchor links (our story, what we stand for, capabilities, our work, team) plus contact icons; doubles as the mobile slide-down menu panel.",
+      "scope": "Home and privacy policy.",
+      "implementedBy": "Header.jsx > Header"
+    },
+    "chrome.static-logo-bar": {
+      "category": "CHROME",
+      "description": "Non-animated wordmark link home plus hamburger, used where there is no splash or shrinking logo.",
+      "scope": "Privacy policy only.",
+      "implementedBy": "PrivacyPolicy.jsx > HomeLink + Hamburger"
+    },
+    "intro.splash": {
+      "category": "INTRO",
+      "description": "100svh coral screen with a centred brand Lottie (starts 1s after mount, then loops from frame 270) and a delayed 'Scroll to explore' caption.",
+      "scope": "Home only.",
+      "implementedBy": "Splash.jsx"
+    },
+    "intro.title": {
+      "category": "INTRO",
+      "description": "Three-line headline over a looping bird video in screen blend mode.",
+      "scope": "Home only.",
+      "implementedBy": "Title.jsx"
+    },
+    "content.story": {
+      "category": "CONTENT",
+      "description": "#our-story: paragraph revealed word by word as the reader scrolls, followed by the four merger-company logos.",
+      "scope": "Home only.",
+      "implementedBy": "Story.jsx"
+    },
+    "content.values": {
+      "category": "CONTENT",
+      "description": "#what-we-stand-for: five sticky stacked value panels on a lime background, each with its own Lottie, an N/5 counter and a scroll-scrubbed fade-out.",
+      "scope": "Home only.",
+      "implementedBy": "Values.jsx"
+    },
+    "content.capabilities": {
+      "category": "CONTENT",
+      "description": "#capabilities: nine accordion cards, one open at a time, with pill reveal on open.",
+      "scope": "Home only.",
+      "implementedBy": "Capabilities.jsx"
+    },
+    "content.our-work": {
+      "category": "CONTENT",
+      "description": "#our-work: draggable five-slide project carousel with arrows, followed by a continuously scrolling 'Proud member of' logo marquee.",
+      "scope": "Home only.",
+      "implementedBy": "OurWork.jsx"
+    },
+    "content.team": {
+      "category": "CONTENT",
+      "description": "#team: list of fifteen names; the name crossing mid-viewport activates a portrait card, halftone background and LinkedIn tag.",
+      "scope": "Home only.",
+      "implementedBy": "Team.jsx"
+    },
+    "conversion.cta": {
+      "category": "CONVERSION",
+      "description": "Closing call to action over a cloud video with an oat multiply overlay; two buttons that widen and invert colour on hover.",
+      "scope": "Home only.",
+      "implementedBy": "Cta.jsx"
+    },
+    "legal.privacy-article": {
+      "category": "LEGAL",
+      "description": "Single long-form privacy policy article rendered from static HTML.",
+      "scope": "Privacy policy only.",
+      "implementedBy": "PrivacyPolicy.jsx > article (lib/privacyBody.js)"
+    },
+    "error.not-found": {
+      "category": "ERROR",
+      "description": "Minimal centred '404 / Page not found: <path> / Go back home' body with no site chrome.",
+      "scope": "404 catch-all only.",
+      "implementedBy": "pages/NotFound.jsx"
+    },
+    "footer.main": {
+      "category": "FOOTER",
+      "description": "Footer with looping brand Lottie, contact links, social links, privacy policy link and studio credit.",
+      "scope": "Home and privacy policy.",
+      "implementedBy": "Footer.jsx > Footer"
+    },
+    "footer.subfooter": {
+      "category": "FOOTER",
+      "description": "Funding strip with the co-funding logos (mono.svg) and the 'Project sheet' PDF link.",
+      "scope": "Home and privacy policy.",
+      "implementedBy": "Footer.jsx > Subfooter"
+    }
+  },
+  "templates": [
+    {
+      "id": "template.home",
+      "name": "Home (single long page)",
+      "routeCount": 1,
+      "routes": ["/"],
+      "routePattern": null,
+      "chrome": "animated",
+      "sections": [
+        "chrome.logo-zone",
+        "chrome.mobile-header",
+        "intro.splash",
+        "chrome.header-nav",
+        "intro.title",
+        "content.story",
+        "content.values",
+        "content.capabilities",
+        "content.our-work",
+        "content.team",
+        "conversion.cta",
+        "footer.main",
+        "footer.subfooter"
+      ]
+    },
+    {
+      "id": "template.legal",
+      "name": "Legal prose",
+      "routeCount": 1,
+      "routes": ["/privacy-policy"],
+      "routePattern": null,
+      "chrome": "static",
+      "sections": [
+        "chrome.static-logo-bar",
+        "chrome.header-nav",
+        "legal.privacy-article",
+        "footer.main",
+        "footer.subfooter"
+      ]
+    },
+    {
+      "id": "template.not-found",
+      "name": "404 catch-all",
+      "routeCount": 1,
+      "routes": ["/*"],
+      "routePattern": null,
+      "chrome": "none",
+      "sections": ["error.not-found"]
+    }
+  ]
+}

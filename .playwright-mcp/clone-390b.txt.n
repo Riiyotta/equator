@@ -1,0 +1,544 @@
+390x844 docH=14040
+div.logoSmallZone [0,1300,390x12740] 
+div.logoTrigger [0,0,0x456] 
+div.logoZone [20,0,370x14040] 
+ div.logoTopScroll [20,0,352x388] bb
+  div.logoCont [20,0,352x68] 
+   a.text-headline4 [20,20,352x34] 
+    svg [20,20,352x34] 
+div.mobileHeader [0,0,390x68] bg:rgb(255, 157, 105) op:0 bb
+ button.hamburger.hamburger--squeeze [346,18,24x32] bb
+  span.hamburger-box [349,26,18x14] 
+   span.hamburger-inner [349,32,18x2] bg:rgb(62, 32, 2)
+section.hide.splash [0,0,390x844] bg:rgb(255, 157, 105) bb
+ div.lottieCont [20,216,350x412] 
+  div [20,216,350x412] 
+   canvas [20,216,350x412] 
+ div.text-bodyS [132,803,126x21] font:National/18px/400/lh21.24px/ls-0.36px/rgb(62, 32, 2) op:0
+div.headerCont.noselect [0,0,390x844] 
+ header [0,-844,390x844] bg:rgb(255, 157, 105) bb
+  div.logoSpace [20,-844,0x0] 
+  nav.text-bodyS [20,-382,266x382] 
+   a.navlink [20,-382,140x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2)
+   a.navlink [20,-330,266x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2)
+   a.navlink [20,-279,172x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2)
+   a.navlink [20,-227,138x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2)
+   a.navlink [20,-176,81x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2)
+   div.icons.text-bodyS [20,-94,241x24] 
+    a [20,-94,95x24] 
+     svg [20,-94,24x24] 
+     span [50,-93,65x21] font:National/18px/400/lh21.24px/ls-0.36px/rgb(62, 32, 2)
+    a [165,-94,96x24] 
+     svg [165,-94,24x24] 
+     span [195,-93,66x21] font:National/18px/400/lh21.24px/ls-0.36px/rgb(62, 32, 2)
+section.titleSection [0,844,390x844] bg:rgb(255, 157, 105) bb
+ div [20,944,350x0] 
+ div.title [20,1024,350x543] 
+  h1.text-headline1 [20,1024,311x153] font:National/52px/500/lh50.96px/ls-1.56px/rgb(62, 32, 2)
+ div.subtitle.text-bodyL [20,1567,350x101] 
+  div.circle [20,1571,20x20] bg:rgb(62, 32, 2) rad:50%
+  span [48,1567,322x101] font:National/21px/400/lh25.2px/ls-0.63px/rgb(62, 32, 2)
+ div.videoLayer [-453,954,1295x734] blend:screen
+  video [-453,954,1295x734] fit:contain 50% 100% disp:inline
+section#our-story.story [0,1688,390x1218] bg:rgb(252, 248, 240)
+ div.lettersTrigger [0,2110,0x0] 
+ div.introCont.text-headline2 [0,1688,390x1218] bb
+  p [20,1763,350x238] 
+   span.word [20,1763,77x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2) op:0
+   span.word [97,1763,77x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2) op:0
+   span.word [174,1763,56x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2) op:0
+  div.logos [20,2031,350x220] 
+   div.logo [20,2056,135x72] bg:rgb(252, 248, 240)
+    a [20,2086,135x45] 
+     img [20,2056,135x65] blend:multiply fit:fill 50% 50% disp:inline op:0
+   div.logo [191,2056,179x74] bg:rgb(252, 248, 240)
+    a [191,2087,60x45] 
+     img [191,2056,60x67] blend:multiply fit:fill 50% 50% disp:inline op:0
+   div.logo [20,2165,135x60] bg:rgb(252, 248, 240)
+    a [20,2183,128x45] 
+     img [20,2165,128x53] blend:multiply fit:fill 50% 50% disp:inline op:0
+   div.logo [191,2172,179x47] bg:rgb(252, 248, 240)
+    a [191,2177,146x45] 
+     img [191,2172,146x40] blend:multiply fit:fill 50% 50% disp:inline op:0
+  p [20,2281,350x119] 
+   span.word [20,2281,86x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2) op:0
+   span.word [106,2281,137x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2) op:0
+   span.word [20,2320,70x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2) op:0
+  p.indent [20,2429,350x119] 
+   span.word [20,2429,28x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2) op:0
+   span.word [48,2429,31x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2) op:0
+   span.word [79,2429,141x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2) op:0
+  p [20,2578,350x119] 
+   span.word [20,2578,28x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2) op:0
+   span.word [48,2578,31x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2) op:0
+   span.word [79,2578,25x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2) op:0
+  p.indent [20,2727,350x79] 
+   span.word [20,2727,68x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2) op:0
+   span.word [88,2727,28x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2) op:0
+   span.word [115,2727,31x40] font:National/36px/400/lh39.6px/ls-1.44px/rgb(62, 32, 2) op:0
+section#what-we-stand-for.values [0,2906,390x5730] bg:rgb(200, 253, 171)
+ div.numbersCont [345,2986,25x5600] 
+  div.number.text-bodyL [345,2986,25x25] font:National/21px/400/lh25.2px/ls-0.63px/rgb(62, 32, 2)
+ div.valuesCont [0,2906,390x5730] bb
+  div.scrollZone [20,2986,350x5300] 
+   div.value [20,2986,350x650] 
+    div.lottieTrigger [20,3408,350x0] 
+    div.lottieCont [20,3076,140x140] 
+     div [20,3076,140x140] 
+      canvas [20,3076,140x140] 
+    h2.text-headline1 [20,3236,350x153] font:National/52px/500/lh50.96px/ls-1.56px/rgb(62, 32, 2)
+    div.text.text-bodyM [20,3409,350x106] 
+     p [20,3409,350x58] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+     p [20,3476,350x38] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+  div.scrollZone [20,4082,350x4204] 
+   div.value [20,4082,350x650] 
+    div.lottieTrigger [20,4504,350x0] 
+    div.lottieCont [20,4172,140x140] 
+     div [20,4172,140x140] 
+      canvas [20,4172,140x140] 
+    h2.text-headline1 [20,4332,350x153] font:National/52px/500/lh50.96px/ls-1.56px/rgb(62, 32, 2)
+    div.text.text-bodyM [20,4505,350x125] 
+     p [20,4505,350x58] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+     p [20,4572,350x58] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+  div.scrollZone [20,5178,350x3108] 
+   div.value [20,5178,350x650] 
+    div.lottieTrigger [20,5600,350x0] 
+    div.lottieCont [20,5268,140x140] 
+     div [20,5268,140x140] 
+      canvas [20,5268,140x140] 
+    h2.text-headline1 [20,5428,350x153] font:National/52px/500/lh50.96px/ls-1.56px/rgb(62, 32, 2)
+    div.text.text-bodyM [20,5601,350x125] 
+     p [20,5601,350x77] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+     p [20,5688,350x38] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+  div.scrollZone [20,6274,350x2012] 
+   div.value [20,6274,350x650] 
+    div.lottieTrigger [20,6696,350x0] 
+    div.lottieCont [20,6364,140x140] 
+     div [20,6364,140x140] 
+      canvas [20,6364,140x140] 
+    h2.text-headline1 [20,6524,350x153] font:National/52px/500/lh50.96px/ls-1.56px/rgb(62, 32, 2)
+    div.text.text-bodyM [20,6697,350x125] 
+     p [20,6697,350x58] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+     p [20,6764,350x58] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+  div.scrollZone [20,7370,350x916] 
+   div.value [20,7370,350x650] 
+    div.lottieTrigger [20,7792,350x0] 
+    div.lottieCont [20,7460,140x140] 
+     div [20,7460,140x140] 
+      canvas [20,7460,140x140] 
+    h2.text-headline1 [20,7620,350x204] font:National/52px/500/lh50.96px/ls-1.56px/rgb(62, 32, 2)
+    div.text.text-bodyM [20,7844,350x144] 
+     p [20,7844,350x77] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+     p [20,7931,350x58] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+  div.hide1Trigger [0,3682,0x717] 
+  div.hide2Trigger [0,4778,0x717] 
+  div.hide3Trigger [0,5874,0x717] 
+  div.hide4Trigger [0,6970,0x717] 
+  div#step1.step1Trigger [0,2986,390x1] 
+  div#step2.step2Trigger [0,4082,390x1] 
+  div#step3.step3Trigger [0,5178,390x1] 
+  div#step4.step4Trigger [0,6274,390x1] 
+  div#step5.step5Trigger [0,7370,390x1] 
+section#capabilities.capabilities [0,8636,390x1312] bg:rgb(252, 248, 240)
+ h2.text-headline2Medium [20,8711,350x79] font:National/36px/500/lh39.6px/ls-1.44px/rgb(62, 32, 2)
+ p.subtitle.text-bodyL [20,8820,350x151] font:National/21px/400/lh25.2px/ls-0.63px/rgba(62, 32, 2, 0.7)
+ div.grid [20,9021,350x852] 
+  div.dropdown.noselect [20,9021,350x84] bg:rgb(255, 255, 255) rad:5px
+   div.dropdownHeader [20,9021,350x58] 
+    h3.text-headline4 [36,9037,278x26] font:National/24px/500/lh26.4px/ls-0.48px/rgb(62, 32, 2)
+   div.dropdownContent [20,9080,350x131] op:0
+    p.text-bodyM [20,9080,350x131] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+   div.plusPill [294,9075,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+    svg [312,9079,24x24] 
+   div.otherPill [294,9105,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+  div.dropdown.noselect [20,9117,350x84] bg:rgb(255, 255, 255) rad:5px
+   div.dropdownHeader [20,9117,350x85] 
+    h3.text-headline4 [36,9133,278x53] font:National/24px/500/lh26.4px/ls-0.48px/rgb(62, 32, 2)
+   div.dropdownContent [20,9202,350x131] op:0
+    p.text-bodyM [20,9202,350x131] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+   div.plusPill [294,9171,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+    svg [312,9175,24x24] 
+   div.otherPill [294,9201,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+  div.dropdown.noselect [20,9213,350x84] bg:rgb(255, 255, 255) rad:5px
+   div.dropdownHeader [20,9213,350x58] 
+    h3.text-headline4 [36,9229,278x26] font:National/24px/500/lh26.4px/ls-0.48px/rgb(62, 32, 2)
+   div.dropdownContent [20,9272,350x112] op:0
+    p.text-bodyM [20,9272,350x112] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+   div.plusPill [294,9267,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+    svg [312,9271,24x24] 
+   div.otherPill [294,9297,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+  div.dropdown.noselect [20,9309,350x84] bg:rgb(255, 255, 255) rad:5px
+   div.dropdownHeader [20,9309,350x58] 
+    h3.text-headline4 [36,9325,278x26] font:National/24px/500/lh26.4px/ls-0.48px/rgb(62, 32, 2)
+   div.dropdownContent [20,9368,350x131] op:0
+    p.text-bodyM [20,9368,350x131] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+   div.plusPill [294,9363,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+    svg [312,9367,24x24] 
+   div.otherPill [294,9393,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+  div.dropdown.noselect [20,9405,350x84] bg:rgb(255, 255, 255) rad:5px
+   div.dropdownHeader [20,9405,350x85] 
+    h3.text-headline4 [36,9421,278x53] font:National/24px/500/lh26.4px/ls-0.48px/rgb(62, 32, 2)
+   div.dropdownContent [20,9490,350x93] op:0
+    p.text-bodyM [20,9490,350x93] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+   div.plusPill [294,9459,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+    svg [312,9463,24x24] 
+   div.otherPill [294,9489,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+  div.dropdown.noselect [20,9501,350x84] bg:rgb(255, 255, 255) rad:5px
+   div.dropdownHeader [20,9501,350x58] 
+    h3.text-headline4 [36,9517,278x26] font:National/24px/500/lh26.4px/ls-0.48px/rgb(62, 32, 2)
+   div.dropdownContent [20,9560,350x112] op:0
+    p.text-bodyM [20,9560,350x112] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+   div.plusPill [294,9555,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+    svg [312,9559,24x24] 
+   div.otherPill [294,9585,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+  div.dropdown.noselect [20,9597,350x84] bg:rgb(255, 255, 255) rad:5px
+   div.dropdownHeader [20,9597,350x58] 
+    h3.text-headline4 [36,9613,278x26] font:National/24px/500/lh26.4px/ls-0.48px/rgb(62, 32, 2)
+   div.dropdownContent [20,9656,350x112] op:0
+    p.text-bodyM [20,9656,350x112] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+   div.plusPill [294,9651,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+    svg [312,9655,24x24] 
+   div.otherPill [294,9681,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+  div.dropdown.noselect [20,9693,350x84] bg:rgb(255, 255, 255) rad:5px
+   div.dropdownHeader [20,9693,350x58] 
+    h3.text-headline4 [36,9709,278x26] font:National/24px/500/lh26.4px/ls-0.48px/rgb(62, 32, 2)
+   div.dropdownContent [20,9752,350x150] op:0
+    p.text-bodyM [20,9752,350x150] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+   div.plusPill [294,9747,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+    svg [312,9751,24x24] 
+   div.otherPill [294,9777,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+  div.dropdown.noselect [20,9789,350x84] bg:rgb(255, 255, 255) rad:5px
+   div.dropdownHeader [20,9789,350x58] 
+    h3.text-headline4 [36,9805,278x26] font:National/24px/500/lh26.4px/ls-0.48px/rgb(62, 32, 2)
+   div.dropdownContent [20,9848,350x112] op:0
+    p.text-bodyM [20,9848,350x112] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2)
+   div.plusPill [294,9843,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+    svg [312,9847,24x24] 
+   div.otherPill [294,9873,60x30] bg:rgb(255, 157, 105) rad:30px 30px 0px 0px
+section#our-work.noselect.partners [0,9948,390x1016] bg:rgb(252, 248, 240) bb
+ h2.text-headline2Medium [20,10023,350x79] font:National/36px/500/lh39.6px/ls-1.44px/rgb(62, 32, 2)
+ div.navigationSpace [20,10103,350x80] 
+ section.carousel.is-effect-slide.is-ltr [20,10183,350x380] bb
+  div.carousel__viewport [20,10183,350x380] bb
+   ol.carousel__track [20,10183,350x380] bb
+    li.carousel__slide [20,10183,310x380] bb
+     div.slide [20,10183,310x380] bg:rgb(255, 255, 255) rad:5px bb
+      h3.slideTitle.text-headline4 [36,10199,278x53] font:National/24px/500/lh26.4px/ls-0.48px/rgb(252, 248, 240) bb
+      div.photoLayer [20,10183,310x380] bb
+      picture.responsivePicture [20,10183,310x380] bb
+       img.cover.lazy [20,10183,310x380] fit:cover 50% 50% disp:block op:0 bb
+      div.plusPill [254,10533,60x30] bg:rgb(200, 253, 171) rad:30px 30px 0px 0px bb
+       svg [272,10537,24x24] bb
+      div.otherPill [254,10563,60x30] bg:rgb(200, 253, 171) rad:30px 30px 0px 0px bb
+      div.descriptionLayer [20,10183,310x380] bg:rgb(200, 253, 171) op:0 bb
+      p.description.text-bodyM [36,10455,278x211] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2) op:0 bb
+    li.carousel__slide [350,10183,310x380] bb
+     div.slide [350,10183,310x380] bg:rgb(255, 255, 255) rad:5px bb
+      h3.slideTitle.text-headline4 [366,10199,278x53] font:National/24px/500/lh26.4px/ls-0.48px/rgb(252, 248, 240) bb
+      div.photoLayer [350,10183,310x380] bb
+      picture.responsivePicture [350,10183,310x380] bb
+       img.cover.lazy [350,10183,310x380] fit:cover 50% 50% disp:block op:0 bb
+      div.plusPill [584,10533,60x30] bg:rgb(200, 253, 171) rad:30px 30px 0px 0px bb
+       svg [602,10537,24x24] bb
+      div.otherPill [584,10563,60x30] bg:rgb(200, 253, 171) rad:30px 30px 0px 0px bb
+      div.descriptionLayer [350,10183,310x380] bg:rgb(200, 253, 171) op:0 bb
+      p.description.text-bodyM [366,10398,278x269] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2) op:0 bb
+    li.carousel__slide [680,10183,310x380] bb
+     div.slide [680,10183,310x380] bg:rgb(255, 255, 255) rad:5px bb
+      h3.slideTitle.text-headline4 [696,10199,278x53] font:National/24px/500/lh26.4px/ls-0.48px/rgb(252, 248, 240) bb
+      div.photoLayer [680,10183,310x380] bb
+      picture.responsivePicture [680,10183,310x380] bb
+       img.cover.lazy [680,10183,310x380] fit:cover 50% 50% disp:block op:0 bb
+      div.plusPill [914,10533,60x30] bg:rgb(200, 253, 171) rad:30px 30px 0px 0px bb
+       svg [932,10537,24x24] bb
+      div.otherPill [914,10563,60x30] bg:rgb(200, 253, 171) rad:30px 30px 0px 0px bb
+      div.descriptionLayer [680,10183,310x380] bg:rgb(200, 253, 171) op:0 bb
+      p.description.text-bodyM [696,10436,278x230] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2) op:0 bb
+    li.carousel__slide [1010,10183,310x380] bb
+     div.slide [1010,10183,310x380] bg:rgb(255, 255, 255) rad:5px bb
+      h3.slideTitle.text-headline4 [1026,10199,278x53] font:National/24px/500/lh26.4px/ls-0.48px/rgb(252, 248, 240) bb
+      div.photoLayer [1010,10183,310x380] bb
+      picture.responsivePicture [1010,10183,310x380] bb
+       img.cover.lazy [1010,10183,310x380] fit:cover 50% 50% disp:block op:0 bb
+      div.plusPill [1244,10533,60x30] bg:rgb(200, 253, 171) rad:30px 30px 0px 0px bb
+       svg [1262,10537,24x24] bb
+      div.otherPill [1244,10563,60x30] bg:rgb(200, 253, 171) rad:30px 30px 0px 0px bb
+      div.descriptionLayer [1010,10183,310x380] bg:rgb(200, 253, 171) op:0 bb
+      p.description.text-bodyM [1026,10436,278x230] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2) op:0 bb
+    li.carousel__slide [1340,10183,310x380] bb
+     div.slide [1340,10183,310x380] bg:rgb(255, 255, 255) rad:5px bb
+      h3.slideTitle.text-headline4 [1356,10199,278x26] font:National/24px/500/lh26.4px/ls-0.48px/rgb(252, 248, 240) bb
+      div.photoLayer [1340,10183,310x380] bb
+      picture.responsivePicture [1340,10183,310x380] bb
+       img.cover.lazy [1340,10183,310x380] fit:cover 50% 50% disp:block op:0 bb
+      div.plusPill [1574,10533,60x30] bg:rgb(200, 253, 171) rad:30px 30px 0px 0px bb
+       svg [1592,10537,24x24] bb
+      div.otherPill [1574,10563,60x30] bg:rgb(200, 253, 171) rad:30px 30px 0px 0px bb
+      div.descriptionLayer [1340,10183,310x380] bg:rgb(200, 253, 171) op:0 bb
+      p.description.text-bodyM [1356,10417,278x250] font:National/16px/400/lh19.2px/ls-0.32px/rgb(62, 32, 2) op:0 bb
+  button.carousel__prev.carousel__prev--disabled [14,10133,30x30] op:0.2 bb
+   svg [17,10136,24x24] bb
+  button.carousel__next [44,10133,30x30] bb
+   svg [47,10136,24x24] bb
+ div.logosCont [20,10686,350x179] 
+  div.text-bodyL [20,10686,350x25] font:National/21px/400/lh25.2px/ls-0.63px/rgb(62, 32, 2)
+section#team.team [0,10965,390x1537] bg:rgb(255, 157, 105)
+ div.intro [20,11040,350x300] 
+  h2.text-headline2Medium [20,11040,350x119] font:National/36px/500/lh39.6px/ls-1.44px/rgb(62, 32, 2)
+  p.subtitle.text-bodyL [20,11189,350x151] font:National/21px/400/lh25.2px/ls-0.63px/rgba(62, 32, 2, 0.7)
+ div.list [20,11400,350x722] 
+  div [20,11400,350x64] 
+   div.teamMember [20,11400,350x64] 
+    div.text-headline3 [20,11400,350x64] font:National/32px/400/lh32px/ls-0.96px/rgb(62, 32, 2) op:0.4
+    div.overlayCont [0,0,390x844] 
+     div.backgroundCont [0,0,0x0] op:0
+      img [0,0,0x0] fit:contain 0% 100% disp:inline
+     div.portraitCont [0,280,285x285] bg:rgb(255, 255, 255) rad:5px op:0
+      picture.responsivePicture [0,280,285x285] 
+       img.cover [0,280,285x285] fit:cover 50% 0% disp:block
+      div.role.text-caption [8,506,155x22] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2) bg:rgb(200, 253, 171) rad:5px bb
+      a.linkedin.text-caption [8,535,86x22] bg:rgb(252, 248, 240) rad:5px
+       span [14,537,57x16] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2)
+       svg [53,538,16x16] op:0
+       svg [79,541,9x9] 
+  div [20,11479,350x32] 
+   div.teamMember [20,11479,350x32] 
+    div.text-headline3 [213,11479,157x32] font:National/32px/400/lh32px/ls-0.96px/rgb(62, 32, 2) op:0.4
+    div.overlayCont [0,0,390x844] 
+     div.backgroundCont [0,0,0x0] op:0
+      img [0,0,0x0] fit:contain 0% 100% disp:inline
+     div.portraitCont [0,280,285x285] bg:rgb(255, 255, 255) rad:5px op:0
+      picture.responsivePicture [0,280,285x285] 
+       img.cover [0,280,285x285] fit:cover 50% 0% disp:block
+      div.role.text-caption [8,506,155x22] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2) bg:rgb(200, 253, 171) rad:5px bb
+      a.linkedin.text-caption [8,535,86x22] bg:rgb(252, 248, 240) rad:5px
+       span [14,537,57x16] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2)
+       svg [53,538,16x16] op:0
+       svg [79,541,9x9] 
+  div [20,11526,350x32] 
+   div.teamMember [20,11526,350x32] 
+    div.text-headline3 [166,11526,204x32] font:National/32px/400/lh32px/ls-0.96px/rgb(62, 32, 2) op:0.4
+    div.overlayCont [0,0,390x844] 
+     div.backgroundCont [0,0,0x0] op:0
+      img [0,0,0x0] fit:contain 0% 100% disp:inline
+     div.portraitCont [0,280,285x285] bg:rgb(255, 255, 255) rad:5px op:0
+      picture.responsivePicture [0,280,285x285] 
+       img.cover [0,280,285x285] fit:cover 50% 0% disp:block
+      div.role.text-caption [8,490,237x38] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2) bg:rgb(200, 253, 171) rad:5px bb
+      a.linkedin.text-caption [8,535,86x22] bg:rgb(252, 248, 240) rad:5px
+       span [14,537,57x16] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2)
+       svg [53,538,16x16] op:0
+       svg [79,541,9x9] 
+  div [20,11573,350x32] 
+   div.teamMember [20,11573,350x32] 
+    div.text-headline3 [204,11573,166x32] font:National/32px/400/lh32px/ls-0.96px/rgb(62, 32, 2) op:0.4
+    div.overlayCont [0,0,390x844] 
+     div.backgroundCont [0,0,0x0] op:0
+      img [0,0,0x0] fit:contain 0% 100% disp:inline
+     div.portraitCont [0,280,285x285] bg:rgb(255, 255, 255) rad:5px op:0
+      picture.responsivePicture [0,280,285x285] 
+       img.cover [0,280,285x285] fit:cover 50% 0% disp:block
+      div.role.text-caption [8,490,165x38] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2) bg:rgb(200, 253, 171) rad:5px bb
+      a.linkedin.text-caption [8,535,86x22] bg:rgb(252, 248, 240) rad:5px
+       span [14,537,57x16] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2)
+       svg [53,538,16x16] op:0
+       svg [79,541,9x9] 
+  div [20,11620,350x32] 
+   div.teamMember [20,11620,350x32] 
+    div.text-headline3 [172,11620,198x32] font:National/32px/400/lh32px/ls-0.96px/rgb(62, 32, 2) op:0.4
+    div.overlayCont [0,0,390x844] 
+     div.backgroundCont [0,0,0x0] op:0
+      img [0,0,0x0] fit:contain 0% 100% disp:inline
+     div.portraitCont [0,280,285x285] bg:rgb(255, 255, 255) rad:5px op:0
+      picture.responsivePicture [0,280,285x285] 
+       img.cover [0,280,285x285] fit:cover 50% 0% disp:block
+      div.role.text-caption [8,506,158x22] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2) bg:rgb(200, 253, 171) rad:5px bb
+      a.linkedin.text-caption [8,535,86x22] bg:rgb(252, 248, 240) rad:5px
+       span [14,537,57x16] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2)
+       svg [53,538,16x16] op:0
+       svg [79,541,9x9] 
+  div [20,11667,350x32] 
+   div.teamMember [20,11667,350x32] 
+    div.text-headline3 [159,11667,211x32] font:National/32px/400/lh32px/ls-0.96px/rgb(62, 32, 2) op:0.4
+    div.overlayCont [0,0,390x844] 
+     div.backgroundCont [0,0,0x0] op:0
+      img [0,0,0x0] fit:contain 0% 100% disp:inline
+     div.portraitCont [0,280,285x285] bg:rgb(255, 255, 255) rad:5px op:0
+      picture.responsivePicture [0,280,285x285] 
+       img.cover [0,280,285x285] fit:cover 50% 0% disp:block
+      div.role.text-caption [8,506,225x22] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2) bg:rgb(200, 253, 171) rad:5px bb
+      a.linkedin.text-caption [8,535,86x22] bg:rgb(252, 248, 240) rad:5px
+       span [14,537,57x16] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2)
+       svg [53,538,16x16] op:0
+       svg [79,541,9x9] 
+  div [20,11714,350x32] 
+   div.teamMember [20,11714,350x32] 
+    div.text-headline3 [151,11714,219x32] font:National/32px/400/lh32px/ls-0.96px/rgb(62, 32, 2) op:0.4
+    div.overlayCont [0,0,390x844] 
+     div.backgroundCont [0,0,0x0] op:0
+      img [0,0,0x0] fit:contain 0% 100% disp:inline
+     div.portraitCont [0,280,285x285] bg:rgb(255, 255, 255) rad:5px op:0
+      picture.responsivePicture [0,280,285x285] 
+       img.cover [0,280,285x285] fit:cover 50% 0% disp:block
+      div.role.text-caption [8,506,179x22] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2) bg:rgb(200, 253, 171) rad:5px bb
+      a.linkedin.text-caption [8,535,86x22] bg:rgb(252, 248, 240) rad:5px
+       span [14,537,57x16] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2)
+       svg [53,538,16x16] op:0
+       svg [79,541,9x9] 
+  div [20,11761,350x32] 
+   div.teamMember [20,11761,350x32] 
+    div.text-headline3 [175,11761,195x32] font:National/32px/400/lh32px/ls-0.96px/rgb(62, 32, 2) op:0.4
+    div.overlayCont [0,0,390x844] 
+     div.backgroundCont [0,0,0x0] op:0
+      img [0,0,0x0] fit:contain 0% 100% disp:inline
+     div.portraitCont [0,280,285x285] bg:rgb(255, 255, 255) rad:5px op:0
+      picture.responsivePicture [0,280,285x285] 
+       img.cover [0,280,285x285] fit:cover 50% 0% disp:block
+      div.role.text-caption [8,506,127x22] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2) bg:rgb(200, 253, 171) rad:5px bb
+      a.linkedin.text-caption [8,535,86x22] bg:rgb(252, 248, 240) rad:5px
+       span [14,537,57x16] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2)
+       svg [53,538,16x16] op:0
+       svg [79,541,9x9] 
+  div [20,11808,350x32] 
+   div.teamMember [20,11808,350x32] 
+    div.text-headline3 [126,11808,244x32] font:National/32px/400/lh32px/ls-0.96px/rgb(62, 32, 2) op:0.4
+    div.overlayCont [0,0,390x844] 
+     div.backgroundCont [0,0,0x0] op:0
+      img [0,0,0x0] fit:contain 0% 100% disp:inline
+     div.portraitCont [0,280,285x285] bg:rgb(255, 255, 255) rad:5px op:0
+      picture.responsivePicture [0,280,285x285] 
+       img.cover [0,280,285x285] fit:cover 50% 0% disp:block
+      div.role.text-caption [8,506,174x22] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2) bg:rgb(200, 253, 171) rad:5px bb
+      a.linkedin.text-caption [8,535,86x22] bg:rgb(252, 248, 240) rad:5px
+       span [14,537,57x16] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2)
+       svg [53,538,16x16] op:0
+       svg [79,541,9x9] 
+  div [20,11855,350x32] 
+   div.teamMember [20,11855,350x32] 
+    div.text-headline3 [221,11855,149x32] font:National/32px/400/lh32px/ls-0.96px/rgb(62, 32, 2) op:0.4
+    div.overlayCont [0,0,390x844] 
+     div.backgroundCont [0,0,0x0] op:0
+      img [0,0,0x0] fit:contain 0% 100% disp:inline
+     div.portraitCont [0,280,285x285] bg:rgb(255, 255, 255) rad:5px op:0
+      picture.responsivePicture [0,280,285x285] 
+       img.cover [0,280,285x285] fit:cover 50% 0% disp:block
+      div.role.text-caption [8,506,153x22] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2) bg:rgb(200, 253, 171) rad:5px bb
+      a.linkedin.text-caption [8,535,86x22] bg:rgb(252, 248, 240) rad:5px
+       span [14,537,57x16] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2)
+       svg [53,538,16x16] op:0
+       svg [79,541,9x9] 
+  div [20,11902,350x32] 
+   div.teamMember [20,11902,350x32] 
+    div.text-headline3 [200,11902,170x32] font:National/32px/400/lh32px/ls-0.96px/rgb(62, 32, 2) op:0.4
+    div.overlayCont [0,0,390x844] 
+     div.backgroundCont [0,0,0x0] op:0
+      img [0,0,0x0] fit:contain 0% 100% disp:inline
+     div.portraitCont [0,280,285x285] bg:rgb(255, 255, 255) rad:5px op:0
+      picture.responsivePicture [0,280,285x285] 
+       img.cover [0,280,285x285] fit:cover 50% 0% disp:block
+      div.role.text-caption [8,506,99x22] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2) bg:rgb(200, 253, 171) rad:5px bb
+      a.linkedin.text-caption [8,535,86x22] bg:rgb(252, 248, 240) rad:5px
+       span [14,537,57x16] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2)
+       svg [53,538,16x16] op:0
+       svg [79,541,9x9] 
+  div [20,11949,350x32] 
+   div.teamMember [20,11949,350x32] 
+    div.text-headline3 [161,11949,209x32] font:National/32px/400/lh32px/ls-0.96px/rgb(62, 32, 2) op:0.4
+    div.overlayCont [0,0,390x844] 
+     div.backgroundCont [0,0,0x0] op:0
+      img [0,0,0x0] fit:contain 0% 100% disp:inline
+     div.portraitCont [0,280,285x285] bg:rgb(255, 255, 255) rad:5px op:0
+      picture.responsivePicture [0,280,285x285] 
+       img.cover [0,280,285x285] fit:cover 50% 0% disp:block
+      div.role.text-caption [8,506,113x22] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2) bg:rgb(200, 253, 171) rad:5px bb
+      a.linkedin.text-caption [8,535,86x22] bg:rgb(252, 248, 240) rad:5px
+       span [14,537,57x16] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2)
+       svg [53,538,16x16] op:0
+       svg [79,541,9x9] 
+  div [20,11996,350x32] 
+   div.teamMember [20,11996,350x32] 
+    div.text-headline3 [137,11996,233x32] font:National/32px/400/lh32px/ls-0.96px/rgb(62, 32, 2) op:0.4
+    div.overlayCont [0,0,390x844] 
+     div.backgroundCont [0,0,0x0] op:0
+      img [0,0,0x0] fit:contain 0% 100% disp:inline
+     div.portraitCont [0,280,285x285] bg:rgb(255, 255, 255) rad:5px op:0
+      picture.responsivePicture [0,280,285x285] 
+       img.cover [0,280,285x285] fit:cover 50% 0% disp:block
+      div.role.text-caption [8,506,260x22] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2) bg:rgb(200, 253, 171) rad:5px bb
+      a.linkedin.text-caption [8,535,86x22] bg:rgb(252, 248, 240) rad:5px
+       span [14,537,57x16] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2)
+       svg [53,538,16x16] op:0
+       svg [79,541,9x9] 
+  div [20,12043,350x32] 
+   div.teamMember [20,12043,350x32] 
+    div.text-headline3 [154,12043,216x32] font:National/32px/400/lh32px/ls-0.96px/rgb(62, 32, 2) op:0.4
+    div.overlayCont [0,0,390x844] 
+     div.backgroundCont [0,0,0x0] op:0
+      img [0,0,0x0] fit:contain 0% 100% disp:inline
+     div.portraitCont [0,280,285x285] bg:rgb(255, 255, 255) rad:5px op:0
+      picture.responsivePicture [0,280,285x285] 
+       img.cover [0,280,285x285] fit:cover 50% 0% disp:block
+      div.role.text-caption [8,506,260x22] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2) bg:rgb(200, 253, 171) rad:5px bb
+      a.linkedin.text-caption [8,535,86x22] bg:rgb(252, 248, 240) rad:5px
+       span [14,537,57x16] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2)
+       svg [53,538,16x16] op:0
+       svg [79,541,9x9] 
+  div [20,12090,350x32] 
+   div.teamMember [20,12090,350x32] 
+    div.text-headline3 [217,12090,153x32] font:National/32px/400/lh32px/ls-0.96px/rgb(62, 32, 2) op:0.4
+    div.overlayCont [0,0,390x844] 
+     div.backgroundCont [0,0,0x0] op:0
+      img [0,0,0x0] fit:contain 0% 100% disp:inline
+     div.portraitCont [0,280,285x285] bg:rgb(255, 255, 255) rad:5px op:0
+      picture.responsivePicture [0,280,285x285] 
+       img.cover [0,280,285x285] fit:cover 50% 0% disp:block
+      div.role.text-caption [8,506,252x22] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2) bg:rgb(200, 253, 171) rad:5px bb
+      a.linkedin.text-caption [8,535,86x22] bg:rgb(252, 248, 240) rad:5px
+       span [14,537,57x16] font:National/16px/400/lh16px/ls-0.48px/rgb(62, 32, 2)
+       svg [53,538,16x16] op:0
+       svg [79,541,9x9] 
+section.ctaSection [0,12502,390x617] bg:rgb(255, 255, 255) bb
+ div.cloud [-355,12510,1100x600] 
+  video [-355,12510,1100x600] fit:contain 50% 50% disp:inline
+ div.cloudOverlay [0,12502,390x617] bg:rgb(252, 248, 240) blend:multiply
+ h2.text-headline2Medium [20,12577,350x204] font:National/52px/500/lh50.96px/ls-1.56px/rgb(62, 32, 2)
+ div.buttons [107,12880,177x88] 
+  a.signup.text-bodyS [107,12880,177x40] bg:rgb(62, 32, 2)
+   span [119,12880,153x40] font:National/18px/500/lh40px/ls-0.36px/rgb(252, 248, 240)
+   svg [0,0,0x0] 
+  a.linkedin.text-caption [111,12928,168x40] bg:rgb(252, 248, 240)
+   span [123,12928,144x40] font:National/16px/400/lh40px/ls-0.48px/rgb(62, 32, 2)
+   svg [0,0,0x0] 
+footer [0,13118,390x762] bg:rgb(62, 32, 2)
+ div.logoCont [20,13508,350x298] 
+  div.lottieCont [20,13618,165x188] 
+   div [20,13618,165x188] 
+    canvas [20,13618,165x188] 
+  svg [205,13708,165x108] 
+ div.infoCont [20,13138,350x340] 
+  p.text-bodyM [20,13138,350x126] font:National/21px/400/lh25.2px/ls-0.42px/rgb(157, 140, 121)
+  ul.text-bodyS [20,13289,350x72] 
+   li [20,13289,350x42] 
+    a [20,13289,350x42] 
+     svg [20,13289,22x24] 
+     span [52,13289,318x42] font:National/18px/400/lh21.24px/ls-0.36px/rgb(157, 140, 121)
+   li [20,13338,350x24] 
+    a [20,13338,350x24] 
+     svg [20,13338,24x24] 
+     span [54,13338,212x21] font:National/18px/400/lh21.24px/ls-0.36px/rgb(157, 140, 121)
+  ul.text-bodyS [20,13387,350x24] 
+   li [20,13387,350x24] 
+    a [20,13387,350x24] 
+     svg [20,13387,24x24] 
+     span [54,13387,166x21] font:National/18px/400/lh21.24px/ls-0.36px/rgb(157, 140, 121)
+  p.text-bodyS [20,13436,350x42] font:National/18px/400/lh21.24px/ls-0.36px/rgb(157, 140, 121)
+ div.bottom [20,13837,350x14] 
+  div.logoSpace [0,0,0x0] 
+  div.credits [20,13837,254x14] 
+   a [20,13837,87x14] font:National/14px/400/lh14px/lsnormal/rgb(109, 84, 60)
+   span [119,13837,155x14] font:National/14px/400/lh14px/lsnormal/rgb(109, 84, 60)
+    a [183,13835,91x18] font:National/14px/400/lh14px/lsnormal/rgb(109, 84, 60)
+div.subfooter [0,13881,390x159] bg:rgb(62, 32, 2)
+ a [20,13921,350x38] 
+  img [20,13921,350x34] fit:fill 50% 50% disp:inline
+ a.sheet.text-caption [20,13979,77x14] font:National/14px/400/lh14px/ls-0.42px/rgb(252, 248, 240)

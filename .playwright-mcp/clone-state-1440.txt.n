@@ -1,0 +1,104 @@
+== header after splash scrollY=1000
+logo a: [50,20.8,234.6x26.4] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfmatrix(0.6666, 0, 0, 0.6666, 0, 0) font36px/39.6px/-0.72px/500 rad0px pad0px
+headerCont: [0,0,1440x68] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad0px pad0px
+nav: [815,22,575x24] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font18px/21.24px/-0.36px/400 rad0px pad0px
+navlink0: [815,23.4,73.4x21.2] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font18px/21.24px/-0.36px/400 rad0px pad0px
+  after tf matrix(0, 0, 0, 1, 0, 0) h1.07812px bottom-1px bgrgb(62, 32, 2)
+navlink1: [908.5,23.4,139.3x21.2] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font18px/21.24px/-0.36px/400 rad0px pad0px
+  after tf matrix(0, 0, 0, 1, 0, 0) h1.07812px bottom-1px bgrgb(62, 32, 2)
+navlink2: [1067.8,23.4,90.2x21.2] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font18px/21.24px/-0.36px/400 rad0px pad0px
+  after tf matrix(0, 0, 0, 1, 0, 0) h1.07812px bottom-1px bgrgb(62, 32, 2)
+navlink3: [1178,23.4,72x21.2] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font18px/21.24px/-0.36px/400 rad0px pad0px
+  after tf matrix(0, 0, 0, 1, 0, 0) h1.07812px bottom-1px bgrgb(62, 32, 2)
+navlink4: [1270.1,23.4,41.9x21.2] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font18px/21.24px/-0.36px/400 rad0px pad0px
+  after tf matrix(0, 0, 0, 1, 0, 0) h1.07812px bottom-1px bgrgb(62, 32, 2)
+== capabilities scrollY=7815
+-- dd0 open
+dd0: [50,523.4,660x266] op1 bgrgb(255, 157, 105) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad5px pad0px
+dd1: [730,523.4,660x120] op1 bgrgb(255, 255, 255) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad5px pad0px
+dd2: [50,809.4,660x120] op1 bgrgb(255, 255, 255) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad5px pad0px
+plusPill: [580,669.4,120x60] op1 bgrgb(254, 184, 145) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, -60) font16px/normal/normal/400 rad60px 60px 0px 0px pad0px
+otherPill: [580,729.4,120x60] op1 bgrgb(254, 184, 145) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, -60) font16px/normal/normal/400 rad60px 60px 0px 0px pad0px
+content: [50,603,660x146] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, 0) font16px/normal/normal/400 rad0px pad0px
+content p: [50,603,660x146] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font21px/25.2px/-0.42px/400 rad0px pad0px 170px 20px 20px
+h3: [70,543.4,400x39.6] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font36px/39.6px/-0.72px/500 rad0px pad0px
+plus svg: [628,691.4,24x24] op0 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad0px pad0px
+-- dd1 clicked
+dd0: [50,523.4,660x120] op1 bgrgb(255, 255, 255) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad5px pad0px
+  class dropdown noselect
+dd1: [730,523.4,660x266] op1 bgrgb(255, 157, 105) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad5px pad0px
+  class dropdown noselect open
+dd2: [50,809.4,660x120] op1 bgrgb(255, 255, 255) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad5px pad0px
+  class dropdown noselect
+dd3: [730,809.4,660x120] op1 bgrgb(255, 255, 255) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad5px pad0px
+  class dropdown noselect
+-- dd1 reclick
+  dd0 class dropdown noselect h120
+  dd1 class dropdown noselect h120
+== carousel scrollY=9268.5
+  track tf matrix(1, 0, 0, 1, 0, 0) prev carousel__prev carousel__prev--disabled 0.2 next carousel__next 1
+ after next #1
+  track tf matrix(1, 0, 0, 1, -650, 0) prev carousel__prev 1 next carousel__next 1
+ after next #2
+  track tf matrix(1, 0, 0, 1, -1300, 0) prev carousel__prev 1 next carousel__next 1
+ after next #3
+  track tf matrix(1, 0, 0, 1, -1890, 0) prev carousel__prev 1 next carousel__next 1
+ after next #4
+  track tf matrix(1, 0, 0, 1, -1890, 0) prev carousel__prev 1 next carousel__next carousel__next--disabled 0.2
+ after next #5
+  track tf matrix(1, 0, 0, 1, -1890, 0) prev carousel__prev 1 next carousel__next carousel__next--disabled 0.2
+ after next #6
+  track tf matrix(1, 0, 0, 1, -1890, 0) prev carousel__prev 1 next carousel__next carousel__next--disabled 0.2
+ after 6x prev
+  track tf matrix(1, 0, 0, 1, 0, 0) prev carousel__prev carousel__prev--disabled 0.2 next carousel__next 1
+slide0: [50,308.3,630x477.3] op1 bgrgb(255, 255, 255) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad5px pad0px
+slide0 title: [70,328.3,590x39.6] op1 bgrgba(0, 0, 0, 0) colrgb(252, 248, 240) tfnone font36px/39.6px/-0.72px/500 rad0px pad0px
+s0 plusPill: [550,785.6,120x60] op1 bgrgb(200, 253, 171) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, 60) font16px/normal/normal/400 rad60px 60px 0px 0px pad0px
+s0 photoLayer: [50,308.3,630x477.3] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad0px pad0px
+  photoLayer bgimg linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0) 46.78%)
+s0 img: [50,308.3,630x477.3] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad0px pad0px
+next svg: [77,261.3,24x24] op1 bgrgba(0, 0, 0, 0) colrgb(0, 0, 0) tfnone font16px/normal/normal/400 rad0px pad0px
+-- slide0 active class slide active
+slide0 title: [70,328.3,590x39.6] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font36px/39.6px/-0.72px/500 rad0px pad0px
+s0 plusPill: [550,665.6,120x60] op1 bgrgb(193, 242, 163) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, -60) font16px/normal/normal/400 rad60px 60px 0px 0px pad0px
+s0 otherPill: [550,725.6,120x60] op1 bgrgb(193, 242, 163) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, -60) font16px/normal/normal/400 rad60px 60px 0px 0px pad0px
+s0 descLayer: [50,308.3,630x477.3] op1 bgrgb(200, 253, 171) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad0px pad0px
+s0 desc: [70,564,460x201.6] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, 0) font21px/25.2px/-0.42px/400 rad0px pad0px
+-- slide1 clicked: s0 slide s1 slide active
+-- slide1 reclicked: s1 slide
+== team scrollY=10943.5
+  member0 teamMember isActiveMobile
+  member2 teamMember isActive
+name2: [1008.3,420,381.7x60] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, 0) font60px/60px/-1.8px/400 rad0px pad0px
+overlay: [0,0,1440x900] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad0px pad0px
+bgCont: [0,0,720x900] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, 0) font16px/normal/normal/400 rad0px pad0px
+bg img: [0,0,720x900] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad0px pad0px
+  bg img fit contain 0% 100% natural 1700
+portrait: [495,170,450x560] op1 bgrgb(255, 255, 255) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, 0) font16px/normal/normal/400 rad5px pad0px
+portrait img: [495,170,450x560] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad0px pad0px
+  pimg fit cover 50% 0% src nathalie-ballan.webp
+role: [503,680,240.5x42] op1 bgrgb(200, 253, 171) colrgb(62, 32, 2) tfnone font16px/16px/-0.48px/400 rad5px pad4px 6px 6px 26px
+  role before 14px 6px
+linkedin: [851,696,86x26] op1 bgrgb(252, 248, 240) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, 0) font16px/normal/-0.48px/400 rad5px pad0px
+linkedin span: [857,700,57.2x16] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, 0) font16px/16px/-0.48px/400 rad0px pad0px
+li svg0: [896,701,16x16] op0 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, -8) font16px/normal/-0.48px/400 rad0px pad0px
+li svg1: [921.9,704.5,9.1x9.1] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfmatrix3d(0.7, 0, 0, 0, 0, 0.7, 0, 0, 0, 0, 0.7, 0, 0, -4.55, 0, 1) font16px/normal/-0.48px/400 rad0px pad0px
+== cta scrollY=12673.5
+cta h2: [320,286.2,800x237.6] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font72px/79.2px/-2.88px/500 rad0px pad0px
+btn0: [543.5,573.8,177x40] op1 bgrgb(252, 248, 240) colrgb(62, 32, 2) tfnone font18px/40px/-0.36px/500 rad0px pad0px
+ span0: [555.5,573.8,152.6x40] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font18px/40px/-0.36px/500 rad0px pad0px
+ svg0: [716.5,585.8,17x16] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, -8) font18px/40px/-0.36px/500 rad0px pad0px
+btn1: [728.5,573.8,168x40] op1 bgrgb(252, 248, 240) colrgb(62, 32, 2) tfnone font16px/40px/-0.48px/400 rad0px pad0px
+ span1: [740.5,573.8,144.1x40] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font16px/40px/-0.48px/400 rad0px pad0px
+ svg1: [892.5,587.8,13x12] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfmatrix(1, 0, 0, 1, 0, -6) font16px/40px/-0.48px/400 rad0px pad0px
+cloud video: [170,150,1100x600] op1 bgrgba(0, 0, 0, 0) colrgb(62, 32, 2) tfnone font16px/normal/normal/400 rad0px pad0px
+== hover rules
+@(hover: hover) header nav a.navlink:hover::after { transform: scaleX(1); transform-origin: left bottom; }
+@(hover: hover) .dropdown:hover:not(.open) .plusPill { transform: translateZ(0px); transition: transform 0.12s ease-out; }
+@(hover: hover) .slide:hover:not(.active) .plusPill { transform: translateZ(0px); transition: transform 0.12s ease-out; }
+@(hover: hover) .teamMember .name:hover { opacity: 1; transition: opacity 0.12s ease-in-out; }
+@(hover: hover) .teamMember .overlayCont .portraitCont .linkedin:hover { background-color: var(--color-lime); transition: background-color 0.12s ease-in-out, width 0.12s ease-in-out; width: 111px; }
+@(hover: hover) .teamMember .overlayCont .portraitCont .linkedin:hover .logo { opacity: 1; transition: opacity 0.12s ease-in-out 0.12s; }
+@(hover: hover) .teamMember .overlayCont .portraitCont .linkedin:hover .arrow { transform: scaleX(1) translate3d(0px, -50%, 0px); transition: transform 0.12s ease-in-out; }
+@screen and (min-width: 769px) and (hover: hover) .ctaSection .buttons a.signup:hover { background-color: var(--color-earth); color: var(--color-oat); width: 202px; }
+@screen and (min-width: 769px) and (hover: hover) .ctaSection .buttons a.linkedin:hover { background-color: var(--color-earth); color: var(--color-oat); width: 189px; }
