@@ -1,0 +1,187 @@
+{
+  "id": "chrome.footer",
+  "name": "Footer",
+  "category": "chrome",
+  "purpose": "Company sign-off: brand animation and stacked wordmark, one-paragraph description, address/email/social links, copyright and legal links.",
+  "evidenceLevel": "measured",
+  "implementedBy": "src/components/Footer.jsx",
+  "surface": "earth",
+  "scrollStage": false,
+  "ambientVideoCount": 0,
+  "anchor": null,
+  "variants": null,
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "blurb",
+      "copyrightHolder",
+      "legalLinkLabel"
+    ],
+    "properties": {
+      "blurb": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 26
+      },
+      "addressLine": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 10
+      },
+      "email": {
+        "type": "string",
+        "pattern": "^placeholder:[a-z0-9-]+$"
+      },
+      "socialLabel": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 4
+      },
+      "copyrightHolder": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 4
+      },
+      "legalLinkLabel": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 3
+      },
+      "creditLine": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 4
+      },
+      "animation": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "assetRole",
+          "assetRef"
+        ],
+        "properties": {
+          "assetRole": {
+            "enum": [
+              "brand-lottie-footer"
+            ]
+          },
+          "assetRef": {
+            "type": "string",
+            "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+          },
+          "alt": {
+            "type": "string",
+            "minLength": 1,
+            "x-maxWords": 12
+          }
+        }
+      },
+      "wordmark": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "assetRole",
+          "assetRef"
+        ],
+        "properties": {
+          "assetRole": {
+            "enum": [
+              "brand-wordmark"
+            ]
+          },
+          "assetRef": {
+            "type": "string",
+            "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+          },
+          "alt": {
+            "type": "string",
+            "minLength": 1,
+            "x-maxWords": 12
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "maxPerPage": 1,
+    "mustBeFollowedOnlyBy": [
+      "chrome.subfooter"
+    ]
+  },
+  "motion": {
+    "pattern": "lottie-autoplay-loop",
+    "trigger": "autoplay",
+    "reducedMotionFallback": "static-first-frame",
+    "distinctive": false,
+    "fallbackIsPrescriptive": true,
+    "timings": {
+      "fps": 30,
+      "frames": 242
+    },
+    "evidence": [
+      {
+        "path": "src/components/Footer.jsx",
+        "lines": "11-16",
+        "quote": "autoplay loop"
+      }
+    ]
+  },
+  "responsive": {
+    "primaryBreakpoint": 768,
+    "changes": [
+      {
+        "maxWidth": 1366,
+        "aspect": "layout",
+        "desktop": "2-column grid",
+        "mobile": "3-column grid, info and bottom span cols 2-3",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "644-648",
+          "quote": "grid-template-columns: repeat(3, minmax(0, 1fr))"
+        }
+      },
+      {
+        "maxWidth": 1024,
+        "aspect": "layout",
+        "desktop": "grid",
+        "mobile": "flex column; info first, logo second (2-col), credits last; text sizes pinned to 21/18px",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "649-659",
+          "quote": "footer .infoCont .text-bodyM { font-size: 1.3125rem; }"
+        }
+      }
+    ],
+    "noChangeAt768": {
+      "reason": "The footer has no 768 rule of its own: it already collapses at 1024, and its 1024 rule pins text to 1.3125rem/1.125rem so the 768 token swap does not shrink footer copy.",
+      "evidence": {
+        "path": "src/index.css",
+        "lines": "649-659",
+        "quote": "footer .infoCont .text-bodyS { font-size: 1.125rem; }"
+      }
+    }
+  },
+  "evidence": [
+    {
+      "path": ".playwright-mcp/orig-1440.txt.n",
+      "lines": "636",
+      "quote": "footer [0,13573,1440x731]"
+    },
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "468-487",
+      "quote": "Footer (`footer`)"
+    }
+  ],
+  "fixtures": {
+    "default": {
+      "content": {
+        "blurb": "Interdisciplinary sustainability consultancy.",
+        "copyrightHolder": "The Equator Company",
+        "legalLinkLabel": "Privacy Policy"
+      }
+    }
+  },
+  "notes": "creditLine must not attribute work to the real design studio credited on the source."
+}

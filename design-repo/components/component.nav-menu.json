@@ -1,0 +1,18 @@
+{
+  "id": "component.nav-menu",
+  "name": "Nav menu",
+  "implementedBy": "src/components/Header.jsx",
+  "uses": [
+    "primitive.nav-link",
+    "primitive.icon",
+    "primitive.hamburger"
+  ],
+  "description": "Desktop inline nav; <=768 full-screen coral overlay sliding from -100%.",
+  "evidence": [
+    {
+      "path": "src/components/Header.jsx",
+      "lines": "37-74",
+      "quote": "<nav className=\"text-bodyS\">"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "primitive.expand-tag",
+  "name": "Expanding link tag",
+  "implementedBy": "src/components/Team.jsx",
+  "description": "86->111px oat->lime tag revealing a glyph on hover with staged .12s delays.",
+  "assetRoles": [],
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": "545-567",
+      "quote": "width: 86px"
+    }
+  ]
+}

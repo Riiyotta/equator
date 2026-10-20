@@ -1,0 +1,203 @@
+{
+  "id": "narrative.story-reveal",
+  "name": "Our Story",
+  "category": "narrative",
+  "purpose": "Origin story told as a scroll-scrubbed word-by-word reveal, with the merged companies' logos counted as reveal units.",
+  "evidenceLevel": "measured",
+  "implementedBy": "src/components/Story.jsx",
+  "surface": "oat",
+  "scrollStage": true,
+  "ambientVideoCount": 0,
+  "anchor": "our-story",
+  "variants": null,
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "intro",
+      "mergerLogos",
+      "statements"
+    ],
+    "properties": {
+      "intro": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 24
+      },
+      "mergerLogos": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 4,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "logo",
+            "label"
+          ],
+          "properties": {
+            "logo": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assetRole",
+                "assetRef"
+              ],
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "merger-logo"
+                  ]
+                },
+                "assetRef": {
+                  "type": "string",
+                  "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                },
+                "alt": {
+                  "type": "string",
+                  "minLength": 1,
+                  "x-maxWords": 12
+                }
+              }
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 3
+            }
+          }
+        }
+      },
+      "statements": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 4,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text",
+            "indent"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 12
+            },
+            "indent": {
+              "type": "boolean"
+            },
+            "emphasisFromWord": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 11
+            }
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "maxPerPage": 1
+  },
+  "motion": {
+    "pattern": "scroll-scrub-word-reveal",
+    "trigger": "scroll-scrub",
+    "reducedMotionFallback": "all-words-visible",
+    "distinctive": true,
+    "fallbackIsPrescriptive": true,
+    "timings": {
+      "unitFade": "{duration.word} ease-in-out",
+      "progressRange": "storyTop-0.5vh -> storyBottom-vh",
+      "reversible": true,
+      "revealUnitsMax": 60
+    },
+    "evidence": [
+      {
+        "path": "src/components/Story.jsx",
+        "lines": "8-26",
+        "quote": "setReveal(p * STORY.total)"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "250-251",
+        "quote": "transition: opacity .25s ease-in-out 0s"
+      },
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": "275-279",
+        "quote": "Word-by-word reveal (scroll-scrubbed)"
+      }
+    ]
+  },
+  "responsive": {
+    "primaryBreakpoint": 768,
+    "changes": [
+      {
+        "maxWidth": 768,
+        "aspect": "spacing",
+        "desktop": "introCont gap 50px, padding 250px/350px, merger logo widths 185/83/176/200",
+        "mobile": "gap 30px, padding 75px/100px, logo widths 135/60/128/146",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "262-268",
+          "quote": "padding: 75px var(--margin-page) 100px"
+        }
+      },
+      {
+        "maxWidth": 1024,
+        "aspect": "layout",
+        "desktop": "logos in one flex row, indent 160px (80px at <=1180)",
+        "mobile": "logos 2x2 grid, indent 0",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "258-261",
+          "quote": "grid-template-columns: min-content 1fr"
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "src/lib/content.js",
+      "lines": "14-30",
+      "quote": "total: 60"
+    },
+    {
+      "path": ".playwright-mcp/orig-1440.txt.n",
+      "lines": "44-48",
+      "quote": "span.word [220,2050,155x79]"
+    }
+  ],
+  "fixtures": {
+    "default": {
+      "content": {
+        "intro": "Born from the merger of four companies with shared values.",
+        "mergerLogos": [
+          {
+            "logo": {
+              "assetRole": "merger-logo",
+              "assetRef": "placeholder:merger-logo-1"
+            },
+            "label": "Founding company one"
+          },
+          {
+            "logo": {
+              "assetRole": "merger-logo",
+              "assetRef": "placeholder:merger-logo-2"
+            },
+            "label": "Founding company two"
+          }
+        ],
+        "statements": [
+          {
+            "text": "What emerged isn't just bigger.",
+            "indent": false
+          }
+        ]
+      }
+    }
+  },
+  "notes": "Reveal units = intro words + merger logos + statement words. The reference implementation hardcodes total 60 (content.js:29), so units beyond 60 never reveal: enforced by STORY_REVEAL_BUDGET."
+}

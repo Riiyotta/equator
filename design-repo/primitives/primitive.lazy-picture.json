@@ -1,0 +1,17 @@
+{
+  "id": "primitive.lazy-picture",
+  "name": "Lazy picture",
+  "implementedBy": "src/components/LazyPicture.jsx",
+  "description": "<picture> whose sources are assigned on first intersection; img fades in .16s on load over a blurhash background.",
+  "assetRoles": [
+    "project-photo",
+    "team-portrait"
+  ],
+  "evidence": [
+    {
+      "path": "src/components/LazyPicture.jsx",
+      "lines": "9-38",
+      "quote": "onLoad={() => setLoaded(true)}"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "primitive.carousel-arrow",
+  "name": "Carousel arrow",
+  "implementedBy": "src/components/OurWork.jsx",
+  "description": "30x30 transparent button with 24px arrow; disabled opacity .2.",
+  "assetRoles": [],
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": "416-424",
+      "quote": "opacity: .2"
+    }
+  ]
+}

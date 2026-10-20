@@ -1,0 +1,81 @@
+{
+  "allowlistVersion": "1.0.0",
+  "description": "Closed set an AI generator may instantiate or set. verify_all.py checks parity against sections/, primitives/, components/, templates.json, asset-roles.json and the schema.",
+  "sections": [
+    "chrome.splash",
+    "chrome.header",
+    "hero.title",
+    "narrative.story-reveal",
+    "values.sticky-stack",
+    "capabilities.accordion",
+    "work.carousel-marquee",
+    "team.roster",
+    "conversion.cta-video",
+    "chrome.footer",
+    "chrome.subfooter",
+    "content.legal-prose",
+    "content.not-found"
+  ],
+  "primitives": [
+    "primitive.wordmark",
+    "primitive.nav-link",
+    "primitive.hamburger",
+    "primitive.icon",
+    "primitive.pill",
+    "primitive.role-chip",
+    "primitive.expand-tag",
+    "primitive.button-square",
+    "primitive.carousel-arrow",
+    "primitive.lazy-picture",
+    "primitive.lottie-player",
+    "primitive.ambient-video"
+  ],
+  "components": [
+    "component.accordion-card",
+    "component.project-slide",
+    "component.carousel-track",
+    "component.logo-marquee",
+    "component.value-panel",
+    "component.step-counter",
+    "component.member-row",
+    "component.nav-menu"
+  ],
+  "templates": [
+    "template.home",
+    "template.legal-prose",
+    "template.not-found"
+  ],
+  "assetRoles": [
+    "brand-wordmark",
+    "brand-lottie-splash",
+    "brand-lottie-value",
+    "brand-lottie-footer",
+    "ambient-video",
+    "merger-logo",
+    "member-logo",
+    "project-photo",
+    "team-portrait",
+    "team-halftone",
+    "funding-emblem",
+    "project-sheet-pdf"
+  ],
+  "nodeProperties": [
+    "anchorId",
+    "content",
+    "motion",
+    "type",
+    "variant"
+  ],
+  "motionProperties": [
+    "pattern",
+    "reducedMotionFallback",
+    "trigger"
+  ],
+  "pageProperties": [
+    "meta",
+    "nodes",
+    "pageSpecVersion",
+    "route",
+    "template"
+  ]
+}

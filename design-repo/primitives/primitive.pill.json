@@ -1,0 +1,14 @@
+{
+  "id": "primitive.pill",
+  "name": "Half-capsule pill",
+  "implementedBy": "src/components/Capabilities.jsx",
+  "description": "120x60 (60x30 mobile) half-capsule with a plus icon; slides up on hover, both pills rise on open.",
+  "assetRoles": [],
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": "360-368",
+      "quote": "border-radius: 60px 60px 0 0"
+    }
+  ]
+}

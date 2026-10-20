@@ -1,0 +1,17 @@
+{
+  "id": "component.carousel-track",
+  "name": "Carousel track",
+  "implementedBy": "src/components/OurWork.jsx",
+  "uses": [
+    "primitive.carousel-arrow",
+    "component.project-slide"
+  ],
+  "description": "Flex track, gap 20, snap start, clamped translate, 300ms ease-out while sliding, mouse/touch drag.",
+  "evidence": [
+    {
+      "path": "src/components/OurWork.jsx",
+      "lines": "34-80",
+      "quote": "const maxTranslate"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "primitive.role-chip",
+  "name": "Role chip",
+  "implementedBy": "src/components/Team.jsx",
+  "description": "Lime 5px-radius chip with a 14px earth dot, caption text, line-height 1.",
+  "assetRoles": [],
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": "538-544",
+      "quote": "padding: 4px 6px 6px 26px"
+    }
+  ]
+}

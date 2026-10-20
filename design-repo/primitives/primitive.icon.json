@@ -1,0 +1,14 @@
+{
+  "id": "primitive.icon",
+  "name": "Inline SVG icon",
+  "implementedBy": "src/lib/icons.jsx",
+  "description": "24/16/13px inline SVG glyphs (mail, LinkedIn, plus, arrows, pin). New generic glyphs may be drawn; social glyphs follow the platform's brand guidelines.",
+  "assetRoles": [],
+  "evidence": [
+    {
+      "path": "src/lib/icons.jsx",
+      "lines": "1-57",
+      "quote": "export"
+    }
+  ]
+}

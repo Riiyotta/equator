@@ -1,0 +1,14 @@
+{
+  "id": "primitive.nav-link",
+  "name": "Underline nav link",
+  "implementedBy": "src/components/Header.jsx",
+  "description": "Inline-block link with a scaleX(0->1) ::after underline (origin right->left), .12s ease-out; .active keeps it.",
+  "assetRoles": [],
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": "137-145",
+      "quote": "transform-origin: bottom right"
+    }
+  ]
+}

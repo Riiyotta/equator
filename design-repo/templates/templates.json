@@ -1,0 +1,171 @@
+{
+  "templatesVersion": "1.0.0",
+  "templates": [
+    {
+      "id": "template.home",
+      "name": "Home (long single page)",
+      "evidenceLevel": "measured",
+      "routePolicy": {
+        "kind": "exact",
+        "route": "/"
+      },
+      "nodes": [
+        {
+          "section": "chrome.splash",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "chrome.header",
+          "required": true,
+          "repeatable": false,
+          "variant": "home"
+        },
+        {
+          "section": "hero.title",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "narrative.story-reveal",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "values.sticky-stack",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "capabilities.accordion",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "work.carousel-marquee",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "team.roster",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.cta-video",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "chrome.footer",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "chrome.subfooter",
+          "required": false,
+          "repeatable": false
+        }
+      ],
+      "evidence": [
+        {
+          "path": "src/pages/Home.jsx",
+          "lines": "106-129",
+          "quote": "<Values ref={reg(2)} />"
+        },
+        {
+          "path": ".playwright-mcp/orig-1440.txt.n",
+          "lines": "13-665",
+          "quote": "section#capabilities.capabilities"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": "103-131",
+          "quote": "section#our-story.story    oat"
+        }
+      ],
+      "notes": "Order confirmed from Home.jsx and the measured original DOM. Subfooter is optional in generated output because its only real contents are policy 'omit'."
+    },
+    {
+      "id": "template.legal-prose",
+      "name": "Legal prose",
+      "evidenceLevel": "measured",
+      "routePolicy": {
+        "kind": "registered-or-new",
+        "registered": [
+          "/privacy-policy"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "chrome.header",
+          "required": true,
+          "repeatable": false,
+          "variant": "legal"
+        },
+        {
+          "section": "content.legal-prose",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "chrome.footer",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "chrome.subfooter",
+          "required": false,
+          "repeatable": false
+        }
+      ],
+      "evidence": [
+        {
+          "path": "src/pages/PrivacyPolicy.jsx",
+          "lines": "35-52",
+          "quote": "<Footer />"
+        },
+        {
+          "path": ".playwright-mcp/orig-pp-1440.txt.n",
+          "lines": "9-108",
+          "quote": "div.subfooter [0,4207.5,1440x216]"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": "496-508",
+          "quote": "No splash, no lottie logo animation"
+        }
+      ],
+      "notes": "No splash, no logo scaling, no section watcher."
+    },
+    {
+      "id": "template.not-found",
+      "name": "Not found (catch-all)",
+      "evidenceLevel": "inferred-unmeasured",
+      "routePolicy": {
+        "kind": "catch-all",
+        "route": "*"
+      },
+      "nodes": [
+        {
+          "section": "content.not-found",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "evidence": [
+        {
+          "path": "src/App.jsx",
+          "lines": "15-17",
+          "quote": "return <NotFound key=\"404\""
+        },
+        {
+          "path": "src/pages/NotFound.jsx",
+          "lines": "4-21",
+          "quote": "Go back home"
+        }
+      ],
+      "notes": "INFERRED/UNMEASURED. NotFound.jsx was added after QA and was never compared against the original's Nuxt 404 (no 404 capture exists in the QA artifacts). No header/footer."
+    }
+  ]
+}

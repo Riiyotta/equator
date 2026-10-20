@@ -1,0 +1,17 @@
+{
+  "id": "component.accordion-card",
+  "name": "Accordion card",
+  "implementedBy": "src/components/Capabilities.jsx",
+  "uses": [
+    "primitive.pill",
+    "primitive.icon"
+  ],
+  "description": "White 5px card, header + hidden content; open = coral, height animates to header+content.",
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": "351-392",
+      "quote": ".dropdown.open { background-color: var(--color-coral); }"
+    }
+  ]
+}

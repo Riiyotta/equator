@@ -1,0 +1,243 @@
+{
+  "id": "work.carousel-marquee",
+  "name": "Our Work",
+  "category": "work",
+  "purpose": "Proof of delivery: draggable project carousel whose cards flip to a lime description, followed by a continuous 'Proud member of' logo marquee.",
+  "evidenceLevel": "measured",
+  "implementedBy": "src/components/OurWork.jsx",
+  "surface": "oat",
+  "scrollStage": false,
+  "ambientVideoCount": 0,
+  "anchor": "our-work",
+  "variants": null,
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "heading",
+      "slides"
+    ],
+    "properties": {
+      "heading": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 6
+      },
+      "slides": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 6,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "title",
+            "text",
+            "image"
+          ],
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 6
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 72
+            },
+            "image": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assetRole",
+                "assetRef"
+              ],
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "project-photo"
+                  ]
+                },
+                "assetRef": {
+                  "type": "string",
+                  "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                },
+                "alt": {
+                  "type": "string",
+                  "minLength": 1,
+                  "x-maxWords": 12
+                }
+              }
+            }
+          }
+        }
+      },
+      "memberCaption": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 4
+      },
+      "memberLogos": {
+        "type": "array",
+        "minItems": 3,
+        "maxItems": 12,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "assetRole",
+            "assetRef"
+          ],
+          "properties": {
+            "assetRole": {
+              "enum": [
+                "member-logo"
+              ]
+            },
+            "assetRef": {
+              "type": "string",
+              "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+            },
+            "alt": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 12
+            }
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "maxPerPage": 1
+  },
+  "motion": {
+    "pattern": "carousel-snap-300ms+marquee-raf-0.5px",
+    "trigger": "click-drag+raf-continuous",
+    "reducedMotionFallback": "carousel-instant-jump+marquee-static-row",
+    "distinctive": true,
+    "fallbackIsPrescriptive": true,
+    "timings": {
+      "carousel": "{duration.carousel} ease-out, translate clamped to trackWidth - viewportWidth, no wrap",
+      "dragThreshold": 0.08,
+      "slideActive": "{duration.ui} with {duration.ui-half} description delay",
+      "marquee": "{scroll.marquee-speed}, never pauses, re-populate on resize (250ms debounce)",
+      "lazyImage": "{duration.image-fade}"
+    },
+    "evidence": [
+      {
+        "path": "src/components/OurWork.jsx",
+        "lines": "6-8",
+        "quote": "const TRANSITION = 300"
+      },
+      {
+        "path": "src/components/OurWork.jsx",
+        "lines": "77-80",
+        "quote": "translate = clamp(translate, 0, maxTranslate)"
+      },
+      {
+        "path": "src/components/OurWork.jsx",
+        "lines": "205-245",
+        "quote": "offset.current -= 0.5"
+      },
+      {
+        "path": ".playwright-mcp/orig-state-1440.txt.n",
+        "lines": "38-47",
+        "quote": "matrix(1, 0, 0, 1, -1890, 0)"
+      },
+      {
+        "path": "src/components/LazyPicture.jsx",
+        "lines": "3-8",
+        "quote": "transition: opacity .16s"
+      }
+    ]
+  },
+  "responsive": {
+    "primaryBreakpoint": 768,
+    "changes": [
+      {
+        "maxWidth": 768,
+        "aspect": "layout",
+        "desktop": "slide width calc(50vw - 90px), aspect 66/50 (46/44 at 769-1180)",
+        "mobile": "slide 310px, aspect 31/38, 16px insets, pills always visible",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "476-482",
+          "quote": "aspect-ratio: 31/38; width: 310px"
+        }
+      },
+      {
+        "maxWidth": 768,
+        "aspect": "spacing",
+        "desktop": "padding 150px/200px, navigationSpace 100px",
+        "mobile": "padding 75px/100px, navigationSpace 80px",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "402-405",
+          "quote": "padding: 75px var(--margin-page) 100px"
+        }
+      },
+      {
+        "maxWidth": 768,
+        "aspect": "layout",
+        "desktop": "marquee logos 200px boxes",
+        "mobile": "logo boxes overlap via -15% side margins",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "495-497",
+          "quote": "margin-left: -15%"
+        }
+      },
+      {
+        "maxWidth": 520,
+        "aspect": "layout",
+        "desktop": "slide 310px",
+        "mobile": "slide calc(100vw - 80px)",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "483-485",
+          "quote": "width: calc(100vw - 80px)"
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "src/components/OurWork.jsx",
+      "lines": "272-284",
+      "quote": "Trusted by those driving change"
+    },
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "354-403",
+      "quote": "vue3-carousel"
+    }
+  ],
+  "fixtures": {
+    "default": {
+      "content": {
+        "heading": "Trusted by those driving change",
+        "slides": [
+          {
+            "title": "Project area one",
+            "text": "A one-sentence project summary.",
+            "image": {
+              "assetRole": "project-photo",
+              "assetRef": "generated:project-photo-1"
+            }
+          },
+          {
+            "title": "Project area two",
+            "text": "A one-sentence project summary.",
+            "image": {
+              "assetRole": "project-photo",
+              "assetRef": "generated:project-photo-2"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "notes": "Slide copy on the source names real clients; generated slide text must describe work generically. Slide count 2-6 and member logos 3-12 are inferred budgets (measured: 5 and 9)."
+}

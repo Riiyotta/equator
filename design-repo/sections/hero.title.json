@@ -1,0 +1,128 @@
+{
+  "id": "hero.title",
+  "name": "Title",
+  "category": "hero",
+  "purpose": "Positioning statement: three-line headline with a one-sentence promise over an ambient looping video.",
+  "evidenceLevel": "measured",
+  "implementedBy": "src/components/Title.jsx",
+  "surface": "coral",
+  "scrollStage": false,
+  "ambientVideoCount": 1,
+  "anchor": null,
+  "variants": null,
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "headingLines",
+      "subtitle"
+    ],
+    "properties": {
+      "headingLines": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 3,
+        "items": {
+          "type": "string",
+          "minLength": 1,
+          "x-maxWords": 3
+        }
+      },
+      "subtitle": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 20
+      },
+      "backgroundVideo": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "assetRole",
+          "assetRef"
+        ],
+        "properties": {
+          "assetRole": {
+            "enum": [
+              "ambient-video"
+            ]
+          },
+          "assetRef": {
+            "type": "string",
+            "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+          },
+          "alt": {
+            "type": "string",
+            "minLength": 1,
+            "x-maxWords": 12
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "maxPerPage": 1
+  },
+  "motion": {
+    "pattern": "ambient-video-loop",
+    "trigger": "autoplay",
+    "reducedMotionFallback": "video-poster-still",
+    "distinctive": false,
+    "fallbackIsPrescriptive": true,
+    "timings": {
+      "videoSeconds": 11.3,
+      "blend": "screen over coral"
+    },
+    "evidence": [
+      {
+        "path": "src/components/Title.jsx",
+        "lines": "24-26",
+        "quote": "autoPlay muted loop playsInline"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "218-221",
+        "quote": "mix-blend-mode: screen"
+      }
+    ]
+  },
+  "responsive": {
+    "primaryBreakpoint": 768,
+    "changes": [
+      {
+        "maxWidth": 768,
+        "aspect": "layout",
+        "desktop": "grid rows 120px 1fr 120px, title vertically centred, video height calc(100% - 64px)",
+        "mobile": "grid rows 160px 1fr min-content, title top-aligned, video height calc(100% - 110px)",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "227-231",
+          "quote": "grid-template-rows: 160px 1fr min-content"
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "241-253",
+      "quote": "No entrance animation on the title text"
+    },
+    {
+      "path": ".playwright-mcp/orig-1440.txt.n",
+      "lines": "35",
+      "quote": "section.titleSection [0,900,1440x900]"
+    }
+  ],
+  "fixtures": {
+    "default": {
+      "content": {
+        "headingLines": [
+          "Enabling the",
+          "Infrastructure",
+          "of Change"
+        ],
+        "subtitle": "Made to endure, designed to adapt."
+      }
+    }
+  }
+}

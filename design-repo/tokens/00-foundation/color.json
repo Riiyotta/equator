@@ -1,0 +1,163 @@
+{
+  "$description": "Every colour observed in the original CSS bundles (entry/index/useSectionWatcher). usageCount = occurrences in the concatenated original CSS (literal + var() references), recomputed during build. Nothing outside this histogram is allowed.",
+  "$extensions": {
+    "evidence": [
+      {
+        "path": "The Equator Company_files/entry.DkmCBGCE.css",
+        "lines": "1",
+        "quote": "--color-coral:#ff9d69"
+      },
+      {
+        "path": "The Equator Company_files/entry.DkmCBGCE.css",
+        "lines": "1",
+        "quote": "--color-earth-light:rgba(62,32,2,.7)"
+      },
+      {
+        "path": "The Equator Company_files/index.Bz9B3sVc.css",
+        "lines": "1",
+        "quote": "#feb891"
+      },
+      {
+        "path": "The Equator Company_files/index.Bz9B3sVc.css",
+        "lines": "1",
+        "quote": "#c1f2a3"
+      },
+      {
+        "path": "The Equator Company_files/useSectionWatcher.DxYJ83pd.css",
+        "lines": "1",
+        "quote": "#9d8c79"
+      },
+      {
+        "path": "The Equator Company_files/useSectionWatcher.DxYJ83pd.css",
+        "lines": "1",
+        "quote": "#6d543c"
+      },
+      {
+        "path": "The Equator Company_files/index.Bz9B3sVc.css",
+        "lines": "1",
+        "quote": "rgba(0,0,0,.7)"
+      },
+      {
+        "path": "The Equator Company_files/entry.DkmCBGCE.css",
+        "lines": "1",
+        "quote": "#090f207f"
+      },
+      {
+        "path": "tailwind.config.cjs",
+        "lines": "9-23",
+        "quote": "coral: '#ff9d69'"
+      },
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": "85-99",
+        "quote": "coral-light (hard-coded)"
+      }
+    ]
+  },
+  "color": {
+    "white": {
+      "$type": "color",
+      "$value": "#ffffff",
+      "$description": "Card, slide, portrait card, CTA section background.",
+      "$extensions": {
+        "usageCount": 6
+      }
+    },
+    "oat": {
+      "$type": "color",
+      "$value": "#fcf8f0",
+      "$description": "Page surface for story/capabilities/work/legal; CTA overlay (multiply); inverse text.",
+      "$extensions": {
+        "usageCount": 14
+      }
+    },
+    "lime": {
+      "$type": "color",
+      "$value": "#c8fdab",
+      "$description": "Values surface; slide pills/active layer; team role chip.",
+      "$extensions": {
+        "usageCount": 7
+      }
+    },
+    "lime-dark": {
+      "$type": "color",
+      "$value": "#c1f2a3",
+      "$description": "Slide pills when the slide is active (hard-coded in original).",
+      "$extensions": {
+        "usageCount": 1
+      }
+    },
+    "earth": {
+      "$type": "color",
+      "$value": "#3e2002",
+      "$description": "All text; footer/subfooter surface; nav underline.",
+      "$extensions": {
+        "usageCount": 15
+      }
+    },
+    "earth-light": {
+      "$type": "color",
+      "$value": "rgba(62,32,2,.7)",
+      "$description": "Section subtitles (capabilities, team).",
+      "$extensions": {
+        "usageCount": 3
+      }
+    },
+    "coral": {
+      "$type": "color",
+      "$value": "#ff9d69",
+      "$description": "Splash, title, team, mobile header/menu, open dropdown, theme-color.",
+      "$extensions": {
+        "usageCount": 9
+      }
+    },
+    "coral-light": {
+      "$type": "color",
+      "$value": "#feb891",
+      "$description": "Dropdown pills when open (hard-coded).",
+      "$extensions": {
+        "usageCount": 1
+      }
+    },
+    "footer-text": {
+      "$type": "color",
+      "$value": "#9d8c79",
+      "$description": "Footer body text.",
+      "$extensions": {
+        "usageCount": 1
+      }
+    },
+    "footer-credits": {
+      "$type": "color",
+      "$value": "#6d543c",
+      "$description": "Footer credits row.",
+      "$extensions": {
+        "usageCount": 1
+      }
+    },
+    "black": {
+      "$type": "color",
+      "$value": "#000000",
+      "$description": "vue3-carousel arrow button colour (SVG itself fills earth).",
+      "$extensions": {
+        "usageCount": 1
+      }
+    },
+    "scrim": {
+      "$type": "color",
+      "$value": "rgba(0,0,0,.7)",
+      "$description": "Top of the slide photo gradient scrim.",
+      "$extensions": {
+        "usageCount": 1
+      }
+    },
+    "nav-hover": {
+      "$type": "color",
+      "$value": "#090f207f",
+      "$description": "vue3-carousel default arrow hover colour.",
+      "$extensions": {
+        "usageCount": 1
+      }
+    }
+  }
+}

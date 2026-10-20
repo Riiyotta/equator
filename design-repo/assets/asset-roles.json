@@ -1,0 +1,188 @@
+{
+  "registryVersion": "1.0.0",
+  "sourceIsRealCompany": true,
+  "generationPolicies": {
+    "may-generate-new": {
+      "meaning": "Generator may create new original media. assetRef must be generated:<id> or placeholder:<id>.",
+      "assetRefPattern": "^(generated|placeholder):"
+    },
+    "placeholder-only": {
+      "meaning": "No real asset and no generated likeness. assetRef must be placeholder:<id>.",
+      "assetRefPattern": "^placeholder:"
+    },
+    "must-not-reproduce": {
+      "meaning": "Real trademark or proprietary brand media: never reused, traced, recreated or imitated. assetRef must be placeholder:<id>.",
+      "assetRefPattern": "^placeholder:"
+    },
+    "omit": {
+      "meaning": "The field must be absent from generated PageSpecs entirely.",
+      "assetRefPattern": null
+    }
+  },
+  "licensingNote": "Source is the live site of a real company (The Equator Company, equatorcompany.com). Real people's names/photos, partner/merger/member logos, client project slides, brand Lotties/videos, the PRR PDF and the National 2 font are not licensed for reuse in generated output.",
+  "roles": {
+    "brand-wordmark": {
+      "generationPolicy": "must-not-reproduce",
+      "pinned": true,
+      "description": "The Equator Company wordmark (header 352x34, footer stacked 276x180). Real trademark.",
+      "evidence": [
+        {
+          "path": "src/components/Header.jsx",
+          "lines": "86-106",
+          "quote": "<LogoWordmark />"
+        }
+      ]
+    },
+    "brand-lottie-splash": {
+      "generationPolicy": "must-not-reproduce",
+      "pinned": true,
+      "description": "Proprietary splash animation (navbar.lottie, 511x720, 0-601f @30fps).",
+      "evidence": [
+        {
+          "path": "src/components/Splash.jsx",
+          "lines": "22-29",
+          "quote": "/lottie/navbar.lottie"
+        }
+      ]
+    },
+    "brand-lottie-value": {
+      "generationPolicy": "must-not-reproduce",
+      "pinned": true,
+      "description": "Five proprietary value animations (sustainability/global/grounded/curiosity/difference.lottie).",
+      "evidence": [
+        {
+          "path": "src/components/Values.jsx",
+          "lines": "29-31",
+          "quote": "LottiePlayer src={`/lottie/${value.lottie}.lottie`}"
+        }
+      ]
+    },
+    "brand-lottie-footer": {
+      "generationPolicy": "must-not-reproduce",
+      "pinned": true,
+      "description": "Proprietary footer animation (footer.lottie, autoplay loop).",
+      "evidence": [
+        {
+          "path": "src/components/Footer.jsx",
+          "lines": "11-16",
+          "quote": "/lottie/footer.lottie"
+        }
+      ]
+    },
+    "ambient-video": {
+      "generationPolicy": "may-generate-new",
+      "pinned": false,
+      "description": "Ambient looping background video slot (title: screen blend over coral; CTA: under oat multiply). New original footage may be generated; the brand's bird_low.mp4 / cloud_low.mp4 must never be reused.",
+      "evidence": [
+        {
+          "path": "src/components/Title.jsx",
+          "lines": "24-26",
+          "quote": "/bird_low.mp4"
+        },
+        {
+          "path": "src/components/Cta.jsx",
+          "lines": "9-11",
+          "quote": "/cloud_low.mp4"
+        }
+      ]
+    },
+    "merger-logo": {
+      "generationPolicy": "must-not-reproduce",
+      "pinned": true,
+      "description": "Logos of the four real merged companies in the story section. Real third-party trademarks.",
+      "evidence": [
+        {
+          "path": "src/lib/content.js",
+          "lines": "17-22",
+          "quote": "/logo_s317.png"
+        }
+      ]
+    },
+    "member-logo": {
+      "generationPolicy": "must-not-reproduce",
+      "pinned": true,
+      "description": "'Proud member of' marquee logos (logo1-9.png). Real third-party trademarks.",
+      "evidence": [
+        {
+          "path": "src/lib/content.js",
+          "lines": "130",
+          "quote": "/logos/logo${n}.png"
+        }
+      ]
+    },
+    "project-photo": {
+      "generationPolicy": "may-generate-new",
+      "pinned": false,
+      "description": "Our Work slide photography. New imagery may be generated provided it depicts no identifiable real person, client, brand or site; the real client project photos (slides/slide1-5) must never be reused.",
+      "evidence": [
+        {
+          "path": "src/components/OurWork.jsx",
+          "lines": "12-26",
+          "quote": "<LazyPicture base={slide.image}"
+        }
+      ]
+    },
+    "team-portrait": {
+      "generationPolicy": "placeholder-only",
+      "pinned": true,
+      "description": "Real employees' portraits (15 people). Never reuse, never generate a likeness: neutral placeholder only.",
+      "evidence": [
+        {
+          "path": "src/components/Team.jsx",
+          "lines": "51-53",
+          "quote": "<LazyPicture base={`/team/${slug}`}"
+        }
+      ]
+    },
+    "team-halftone": {
+      "generationPolicy": "placeholder-only",
+      "pinned": true,
+      "description": "Halftone 'back' images derived from the real employees' portraits. Still a likeness: placeholder only.",
+      "evidence": [
+        {
+          "path": "src/components/Team.jsx",
+          "lines": "48-50",
+          "quote": "-back.png"
+        }
+      ]
+    },
+    "funding-emblem": {
+      "generationPolicy": "omit",
+      "pinned": true,
+      "description": "PRR / Republica Portuguesa / EU funding strip (mono.svg). Reproducing it would falsely claim public funding: the field must be absent.",
+      "evidence": [
+        {
+          "path": "src/components/Footer.jsx",
+          "lines": "75-86",
+          "quote": "/mono.svg"
+        }
+      ]
+    },
+    "project-sheet-pdf": {
+      "generationPolicy": "omit",
+      "pinned": true,
+      "description": "The company's PRR project sheet PDF. Real proprietary document: never linked or bundled; the field must be absent.",
+      "evidence": [
+        {
+          "path": "src/components/Footer.jsx",
+          "lines": "75-86",
+          "quote": "/Equator-PRR-Investimentos.pdf"
+        }
+      ]
+    }
+  },
+  "licensedResources": {
+    "font.national-2": {
+      "licence": "licence-required",
+      "pinned": true,
+      "description": "National 2 (Klim Type Foundry), weights 400/500. Not an assetRole: never referenced from a PageSpec; generated output uses the token fallback stack unless the deployer holds a licence.",
+      "evidence": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": "78-83",
+          "quote": "Klim Type Foundry"
+        }
+      ]
+    }
+  }
+}

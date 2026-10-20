@@ -1,0 +1,16 @@
+{
+  "id": "primitive.ambient-video",
+  "name": "Ambient video",
+  "implementedBy": "src/components/Title.jsx",
+  "description": "<video autoplay muted loop playsinline> with blend mode set by the parent section.",
+  "assetRoles": [
+    "ambient-video"
+  ],
+  "evidence": [
+    {
+      "path": "src/components/Title.jsx",
+      "lines": "24-26",
+      "quote": "autoPlay muted loop playsInline"
+    }
+  ]
+}

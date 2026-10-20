@@ -1,0 +1,488 @@
+{
+  "pageSpecVersion": "1.0.0",
+  "template": "template.home",
+  "route": "/",
+  "meta": {
+    "title": "The Equator Company",
+    "description": "Interdisciplinary sustainability consultancy with 45 years of experience."
+  },
+  "nodes": [
+    {
+      "type": "chrome.splash",
+      "content": {
+        "caption": "Scroll to explore",
+        "animation": {
+          "assetRole": "brand-lottie-splash",
+          "assetRef": "placeholder:splash-animation"
+        }
+      },
+      "motion": {
+        "pattern": "lottie-intro-then-loop",
+        "trigger": "mount-delay-1000ms",
+        "reducedMotionFallback": "static-first-frame-caption-visible"
+      }
+    },
+    {
+      "type": "chrome.header",
+      "variant": "home",
+      "content": {
+        "logo": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "placeholder:wordmark"
+        },
+        "navItems": [
+          {
+            "label": "Our Story",
+            "anchor": "our-story"
+          },
+          {
+            "label": "What we stand for",
+            "anchor": "what-we-stand-for"
+          },
+          {
+            "label": "Capabilities",
+            "anchor": "capabilities"
+          },
+          {
+            "label": "Our Work",
+            "anchor": "our-work"
+          },
+          {
+            "label": "Team",
+            "anchor": "team"
+          }
+        ],
+        "emailLabel": "Email us",
+        "socialLabel": "LinkedIn"
+      },
+      "motion": {
+        "pattern": "scroll-scrub-logo-scale",
+        "trigger": "scroll-scrub",
+        "reducedMotionFallback": "logo-static-small-scale-menu-instant"
+      }
+    },
+    {
+      "type": "hero.title",
+      "content": {
+        "headingLines": [
+          "Enabling the",
+          "Infrastructure",
+          "of Change"
+        ],
+        "subtitle": "Made to endure, designed to adapt: we help organizations and places deliver sustainable, resilient and profitable impact.",
+        "backgroundVideo": {
+          "assetRole": "ambient-video",
+          "assetRef": "placeholder:ambient-video-title"
+        }
+      },
+      "motion": {
+        "pattern": "ambient-video-loop",
+        "trigger": "autoplay",
+        "reducedMotionFallback": "video-poster-still"
+      }
+    },
+    {
+      "type": "narrative.story-reveal",
+      "anchorId": "our-story",
+      "content": {
+        "intro": "Born from the merger of four companies with different skill sets, but the same shared values, expertise and decades of experience:",
+        "mergerLogos": [
+          {
+            "logo": {
+              "assetRole": "merger-logo",
+              "assetRef": "placeholder:merger-logo-1",
+              "alt": "Founding company logo"
+            },
+            "label": "Founding company one"
+          },
+          {
+            "logo": {
+              "assetRole": "merger-logo",
+              "assetRef": "placeholder:merger-logo-2",
+              "alt": "Founding company logo"
+            },
+            "label": "Founding company two"
+          },
+          {
+            "logo": {
+              "assetRole": "merger-logo",
+              "assetRef": "placeholder:merger-logo-3",
+              "alt": "Founding company logo"
+            },
+            "label": "Founding company three"
+          },
+          {
+            "logo": {
+              "assetRole": "merger-logo",
+              "assetRef": "placeholder:merger-logo-4",
+              "alt": "Founding company logo"
+            },
+            "label": "Founding company four"
+          }
+        ],
+        "statements": [
+          {
+            "text": "What emerged isn't just bigger. It is different.",
+            "indent": false
+          },
+          {
+            "text": "It is designed to provide a structured full-service ESG offer.",
+            "indent": true
+          },
+          {
+            "text": "It is a unique partner for organizations seeking change.",
+            "indent": false
+          },
+          {
+            "text": "And it is here: meet The Equator Company",
+            "indent": true,
+            "emphasisFromWord": 5
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "scroll-scrub-word-reveal",
+        "trigger": "scroll-scrub",
+        "reducedMotionFallback": "all-words-visible"
+      }
+    },
+    {
+      "type": "values.sticky-stack",
+      "anchorId": "what-we-stand-for",
+      "content": {
+        "panels": [
+          {
+            "titleLines": [
+              "Sustainability,",
+              "made to endure"
+            ],
+            "columns": [
+              "We embed sustainability in the foundations of economies and communities.",
+              "From infrastructure to multiyear strategies."
+            ],
+            "animation": {
+              "assetRole": "brand-lottie-value",
+              "assetRef": "placeholder:value-animation-1"
+            }
+          },
+          {
+            "titleLines": [
+              "Local legitimacy,",
+              "global reach"
+            ],
+            "columns": [
+              "We combine the independence of each founding organization.",
+              "Local partnerships ensure delivery on the ground."
+            ],
+            "animation": {
+              "assetRole": "brand-lottie-value",
+              "assetRef": "placeholder:value-animation-2"
+            }
+          },
+          {
+            "titleLines": [
+              "Vision grounded",
+              "in reality"
+            ],
+            "columns": [
+              "Bridging ambition and execution to make transitions work.",
+              "From waste blueprints to decarbonization roadmaps."
+            ],
+            "animation": {
+              "assetRole": "brand-lottie-value",
+              "assetRef": "placeholder:value-animation-3"
+            }
+          },
+          {
+            "titleLines": [
+              "We blend curiosity",
+              "with courage"
+            ],
+            "columns": [
+              "Engaging every challenge with curiosity and openness.",
+              "Fresh perspectives for real-world solutions."
+            ],
+            "animation": {
+              "assetRole": "brand-lottie-value",
+              "assetRef": "placeholder:value-animation-4"
+            }
+          },
+          {
+            "titleLines": [
+              "Making a difference",
+              "and making it last"
+            ],
+            "columns": [
+              "We design it, we implement it, and we monitor it.",
+              "Transformations that are possible and practical."
+            ],
+            "animation": {
+              "assetRole": "brand-lottie-value",
+              "assetRef": "placeholder:value-animation-5"
+            }
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "sticky-stack-scrub-fade",
+        "trigger": "scroll-scrub",
+        "reducedMotionFallback": "panels-static-sequential-all-visible"
+      }
+    },
+    {
+      "type": "capabilities.accordion",
+      "anchorId": "capabilities",
+      "content": {
+        "heading": "Your partner for a sustainable transition",
+        "subtitle": "We design and implement high-impact, long-lasting change with your organization. Whatever the scale, scope, service or challenge.",
+        "cards": [
+          {
+            "title": "Sustainability Strategy",
+            "text": "ESG strategies and financially sustainable action plans."
+          },
+          {
+            "title": "Energy, Carbon & Biodiversity",
+            "text": "Leading the energy transition with sustainable systems."
+          },
+          {
+            "title": "Impact & Risks",
+            "text": "Sustainability built into risk and investment decisions."
+          },
+          {
+            "title": "Water & Sanitation",
+            "text": "Resilient water and wastewater infrastructure."
+          },
+          {
+            "title": "Crisis & Communications Management",
+            "text": "Prepare. Respond. Recover."
+          },
+          {
+            "title": "Capacity Building",
+            "text": "Turn knowledge into performance."
+          },
+          {
+            "title": "Social & Communities",
+            "text": "Community engagement and lasting shared value."
+          },
+          {
+            "title": "Waste & Circular Economy",
+            "text": "From linear to circular thinking."
+          },
+          {
+            "title": "Sustainable Finance",
+            "text": "Financial models that make sustainability profitable."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "accordion-expand-120ms",
+        "trigger": "click",
+        "reducedMotionFallback": "accordion-instant-expand"
+      }
+    },
+    {
+      "type": "work.carousel-marquee",
+      "anchorId": "our-work",
+      "content": {
+        "heading": "Trusted by those driving change",
+        "slides": [
+          {
+            "title": "Forests, Carbon, and Natural Capital",
+            "text": "A short, generic summary of the programme's scope and outcome.",
+            "image": {
+              "assetRole": "project-photo",
+              "assetRef": "generated:project-photo-1",
+              "alt": "Project landscape"
+            }
+          },
+          {
+            "title": "Energy and Energy Efficiency",
+            "text": "A short, generic summary of the programme's scope and outcome.",
+            "image": {
+              "assetRole": "project-photo",
+              "assetRef": "generated:project-photo-2",
+              "alt": "Project landscape"
+            }
+          },
+          {
+            "title": "Consumer Goods and Social Impact",
+            "text": "A short, generic summary of the programme's scope and outcome.",
+            "image": {
+              "assetRole": "project-photo",
+              "assetRef": "generated:project-photo-3",
+              "alt": "Project landscape"
+            }
+          },
+          {
+            "title": "Water, Sanitation, and Resilient Cities",
+            "text": "A short, generic summary of the programme's scope and outcome.",
+            "image": {
+              "assetRole": "project-photo",
+              "assetRef": "generated:project-photo-4",
+              "alt": "Project landscape"
+            }
+          },
+          {
+            "title": "Resilience and Impact",
+            "text": "A short, generic summary of the programme's scope and outcome.",
+            "image": {
+              "assetRole": "project-photo",
+              "assetRef": "generated:project-photo-5",
+              "alt": "Project landscape"
+            }
+          }
+        ],
+        "memberCaption": "Proud member of",
+        "memberLogos": [
+          {
+            "assetRole": "member-logo",
+            "assetRef": "placeholder:member-logo-1"
+          },
+          {
+            "assetRole": "member-logo",
+            "assetRef": "placeholder:member-logo-2"
+          },
+          {
+            "assetRole": "member-logo",
+            "assetRef": "placeholder:member-logo-3"
+          },
+          {
+            "assetRole": "member-logo",
+            "assetRef": "placeholder:member-logo-4"
+          },
+          {
+            "assetRole": "member-logo",
+            "assetRef": "placeholder:member-logo-5"
+          },
+          {
+            "assetRole": "member-logo",
+            "assetRef": "placeholder:member-logo-6"
+          },
+          {
+            "assetRole": "member-logo",
+            "assetRef": "placeholder:member-logo-7"
+          },
+          {
+            "assetRole": "member-logo",
+            "assetRef": "placeholder:member-logo-8"
+          },
+          {
+            "assetRole": "member-logo",
+            "assetRef": "placeholder:member-logo-9"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "carousel-snap-300ms+marquee-raf-0.5px",
+        "trigger": "click-drag+raf-continuous",
+        "reducedMotionFallback": "carousel-instant-jump+marquee-static-row"
+      }
+    },
+    {
+      "type": "team.roster",
+      "anchorId": "team",
+      "content": {
+        "heading": "Over 45 years experience delivering impact",
+        "subtitle": "Our executive team brings decades of experience in diverse areas such as infrastructure, strategy, social innovation, and policy.",
+        "members": [
+          {
+            "name": "Team Member One",
+            "role": "Management Team",
+            "portrait": {
+              "assetRole": "team-portrait",
+              "assetRef": "placeholder:portrait-1"
+            },
+            "halftone": {
+              "assetRole": "team-halftone",
+              "assetRef": "placeholder:halftone-1"
+            },
+            "profileUrl": "placeholder:profile-1"
+          },
+          {
+            "name": "Team Member Two",
+            "role": "Operations Division",
+            "portrait": {
+              "assetRole": "team-portrait",
+              "assetRef": "placeholder:portrait-2"
+            },
+            "halftone": {
+              "assetRole": "team-halftone",
+              "assetRef": "placeholder:halftone-2"
+            },
+            "profileUrl": "placeholder:profile-2"
+          },
+          {
+            "name": "Team Member Three",
+            "role": "Water & Sanitation",
+            "portrait": {
+              "assetRole": "team-portrait",
+              "assetRef": "placeholder:portrait-3"
+            },
+            "halftone": {
+              "assetRole": "team-halftone",
+              "assetRef": "placeholder:halftone-3"
+            },
+            "profileUrl": "placeholder:profile-3"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "viewport-band-activation",
+        "trigger": "intersection-band",
+        "reducedMotionFallback": "overlay-instant-show"
+      }
+    },
+    {
+      "type": "conversion.cta-video",
+      "content": {
+        "heading": "Let’s Build the Infrastructure of Change Together",
+        "primaryLabel": "Sign up for updates",
+        "primaryHref": "placeholder:newsletter-signup",
+        "secondaryLabel": "Follow us on LinkedIn",
+        "secondaryHref": "placeholder:social-profile",
+        "backgroundVideo": {
+          "assetRole": "ambient-video",
+          "assetRef": "placeholder:ambient-video-cta"
+        }
+      },
+      "motion": {
+        "pattern": "ambient-video-loop",
+        "trigger": "autoplay",
+        "reducedMotionFallback": "video-poster-still"
+      }
+    },
+    {
+      "type": "chrome.footer",
+      "content": {
+        "blurb": "Interdisciplinary sustainability consultancy with 45 years of experience.",
+        "addressLine": "Lisbon, Portugal",
+        "email": "placeholder:contact-email",
+        "socialLabel": "Follow us on LinkedIn",
+        "copyrightHolder": "The Equator Company",
+        "legalLinkLabel": "Privacy Policy",
+        "animation": {
+          "assetRole": "brand-lottie-footer",
+          "assetRef": "placeholder:footer-animation"
+        },
+        "wordmark": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "placeholder:wordmark-stacked"
+        }
+      },
+      "motion": {
+        "pattern": "lottie-autoplay-loop",
+        "trigger": "autoplay",
+        "reducedMotionFallback": "static-first-frame"
+      }
+    },
+    {
+      "type": "chrome.subfooter",
+      "content": {},
+      "motion": {
+        "pattern": "none",
+        "trigger": "none",
+        "reducedMotionFallback": "none"
+      }
+    }
+  ]
+}

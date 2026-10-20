@@ -1,0 +1,64 @@
+{
+  "$description": "Border-radius histogram of the original CSS: 5px x5, 60/60/0/0 x4, 30/30/0/0 x4, 50% x1, 7px x1 (vue3-carousel var() radii excluded).",
+  "$extensions": {
+    "evidence": [
+      {
+        "path": "The Equator Company_files/index.Bz9B3sVc.css",
+        "lines": "1",
+        "quote": "border-radius:5px"
+      },
+      {
+        "path": "The Equator Company_files/index.Bz9B3sVc.css",
+        "lines": "1",
+        "quote": "border-radius:60px 60px 0 0"
+      },
+      {
+        "path": "The Equator Company_files/index.Bz9B3sVc.css",
+        "lines": "1",
+        "quote": "border-radius:30px 30px 0 0"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "225",
+        "quote": "border-radius: 50%"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "543",
+        "quote": "border-radius: 7px"
+      }
+    ]
+  },
+  "radius": {
+    "card": {
+      "$type": "dimension",
+      "$value": "5px",
+      "$description": "Dropdown, slide, portrait, role chip, LinkedIn tag."
+    },
+    "pill-lg": {
+      "$type": "dimension",
+      "$value": "60px 60px 0 0",
+      "$description": "Desktop half-capsule pill (120x60)."
+    },
+    "pill-sm": {
+      "$type": "dimension",
+      "$value": "30px 30px 0 0",
+      "$description": "Mobile half-capsule pill (60x30)."
+    },
+    "circle": {
+      "$type": "dimension",
+      "$value": "50%",
+      "$description": "Title subtitle bullet."
+    },
+    "dot": {
+      "$type": "dimension",
+      "$value": "7px",
+      "$description": "Role chip 14px dot."
+    },
+    "none": {
+      "$type": "dimension",
+      "$value": "0",
+      "$description": "CTA buttons are square."
+    }
+  }
+}

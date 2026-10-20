@@ -1,0 +1,17 @@
+{
+  "id": "component.project-slide",
+  "name": "Project slide card",
+  "implementedBy": "src/components/OurWork.jsx",
+  "uses": [
+    "primitive.lazy-picture",
+    "primitive.pill"
+  ],
+  "description": "Photo card with scrim and title; active = lime layer, earth title, description rises 120px.",
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": "436-466",
+      "quote": ".slide.active .descriptionLayer { opacity: 1; }"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "id": "conversion.cta-video",
+  "name": "Call to action",
+  "category": "conversion",
+  "purpose": "Closing invitation: centred headline with two square pill buttons (newsletter sign-up, social follow) over a tinted ambient video.",
+  "evidenceLevel": "measured",
+  "implementedBy": "src/components/Cta.jsx",
+  "surface": "white",
+  "scrollStage": false,
+  "ambientVideoCount": 1,
+  "anchor": null,
+  "variants": null,
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "heading",
+      "primaryLabel",
+      "primaryHref"
+    ],
+    "properties": {
+      "heading": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 8
+      },
+      "primaryLabel": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 4
+      },
+      "primaryHref": {
+        "type": "string",
+        "pattern": "^(placeholder:[a-z0-9-]+|/[a-z0-9/#-]*|#[a-z0-9-]+)$"
+      },
+      "secondaryLabel": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 4
+      },
+      "secondaryHref": {
+        "type": "string",
+        "pattern": "^(placeholder:[a-z0-9-]+|/[a-z0-9/#-]*|#[a-z0-9-]+)$"
+      },
+      "backgroundVideo": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "assetRole",
+          "assetRef"
+        ],
+        "properties": {
+          "assetRole": {
+            "enum": [
+              "ambient-video"
+            ]
+          },
+          "assetRef": {
+            "type": "string",
+            "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+          },
+          "alt": {
+            "type": "string",
+            "minLength": 1,
+            "x-maxWords": 12
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "maxPerPage": 1,
+    "mustImmediatelyPrecede": "chrome.footer"
+  },
+  "motion": {
+    "pattern": "ambient-video-loop",
+    "trigger": "autoplay",
+    "reducedMotionFallback": "video-poster-still",
+    "distinctive": false,
+    "fallbackIsPrescriptive": true,
+    "timings": {
+      "videoSeconds": 4.7,
+      "buttonHover": "{duration.ui} ease-in-out, width +25px (desktop >=769 only)"
+    },
+    "evidence": [
+      {
+        "path": "src/components/Cta.jsx",
+        "lines": "9-11",
+        "quote": "/cloud_low.mp4"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "601-615",
+        "quote": "transition: background-color .12s ease-in-out 0s"
+      }
+    ]
+  },
+  "responsive": {
+    "primaryBreakpoint": 768,
+    "changes": [
+      {
+        "maxWidth": 768,
+        "aspect": "layout",
+        "desktop": "100svh, gap 50px, buttons in a row, arrows revealed on hover",
+        "mobile": "height auto, gap 100px, buttons stacked, sign-up always earth, arrows hidden, heading uses headline1 sizes",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "616-625",
+          "quote": "gap: 100px; height: auto"
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": ".playwright-mcp/orig-state-1440.txt.n",
+      "lines": "86-94",
+      "quote": "cta h2: [320,286.2,800x237.6]"
+    },
+    {
+      "path": ".playwright-mcp/orig-1440.txt.n",
+      "lines": "624",
+      "quote": "section.ctaSection [0,12673,1440x900]"
+    }
+  ],
+  "fixtures": {
+    "default": {
+      "content": {
+        "heading": "Let's build it together",
+        "primaryLabel": "Sign up for updates",
+        "primaryHref": "placeholder:newsletter-signup"
+      }
+    }
+  },
+  "notes": "hrefs are restricted to placeholder:/relative values: the source points at a live Mailchimp signup endpoint and the company LinkedIn page, which generated output must not reuse."
+}

@@ -1,0 +1,208 @@
+{
+  "$description": "Type roles from the original :root custom properties; sizes swap only at max-width 768 (no clamp/vw). Desktop/mobile px values are the computed values in CLONE_SPEC 1.4.",
+  "$extensions": {
+    "evidence": [
+      {
+        "path": "The Equator Company_files/entry.DkmCBGCE.css",
+        "lines": "1",
+        "quote": "--font-size-headline1:6rem"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "26-43",
+        "quote": "--font-size-headline1: 6rem"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "47-57",
+        "quote": "--font-size-headline1: 3.25rem;"
+      },
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": "62-76",
+        "quote": "Text role classes (computed at 1440 / 390)"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "36",
+        "quote": "--font-line-body-s: 1.18"
+      }
+    ]
+  },
+  "font": {
+    "family": {
+      "national": {
+        "$type": "fontFamily",
+        "$value": [
+          "National",
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "$description": "Self-hosted National 2 with Arial/Helvetica fallback.",
+        "$extensions": {
+          "licence": {
+            "status": "licence-required",
+            "family": "National 2",
+            "foundry": "Klim Type Foundry",
+            "note": "Commercial typeface. The woff2 files must not be copied into generated output or redistributed. A deployer must hold their own Klim licence or substitute the fallback stack.",
+            "evidence": [
+              {
+                "path": "CLONE_SPEC.md",
+                "lines": "78-83",
+                "quote": "Klim Type Foundry"
+              },
+              {
+                "path": "CLONE_SPEC.md",
+                "lines": "78-83",
+                "quote": "They are commercial fonts. Check the licence before shipping."
+              }
+            ]
+          }
+        }
+      }
+    },
+    "weight": {
+      "regular": {
+        "$type": "fontWeight",
+        "$value": 400
+      },
+      "medium": {
+        "$type": "fontWeight",
+        "$value": 500
+      }
+    }
+  },
+  "type": {
+    "headline1": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": {
+          "desktop": "6rem",
+          "mobile": "3.25rem"
+        },
+        "lineHeight": 0.98,
+        "letterSpacing": "-0.03em",
+        "fontWeight": 500
+      },
+      "$description": "96px / 52px. Title h1, value h2, privacy h1."
+    },
+    "headline2": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": {
+          "desktop": "4.5rem",
+          "mobile": "2.25rem"
+        },
+        "lineHeight": 1.1,
+        "letterSpacing": "-0.04em",
+        "fontWeight": 400
+      },
+      "$description": "72px / 36px weight 400. Story reveal text."
+    },
+    "headline2Medium": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": {
+          "desktop": "4.5rem",
+          "mobile": "2.25rem"
+        },
+        "lineHeight": 1.1,
+        "letterSpacing": "-0.04em",
+        "fontWeight": 500
+      },
+      "$description": "72px / 36px weight 500. Section h2."
+    },
+    "headline3": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": {
+          "desktop": "3.75rem",
+          "mobile": "2rem"
+        },
+        "lineHeight": 1,
+        "letterSpacing": "-0.03em",
+        "fontWeight": 400
+      },
+      "$description": "60px / 32px. Team names."
+    },
+    "headline4": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": {
+          "desktop": "2.25rem",
+          "mobile": "1.5rem"
+        },
+        "lineHeight": 1.1,
+        "letterSpacing": "-0.02em",
+        "fontWeight": 500
+      },
+      "$description": "36px / 24px. Card and slide titles."
+    },
+    "bodyL": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": {
+          "desktop": "1.5rem",
+          "mobile": "1.3125rem"
+        },
+        "lineHeight": 1.2,
+        "letterSpacing": "-0.03em",
+        "fontWeight": 400
+      },
+      "$description": "24px / 21px. Subtitles."
+    },
+    "bodyM": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": {
+          "desktop": "1.3125rem",
+          "mobile": "1rem"
+        },
+        "lineHeight": 1.2,
+        "letterSpacing": "-0.02em",
+        "fontWeight": 400
+      },
+      "$description": "21px / 16px. Body copy."
+    },
+    "bodyS": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": {
+          "desktop": "1.125rem",
+          "mobile": "1.125rem"
+        },
+        "lineHeight": 1.18,
+        "letterSpacing": "-0.02em",
+        "fontWeight": 400
+      },
+      "$description": "18px both. Effective line-height 1.18 because the original re-declares --font-line-body-s."
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": {
+          "desktop": "1rem",
+          "mobile": "1rem"
+        },
+        "lineHeight": "normal",
+        "letterSpacing": "-0.03em",
+        "fontWeight": 400
+      },
+      "$description": "16px. --font-line-caption is never defined, so line-height is normal."
+    },
+    "credits": {
+      "$type": "typography",
+      "$value": {
+        "fontSize": {
+          "desktop": "0.875rem",
+          "mobile": "0.875rem"
+        },
+        "lineHeight": 1,
+        "letterSpacing": "normal",
+        "fontWeight": 400
+      },
+      "$description": "14px footer credits row."
+    }
+  }
+}

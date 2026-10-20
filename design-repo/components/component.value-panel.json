@@ -1,0 +1,16 @@
+{
+  "id": "component.value-panel",
+  "name": "Value panel",
+  "implementedBy": "src/components/Values.jsx",
+  "uses": [
+    "primitive.lottie-player"
+  ],
+  "description": "Sticky 12-col panel: lottie, 2-line headline1, two body columns.",
+  "evidence": [
+    {
+      "path": "src/components/Values.jsx",
+      "lines": "6-44",
+      "quote": "className=\"scrollZone\""
+    }
+  ]
+}

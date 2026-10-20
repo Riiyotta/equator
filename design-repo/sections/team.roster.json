@@ -1,0 +1,228 @@
+{
+  "id": "team.roster",
+  "name": "Team",
+  "category": "team",
+  "purpose": "Leadership roster: right-aligned names that activate one at a time at viewport centre, revealing a fixed portrait card and role chip.",
+  "evidenceLevel": "measured",
+  "implementedBy": "src/components/Team.jsx",
+  "surface": "coral",
+  "scrollStage": true,
+  "ambientVideoCount": 0,
+  "anchor": "team",
+  "variants": null,
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "heading",
+      "subtitle",
+      "members"
+    ],
+    "properties": {
+      "heading": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 8
+      },
+      "subtitle": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 32
+      },
+      "members": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 20,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "role",
+            "portrait"
+          ],
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 4
+            },
+            "role": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 6
+            },
+            "portrait": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assetRole",
+                "assetRef"
+              ],
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "team-portrait"
+                  ]
+                },
+                "assetRef": {
+                  "type": "string",
+                  "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                },
+                "alt": {
+                  "type": "string",
+                  "minLength": 1,
+                  "x-maxWords": 12
+                }
+              }
+            },
+            "halftone": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assetRole",
+                "assetRef"
+              ],
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "team-halftone"
+                  ]
+                },
+                "assetRef": {
+                  "type": "string",
+                  "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                },
+                "alt": {
+                  "type": "string",
+                  "minLength": 1,
+                  "x-maxWords": 12
+                }
+              }
+            },
+            "profileUrl": {
+              "type": "string",
+              "pattern": "^placeholder:[a-z0-9-]+$"
+            }
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "maxPerPage": 1
+  },
+  "motion": {
+    "pattern": "viewport-band-activation",
+    "trigger": "intersection-band",
+    "reducedMotionFallback": "overlay-instant-show",
+    "distinctive": true,
+    "fallbackIsPrescriptive": true,
+    "timings": {
+      "band": "rootMargin -49.5% 0% -49.5% 0% (1% centre band); <=520 band at 25% from top",
+      "portraitFade": "{duration.reveal}",
+      "backgroundDelay": "{duration.team-bg-delay}",
+      "nameHover": "{duration.ui}"
+    },
+    "evidence": [
+      {
+        "path": "src/components/Team.jsx",
+        "lines": "14-30",
+        "quote": "rootMargin: '-49.5% 0% -49.5% 0%'"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "568-572",
+        "quote": "transition: opacity .24s ease-in-out .48s"
+      },
+      {
+        "path": ".playwright-mcp/orig-state-1440.txt.n",
+        "lines": "69-79",
+        "quote": "member2 teamMember isActive"
+      }
+    ]
+  },
+  "responsive": {
+    "primaryBreakpoint": 768,
+    "changes": [
+      {
+        "maxWidth": 768,
+        "aspect": "layout",
+        "desktop": "portrait 450px (45/56) centred; halftone background on left half",
+        "mobile": "portrait 285x285 left-aligned; halftone hidden; name max-width 350px",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "578-587",
+          "quote": "aspect-ratio: 1/1; width: 285px"
+        }
+      },
+      {
+        "maxWidth": 768,
+        "aspect": "spacing",
+        "desktop": "padding 150px/350px, list margin-top 130px",
+        "mobile": "padding 75px/200px, list margin-top 60px",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "507-511",
+          "quote": "padding: 75px var(--margin-page) 200px"
+        }
+      },
+      {
+        "maxWidth": 520,
+        "aspect": "motion",
+        "desktop": "activation band at viewport centre",
+        "mobile": "activation band 25% from top (isActiveMobile)",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "573-577",
+          "quote": ".teamMember.isActiveMobile .overlayCont .portraitCont"
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "src/components/Team.jsx",
+      "lines": "66-83",
+      "quote": "Over 45 years experience delivering impact"
+    },
+    {
+      "path": ".playwright-mcp/orig-1440.txt.n",
+      "lines": "364-372",
+      "quote": "section#team.team [0,10560,1440x2114]"
+    }
+  ],
+  "fixtures": {
+    "default": {
+      "content": {
+        "heading": "Over 45 years experience delivering impact",
+        "subtitle": "Decades of experience in diverse areas.",
+        "members": [
+          {
+            "name": "Team Member One",
+            "role": "Management Team",
+            "portrait": {
+              "assetRole": "team-portrait",
+              "assetRef": "placeholder:portrait-1"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "knownParityDefects": [
+    {
+      "id": "team-names-not-keyboard-operable",
+      "description": "Names are divs with onClick (scroll-to-centre) and no role/tabIndex; activation is scroll-only, so keyboard users cannot open a portrait card.",
+      "evidence": [
+        {
+          "path": "src/components/Team.jsx",
+          "lines": "44-46",
+          "quote": "onClick={onNameClick}"
+        }
+      ],
+      "status": "source-site-behaviour-preserved"
+    }
+  ],
+  "notes": "Real employees: names in generated output are free text but portraits/halftones are placeholder-only and profileUrl must be a placeholder (never a real LinkedIn URL)."
+}

@@ -1,0 +1,18 @@
+{
+  "id": "primitive.lottie-player",
+  "name": "Lottie canvas player",
+  "implementedBy": "src/components/LottiePlayer.jsx",
+  "description": "dotLottie canvas, fit contain, whole-frame 30fps cadence (useFrameInterpolation:false).",
+  "assetRoles": [
+    "brand-lottie-splash",
+    "brand-lottie-value",
+    "brand-lottie-footer"
+  ],
+  "evidence": [
+    {
+      "path": "src/components/LottiePlayer.jsx",
+      "lines": "13-24",
+      "quote": "useFrameInterpolation: false"
+    }
+  ]
+}

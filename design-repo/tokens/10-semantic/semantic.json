@@ -1,0 +1,94 @@
+{
+  "$description": "Intent-level roles. Every $value is a reference into 00-foundation; themes/light.json resolves them.",
+  "$extensions": {
+    "evidence": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": "85-99",
+        "quote": "| coral | `#ff9d69`"
+      }
+    ]
+  },
+  "text": {
+    "primary": {
+      "$type": "color",
+      "$value": "{color.earth}"
+    },
+    "muted": {
+      "$type": "color",
+      "$value": "{color.earth-light}"
+    },
+    "inverse": {
+      "$type": "color",
+      "$value": "{color.oat}"
+    },
+    "on-footer": {
+      "$type": "color",
+      "$value": "{color.footer-text}"
+    },
+    "credits": {
+      "$type": "color",
+      "$value": "{color.footer-credits}"
+    }
+  },
+  "surface": {
+    "hero": {
+      "$type": "color",
+      "$value": "{color.coral}",
+      "$description": "Splash, title, team, mobile header/menu."
+    },
+    "page": {
+      "$type": "color",
+      "$value": "{color.oat}"
+    },
+    "values": {
+      "$type": "color",
+      "$value": "{color.lime}"
+    },
+    "card": {
+      "$type": "color",
+      "$value": "{color.white}"
+    },
+    "footer": {
+      "$type": "color",
+      "$value": "{color.earth}"
+    },
+    "cta": {
+      "$type": "color",
+      "$value": "{color.white}",
+      "$description": "Tinted to oat by a multiply overlay."
+    }
+  },
+  "accent": {
+    "pill-capability": {
+      "$type": "color",
+      "$value": "{color.coral}"
+    },
+    "pill-capability-open": {
+      "$type": "color",
+      "$value": "{color.coral-light}"
+    },
+    "pill-slide": {
+      "$type": "color",
+      "$value": "{color.lime}"
+    },
+    "pill-slide-active": {
+      "$type": "color",
+      "$value": "{color.lime-dark}"
+    },
+    "role-chip": {
+      "$type": "color",
+      "$value": "{color.lime}"
+    },
+    "card-open": {
+      "$type": "color",
+      "$value": "{color.coral}"
+    }
+  },
+  "overlay": {
+    "photo-scrim": {
+      "$type": "color",
+      "$value": "{color.scrim}"
+    }
+  }
+}

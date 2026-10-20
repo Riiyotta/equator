@@ -1,0 +1,140 @@
+{
+  "id": "chrome.splash",
+  "name": "Splash",
+  "category": "chrome",
+  "purpose": "Brand moment before the content: full-viewport coral field with the brand animation and a scroll prompt.",
+  "evidenceLevel": "measured",
+  "implementedBy": "src/components/Splash.jsx",
+  "surface": "coral",
+  "scrollStage": false,
+  "ambientVideoCount": 0,
+  "anchor": null,
+  "variants": null,
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "caption",
+      "animation"
+    ],
+    "properties": {
+      "caption": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 4
+      },
+      "animation": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "assetRole",
+          "assetRef"
+        ],
+        "properties": {
+          "assetRole": {
+            "enum": [
+              "brand-lottie-splash"
+            ]
+          },
+          "assetRef": {
+            "type": "string",
+            "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+          },
+          "alt": {
+            "type": "string",
+            "minLength": 1,
+            "x-maxWords": 12
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "maxPerPage": 1,
+    "mustBeFirst": true,
+    "templates": [
+      "template.home"
+    ]
+  },
+  "motion": {
+    "pattern": "lottie-intro-then-loop",
+    "trigger": "mount-delay-1000ms",
+    "reducedMotionFallback": "static-first-frame-caption-visible",
+    "distinctive": true,
+    "fallbackIsPrescriptive": true,
+    "timings": {
+      "playDelayMs": 1000,
+      "loopFromFrame": 270,
+      "captionDelayMs": 2500,
+      "captionFade": "{duration.menu}",
+      "fps": 30
+    },
+    "evidence": [
+      {
+        "path": "src/components/Splash.jsx",
+        "lines": "9-18",
+        "quote": "playThenLoop(playerRef.current, 270), 1000)"
+      },
+      {
+        "path": "src/components/Splash.jsx",
+        "lines": "9-18",
+        "quote": "setIntroDone(true), 2500"
+      },
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": "186-194",
+        "quote": "Playback: **not autoplay**"
+      }
+    ]
+  },
+  "responsive": {
+    "primaryBreakpoint": 768,
+    "changes": [
+      {
+        "maxWidth": 768,
+        "aspect": "spacing",
+        "desktop": "lottie width calc(100vw - 100px), page margin 50px",
+        "mobile": "page margin 20px so the lottie box widens to calc(100vw - 40px), capped by svh",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "196-203",
+          "quote": "width: calc(100vw - var(--margin-page) * 2)"
+        }
+      },
+      {
+        "maxWidth": 768,
+        "aspect": "spacing",
+        "desktop": "--margin-page 50px",
+        "mobile": "--margin-page 20px",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "47-57",
+          "quote": "--margin-page: 20px;"
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": "196-205",
+      "quote": ".splash.hide .caption { opacity: 0; }"
+    },
+    {
+      "path": ".playwright-mcp/orig-1440.txt.n",
+      "lines": "13",
+      "quote": "section.splash [0,0,1440x900]"
+    }
+  ],
+  "fixtures": {
+    "default": {
+      "content": {
+        "caption": "Scroll to explore",
+        "animation": {
+          "assetRole": "brand-lottie-splash",
+          "assetRef": "placeholder:splash-animation"
+        }
+      }
+    }
+  }
+}

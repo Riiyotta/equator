@@ -1,0 +1,16 @@
+{
+  "id": "primitive.wordmark",
+  "name": "Wordmark link",
+  "implementedBy": "src/lib/icons.jsx",
+  "description": "Inline SVG wordmark (fill currentColor) inside a link; scaled via transform.",
+  "assetRoles": [
+    "brand-wordmark"
+  ],
+  "evidence": [
+    {
+      "path": "src/components/Header.jsx",
+      "lines": "86-106",
+      "quote": "<LogoWordmark />"
+    }
+  ]
+}

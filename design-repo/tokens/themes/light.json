@@ -1,0 +1,79 @@
+{
+  "theme": "light",
+  "isDefault": true,
+  "note": "The only theme. The original ships no dark mode (0 prefers-color-scheme rules in its CSS).",
+  "resolves": {
+    "text.primary": {
+      "ref": "{color.earth}",
+      "value": "#3e2002"
+    },
+    "text.muted": {
+      "ref": "{color.earth-light}",
+      "value": "rgba(62,32,2,.7)"
+    },
+    "text.inverse": {
+      "ref": "{color.oat}",
+      "value": "#fcf8f0"
+    },
+    "text.on-footer": {
+      "ref": "{color.footer-text}",
+      "value": "#9d8c79"
+    },
+    "text.credits": {
+      "ref": "{color.footer-credits}",
+      "value": "#6d543c"
+    },
+    "surface.hero": {
+      "ref": "{color.coral}",
+      "value": "#ff9d69"
+    },
+    "surface.page": {
+      "ref": "{color.oat}",
+      "value": "#fcf8f0"
+    },
+    "surface.values": {
+      "ref": "{color.lime}",
+      "value": "#c8fdab"
+    },
+    "surface.card": {
+      "ref": "{color.white}",
+      "value": "#ffffff"
+    },
+    "surface.footer": {
+      "ref": "{color.earth}",
+      "value": "#3e2002"
+    },
+    "surface.cta": {
+      "ref": "{color.white}",
+      "value": "#ffffff"
+    },
+    "accent.pill-capability": {
+      "ref": "{color.coral}",
+      "value": "#ff9d69"
+    },
+    "accent.pill-capability-open": {
+      "ref": "{color.coral-light}",
+      "value": "#feb891"
+    },
+    "accent.pill-slide": {
+      "ref": "{color.lime}",
+      "value": "#c8fdab"
+    },
+    "accent.pill-slide-active": {
+      "ref": "{color.lime-dark}",
+      "value": "#c1f2a3"
+    },
+    "accent.role-chip": {
+      "ref": "{color.lime}",
+      "value": "#c8fdab"
+    },
+    "accent.card-open": {
+      "ref": "{color.coral}",
+      "value": "#ff9d69"
+    },
+    "overlay.photo-scrim": {
+      "ref": "{color.scrim}",
+      "value": "rgba(0,0,0,.7)"
+    }
+  }
+}

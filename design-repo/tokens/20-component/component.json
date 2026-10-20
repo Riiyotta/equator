@@ -1,0 +1,106 @@
+{
+  "$description": "Approved component-level applications (sizes measured at 1440 / 390).",
+  "$extensions": {
+    "evidence": [
+      {
+        "path": "src/index.css",
+        "lines": "351-355",
+        "quote": "--min-height: 120px;"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "384-392",
+        "quote": "--min-height: 84px;"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "533-536",
+        "quote": "width: 450px"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "578-587",
+        "quote": "width: 285px"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "601-611",
+        "quote": "a.signup { font-weight: 500; width: 177px; }"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "113",
+        "quote": "scale3d(.6666, .6666, 1)"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "436-439",
+        "quote": "aspect-ratio: 66/50"
+      }
+    ]
+  },
+  "dropdown": {
+    "min-height": {
+      "desktop": {
+        "$type": "dimension",
+        "$value": "120px"
+      },
+      "mobile": {
+        "$type": "dimension",
+        "$value": "84px"
+      }
+    }
+  },
+  "pill": {
+    "size": {
+      "desktop": {
+        "$type": "dimension",
+        "$value": "120x60"
+      },
+      "mobile": {
+        "$type": "dimension",
+        "$value": "60x30"
+      }
+    }
+  },
+  "slide": {
+    "aspect": {
+      "desktop": {
+        "$type": "string",
+        "$value": "66/50"
+      },
+      "compact": {
+        "$type": "string",
+        "$value": "46/44"
+      },
+      "mobile": {
+        "$type": "string",
+        "$value": "31/38"
+      }
+    }
+  },
+  "portrait": {
+    "width": {
+      "desktop": {
+        "$type": "dimension",
+        "$value": "450px"
+      },
+      "mobile": {
+        "$type": "dimension",
+        "$value": "285px"
+      }
+    }
+  },
+  "cta-button": {
+    "height": {
+      "$type": "dimension",
+      "$value": "40px"
+    }
+  },
+  "logo": {
+    "small-scale": {
+      "$type": "number",
+      "$value": 0.6666
+    }
+  }
+}

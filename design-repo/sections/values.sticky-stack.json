@@ -1,0 +1,240 @@
+{
+  "id": "values.sticky-stack",
+  "name": "What we stand for",
+  "category": "values",
+  "purpose": "Five brand values presented as pinned full-viewport panels that cross-fade as the next one scrolls in, with an N/5 counter.",
+  "evidenceLevel": "measured",
+  "implementedBy": "src/components/Values.jsx",
+  "surface": "lime",
+  "scrollStage": true,
+  "ambientVideoCount": 0,
+  "anchor": "what-we-stand-for",
+  "variants": null,
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "panels"
+    ],
+    "properties": {
+      "panels": {
+        "type": "array",
+        "minItems": 5,
+        "maxItems": 5,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "titleLines",
+            "columns"
+          ],
+          "properties": {
+            "titleLines": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "x-maxWords": 4
+              }
+            },
+            "columns": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "x-maxWords": 32
+              }
+            },
+            "animation": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "assetRole",
+                "assetRef"
+              ],
+              "properties": {
+                "assetRole": {
+                  "enum": [
+                    "brand-lottie-value"
+                  ]
+                },
+                "assetRef": {
+                  "type": "string",
+                  "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                },
+                "alt": {
+                  "type": "string",
+                  "minLength": 1,
+                  "x-maxWords": 12
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "maxPerPage": 1,
+    "exactPanels": 5
+  },
+  "motion": {
+    "pattern": "sticky-stack-scrub-fade",
+    "trigger": "scroll-scrub",
+    "reducedMotionFallback": "panels-static-sequential-all-visible",
+    "distinctive": true,
+    "fallbackIsPrescriptive": true,
+    "timings": {
+      "fadeRange": "0.15vh before the next panel, scrubbed, no CSS transition",
+      "initialOpacity": 0,
+      "ioRootMargin": "100% on all sides, snap to 0/1 on exit",
+      "counter": "N/5 text swap via IO rootMargin 50% 0% -100% 0%",
+      "lottie": "play on first visibility, loop from frame 60"
+    },
+    "evidence": [
+      {
+        "path": "src/components/Values.jsx",
+        "lines": "52-97",
+        "quote": "rootMargin: '100% 100% 100% 100%'"
+      },
+      {
+        "path": "src/components/Values.jsx",
+        "lines": "76-79",
+        "quote": "emit(i, s.last <= 0.5 ? 0 : 1)"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "287-292",
+        "quote": "var(--hide1-opacity, 0)"
+      },
+      {
+        "path": ".playwright-mcp/orig-1440.txt.n",
+        "lines": "85",
+        "quote": "div.value [50,3995,1340x570] op:0"
+      },
+      {
+        "path": "src/components/Values.jsx",
+        "lines": "99-111",
+        "quote": "rootMargin: '50% 0% -100% 0%'"
+      }
+    ]
+  },
+  "responsive": {
+    "primaryBreakpoint": 768,
+    "changes": [
+      {
+        "maxWidth": 768,
+        "aspect": "layout",
+        "desktop": "12-col grid: h2 col 4/span 9, two text columns; counter bottom-left",
+        "mobile": "flex column, gap 20px, padding-top 250px; counter pinned top-right at 86px",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "329-332",
+          "quote": "flex-direction: column; gap: 20px; padding-top: 250px"
+        }
+      },
+      {
+        "maxWidth": 768,
+        "aspect": "layout",
+        "desktop": "numbersCont left 50px",
+        "mobile": "numbersCont right margin-page",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "304-307",
+          "quote": "right: var(--margin-page)"
+        }
+      },
+      {
+        "maxWidth": 520,
+        "aspect": "spacing",
+        "desktop": "--slide-height 100svh",
+        "mobile": "--slide-height 150svh",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "278",
+          "quote": "--slide-height: 150svh"
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": "273-303",
+      "quote": "--slide-spacing: 170px"
+    },
+    {
+      "path": "src/components/Values.jsx",
+      "lines": "113-136",
+      "quote": "{step}/5"
+    },
+    {
+      "path": ".playwright-mcp/orig-390.txt.n",
+      "lines": "80",
+      "quote": "section#what-we-stand-for.values [0,2906,390x5730]"
+    }
+  ],
+  "fixtures": {
+    "default": {
+      "content": {
+        "panels": [
+          {
+            "titleLines": [
+              "Value one",
+              "made to last"
+            ],
+            "columns": [
+              "One sentence of supporting copy.",
+              "A second short supporting sentence."
+            ]
+          },
+          {
+            "titleLines": [
+              "Value two",
+              "made to last"
+            ],
+            "columns": [
+              "One sentence of supporting copy.",
+              "A second short supporting sentence."
+            ]
+          },
+          {
+            "titleLines": [
+              "Value three",
+              "made to last"
+            ],
+            "columns": [
+              "One sentence of supporting copy.",
+              "A second short supporting sentence."
+            ]
+          },
+          {
+            "titleLines": [
+              "Value four",
+              "made to last"
+            ],
+            "columns": [
+              "One sentence of supporting copy.",
+              "A second short supporting sentence."
+            ]
+          },
+          {
+            "titleLines": [
+              "Value five",
+              "made to last"
+            ],
+            "columns": [
+              "One sentence of supporting copy.",
+              "A second short supporting sentence."
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "notes": "Exactly five panels: CSS geometry hardcodes 5 scrollZones, 4 hide triggers and 5 step triggers, and the counter renders '/5'."
+}

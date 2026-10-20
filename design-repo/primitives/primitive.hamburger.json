@@ -1,0 +1,14 @@
+{
+  "id": "primitive.hamburger",
+  "name": "Squeeze hamburger",
+  "implementedBy": "src/components/Header.jsx",
+  "description": "18x14 three-bar button animating to an X (75ms + .12s staged delays). aria-label only.",
+  "assetRoles": [],
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": "167-191",
+      "quote": "hamburger--squeeze"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "$description": "Grid and measure constraints.",
+  "$extensions": {
+    "evidence": [
+      {
+        "path": "src/index.css",
+        "lines": "310-317",
+        "quote": "grid-template-columns: repeat(12, minmax(0, 1fr))"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "238-241",
+        "quote": "max-width: 1100px"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "340-341",
+        "quote": "max-width: 700px"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "685-689",
+        "quote": "grid-column: 1 / span 7"
+      }
+    ]
+  },
+  "grid": {
+    "columns": {
+      "$type": "number",
+      "$value": 12
+    },
+    "column-gap": {
+      "$type": "dimension",
+      "$value": "20px"
+    }
+  },
+  "measure": {
+    "story": {
+      "$type": "dimension",
+      "$value": "1100px"
+    },
+    "section-heading": {
+      "$type": "dimension",
+      "$value": "700px"
+    },
+    "team-heading": {
+      "$type": "dimension",
+      "$value": "940px"
+    },
+    "subtitle": {
+      "$type": "dimension",
+      "$value": "570px"
+    },
+    "cta-heading": {
+      "$type": "dimension",
+      "$value": "800px"
+    },
+    "title-subtitle": {
+      "$type": "dimension",
+      "$value": "630px"
+    }
+  },
+  "legal": {
+    "body-span": {
+      "$type": "number",
+      "$value": 7
+    }
+  }
+}

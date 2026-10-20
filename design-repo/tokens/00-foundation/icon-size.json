@@ -1,0 +1,31 @@
+{
+  "$description": "Inline SVG icon boxes (no icon font, no sprite).",
+  "$extensions": {
+    "evidence": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": "203",
+        "quote": "Two 24x24 icon links"
+      },
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": "423-424",
+        "quote": "`svg.logo` (16x16 LinkedIn glyph)"
+      }
+    ]
+  },
+  "icon": {
+    "md": {
+      "$type": "dimension",
+      "$value": "24px"
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "16px"
+    },
+    "xs": {
+      "$type": "dimension",
+      "$value": "13px"
+    }
+  }
+}

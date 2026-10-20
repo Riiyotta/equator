@@ -1,0 +1,285 @@
+{
+  "id": "chrome.header",
+  "name": "Header / logo / mobile menu",
+  "category": "chrome",
+  "purpose": "Persistent wayfinding: wordmark that scales down on scroll, in-page anchor nav and contact icons; on <=768 a coral full-screen menu.",
+  "evidenceLevel": "measured",
+  "implementedBy": "src/components/Header.jsx",
+  "surface": "transparent",
+  "scrollStage": false,
+  "ambientVideoCount": 0,
+  "anchor": null,
+  "variants": [
+    "home",
+    "legal"
+  ],
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "logo",
+      "navItems"
+    ],
+    "properties": {
+      "logo": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "assetRole",
+          "assetRef"
+        ],
+        "properties": {
+          "assetRole": {
+            "enum": [
+              "brand-wordmark"
+            ]
+          },
+          "assetRef": {
+            "type": "string",
+            "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+          },
+          "alt": {
+            "type": "string",
+            "minLength": 1,
+            "x-maxWords": 12
+          }
+        }
+      },
+      "navItems": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 5,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "anchor"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 4
+            },
+            "anchor": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]{1,40}$"
+            }
+          }
+        }
+      },
+      "emailLabel": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 3
+      },
+      "socialLabel": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 2
+      }
+    }
+  },
+  "constraints": {
+    "maxPerPage": 1,
+    "mustFollow": {
+      "template.home": "chrome.splash"
+    },
+    "mustBeFirst": {
+      "template.legal-prose": true
+    }
+  },
+  "motion": {
+    "variants": {
+      "home": {
+        "pattern": "scroll-scrub-logo-scale",
+        "trigger": "scroll-scrub",
+        "reducedMotionFallback": "logo-static-small-scale-menu-instant",
+        "distinctive": true,
+        "fallbackIsPrescriptive": true,
+        "timings": {},
+        "evidence": []
+      },
+      "legal": {
+        "pattern": "menu-slide-200ms",
+        "trigger": "click",
+        "reducedMotionFallback": "menu-instant-toggle",
+        "distinctive": false,
+        "fallbackIsPrescriptive": true,
+        "timings": {},
+        "evidence": []
+      }
+    },
+    "timings": {
+      "logoScale": "s = 1 - progress*0.3333, scrubbed, no transition",
+      "smallScale": 0.6666,
+      "menuSlide": "{duration.menu}",
+      "navUnderline": "{duration.ui} ease-out"
+    },
+    "evidence": [
+      {
+        "path": "src/pages/Home.jsx",
+        "lines": "71-75",
+        "quote": "const s = 1 - p * 0.3333"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "149-164",
+        "quote": "transition: transform .2s ease-in;"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "138-141",
+        "quote": "transition: transform .12s ease-out"
+      }
+    ],
+    "fallbackIsPrescriptive": true
+  },
+  "responsive": {
+    "primaryBreakpoint": 768,
+    "changes": [
+      {
+        "maxWidth": 768,
+        "aspect": "layout",
+        "desktop": "logo zone sticky inside the splash, scales 1 -> 0.6666; desktop nav row 68px",
+        "mobile": "logo fixed top-left; mobile header bar (68px coral) fades in",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "114-119",
+          "quote": "position: fixed"
+        }
+      },
+      {
+        "maxWidth": 768,
+        "aspect": "visibility",
+        "desktop": "mobileHeader display none",
+        "mobile": "mobileHeader display flex, opacity toggled by .visible",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "122-128",
+          "quote": "@media screen and (max-width: 768px) { .mobileHeader { display: flex; } }"
+        }
+      },
+      {
+        "maxWidth": 768,
+        "aspect": "layout",
+        "desktop": "transparent nav floating over content",
+        "mobile": "header becomes a full-height coral overlay sliding from -100%; links use headline2 size",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "149-164",
+          "quote": "transform: translate3d(0, -100%, 0)"
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "src/components/Header.jsx",
+      "lines": "37-74",
+      "quote": "export function Header"
+    },
+    {
+      "path": "src/pages/Home.jsx",
+      "lines": "108-113",
+      "quote": "<Header open={open} activeHash={activeHash} onNavigate={onNavigate} />"
+    },
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "196-237",
+      "quote": "Desktop header (>768)"
+    },
+    {
+      "path": ".playwright-mcp/orig-state-1440.txt.n",
+      "lines": "2-14",
+      "quote": "tfmatrix(0.6666, 0, 0, 0.6666, 0, 0)"
+    }
+  ],
+  "fixtures": {
+    "home": {
+      "variant": "home",
+      "content": {
+        "logo": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "placeholder:wordmark"
+        },
+        "navItems": [
+          {
+            "label": "Our Story",
+            "anchor": "our-story"
+          },
+          {
+            "label": "What we stand for",
+            "anchor": "what-we-stand-for"
+          },
+          {
+            "label": "Capabilities",
+            "anchor": "capabilities"
+          },
+          {
+            "label": "Our Work",
+            "anchor": "our-work"
+          },
+          {
+            "label": "Team",
+            "anchor": "team"
+          }
+        ],
+        "emailLabel": "Email us",
+        "socialLabel": "LinkedIn"
+      }
+    },
+    "legal": {
+      "variant": "legal",
+      "content": {
+        "logo": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "placeholder:wordmark"
+        },
+        "navItems": [
+          {
+            "label": "Our Story",
+            "anchor": "our-story"
+          },
+          {
+            "label": "Team",
+            "anchor": "team"
+          }
+        ]
+      }
+    }
+  },
+  "knownParityDefects": [
+    {
+      "id": "hamburger-no-aria-expanded",
+      "description": "The hamburger button carries aria-label=\"Menu\" but no aria-expanded/aria-controls.",
+      "evidence": [
+        {
+          "path": "src/components/Header.jsx",
+          "lines": "6-19",
+          "quote": "aria-label=\"Menu\""
+        }
+      ],
+      "status": "source-site-behaviour-preserved"
+    },
+    {
+      "id": "scroll-lock-persists-on-resize",
+      "description": "Body overflow:hidden is tied only to the open flag; resizing past 768 while the menu is open leaves the page scroll-locked because nothing resets open.",
+      "evidence": [
+        {
+          "path": "src/components/Header.jsx",
+          "lines": "22-30",
+          "quote": "document.body.style.overflow = 'hidden'"
+        },
+        {
+          "path": "src/pages/Home.jsx",
+          "lines": "80",
+          "quote": "useScrollLock(open)"
+        }
+      ],
+      "status": "source-site-behaviour-preserved"
+    }
+  ],
+  "notes": "DOM order on home: the absolutely-positioned logo zone and the fixed mobile header bar render BEFORE the splash (Home.jsx:110-111); the flowing header bar (headerCont) renders after it, which is the position TEMPLATE_SEQUENCE and HEADER_POSITION encode. variant 'home' = sticky scroll-scaled logo + in-page anchor nav (onNavigate); variant 'legal' = static 0.6666 logo linking to / and nav hrefs '/#id' (full navigation back to home)."
+}

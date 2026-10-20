@@ -1,0 +1,242 @@
+{
+  "graphVersion": "1.0.0",
+  "enforcedBy": "schema/semantic_validate.py (GRAPH_RULES registry; verify_all.py checks the ids and severities match)",
+  "rules": [
+    {
+      "id": "TEMPLATE_SEQUENCE",
+      "severity": "error",
+      "description": "The node sequence must match the declared template's node list: required nodes present, order preserved, no extra or duplicated non-repeatable nodes, node variant equal to the template node's variant.",
+      "exceptions": [],
+      "evidence": [
+        {
+          "path": "src/pages/Home.jsx",
+          "lines": "106-129",
+          "quote": "<Team ref={reg(5)} />"
+        }
+      ]
+    },
+    {
+      "id": "ROUTE_TEMPLATE_BINDING",
+      "severity": "error",
+      "description": "A registered route must use its bound template; template.home only at '/', template.not-found only at '*', template.legal-prose never at '/' or '*'.",
+      "exceptions": [],
+      "evidence": [
+        {
+          "path": "src/App.jsx",
+          "lines": "15-17",
+          "quote": "return <NotFound"
+        }
+      ]
+    },
+    {
+      "id": "NEW_ROUTE_NOTICE",
+      "severity": "warn",
+      "description": "A legal-prose PageSpec at a route not in templates/routes.json is allowed but flagged (new page, no measured counterpart).",
+      "exceptions": [],
+      "evidence": []
+    },
+    {
+      "id": "SPLASH_FIRST_HOME_ONLY",
+      "severity": "error",
+      "description": "chrome.splash appears only on template.home and only as node 0.",
+      "exceptions": [],
+      "evidence": [
+        {
+          "path": "src/pages/PrivacyPolicy.jsx",
+          "lines": "9",
+          "quote": "no splash"
+        }
+      ]
+    },
+    {
+      "id": "HEADER_POSITION",
+      "severity": "error",
+      "description": "chrome.header appears exactly once: immediately after the splash on home, first on legal-prose.",
+      "exceptions": [
+        "template.not-found renders no header (NotFound.jsx)"
+      ],
+      "evidence": [
+        {
+          "path": "src/pages/NotFound.jsx",
+          "lines": "4-21",
+          "quote": "<main className=\"min-h-screen"
+        }
+      ]
+    },
+    {
+      "id": "ONE_HERO",
+      "severity": "error",
+      "description": "At most one hero.title per page.",
+      "exceptions": [
+        "template.legal-prose and template.not-found have no hero at all; zero heroes is valid"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "CTA_IMMEDIATELY_BEFORE_FOOTER",
+      "severity": "error",
+      "description": "When present, conversion.cta-video is immediately followed by chrome.footer.",
+      "exceptions": [],
+      "evidence": [
+        {
+          "path": "src/pages/Home.jsx",
+          "lines": "125-126",
+          "quote": "<Cta ref={reg(6)} />"
+        }
+      ]
+    },
+    {
+      "id": "FOOTER_SUBFOOTER_TAIL",
+      "severity": "error",
+      "description": "chrome.footer may only be followed by chrome.subfooter; chrome.subfooter is always last.",
+      "exceptions": [],
+      "evidence": [
+        {
+          "path": "src/pages/Home.jsx",
+          "lines": "126-127",
+          "quote": "<Subfooter />"
+        }
+      ]
+    },
+    {
+      "id": "ONE_PER_PAGE",
+      "severity": "error",
+      "description": "Every section type has maxPerPage 1 (constraints.maxPerPage in its contract).",
+      "exceptions": [],
+      "evidence": []
+    },
+    {
+      "id": "MAX_CONSECUTIVE_SCROLL_STAGES",
+      "severity": "error",
+      "description": "No more than 2 consecutive scroll-driven sections (scrollStage: story-reveal, values sticky-stack, team roster).",
+      "exceptions": [
+        "narrative.story-reveal -> values.sticky-stack is the observed maximum run of 2 on the home page and is valid"
+      ],
+      "evidence": [
+        {
+          "path": "src/pages/Home.jsx",
+          "lines": "120-121",
+          "quote": "<Values ref={reg(2)} />"
+        }
+      ]
+    },
+    {
+      "id": "SURFACE_RHYTHM",
+      "severity": "warn",
+      "description": "Adjacent painted sections (transparent chrome.header skipped) should change surface colour.",
+      "exceptions": [
+        "chrome.splash -> hero.title (both coral)",
+        "capabilities.accordion -> work.carousel-marquee (both oat)",
+        "chrome.footer -> chrome.subfooter (both earth)"
+      ],
+      "evidence": [
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": "133-147",
+          "quote": "| capabilities | 7815 | 1354 | #fcf8f0 |"
+        }
+      ]
+    },
+    {
+      "id": "NAV_ANCHORS_RESOLVE",
+      "severity": "error",
+      "description": "Header navItems anchors must resolve: on home to anchorIds present on the same page; on legal-prose to anchors of template.home sections.",
+      "exceptions": [],
+      "evidence": [
+        {
+          "path": "src/lib/content.js",
+          "lines": "3-9",
+          "quote": "{ id: 'our-story', label: 'Our Story' }"
+        }
+      ]
+    },
+    {
+      "id": "ANCHOR_UNIQUE",
+      "severity": "error",
+      "description": "anchorId values are unique within a page.",
+      "exceptions": [],
+      "evidence": []
+    },
+    {
+      "id": "STORY_REVEAL_BUDGET",
+      "severity": "error",
+      "description": "Story reveal units (intro words + merger logos + statement words) must be <= 60, else trailing words never reveal in the reference implementation.",
+      "exceptions": [],
+      "evidence": [
+        {
+          "path": "src/lib/content.js",
+          "lines": "29",
+          "quote": "total: 60"
+        },
+        {
+          "path": "src/components/Story.jsx",
+          "lines": "12-17",
+          "quote": "k <= reveal"
+        }
+      ]
+    },
+    {
+      "id": "VALUES_FIVE_PANELS",
+      "severity": "error",
+      "description": "values.sticky-stack has exactly five panels (geometry and '/5' counter are hardcoded).",
+      "exceptions": [],
+      "evidence": [
+        {
+          "path": "src/index.css",
+          "lines": "282-286",
+          "quote": "scrollZone:nth-of-type(5)"
+        },
+        {
+          "path": "src/components/Values.jsx",
+          "lines": "116",
+          "quote": "{step}/5"
+        }
+      ]
+    },
+    {
+      "id": "HEADER_VARIANT_MATCH",
+      "severity": "error",
+      "description": "chrome.header variant must match its motion pattern (home: scroll-scrub-logo-scale; legal: menu-slide-200ms).",
+      "exceptions": [],
+      "evidence": []
+    },
+    {
+      "id": "AMBIENT_VIDEO_BUDGET",
+      "severity": "warn",
+      "description": "At most 2 sections with autoplay ambient video per page (home has 2: title and CTA).",
+      "exceptions": [],
+      "evidence": [
+        {
+          "path": "src/components/Title.jsx",
+          "lines": "24-26",
+          "quote": "/bird_low.mp4"
+        },
+        {
+          "path": "src/components/Cta.jsx",
+          "lines": "9-11",
+          "quote": "/cloud_low.mp4"
+        }
+      ]
+    },
+    {
+      "id": "ASSET_POLICY",
+      "severity": "error",
+      "description": "Every media object satisfies its assetRole's generationPolicy (assetRefPattern); roles with policy 'omit' must not appear at all.",
+      "exceptions": [],
+      "evidence": [
+        {
+          "path": "src/components/Footer.jsx",
+          "lines": "75-86",
+          "quote": "/mono.svg"
+        }
+      ]
+    },
+    {
+      "id": "MAX_WORDS",
+      "severity": "error",
+      "description": "Every text field respects its contract x-maxWords (and maxWordsByKind for legal blocks), counted per instance.",
+      "exceptions": [],
+      "evidence": []
+    }
+  ]
+}

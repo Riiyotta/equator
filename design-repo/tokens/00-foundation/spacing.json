@@ -1,0 +1,86 @@
+{
+  "$description": "Page margin and section rhythm. --margin-page is the only spacing custom property; section paddings are literal px in the CSS.",
+  "$extensions": {
+    "evidence": [
+      {
+        "path": "src/index.css",
+        "lines": "26-43",
+        "quote": "--margin-page: 50px;"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "44-46",
+        "quote": "--margin-page: 30px;"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "47-57",
+        "quote": "--margin-page: 20px;"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "337-339",
+        "quote": "padding: 150px var(--margin-page)"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "343-346",
+        "quote": "padding: 75px var(--margin-page)"
+      }
+    ]
+  },
+  "space": {
+    "page-margin": {
+      "desktop": {
+        "$type": "dimension",
+        "$value": "50px"
+      },
+      "compact": {
+        "$type": "dimension",
+        "$value": "30px",
+        "$description": "max-width 1180"
+      },
+      "mobile": {
+        "$type": "dimension",
+        "$value": "20px",
+        "$description": "max-width 768"
+      }
+    },
+    "section-y": {
+      "desktop": {
+        "$type": "dimension",
+        "$value": "150px"
+      },
+      "mobile": {
+        "$type": "dimension",
+        "$value": "75px"
+      }
+    },
+    "grid-gap": {
+      "desktop": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "mobile": {
+        "$type": "dimension",
+        "$value": "12px",
+        "$description": "Capabilities grid at <=768."
+      }
+    },
+    "stack-gap": {
+      "desktop": {
+        "$type": "dimension",
+        "$value": "40px"
+      },
+      "mobile": {
+        "$type": "dimension",
+        "$value": "30px"
+      }
+    },
+    "header-height": {
+      "$type": "dimension",
+      "$value": "68px",
+      "$description": "Header row, mobile header, logo row."
+    }
+  }
+}

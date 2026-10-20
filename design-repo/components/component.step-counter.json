@@ -1,0 +1,14 @@
+{
+  "id": "component.step-counter",
+  "name": "Step counter",
+  "implementedBy": "src/components/Values.jsx",
+  "uses": [],
+  "description": "Sticky 'N/5' text swapped by IntersectionObserver step triggers.",
+  "evidence": [
+    {
+      "path": "src/components/Values.jsx",
+      "lines": "99-117",
+      "quote": "{step}/5"
+    }
+  ]
+}

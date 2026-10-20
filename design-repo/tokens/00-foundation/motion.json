@@ -1,0 +1,141 @@
+{
+  "$description": "Durations from the original CSS transition histogram (.12s x44, 0s x37, 60ms x9, 75ms x8, .24s x8, .2s x4, .48s x2, .25s x2, .16s x1) plus JS-driven timings.",
+  "$extensions": {
+    "evidence": [
+      {
+        "path": "src/index.css",
+        "lines": "138-141",
+        "quote": "transition: transform .12s ease-out"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "429-434",
+        "quote": "transition: opacity .16s ease-in-out 0s"
+      },
+      {
+        "path": "src/components/OurWork.jsx",
+        "lines": "6-8",
+        "quote": "const TRANSITION = 300"
+      },
+      {
+        "path": "src/lib/scroll.js",
+        "lines": "103-118",
+        "quote": "t += 1 / 60"
+      },
+      {
+        "path": "src/lib/scroll.js",
+        "lines": "7-31",
+        "quote": "lerp: 0.1"
+      },
+      {
+        "path": "src/components/OurWork.jsx",
+        "lines": "235-245",
+        "quote": "offset.current -= 0.5"
+      },
+      {
+        "path": "src/components/LottiePlayer.jsx",
+        "lines": "20-22",
+        "quote": "useFrameInterpolation: false"
+      }
+    ]
+  },
+  "duration": {
+    "ui": {
+      "$type": "duration",
+      "$value": "120ms",
+      "$description": "Default hover/UI transition (44 uses)."
+    },
+    "ui-half": {
+      "$type": "duration",
+      "$value": "60ms",
+      "$description": "Pill icon fade and content delay."
+    },
+    "hamburger": {
+      "$type": "duration",
+      "$value": "75ms"
+    },
+    "menu": {
+      "$type": "duration",
+      "$value": "200ms",
+      "$description": "Mobile menu slide; mobile header and splash caption fade."
+    },
+    "reveal": {
+      "$type": "duration",
+      "$value": "240ms",
+      "$description": "Team portrait/background fades."
+    },
+    "word": {
+      "$type": "duration",
+      "$value": "250ms",
+      "$description": "Story per-word opacity."
+    },
+    "image-fade": {
+      "$type": "duration",
+      "$value": "160ms",
+      "$description": "Lazy picture fade-in."
+    },
+    "carousel": {
+      "$type": "duration",
+      "$value": "300ms",
+      "$description": "Track transform while sliding (JS)."
+    },
+    "team-bg-delay": {
+      "$type": "duration",
+      "$value": "480ms"
+    }
+  },
+  "easing": {
+    "standard": {
+      "$type": "cubicBezier",
+      "$value": "ease-in-out"
+    },
+    "out": {
+      "$type": "cubicBezier",
+      "$value": "ease-out"
+    },
+    "in": {
+      "$type": "cubicBezier",
+      "$value": "ease-in"
+    },
+    "squeeze-in": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.55,
+        0.055,
+        0.675,
+        0.19
+      ]
+    },
+    "squeeze-out": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.215,
+        0.61,
+        0.355,
+        1
+      ]
+    },
+    "anchor-scroll": {
+      "$type": "string",
+      "$value": "easeOutSine sin(p*PI/2)",
+      "$description": "Frame-based: t += 1/60 per rAF; duration clamp(distance/2000, 0.1, 0.8)s."
+    }
+  },
+  "scroll": {
+    "lerp": {
+      "$type": "number",
+      "$value": 0.1,
+      "$description": "Lenis smoothing (Locomotive v5 default)."
+    },
+    "marquee-speed": {
+      "$type": "string",
+      "$value": "0.5px/frame",
+      "$description": "Leftward, never pauses; 30px/s at 60Hz."
+    },
+    "lottie-cadence": {
+      "$type": "string",
+      "$value": "30fps whole frames",
+      "$description": "useFrameInterpolation:false reproduces the original's 30fps cadence."
+    }
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "id": "capabilities.accordion",
+  "name": "Capabilities",
+  "category": "capabilities",
+  "purpose": "Service catalogue as a two-column single-open accordion of capability cards.",
+  "evidenceLevel": "measured",
+  "implementedBy": "src/components/Capabilities.jsx",
+  "surface": "oat",
+  "scrollStage": false,
+  "ambientVideoCount": 0,
+  "anchor": "capabilities",
+  "variants": null,
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "heading",
+      "subtitle",
+      "cards"
+    ],
+    "properties": {
+      "heading": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 8
+      },
+      "subtitle": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 36
+      },
+      "cards": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 12,
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "title",
+            "text"
+          ],
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 5
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1,
+              "x-maxWords": 36
+            }
+          }
+        }
+      }
+    }
+  },
+  "constraints": {
+    "maxPerPage": 1
+  },
+  "motion": {
+    "pattern": "accordion-expand-120ms",
+    "trigger": "click",
+    "reducedMotionFallback": "accordion-instant-expand",
+    "distinctive": false,
+    "fallbackIsPrescriptive": true,
+    "timings": {
+      "height": "{duration.ui} ease-in-out",
+      "contentDelay": "{duration.ui-half}",
+      "pillHover": "{duration.ui} ease-out (desktop only)"
+    },
+    "evidence": [
+      {
+        "path": "src/index.css",
+        "lines": "351-355",
+        "quote": "transition: height .12s ease-in-out 0s"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "374",
+        "quote": "transition: opacity .12s ease-in-out 60ms"
+      },
+      {
+        "path": ".playwright-mcp/orig-state-1440.txt.n",
+        "lines": "16-25",
+        "quote": "dd0: [50,523.4,660x266]"
+      }
+    ]
+  },
+  "responsive": {
+    "primaryBreakpoint": 768,
+    "changes": [
+      {
+        "maxWidth": 768,
+        "aspect": "spacing",
+        "desktop": "gap 40px, padding 150px, grid gap 20px",
+        "mobile": "gap 30px, padding 75px, grid gap 12px",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "343-346",
+          "quote": "padding: 75px var(--margin-page)"
+        }
+      },
+      {
+        "maxWidth": 768,
+        "aspect": "layout",
+        "desktop": "card min-height 120px, pill hidden until hover (120x60)",
+        "mobile": "card min-height 84px, 60x30 pill always visible",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "384-392",
+          "quote": "--min-height: 84px"
+        }
+      },
+      {
+        "maxWidth": 620,
+        "aspect": "layout",
+        "desktop": "2-column grid",
+        "mobile": "1-column grid",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "347-349",
+          "quote": "grid-template-columns: 1fr"
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "src/components/Capabilities.jsx",
+      "lines": "38-59",
+      "quote": "Your partner for a sustainable transition"
+    },
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "314-340",
+      "quote": "accordion with only one open at a time"
+    }
+  ],
+  "fixtures": {
+    "default": {
+      "content": {
+        "heading": "Your partner for a sustainable transition",
+        "subtitle": "Whatever the scale, scope, service or challenge.",
+        "cards": [
+          {
+            "title": "Capability one",
+            "text": "One short sentence."
+          },
+          {
+            "title": "Capability two",
+            "text": "One short sentence."
+          }
+        ]
+      }
+    }
+  },
+  "knownParityDefects": [
+    {
+      "id": "accordion-not-keyboard-operable",
+      "description": "Each card is a div with onClick only: no role, no tabIndex (DOM tabIndex -1), no key handler, no aria-expanded. Matches the original's generic[cursor=pointer] nodes.",
+      "evidence": [
+        {
+          "path": "src/components/Capabilities.jsx",
+          "lines": "18-35",
+          "quote": "onClick={onToggle}"
+        }
+      ],
+      "status": "source-site-behaviour-preserved"
+    }
+  ],
+  "notes": "Card count 2-12 is an inferred budget; the measured instance has 9."
+}

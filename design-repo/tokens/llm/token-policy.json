@@ -1,0 +1,15 @@
+{
+  "policyVersion": "1.0.0",
+  "rawValueRestrictions": {
+    "semantic": "forbidden: reference a catalog token instead",
+    "component": "forbidden: reference a catalog token instead",
+    "layout": "forbidden: reference a catalog token instead",
+    "typography": "forbidden: reference a catalog token instead",
+    "motion": "forbidden: reference a catalog token instead",
+    "breakpoint": "forbidden: reference a catalog token instead"
+  },
+  "overrides": "PageSpecs carry no per-instance style/token-override field: styling is owned by section contracts. There is nothing to override at the PageSpec layer, so no token-override validation exists (by design, not omission).",
+  "font": "National 2 is licence-required (typography.font.family.national $extensions.licence). Generated output uses the fallback stack unless a licence is held.",
+  "reducedMotion": "The source implements no prefers-reduced-motion handling (0 matches in src/ and the original CSS). reducedMotionFallback is a prescription for generated output, not a measured behaviour.",
+  "accessibilityNote": "Known parity defects (non-keyboard-operable accordion and team rows, hamburger without aria-expanded, scroll lock persisting across the 768 resize) are documented as source-site behaviour in the section contracts. New builds generated from this repo should use button semantics and aria-expanded; that is a recommendation, not a description of the source."
+}

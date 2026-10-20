@@ -1,0 +1,14 @@
+{
+  "id": "component.logo-marquee",
+  "name": "Logo marquee",
+  "implementedBy": "src/components/OurWork.jsx",
+  "uses": [],
+  "description": "nowrap wrapper of copies translated 0.5px per frame leftward.",
+  "evidence": [
+    {
+      "path": "src/components/OurWork.jsx",
+      "lines": "205-270",
+      "quote": "marquee3k"
+    }
+  ]
+}

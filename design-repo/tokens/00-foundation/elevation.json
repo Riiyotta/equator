@@ -1,0 +1,53 @@
+{
+  "$description": "Layering only. The original has zero box-shadow declarations (grep count 0), so elevation is z-index stacking.",
+  "$extensions": {
+    "evidence": [
+      {
+        "path": "The Equator Company_files/index.Bz9B3sVc.css",
+        "lines": "1",
+        "quote": "z-index:11"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "98-101",
+        "quote": "z-index: 11"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "149-150",
+        "quote": "z-index: 9"
+      },
+      {
+        "path": "src/index.css",
+        "lines": "524-526",
+        "quote": "z-index: 5"
+      }
+    ]
+  },
+  "z": {
+    "content": {
+      "$type": "number",
+      "$value": 1
+    },
+    "pill": {
+      "$type": "number",
+      "$value": 3
+    },
+    "team-overlay": {
+      "$type": "number",
+      "$value": 5
+    },
+    "menu-overlay": {
+      "$type": "number",
+      "$value": 9
+    },
+    "header": {
+      "$type": "number",
+      "$value": 10
+    },
+    "logo": {
+      "$type": "number",
+      "$value": 11
+    }
+  }
+}

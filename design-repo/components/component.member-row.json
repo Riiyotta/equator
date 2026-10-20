@@ -1,0 +1,18 @@
+{
+  "id": "component.member-row",
+  "name": "Team member row",
+  "implementedBy": "src/components/Team.jsx",
+  "uses": [
+    "primitive.lazy-picture",
+    "primitive.role-chip",
+    "primitive.expand-tag"
+  ],
+  "description": "Right-aligned name at .4 opacity plus a fixed overlay (portrait card + halftone) shown while active.",
+  "evidence": [
+    {
+      "path": "src/components/Team.jsx",
+      "lines": "8-64",
+      "quote": "teamMember"
+    }
+  ]
+}

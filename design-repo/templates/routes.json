@@ -1,0 +1,71 @@
+{
+  "routesVersion": "1.0.0",
+  "routes": [
+    {
+      "path": "/",
+      "template": "template.home",
+      "evidenceLevel": "measured",
+      "evidence": [
+        {
+          "path": "src/App.jsx",
+          "lines": "15",
+          "quote": "if (path === '/') return <Home"
+        }
+      ]
+    },
+    {
+      "path": "/privacy-policy",
+      "template": "template.legal-prose",
+      "evidenceLevel": "measured",
+      "evidence": [
+        {
+          "path": "src/App.jsx",
+          "lines": "16",
+          "quote": "if (path === '/privacy-policy')"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": "13-20",
+          "quote": "Second (and last) real route"
+        }
+      ]
+    },
+    {
+      "path": "*",
+      "template": "template.not-found",
+      "evidenceLevel": "inferred-unmeasured",
+      "evidence": [
+        {
+          "path": "src/App.jsx",
+          "lines": "17",
+          "quote": "return <NotFound"
+        }
+      ]
+    }
+  ],
+  "notInventory": {
+    "inPageAnchors": [
+      "/#our-story",
+      "/#what-we-stand-for",
+      "/#capabilities",
+      "/#our-work",
+      "/#team"
+    ],
+    "staticFiles": [
+      "/Equator-PRR-Investimentos.pdf"
+    ],
+    "note": "Anchors are sections of /, not routes. The PDF is a static download (asset role project-sheet-pdf, policy omit). Trailing slashes are normalised (router.js:23).",
+    "evidence": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": "13-20",
+        "quote": "They are not separate routes."
+      },
+      {
+        "path": "src/lib/router.js",
+        "lines": "23",
+        "quote": "path.replace(/\\/+$/, '') || '/'"
+      }
+    ]
+  }
+}

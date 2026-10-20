@@ -1,0 +1,83 @@
+{
+  "id": "content.not-found",
+  "name": "Not found",
+  "category": "content",
+  "purpose": "Minimal error page: large 404, one line naming the missing path, a link home.",
+  "evidenceLevel": "inferred-unmeasured",
+  "implementedBy": "src/pages/NotFound.jsx",
+  "surface": "transparent",
+  "scrollStage": false,
+  "ambientVideoCount": 0,
+  "anchor": null,
+  "variants": null,
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "code",
+      "message",
+      "homeLinkLabel"
+    ],
+    "properties": {
+      "code": {
+        "const": "404"
+      },
+      "message": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 6
+      },
+      "homeLinkLabel": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 4
+      }
+    }
+  },
+  "constraints": {
+    "maxPerPage": 1
+  },
+  "motion": {
+    "pattern": "none",
+    "trigger": "none",
+    "reducedMotionFallback": "none",
+    "distinctive": false,
+    "fallbackIsPrescriptive": true,
+    "timings": {},
+    "evidence": []
+  },
+  "responsive": {
+    "primaryBreakpoint": 768,
+    "changes": [],
+    "noChangeAt768": {
+      "reason": "NotFound.jsx uses fixed Tailwind utility classes (text-[96px], text-[18px]) and has no breakpoint rules. INFERRED/UNMEASURED: never compared against the original's Nuxt 404.",
+      "evidence": {
+        "path": "src/pages/NotFound.jsx",
+        "lines": "4-21",
+        "quote": "text-[96px] leading-none font-medium"
+      }
+    }
+  },
+  "evidence": [
+    {
+      "path": "src/pages/NotFound.jsx",
+      "lines": "3-8",
+      "quote": "live: unknown routes render Nuxt's default 404"
+    },
+    {
+      "path": "src/App.jsx",
+      "lines": "15-17",
+      "quote": "return <NotFound key=\"404\""
+    }
+  ],
+  "fixtures": {
+    "default": {
+      "content": {
+        "code": "404",
+        "message": "Page not found",
+        "homeLinkLabel": "Go back home"
+      }
+    }
+  },
+  "notes": "Added after QA. Not measured against the original's Nuxt 404; styling is approximate. No header/footer is rendered."
+}

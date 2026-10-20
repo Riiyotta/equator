@@ -1,0 +1,58 @@
+{
+  "$description": "All max-width media queries in the original. 768 is the primary breakpoint (token swap, header, most layouts).",
+  "$extensions": {
+    "evidence": [
+      {
+        "path": "CLONE_SPEC.md",
+        "lines": "59-60",
+        "quote": "`1366` (footer grid)"
+      },
+      {
+        "path": "The Equator Company_files/useSectionWatcher.DxYJ83pd.css",
+        "lines": "1",
+        "quote": "max-width:1366px"
+      },
+      {
+        "path": "The Equator Company_files/index.Bz9B3sVc.css",
+        "lines": "1",
+        "quote": "max-width:620px"
+      },
+      {
+        "path": "tailwind.config.cjs",
+        "lines": "43-52",
+        "quote": "'max-768': { max: '768px' }"
+      }
+    ]
+  },
+  "breakpoint": {
+    "footer-wide": {
+      "$type": "dimension",
+      "$value": "1366px"
+    },
+    "compact": {
+      "$type": "dimension",
+      "$value": "1180px"
+    },
+    "footer-stack": {
+      "$type": "dimension",
+      "$value": "1024px"
+    },
+    "values-text": {
+      "$type": "dimension",
+      "$value": "920px"
+    },
+    "mobile": {
+      "$type": "dimension",
+      "$value": "768px",
+      "$description": "Primary breakpoint."
+    },
+    "capabilities-1col": {
+      "$type": "dimension",
+      "$value": "620px"
+    },
+    "small": {
+      "$type": "dimension",
+      "$value": "520px"
+    }
+  }
+}

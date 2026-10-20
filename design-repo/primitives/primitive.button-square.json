@@ -1,0 +1,14 @@
+{
+  "id": "primitive.button-square",
+  "name": "Square CTA button",
+  "implementedBy": "src/components/Cta.jsx",
+  "description": "40px tall oat block link, no radius; hover inverts to earth/oat and widens by ~25px to reveal an arrow.",
+  "assetRoles": [],
+  "evidence": [
+    {
+      "path": "src/index.css",
+      "lines": "601-615",
+      "quote": "height: 40px; line-height: 40px"
+    }
+  ]
+}
