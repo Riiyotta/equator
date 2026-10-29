@@ -2,6 +2,17 @@
   "id": "content.not-found",
   "name": "Not found",
   "category": "content",
+  "semantic": {
+    "id": "content.not-found",
+    "category": "ERROR"
+  },
+  "source": {
+    "id": "NotFound>main",
+    "tag": "main",
+    "file": "src/pages/NotFound.jsx",
+    "lines": "6-19"
+  },
+  "retrievalEligible": true,
   "purpose": "Minimal error page: large 404, one line naming the missing path, a link home.",
   "evidenceLevel": "inferred-unmeasured",
   "implementedBy": "src/pages/NotFound.jsx",
@@ -37,6 +48,7 @@
   "constraints": {
     "maxPerPage": 1
   },
+  "generatedAssetRoles": [],
   "motion": {
     "pattern": "none",
     "trigger": "none",

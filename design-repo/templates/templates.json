@@ -1,5 +1,5 @@
 {
-  "templatesVersion": "1.0.0",
+  "templatesVersion": "2.0.0",
   "templates": [
     {
       "id": "template.home",
@@ -84,7 +84,8 @@
           "quote": "section#our-story.story    oat"
         }
       ],
-      "notes": "Order confirmed from Home.jsx and the measured original DOM. Subfooter is optional in generated output because its only real contents are policy 'omit'."
+      "notes": "Order confirmed from Home.jsx and the measured original DOM. Subfooter is optional in generated output because its only real contents are policy 'omit'.",
+      "family": "home"
     },
     {
       "id": "template.legal-prose",
@@ -104,9 +105,14 @@
           "variant": "legal"
         },
         {
-          "section": "content.legal-prose",
+          "section": "content.legal-header",
           "required": true,
           "repeatable": false
+        },
+        {
+          "section": "content.legal-section",
+          "required": true,
+          "repeatable": true
         },
         {
           "section": "chrome.footer",
@@ -136,7 +142,8 @@
           "quote": "No splash, no lottie logo animation"
         }
       ],
-      "notes": "No splash, no logo scaling, no section watcher."
+      "notes": "No splash, no logo scaling, no section watcher. The article is decomposed by its real heading boundaries (R6): content.legal-header (h1 + preamble) then one content.legal-section per bold-paragraph / h2 heading (8 on /privacy-policy). The former single content.legal-prose section measured 3476px = 79% of the 4423px page at 1440.",
+      "family": "legal"
     },
     {
       "id": "template.not-found",
@@ -165,7 +172,8 @@
           "quote": "Go back home"
         }
       ],
-      "notes": "INFERRED/UNMEASURED. NotFound.jsx was added after QA and was never compared against the original's Nuxt 404 (no 404 capture exists in the QA artifacts). No header/footer."
+      "notes": "INFERRED/UNMEASURED. NotFound.jsx was added after QA and was never compared against the original's Nuxt 404 (no 404 capture exists in the QA artifacts). No header/footer.",
+      "family": "not-found"
     }
   ]
 }

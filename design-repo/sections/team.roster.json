@@ -2,6 +2,17 @@
   "id": "team.roster",
   "name": "Team",
   "category": "team",
+  "semantic": {
+    "id": "team.roster",
+    "category": "TEAM"
+  },
+  "source": {
+    "id": "Team>section#team",
+    "tag": "section",
+    "file": "src/components/Team.jsx",
+    "lines": "68-81"
+  },
+  "retrievalEligible": true,
   "purpose": "Leadership roster: right-aligned names that activate one at a time at viewport centre, revealing a fixed portrait card and role chip.",
   "evidenceLevel": "measured",
   "implementedBy": "src/components/Team.jsx",
@@ -62,12 +73,13 @@
               "properties": {
                 "assetRole": {
                   "enum": [
-                    "team-portrait"
+                    "team-portrait",
+                    "fictional-avatar"
                   ]
                 },
                 "assetRef": {
                   "type": "string",
-                  "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                  "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                 },
                 "alt": {
                   "type": "string",
@@ -86,12 +98,13 @@
               "properties": {
                 "assetRole": {
                   "enum": [
-                    "team-halftone"
+                    "team-halftone",
+                    "fictional-avatar"
                   ]
                 },
                 "assetRef": {
                   "type": "string",
-                  "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                  "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                 },
                 "alt": {
                   "type": "string",
@@ -102,7 +115,7 @@
             },
             "profileUrl": {
               "type": "string",
-              "pattern": "^placeholder:[a-z0-9-]+$"
+              "pattern": "^(placeholder:[a-z0-9-]+|https://[^\\s]{1,200})$"
             }
           }
         }
@@ -112,6 +125,9 @@
   "constraints": {
     "maxPerPage": 1
   },
+  "generatedAssetRoles": [
+    "fictional-avatar"
+  ],
   "motion": {
     "pattern": "viewport-band-activation",
     "trigger": "intersection-band",

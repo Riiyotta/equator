@@ -1,14 +1,114 @@
 {
-  "policyVersion": "1.0.0",
+  "policyVersion": "2.0.0",
+  "description": "How a PageSpec may reference tokens. Sections own their styling; a node's optional `tokens` object may only pick approved catalog ids for a closed set of slots. Enforced by schema/semantic_validate.py (TOKEN_* rules); categories are checked against tokens/llm/token-catalog.json by verify_all.py.",
   "rawValueRestrictions": {
-    "semantic": "forbidden: reference a catalog token instead",
-    "component": "forbidden: reference a catalog token instead",
-    "layout": "forbidden: reference a catalog token instead",
-    "typography": "forbidden: reference a catalog token instead",
-    "motion": "forbidden: reference a catalog token instead",
-    "breakpoint": "forbidden: reference a catalog token instead"
+    "breakpoint": "forbidden: reference a catalog token id instead",
+    "color": "forbidden: reference a catalog token id instead",
+    "component": "forbidden: reference a catalog token id instead",
+    "elevation": "forbidden: reference a catalog token id instead",
+    "fontFamily": "forbidden: reference a catalog token id instead",
+    "fontWeight": "forbidden: reference a catalog token id instead",
+    "iconSize": "forbidden: reference a catalog token id instead",
+    "layout": "forbidden: reference a catalog token id instead",
+    "motion": "forbidden: reference a catalog token id instead",
+    "radius": "forbidden: reference a catalog token id instead",
+    "semantic": "forbidden: reference a catalog token id instead",
+    "spacing": "forbidden: reference a catalog token id instead",
+    "typography": "forbidden: reference a catalog token id instead"
   },
-  "overrides": "PageSpecs carry no per-instance style/token-override field: styling is owned by section contracts. There is nothing to override at the PageSpec layer, so no token-override validation exists (by design, not omission).",
+  "slots": {
+    "surface": {
+      "categories": [
+        "semantic"
+      ],
+      "idPrefixes": [
+        "surface."
+      ]
+    },
+    "text": {
+      "categories": [
+        "semantic"
+      ],
+      "idPrefixes": [
+        "text."
+      ]
+    },
+    "accent": {
+      "categories": [
+        "semantic"
+      ],
+      "idPrefixes": [
+        "accent.",
+        "overlay."
+      ]
+    },
+    "headingType": {
+      "categories": [
+        "typography"
+      ],
+      "idPrefixes": [
+        "type."
+      ]
+    },
+    "bodyType": {
+      "categories": [
+        "typography"
+      ],
+      "idPrefixes": [
+        "type."
+      ]
+    },
+    "spacingY": {
+      "categories": [
+        "spacing"
+      ],
+      "idPrefixes": [
+        "space.section-y."
+      ]
+    },
+    "gap": {
+      "categories": [
+        "spacing"
+      ],
+      "idPrefixes": [
+        "space.stack-gap.",
+        "space.grid-gap."
+      ]
+    },
+    "radius": {
+      "categories": [
+        "radius"
+      ],
+      "idPrefixes": [
+        "radius."
+      ]
+    },
+    "fontFamily": {
+      "categories": [
+        "fontFamily"
+      ],
+      "idPrefixes": [
+        "font.family."
+      ]
+    }
+  },
+  "rules": {
+    "TOKEN_UNKNOWN": "error: a slot value is not a token id in token-catalog.json",
+    "TOKEN_RAW_COLOR": "error: a raw hex / rgb() / rgba() / hsl() colour instead of a token id",
+    "TOKEN_ARBITRARY_SPACING": "error: a raw length (px/rem/em/%/vh/vw), bare number or calc() instead of a spacing/radius token id",
+    "TOKEN_FONT_UNSUPPORTED": "error: fontFamily is not one of the catalog fontFamily tokens (only font.family.national exists)",
+    "TOKEN_SLOT_MISMATCH": "error: a real token used in a slot whose policy does not allow its category / prefix (e.g. a foundation colour in `surface`, a text role as a surface)",
+    "TOKEN_THEME_COMBINATION": "error: the PageSpec theme is not a schema-validated theme in registry.manifest.json, or a semantic token is not resolved by that theme's file",
+    "TOKEN_FONT_LICENCE": "warn: font.family.national in generation mode; National 2 is licence-required, so a deployer without a Klim licence gets the Arial/Helvetica fallback"
+  },
+  "themes": {
+    "validated": [
+      "light"
+    ],
+    "default": "light",
+    "note": "The original ships no dark mode (0 prefers-color-scheme rules); any other theme value is TOKEN_THEME_COMBINATION."
+  },
+  "overrides": "Before 2.0.0 PageSpecs had no token field at all. 2.0.0 adds an OPTIONAL per-node `tokens` object restricted to the slots above, so token misuse is machine-checkable; omitting it keeps the section contract's own styling (all bundled examples except the token control omit or use it sparingly).",
   "font": "National 2 is licence-required (typography.font.family.national $extensions.licence). Generated output uses the fallback stack unless a licence is held.",
   "reducedMotion": "The source implements no prefers-reduced-motion handling (0 matches in src/ and the original CSS). reducedMotionFallback is a prescription for generated output, not a measured behaviour.",
   "accessibilityNote": "Known parity defects (non-keyboard-operable accordion and team rows, hamburger without aria-expanded, scroll lock persisting across the 768 resize) are documented as source-site behaviour in the section contracts. New builds generated from this repo should use button semantics and aria-expanded; that is a recommendation, not a description of the source."

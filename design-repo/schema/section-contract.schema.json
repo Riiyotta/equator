@@ -1,0 +1,302 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://design-repo.local/equator/section-contract.schema.json",
+  "title": "Equator section contract",
+  "description": "Closed schema every sections/*.json must satisfy (verify_all.py check `section_contracts`). R7 provenance (`source`) is separate from AI-facing taxonomy (`semantic`); R8 retrievalEligible is a closed boolean, false requires a 30+ char retrievalReason.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "name",
+    "category",
+    "semantic",
+    "source",
+    "retrievalEligible",
+    "purpose",
+    "evidenceLevel",
+    "implementedBy",
+    "surface",
+    "scrollStage",
+    "ambientVideoCount",
+    "anchor",
+    "variants",
+    "content",
+    "constraints",
+    "generatedAssetRoles",
+    "motion",
+    "responsive",
+    "evidence",
+    "fixtures"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z]+\\.[a-z0-9-]+$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "enum": [
+        "chrome",
+        "hero",
+        "narrative",
+        "values",
+        "capabilities",
+        "work",
+        "team",
+        "conversion",
+        "content"
+      ]
+    },
+    "semantic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "category"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "HERO",
+            "INTRO",
+            "SHELL",
+            "NARRATIVE",
+            "VALUES",
+            "FEATURES",
+            "PROOF",
+            "TEAM",
+            "CTA",
+            "LEGAL",
+            "ERROR"
+          ]
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "tag",
+        "file",
+        "lines"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tag": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*$"
+        },
+        "file": {
+          "type": "string",
+          "pattern": "^src/[A-Za-z0-9_./-]+$"
+        },
+        "lines": {
+          "type": "string",
+          "pattern": "^\\d+(-\\d+)?$"
+        }
+      }
+    },
+    "retrievalEligible": {
+      "type": "boolean"
+    },
+    "retrievalReason": {
+      "type": "string",
+      "minLength": 30
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 10
+    },
+    "evidenceLevel": {
+      "enum": [
+        "measured",
+        "inferred-unmeasured"
+      ]
+    },
+    "implementedBy": {
+      "type": "string"
+    },
+    "surface": {
+      "enum": [
+        "coral",
+        "oat",
+        "lime",
+        "white",
+        "earth",
+        "transparent"
+      ]
+    },
+    "scrollStage": {
+      "type": "boolean"
+    },
+    "ambientVideoCount": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "anchor": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "variants": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "content": {
+      "type": "object",
+      "required": [
+        "type",
+        "additionalProperties",
+        "properties"
+      ],
+      "properties": {
+        "additionalProperties": {
+          "const": false
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "mustBeFollowedOnlyBy": {},
+        "templates": {},
+        "mustFollow": {},
+        "mustImmediatelyPrecede": {},
+        "exactPanels": {},
+        "maxPerPage": {},
+        "mustBeFirst": {},
+        "mustBeLast": {}
+      }
+    },
+    "generatedAssetRoles": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "brand-wordmark",
+          "brand-lottie-splash",
+          "brand-lottie-value",
+          "brand-lottie-footer",
+          "ambient-video",
+          "merger-logo",
+          "member-logo",
+          "project-photo",
+          "team-portrait",
+          "team-halftone",
+          "funding-emblem",
+          "project-sheet-pdf",
+          "placeholder-brand-mark",
+          "user-supplied-asset",
+          "generated-illustration",
+          "generated-ambient-video",
+          "placeholder-screenshot",
+          "fictional-avatar",
+          "placeholder-company-logo",
+          "placeholder-url",
+          "original-copy"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "motion": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {},
+        "reducedMotionFallback": {},
+        "fallbackIsPrescriptive": {},
+        "distinctive": {},
+        "pattern": {},
+        "trigger": {},
+        "timings": {},
+        "variants": {}
+      }
+    },
+    "responsive": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primaryBreakpoint"
+      ],
+      "properties": {
+        "primaryBreakpoint": {
+          "const": 768
+        },
+        "changes": {
+          "type": "array"
+        },
+        "noChangeAt768": {
+          "type": "object"
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "lines",
+          "quote"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "lines": {
+            "type": "string",
+            "pattern": "^\\d+(-\\d+)?$"
+          },
+          "quote": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "fixtures": {
+      "type": "object",
+      "minProperties": 1,
+      "description": "'default', or one fixture per variant"
+    },
+    "knownParityDefects": {
+      "type": "array"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "retrievalEligible": {
+            "const": false
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "retrievalReason"
+        ]
+      }
+    }
+  ]
+}

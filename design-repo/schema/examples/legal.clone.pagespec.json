@@ -1,0 +1,143 @@
+{
+  "pageSpecVersion": "2.0.0",
+  "mode": "clone",
+  "theme": "light",
+  "template": "template.legal-prose",
+  "route": "/privacy-policy",
+  "meta": {
+    "title": "The Equator Company",
+    "description": "Privacy policy of The Equator Company website."
+  },
+  "nodes": [
+    {
+      "type": "chrome.header",
+      "variant": "legal",
+      "content": {
+        "logo": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "source:inline:LogoWordmark"
+        },
+        "navItems": [
+          {
+            "label": "Our Story",
+            "anchor": "our-story"
+          },
+          {
+            "label": "What we stand for",
+            "anchor": "what-we-stand-for"
+          },
+          {
+            "label": "Capabilities",
+            "anchor": "capabilities"
+          },
+          {
+            "label": "Our Work",
+            "anchor": "our-work"
+          },
+          {
+            "label": "Team",
+            "anchor": "team"
+          }
+        ],
+        "emailLabel": "Email us",
+        "socialLabel": "LinkedIn"
+      },
+      "motion": {
+        "pattern": "menu-slide-200ms",
+        "trigger": "click",
+        "reducedMotionFallback": "menu-instant-toggle"
+      }
+    },
+    {
+      "type": "content.legal-header",
+      "content": {
+        "heading": "Privacy Policy",
+        "intro": [
+          "This Privacy Policy presents the process of collecting and using personal data, as well as the safeguard and security measures adopted in the treatment of such data. S317 Consulting recognises the importance of privacy and we ask you to carefully read this Privacy Policy to know how your Personal Information will be handled when using our website. The website www.theequatorcompany.com is owned by S317 Consulting, LDA. with headquarters at Rua Laura Alves nº12, 6º andar, 1050-041 Lisboa, Portugal."
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "trigger": "none",
+        "reducedMotionFallback": "none"
+      }
+    },
+    {
+      "type": "content.legal-section",
+      "content": {
+        "heading": "1. Data collection",
+        "headingStyle": "bold-paragraph",
+        "paragraphs": [
+          "Whenever it is necessary to collect personal information, the use of this information will be carried out in compliance with the applicable legislation in force for the Data Protection Policy imposed by the National Data Protection Commission (CNPD), to ensure the confidentiality and security of personal data provided.",
+          "The collection of personal data (name, email address, telephone contact), is applicable in commercial consultations and/or service agreements. The entity responsible for the collection and processing of personal data is S317 Consulting."
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "trigger": "none",
+        "reducedMotionFallback": "none"
+      }
+    },
+    {
+      "type": "content.legal-section",
+      "content": {
+        "heading": "2. Use of the information collected",
+        "headingStyle": "bold-paragraph",
+        "paragraphs": [
+          "S317 Consulting undertakes to comply with the rules of personal data processing in force in Portugal.",
+          "The data collected data is exclusively for the use of S317 Consulting, being guaranteed the privacy and protection of the data of the users."
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "trigger": "none",
+        "reducedMotionFallback": "none"
+      }
+    },
+    {
+      "type": "chrome.footer",
+      "content": {
+        "blurb": "Interdisciplinary sustainability consultancy with 45 years of experience.",
+        "addressLine": "Lisbon, Portugal",
+        "email": "mailto:info@equatorcompany.com",
+        "socialLabel": "Follow us on LinkedIn",
+        "copyrightHolder": "The Equator Company",
+        "legalLinkLabel": "Privacy Policy",
+        "animation": {
+          "assetRole": "brand-lottie-footer",
+          "assetRef": "source:/lottie/footer.lottie"
+        },
+        "wordmark": {
+          "assetRole": "brand-wordmark",
+          "assetRef": "source:inline:FooterWordmark"
+        }
+      },
+      "motion": {
+        "pattern": "lottie-autoplay-loop",
+        "trigger": "autoplay",
+        "reducedMotionFallback": "static-first-frame"
+      }
+    },
+    {
+      "type": "chrome.subfooter",
+      "content": {
+        "emblem": {
+          "assetRole": "funding-emblem",
+          "assetRef": "source:/mono.svg"
+        },
+        "projectSheet": {
+          "label": "Project sheet",
+          "document": {
+            "assetRole": "project-sheet-pdf",
+            "assetRef": "source:/Equator-PRR-Investimentos.pdf"
+          }
+        }
+      },
+      "motion": {
+        "pattern": "none",
+        "trigger": "none",
+        "reducedMotionFallback": "none"
+      }
+    }
+  ]
+}

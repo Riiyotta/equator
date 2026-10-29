@@ -1,0 +1,2813 @@
+{
+ "registryVersion": "1.0.0",
+ "generatedBy": "extraction/build_leakage_patterns.py (verify_all.py re-runs it with --check when the source project is present)",
+ "humanReviewed": false,
+ "caveat": "No human has reviewed these patterns. Matching is string-based on normalised text: paraphrase, translation or text inside images evade it. A pass means 'no known Equator string found', not proof of originality.",
+ "normalization": "schema/textnorm.py: NFKC; zero-width and soft-hyphen removed; Cyrillic/Greek look-alikes folded to Latin; curly quotes -> straight; dash variants -> '-'; diacritics stripped; lower-case; whitespace collapsed.",
+ "brand": [
+  {
+   "id": "equator",
+   "regex": "\\bequator\\b",
+   "evidence": [
+    {
+     "cite": "index.html:5",
+     "anchor": "<title>The Equator Company</title>"
+    }
+   ],
+   "note": "the brand name; also blocks the ordinary word 'equator' in generation mode (accepted false positive)"
+  },
+  {
+   "id": "equator-spaced",
+   "regex": "\\be[\\s._*-]{1,2}q[\\s._*-]{1,2}u[\\s._*-]{1,2}a[\\s._*-]{1,2}t[\\s._*-]{1,2}o[\\s._*-]{1,2}r\\b",
+   "evidence": [
+    {
+     "cite": "index.html:5",
+     "anchor": "<title>The Equator Company</title>"
+    }
+   ],
+   "note": "letter-separated spelling (E.Q.U.A.T.O.R)"
+  },
+  {
+   "id": "equatorcompany",
+   "regex": "(the)?equator[\\s_-]?company",
+   "evidence": [
+    {
+     "cite": "index.html:21",
+     "anchor": "href=\"http://equatorcompany.com\""
+    }
+   ]
+  },
+  {
+   "id": "s317",
+   "regex": "\\bs\\s?317\\b",
+   "evidence": [
+    {
+     "cite": "src/lib/privacyBody.js:2",
+     "anchor": "owned by S317 Consulting, LDA."
+    }
+   ],
+   "note": "S317 Consulting, LDA. is the legal entity that owns the site (privacy policy) and one of the four merged companies"
+  }
+ ],
+ "persons": [
+  {
+   "name": "filipe de morais vasconcelos",
+   "regex": "\\bfilipe\\s+de\\s+morais\\s+vasconcelos\\b",
+   "kind": "employee-name",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:134",
+     "anchor": "'Filipe de Morais Vasconcelos'"
+    }
+   ]
+  },
+  {
+   "name": "filipe-de-morais-vasconcelos",
+   "regex": "\\bfilipe\\-de\\-morais\\-vasconcelos\\b",
+   "kind": "employee-asset-slug",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:134",
+     "anchor": "'filipe-de-morais-vasconcelos'"
+    }
+   ]
+  },
+  {
+   "name": "miguel feliz",
+   "regex": "\\bmiguel\\s+feliz\\b",
+   "kind": "employee-name",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:135",
+     "anchor": "'Miguel Feliz'"
+    }
+   ]
+  },
+  {
+   "name": "miguel-feliz",
+   "regex": "\\bmiguel\\-feliz\\b",
+   "kind": "employee-asset-slug",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:135",
+     "anchor": "'miguel-feliz'"
+    }
+   ]
+  },
+  {
+   "name": "nathalie ballan",
+   "regex": "\\bnathalie\\s+ballan\\b",
+   "kind": "employee-name",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:136",
+     "anchor": "'Nathalie Ballan'"
+    }
+   ]
+  },
+  {
+   "name": "nathalie-ballan",
+   "regex": "\\bnathalie\\-ballan\\b",
+   "kind": "employee-asset-slug",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:136",
+     "anchor": "'nathalie-ballan'"
+    }
+   ]
+  },
+  {
+   "name": "rui marques",
+   "regex": "\\brui\\s+marques\\b",
+   "kind": "employee-name",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:137",
+     "anchor": "'Rui Marques'"
+    }
+   ]
+  },
+  {
+   "name": "rui-marques",
+   "regex": "\\brui\\-marques\\b",
+   "kind": "employee-asset-slug",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:137",
+     "anchor": "'rui-marques'"
+    }
+   ]
+  },
+  {
+   "name": "ana goncalves",
+   "regex": "\\bana\\s+goncalves\\b",
+   "kind": "employee-name",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:138",
+     "anchor": "'Ana Gonçalves'"
+    }
+   ]
+  },
+  {
+   "name": "ana-goncalves",
+   "regex": "\\bana\\-goncalves\\b",
+   "kind": "employee-asset-slug",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:138",
+     "anchor": "'ana-goncalves'"
+    }
+   ]
+  },
+  {
+   "name": "raquel almeida",
+   "regex": "\\braquel\\s+almeida\\b",
+   "kind": "employee-name",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:139",
+     "anchor": "'Raquel Almeida'"
+    }
+   ]
+  },
+  {
+   "name": "raquel-almeida",
+   "regex": "\\braquel\\-almeida\\b",
+   "kind": "employee-asset-slug",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:139",
+     "anchor": "'raquel-almeida'"
+    }
+   ]
+  },
+  {
+   "name": "claudia tapadas",
+   "regex": "\\bclaudia\\s+tapadas\\b",
+   "kind": "employee-name",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:140",
+     "anchor": "'Cláudia Tapadas'"
+    }
+   ]
+  },
+  {
+   "name": "claudia-tapadas",
+   "regex": "\\bclaudia\\-tapadas\\b",
+   "kind": "employee-asset-slug",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:140",
+     "anchor": "'claudia-tapadas'"
+    }
+   ]
+  },
+  {
+   "name": "dalila antunes",
+   "regex": "\\bdalila\\s+antunes\\b",
+   "kind": "employee-name",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:141",
+     "anchor": "'Dalila Antunes'"
+    }
+   ]
+  },
+  {
+   "name": "dalila-antunes",
+   "regex": "\\bdalila\\-antunes\\b",
+   "kind": "employee-asset-slug",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:141",
+     "anchor": "'dalila-antunes'"
+    }
+   ]
+  },
+  {
+   "name": "marta vian santos",
+   "regex": "\\bmarta\\s+vian\\s+santos\\b",
+   "kind": "employee-name",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:142",
+     "anchor": "'Marta Vian Santos'"
+    }
+   ]
+  },
+  {
+   "name": "marta-vian-santos",
+   "regex": "\\bmarta\\-vian\\-santos\\b",
+   "kind": "employee-asset-slug",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:142",
+     "anchor": "'marta-vian-santos'"
+    }
+   ]
+  },
+  {
+   "name": "paulo rosa",
+   "regex": "\\bpaulo\\s+rosa\\b",
+   "kind": "employee-name",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:143",
+     "anchor": "'Paulo Rosa'"
+    }
+   ]
+  },
+  {
+   "name": "paulo-rosa",
+   "regex": "\\bpaulo\\-rosa\\b",
+   "kind": "employee-asset-slug",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:143",
+     "anchor": "'paulo-rosa'"
+    }
+   ]
+  },
+  {
+   "name": "rita campos",
+   "regex": "\\brita\\s+campos\\b",
+   "kind": "employee-name",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:144",
+     "anchor": "'Rita Campos'"
+    }
+   ]
+  },
+  {
+   "name": "rita-campos",
+   "regex": "\\brita\\-campos\\b",
+   "kind": "employee-asset-slug",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:144",
+     "anchor": "'rita-campos'"
+    }
+   ]
+  },
+  {
+   "name": "teresa cordeiro",
+   "regex": "\\bteresa\\s+cordeiro\\b",
+   "kind": "employee-name",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:145",
+     "anchor": "'Teresa Cordeiro'"
+    }
+   ]
+  },
+  {
+   "name": "teresa-cordeiro",
+   "regex": "\\bteresa\\-cordeiro\\b",
+   "kind": "employee-asset-slug",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:145",
+     "anchor": "'teresa-cordeiro'"
+    }
+   ]
+  },
+  {
+   "name": "antonio monteiro",
+   "regex": "\\bantonio\\s+monteiro\\b",
+   "kind": "employee-name",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:146",
+     "anchor": "'António Monteiro'"
+    }
+   ]
+  },
+  {
+   "name": "antonio-monteiro",
+   "regex": "\\bantonio\\-monteiro\\b",
+   "kind": "employee-asset-slug",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:146",
+     "anchor": "'antonio-monteiro'"
+    }
+   ]
+  },
+  {
+   "name": "joao guimaraes",
+   "regex": "\\bjoao\\s+guimaraes\\b",
+   "kind": "employee-name",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:147",
+     "anchor": "'João Guimarães'"
+    }
+   ]
+  },
+  {
+   "name": "joao-guimaraes",
+   "regex": "\\bjoao\\-guimaraes\\b",
+   "kind": "employee-asset-slug",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:147",
+     "anchor": "'joao-guimaraes'"
+    }
+   ]
+  },
+  {
+   "name": "jose palma",
+   "regex": "\\bjose\\s+palma\\b",
+   "kind": "employee-name",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:148",
+     "anchor": "'José Palma'"
+    }
+   ]
+  },
+  {
+   "name": "jose-palma",
+   "regex": "\\bjose\\-palma\\b",
+   "kind": "employee-asset-slug",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:148",
+     "anchor": "'jose-palma'"
+    }
+   ]
+  }
+ ],
+ "customers": [
+  {
+   "name": "s317",
+   "regex": "\\bs317\\b",
+   "kind": "merged-company",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:18",
+     "anchor": "alt: 'S317'"
+    }
+   ]
+  },
+  {
+   "name": "sair da casca",
+   "regex": "\\bsair\\s+da\\s+casca\\b",
+   "kind": "merged-company",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:19",
+     "anchor": "alt: 'Sair da Casca'"
+    }
+   ]
+  },
+  {
+   "name": "engidro",
+   "regex": "\\bengidro\\b",
+   "kind": "merged-company",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:20",
+     "anchor": "alt: 'Engidro'"
+    }
+   ]
+  },
+  {
+   "name": "factor social",
+   "regex": "\\bfactor\\s+social\\b",
+   "kind": "merged-company",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:21",
+     "anchor": "alt: 'Factor Social'"
+    }
+   ]
+  },
+  {
+   "name": "mamaland",
+   "regex": "\\bmamaland\\b",
+   "kind": "client",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:100",
+     "anchor": "Mamaland"
+    }
+   ]
+  },
+  {
+   "name": "mota-engil",
+   "regex": "\\bmota[\\s-]?engil\\b",
+   "kind": "client",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:100",
+     "anchor": "Mota-Engil"
+    }
+   ]
+  },
+  {
+   "name": "e-redes",
+   "regex": "\\be[\\s-]?redes\\b",
+   "kind": "client",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:100",
+     "anchor": "E-Redes"
+    }
+   ]
+  },
+  {
+   "name": "edp",
+   "regex": "\\bedp\\b",
+   "kind": "client",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:106",
+     "anchor": "We support EDP"
+    }
+   ]
+  },
+  {
+   "name": "effizency",
+   "regex": "\\beffizency\\b",
+   "kind": "client-platform",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:106",
+     "anchor": "Effizency"
+    }
+   ]
+  },
+  {
+   "name": "sonae mc",
+   "regex": "\\bsonae\\b",
+   "kind": "client",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:112",
+     "anchor": "SONAE MC"
+    }
+   ]
+  },
+  {
+   "name": "missao continente",
+   "regex": "\\bmissao continente\\b",
+   "kind": "client-programme",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:112",
+     "anchor": "Missão Continente"
+    }
+   ]
+  },
+  {
+   "name": "dallas airport",
+   "regex": "\\bdallas airport\\b",
+   "kind": "client-asset",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:124",
+     "anchor": "Dallas Airport"
+    }
+   ]
+  },
+  {
+   "name": "lisbon general drainage plan",
+   "regex": "\\blisbon general drainage plan\\b",
+   "kind": "client-project",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:118",
+     "anchor": "Lisbon General Drainage Plan"
+    }
+   ]
+  },
+  {
+   "name": "luanda water master plan",
+   "regex": "\\bluanda water master plan\\b",
+   "kind": "client-project",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:118",
+     "anchor": "Luanda Water Master Plan"
+    }
+   ]
+  },
+  {
+   "name": "studio cronica",
+   "regex": "\\bstudio[\\s-]?cronica\\b",
+   "kind": "design-credit",
+   "evidence": [
+    {
+     "cite": "src/components/Footer.jsx:65",
+     "anchor": "Studio Cronica"
+    }
+   ]
+  }
+ ],
+ "claims": [
+  {
+   "id": "45-years",
+   "regex": "\\b45\\s*\\+?\\s*years\\b",
+   "evidence": [
+    {
+     "cite": "src/components/Footer.jsx:19",
+     "anchor": "45 years of experience"
+    }
+   ]
+  },
+  {
+   "id": "550000-hectare",
+   "regex": "\\b550[,. ]?000[\\s-]*hectares?\\b",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:100",
+     "anchor": "550,000-hectare"
+    }
+   ]
+  },
+  {
+   "id": "900000-people",
+   "regex": "\\b900[,. ]?000 people\\b",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:112",
+     "anchor": "900,000 people"
+    }
+   ]
+  },
+  {
+   "id": "european-excellence-award",
+   "regex": "\\beuropean excellence award\\b",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:112",
+     "anchor": "European Excellence Award"
+    }
+   ]
+  },
+  {
+   "id": "prr-funding",
+   "regex": "\\b(prr|recuperar\\s?portugal|republica portuguesa)\\b",
+   "evidence": [
+    {
+     "cite": "src/components/Footer.jsx:78",
+     "anchor": "https://recuperarportugal.gov.pt/"
+    },
+    {
+     "cite": "CLONE_SPEC.md:491",
+     "anchor": "PRR / República Portuguesa / EU funding strip"
+    }
+   ],
+   "note": "public-funding claim (PRR / Recuperar Portugal / EU strip): must never be implied in generation mode"
+  },
+  {
+   "id": "full-service-esg-offer",
+   "regex": "\\bfull[\\s-]service esg offer\\b",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:25",
+     "anchor": "full-service ESG offer"
+    }
+   ]
+  }
+ ],
+ "domains": [
+  {
+   "domain": "equatorcompany.com",
+   "evidence": [
+    {
+     "cite": "index.html:21",
+     "anchor": "http://equatorcompany.com"
+    }
+   ]
+  },
+  {
+   "domain": "mailchi.mp",
+   "evidence": [
+    {
+     "cite": "src/components/Cta.jsx:17",
+     "anchor": "https://mailchi.mp"
+    }
+   ]
+  },
+  {
+   "domain": "maps.app.goo.gl",
+   "evidence": [
+    {
+     "cite": "src/components/Footer.jsx:24",
+     "anchor": "https://maps.app.goo.gl"
+    }
+   ]
+  },
+  {
+   "domain": "studio-cronica.com",
+   "evidence": [
+    {
+     "cite": "src/components/Footer.jsx:64",
+     "anchor": "https://studio-cronica.com"
+    }
+   ]
+  },
+  {
+   "domain": "recuperarportugal.gov.pt",
+   "evidence": [
+    {
+     "cite": "src/components/Footer.jsx:78",
+     "anchor": "https://recuperarportugal.gov.pt"
+    }
+   ]
+  },
+  {
+   "domain": "linkedin.com",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:12",
+     "anchor": "https://www.linkedin.com"
+    }
+   ]
+  },
+  {
+   "domain": "s317consulting.com",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:18",
+     "anchor": "https://s317consulting.com"
+    }
+   ]
+  },
+  {
+   "domain": "sairdacasca.com",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:19",
+     "anchor": "https://www.sairdacasca.com"
+    }
+   ]
+  },
+  {
+   "domain": "engidro.pt",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:20",
+     "anchor": "https://engidro.pt"
+    }
+   ]
+  },
+  {
+   "domain": "factorsocial.pt",
+   "evidence": [
+    {
+     "cite": "src/lib/content.js:21",
+     "anchor": "https://factorsocial.pt"
+    }
+   ]
+  },
+  {
+   "domain": "theequatorcompany.com",
+   "evidence": [
+    {
+     "cite": "src/lib/privacyBody.js:2",
+     "anchor": "www.theequatorcompany.com"
+    }
+   ]
+  }
+ ],
+ "emails": [
+  {
+   "email": "info@equatorcompany.com",
+   "evidence": [
+    {
+     "cite": "src/components/Footer.jsx:32",
+     "anchor": "info@equatorcompany.com"
+    }
+   ]
+  },
+  {
+   "email": "info@s317consulting.com",
+   "evidence": [
+    {
+     "cite": "src/lib/privacyBody.js:2",
+     "anchor": "info@s317consulting.com"
+    }
+   ]
+  }
+ ],
+ "embeds": [
+  {
+   "id": "960b9490730a",
+   "kind": "mailchimp-signup-form",
+   "evidence": [
+    {
+     "cite": "src/components/Cta.jsx:17",
+     "anchor": "https://mailchi.mp/960b9490730a/website-signup"
+    }
+   ]
+  },
+  {
+   "id": "website-signup",
+   "kind": "mailchimp-signup-form-slug",
+   "evidence": [
+    {
+     "cite": "src/components/Cta.jsx:17",
+     "anchor": "https://mailchi.mp/960b9490730a/website-signup"
+    }
+   ]
+  },
+  {
+   "id": "DhKJrr1GrcZ6ptwT7",
+   "kind": "google-maps-place-link",
+   "evidence": [
+    {
+     "cite": "src/components/Footer.jsx:24",
+     "anchor": "https://maps.app.goo.gl/DhKJrr1GrcZ6ptwT7"
+    }
+   ]
+  }
+ ],
+ "assets": {
+  "files": [
+   {
+    "file": "/Equator-PRR-Investimentos.pdf",
+    "evidence": [
+     {
+      "cite": "public/Equator-PRR-Investimentos.pdf",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/bird_low.mp4",
+    "evidence": [
+     {
+      "cite": "public/bird_low.mp4",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/cloud_low.mp4",
+    "evidence": [
+     {
+      "cite": "public/cloud_low.mp4",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/logo_engidro.png",
+    "evidence": [
+     {
+      "cite": "public/logo_engidro.png",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/logo_factorsocial.png",
+    "evidence": [
+     {
+      "cite": "public/logo_factorsocial.png",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/logo_s317.png",
+    "evidence": [
+     {
+      "cite": "public/logo_s317.png",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/logo_sairdacasca.png",
+    "evidence": [
+     {
+      "cite": "public/logo_sairdacasca.png",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/mono.svg",
+    "evidence": [
+     {
+      "cite": "public/mono.svg",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/national-2-medium.woff2",
+    "evidence": [
+     {
+      "cite": "public/national-2-medium.woff2",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/national-2-regular.woff2",
+    "evidence": [
+     {
+      "cite": "public/national-2-regular.woff2",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/logos/logo1.png",
+    "evidence": [
+     {
+      "cite": "public/logos/logo1.png",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/logos/logo2.png",
+    "evidence": [
+     {
+      "cite": "public/logos/logo2.png",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/logos/logo3.png",
+    "evidence": [
+     {
+      "cite": "public/logos/logo3.png",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/logos/logo4.png",
+    "evidence": [
+     {
+      "cite": "public/logos/logo4.png",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/logos/logo5.png",
+    "evidence": [
+     {
+      "cite": "public/logos/logo5.png",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/logos/logo6.png",
+    "evidence": [
+     {
+      "cite": "public/logos/logo6.png",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/logos/logo7.png",
+    "evidence": [
+     {
+      "cite": "public/logos/logo7.png",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/logos/logo8.png",
+    "evidence": [
+     {
+      "cite": "public/logos/logo8.png",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/logos/logo9.png",
+    "evidence": [
+     {
+      "cite": "public/logos/logo9.png",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide1.jpg",
+    "evidence": [
+     {
+      "cite": "public/slides/slide1.jpg",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide1.webp",
+    "evidence": [
+     {
+      "cite": "public/slides/slide1.webp",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide1_mobile.jpg",
+    "evidence": [
+     {
+      "cite": "public/slides/slide1_mobile.jpg",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide1_mobile.webp",
+    "evidence": [
+     {
+      "cite": "public/slides/slide1_mobile.webp",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide2.jpg",
+    "evidence": [
+     {
+      "cite": "public/slides/slide2.jpg",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide2.webp",
+    "evidence": [
+     {
+      "cite": "public/slides/slide2.webp",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide2_mobile.jpg",
+    "evidence": [
+     {
+      "cite": "public/slides/slide2_mobile.jpg",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide2_mobile.webp",
+    "evidence": [
+     {
+      "cite": "public/slides/slide2_mobile.webp",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide3.jpg",
+    "evidence": [
+     {
+      "cite": "public/slides/slide3.jpg",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide3.webp",
+    "evidence": [
+     {
+      "cite": "public/slides/slide3.webp",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide3_mobile.jpg",
+    "evidence": [
+     {
+      "cite": "public/slides/slide3_mobile.jpg",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide3_mobile.webp",
+    "evidence": [
+     {
+      "cite": "public/slides/slide3_mobile.webp",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide4.jpg",
+    "evidence": [
+     {
+      "cite": "public/slides/slide4.jpg",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide4.webp",
+    "evidence": [
+     {
+      "cite": "public/slides/slide4.webp",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide4_mobile.jpg",
+    "evidence": [
+     {
+      "cite": "public/slides/slide4_mobile.jpg",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide4_mobile.webp",
+    "evidence": [
+     {
+      "cite": "public/slides/slide4_mobile.webp",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide5.jpg",
+    "evidence": [
+     {
+      "cite": "public/slides/slide5.jpg",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide5.webp",
+    "evidence": [
+     {
+      "cite": "public/slides/slide5.webp",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide5_mobile.jpg",
+    "evidence": [
+     {
+      "cite": "public/slides/slide5_mobile.jpg",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/slides/slide5_mobile.webp",
+    "evidence": [
+     {
+      "cite": "public/slides/slide5_mobile.webp",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/lottie/curiosity.lottie",
+    "evidence": [
+     {
+      "cite": "public/lottie/curiosity.lottie",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/lottie/difference.lottie",
+    "evidence": [
+     {
+      "cite": "public/lottie/difference.lottie",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/lottie/footer.lottie",
+    "evidence": [
+     {
+      "cite": "public/lottie/footer.lottie",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/lottie/global.lottie",
+    "evidence": [
+     {
+      "cite": "public/lottie/global.lottie",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/lottie/grounded.lottie",
+    "evidence": [
+     {
+      "cite": "public/lottie/grounded.lottie",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/lottie/navbar.lottie",
+    "evidence": [
+     {
+      "cite": "public/lottie/navbar.lottie",
+      "anchor": "file present in public/"
+     }
+    ]
+   },
+   {
+    "file": "/lottie/sustainability.lottie",
+    "evidence": [
+     {
+      "cite": "public/lottie/sustainability.lottie",
+      "anchor": "file present in public/"
+     }
+    ]
+   }
+  ],
+  "distinctiveStems": [
+   "bird_low",
+   "cloud_low",
+   "equator-prr-investimentos",
+   "logo_engidro",
+   "logo_factorsocial",
+   "logo_s317",
+   "logo_sairdacasca",
+   "national-2-medium",
+   "national-2-regular",
+   "navbar",
+   "slide1_mobile",
+   "slide2_mobile",
+   "slide3_mobile",
+   "slide4_mobile",
+   "slide5_mobile"
+  ],
+  "note": "files: every real public/ file (team portraits are matched through persons); distinctiveStems: file stems matched as whole tokens in any string or asset id. Generic stems (logo1, slide1, global, footer ...) are matched only as full file names."
+ },
+ "copyShingles": {
+  "n": 5,
+  "hash": "sha256 hex[:16] of the space-joined normalised 5-word window (punctuation stripped)",
+  "sources": [
+   {
+    "file": "CLONE_SPEC.md",
+    "strings": 41,
+    "firstLine": 250,
+    "lastLine": 619
+   },
+   {
+    "file": "index.html",
+    "strings": 3,
+    "firstLine": 13,
+    "lastLine": 15
+   },
+   {
+    "file": "src/components/Capabilities.jsx",
+    "strings": 2,
+    "firstLine": 42,
+    "lastLine": 43
+   },
+   {
+    "file": "src/components/Cta.jsx",
+    "strings": 1,
+    "firstLine": 13,
+    "lastLine": 13
+   },
+   {
+    "file": "src/components/Footer.jsx",
+    "strings": 2,
+    "firstLine": 18,
+    "lastLine": 26
+   },
+   {
+    "file": "src/components/LazyPicture.jsx",
+    "strings": 1,
+    "firstLine": 4,
+    "lastLine": 4
+   },
+   {
+    "file": "src/components/OurWork.jsx",
+    "strings": 1,
+    "firstLine": 275,
+    "lastLine": 275
+   },
+   {
+    "file": "src/components/Team.jsx",
+    "strings": 2,
+    "firstLine": 70,
+    "lastLine": 71
+   },
+   {
+    "file": "src/components/Title.jsx",
+    "strings": 1,
+    "firstLine": 19,
+    "lastLine": 19
+   },
+   {
+    "file": "src/lib/content.js",
+    "strings": 34,
+    "firstLine": 16,
+    "lastLine": 147
+   },
+   {
+    "file": "src/lib/privacyBody.js",
+    "strings": 29,
+    "firstLine": 2,
+    "lastLine": 2
+   }
+  ],
+  "count": 1531,
+  "hashes": [
+   "002926bedcf0b756",
+   "005994413457ea2b",
+   "0066317f290022b2",
+   "00681fca5338bf08",
+   "009bf63efe2e3bde",
+   "00aa6c5bcdd7754f",
+   "00f15f456533f207",
+   "00f22defed4a21a9",
+   "00f8a09180071d29",
+   "01206d3b121461a5",
+   "0122c8fdfe61cda3",
+   "01acf149b72c35d7",
+   "01d2457a5cc57acf",
+   "0229c6d86986e253",
+   "02493d72f2e2bed8",
+   "026149dade75e48f",
+   "026f1b0723755d97",
+   "02effc2c959a0070",
+   "033a0f622591ef83",
+   "035df821e6bf661e",
+   "0362d726fda7077f",
+   "03cded55cde22ced",
+   "03ce30bd898dfbf4",
+   "03e6a5df3596fd02",
+   "0431e5ded4fc5041",
+   "047d064c1804cbd8",
+   "049466f64fb0abaa",
+   "04ad9bdd59ef817c",
+   "04bcfcd8431fca39",
+   "04bfa3c326a5914d",
+   "04e3102ca7788d1a",
+   "05344e0b8cfcb0ed",
+   "053b46efe7904b24",
+   "054d0be4a8df3cba",
+   "054e629d4a5dfc06",
+   "055c158dd964f188",
+   "056c977b00aa995d",
+   "058a8c2952316fac",
+   "059d633d71bee46e",
+   "0600c3f1a948a769",
+   "06157685d408aa3b",
+   "06527c9e757d5ac3",
+   "0665020dce0932d8",
+   "06671d95113d89d8",
+   "0693b7b5eb9452e8",
+   "06de8325cfd17ea4",
+   "06ec5f8e645c5477",
+   "06f8af611c9f8760",
+   "0774f4779eb941de",
+   "078de99f7ac067f4",
+   "0792cf78be335e98",
+   "07981de44ef8bd44",
+   "07a4f3aab2d0f351",
+   "07b34713ae5bd671",
+   "07f7adddb8cceacc",
+   "083467f2248e1684",
+   "084541266bd088c4",
+   "08a06c10679affdd",
+   "08b36d376a2844c9",
+   "08de1653ab837b23",
+   "08e89a5d1755a315",
+   "08f7aa1bdef6b906",
+   "0920fbb4060d93e3",
+   "095d91e131ef84ae",
+   "09b356b8821b154e",
+   "09c703c60b71b921",
+   "0a17831310b0da4d",
+   "0a2437fb9222f55c",
+   "0a513f9a1ae1c3f9",
+   "0a515499f9148f1c",
+   "0a53225d7d7625a3",
+   "0a8631f7713ab6d5",
+   "0a9b66d41d546788",
+   "0afa78470e64d4e5",
+   "0b2775c7753a372a",
+   "0b49704b866691ad",
+   "0b5982fb5f91f791",
+   "0c0891e5aaa831de",
+   "0c1ae8577385b130",
+   "0c6190a904d9a48c",
+   "0c8d1b030247470d",
+   "0ca2c4eca7b9c14d",
+   "0cb80685f1d95dd3",
+   "0d0238fbadf2a14d",
+   "0d242945d77a2cc4",
+   "0d438b24148e29b5",
+   "0d7958adaa539858",
+   "0d7a7724f5d7cc3b",
+   "0deaeb982af947a3",
+   "0dfd91efe9953e55",
+   "0e57d0a4cdad89a5",
+   "0e593b666cd5f864",
+   "0e82a0260cb8bb46",
+   "0edc1d97d5f93432",
+   "0f0c9227e8453c3a",
+   "0f89b3c7c1b297b6",
+   "0ff4029cfaaecefe",
+   "100e406b13e8d1e1",
+   "1024578eabfa59e9",
+   "102483cfdeba795f",
+   "1027a3e82569c0d0",
+   "1051c54f08b22f8c",
+   "10529a79379ac55e",
+   "10914bf0d4071168",
+   "10a13615e021aff6",
+   "10b4b519b23ecc6b",
+   "10d302ee42390626",
+   "10dd312c7789f761",
+   "117b247fa14c81b4",
+   "11844dd43eecc71a",
+   "119904c802884f7d",
+   "11daa31438359c83",
+   "121b4a4463ad6604",
+   "121fd464e3f04726",
+   "1231466027a905d2",
+   "12737ca7272c3f37",
+   "12a2a2cdaeffa312",
+   "12c4fb11577dfc6c",
+   "12c836ec845ca1ce",
+   "12da84eea1d9fb94",
+   "1303b440502753e3",
+   "130a731d9f102ada",
+   "130db26468d8e067",
+   "1324b8d3df970f30",
+   "13258425cbf46811",
+   "137836444108317d",
+   "137a7402db7f24ba",
+   "1398967ba635d79b",
+   "13e10ad2cd1bd55d",
+   "13f7cb6bccfbab96",
+   "142ec668c8cc4e58",
+   "156c3a068aec2237",
+   "15c83713566ed1fc",
+   "15f33df482146d09",
+   "15f3b22394c216b0",
+   "15fca05fac357a40",
+   "1624da8cda032b20",
+   "16659184e8de4ddd",
+   "166b6e3153186d22",
+   "16b31f74a574f1b1",
+   "172140de28efd96a",
+   "173f5d8afb6d2f17",
+   "1740755c57701144",
+   "176c394396370253",
+   "17812e69f407c959",
+   "1788d50d2eba4453",
+   "178d19b21469b04d",
+   "17a5ebe9036830ac",
+   "17d04facd4677968",
+   "182ea1e95ec1ebe1",
+   "183d5a8cc20e1f70",
+   "186857d048d15c0a",
+   "186a79755a8d6f30",
+   "18b300ad57db91df",
+   "18b9b82b796adc8e",
+   "18db8bc19cb919a8",
+   "18e5d1fa8671dfff",
+   "195c7829410d94de",
+   "198af079b7fab366",
+   "19b4c7320390be2a",
+   "19d1461690cc2d7a",
+   "19e181bd0d8f81dd",
+   "19f9b4dcc8dc4594",
+   "1a3e956e7b0b66bb",
+   "1a4092f672dbb950",
+   "1a5fa99afee1ae4d",
+   "1a7212f896d3ce97",
+   "1ac50a5c554f8e82",
+   "1acebd4f87714af0",
+   "1adc22ee985f542c",
+   "1adf59ebf750e852",
+   "1af3945c3f280d86",
+   "1b1547115588dc2e",
+   "1b1708fc54963117",
+   "1b5d0b9daa39b1f6",
+   "1b8459fb1de218f7",
+   "1b918ebb2b576a3a",
+   "1bace45ebf0fecd0",
+   "1bccb1baa8811c7e",
+   "1c00bb60f021e0bf",
+   "1c1926f632c33b9e",
+   "1c394027f9e5e157",
+   "1c513a94e80ecdea",
+   "1c88d458fb4b66d3",
+   "1cd7acd2a6e9dada",
+   "1d64486e294c2837",
+   "1d7b6abf129553f8",
+   "1d98273b2756f7a2",
+   "1dcc2d6e2260be2e",
+   "1de77b78fc6df16b",
+   "1e00882d74c6dc6f",
+   "1e42a1e8c76385d7",
+   "1ee13f170e9a6a0b",
+   "1f4031b8ecfa7cb5",
+   "1f45a723e43fe72b",
+   "1f8ec7e5ae45f292",
+   "1fb354158e867a0d",
+   "1fcb7f2f91d19a41",
+   "201af56a971b03e9",
+   "203f9bb5fabb729f",
+   "20473bcb4cfc5b3c",
+   "208657a4d5996d13",
+   "20869121cf6d945e",
+   "20b662fe60215966",
+   "20c290e2b7ff22a7",
+   "20cad14a6ead4d0f",
+   "211da4df17088619",
+   "212cd0fcc00b22ce",
+   "213a2d1641307c0a",
+   "219f3e81b9b49902",
+   "21afa1e150efbe63",
+   "21d3ce8791e1a93a",
+   "2206cc45ce45a64d",
+   "220bcb4efa61afd9",
+   "222c126deaa3e292",
+   "2253b574247afff3",
+   "2259111c3dec21df",
+   "22945b5a62c12deb",
+   "230d72c25deae7d7",
+   "233101635d4b899b",
+   "23d211386e0e4908",
+   "23d479ed20bee19b",
+   "23eaca8247d4d2d2",
+   "24008a87fbf802ac",
+   "242a483174e57e79",
+   "246c015c66988301",
+   "24a073b3262e4f74",
+   "24b1025654112073",
+   "24b6495bcb9a0427",
+   "24bcfc6ae09ee9db",
+   "24c5de3ed9108f20",
+   "2507da47549ef079",
+   "254ecf2b38fdfe0a",
+   "254ffff072db3186",
+   "25781d73ab458a35",
+   "258ea077dd280ebf",
+   "25d0d2fbc877f113",
+   "25dc2d6ee0b65798",
+   "25defae61ca18799",
+   "2605b2f78470d2b6",
+   "2620cd7281d409b4",
+   "264340aaef202cf6",
+   "26d07c4053590e8e",
+   "26d1bd9aae0832b0",
+   "271b14cfc8c0ed2e",
+   "2730c34068e4c428",
+   "279029f1cd367b50",
+   "27992624ffa6f8df",
+   "27a5a6fc822a1264",
+   "27ecd9eeea2481a7",
+   "27fc08555be73b11",
+   "283a72bacfb56395",
+   "286d329747d5fe70",
+   "286f6adf2e7b6b7a",
+   "2884a57f307345f5",
+   "28a78bdec14f6aca",
+   "28e0d4272a2b7d72",
+   "28f3ac3042e5fb64",
+   "291871b6c10495b6",
+   "296caf151591dfd4",
+   "29ef612666d5d716",
+   "2a22cb092a4274b8",
+   "2a887c5be8b5402a",
+   "2a894f6fd59ddd41",
+   "2aa01258c6b32b17",
+   "2ab8aab7f200208b",
+   "2ada38727b19c274",
+   "2b376fc08bd1c824",
+   "2bc248a3b93d9656",
+   "2bccbb6606c57aa2",
+   "2c70bf849883002d",
+   "2c7fe2da37b558f2",
+   "2c8f827919350047",
+   "2cac2e6f8304b884",
+   "2cb1e61016f2584f",
+   "2cd47cebc37501e7",
+   "2d88c016cbb803b3",
+   "2d9ea4bca1e5cec2",
+   "2de4946446866b02",
+   "2e394e7661430f56",
+   "2e3e98560ec48ce7",
+   "2e405cd1243f5c6a",
+   "2e432a2e586a5af6",
+   "2e67448307bdd7a2",
+   "2e8229c0b3049624",
+   "2ebd0f4fe88500ab",
+   "2eccfe6b6f80aacd",
+   "2ef06c7468da8639",
+   "2f04893e0cce9547",
+   "2f1a17f02e61a6d8",
+   "2f319ec7b9a5e265",
+   "2f37eb17d39cf118",
+   "30241436ee2745b2",
+   "30412ef5bbcffdc1",
+   "304999623faacf68",
+   "3098eedf51871155",
+   "30ea814b3322267f",
+   "3114720d250873e6",
+   "31d8bfaba00d9878",
+   "31ea5aabf5875ad7",
+   "31f535a5b16b0f14",
+   "320903632927145c",
+   "3217124a992a6efb",
+   "322a24d7b3bf33e2",
+   "32482bdee3f73cd1",
+   "3254e9757e3128ce",
+   "334ea1d324441f79",
+   "3391600c120cd91b",
+   "33adb7e3ab380130",
+   "344478c2e0c09b2d",
+   "34529f44fb8c9fd5",
+   "34f0fca0803aadbb",
+   "34fdbc0dec4b1302",
+   "35d2b62f9cc6c28d",
+   "35dad4562d6b947e",
+   "35f14acce31a89c8",
+   "3617b71cd415c06a",
+   "362276a476c17fbe",
+   "362fb5b3fac7afb5",
+   "3649c6adb2b68045",
+   "365022c6002fbd13",
+   "366bbbb1b7d61f83",
+   "366f022884c7197b",
+   "369b1a62cdd16450",
+   "369b261113c568d5",
+   "37051383ac1b665f",
+   "3708b95e7a3f87fc",
+   "3713a9ddaa4fe89e",
+   "37a259f77129cbb8",
+   "37abee17e14e6802",
+   "37cc152f47b34807",
+   "38040fada5742dd0",
+   "381fd7e019930602",
+   "382a5ca54eb6165a",
+   "385bc9d37474a7b3",
+   "38a3bffb7fa2d5ca",
+   "38e8395a3454359b",
+   "38f3c08d9e0f213e",
+   "38f997f0e3144483",
+   "39024eb14e766d0f",
+   "39098be96a5671dc",
+   "390a22daa46194d3",
+   "391c1a92192ff0a1",
+   "3943317bda64e5d6",
+   "39b3305e43ae5597",
+   "3a6d050872c6e4e0",
+   "3a8b87b46af7a732",
+   "3aa42eada4fe8384",
+   "3ab8a341be0ce5e2",
+   "3acc23d5656c2fa0",
+   "3b6693a953a16be8",
+   "3b878a97dbd4fd79",
+   "3c35c5c1bb0c77c9",
+   "3d15f127692d5acf",
+   "3d785f1c974c8d38",
+   "3dc711428b57b3d2",
+   "3e03ad10e8eb8915",
+   "3e6cb2e5c0e98224",
+   "3e79f78d02da7b03",
+   "3e85ad7cf7caf150",
+   "3eb1c310f2a68950",
+   "3ec0c2c24930306d",
+   "3f01cb8c1557279c",
+   "3f6f319d71e0c837",
+   "401033a4bb726e86",
+   "404253da613e0212",
+   "40534e31c310e7cd",
+   "40696019a4c6002d",
+   "406c16f12315a490",
+   "40b5717eec5e7ab9",
+   "40d65e7afa33cee9",
+   "40f10c32c2320ee0",
+   "410b7021a6c89995",
+   "410c716ea9542fee",
+   "414b764a4442a075",
+   "4181f468ca177b80",
+   "419b12b65fce2551",
+   "41af093651859810",
+   "41dd220a5ce720cb",
+   "41e5edc8c43739e8",
+   "42026770b39dd98a",
+   "424b0574d6009c20",
+   "427f5854f0add2a8",
+   "4290dc01f8e6faec",
+   "42b8b047d12abf27",
+   "42da6bb963774867",
+   "430ca0ef8d6c9b37",
+   "4312f90eb8e92bd0",
+   "4322aca50b66e4f0",
+   "43252ff54af58bc1",
+   "439a94a22efc6955",
+   "43f33d7d6601d540",
+   "43f693ae16d6466a",
+   "44014fc2a317e921",
+   "446d69680b88cc50",
+   "4480c93cc5719f61",
+   "44a1bffe98b07938",
+   "44d786b3532330d1",
+   "45427c94c220110c",
+   "454f698a292df790",
+   "458e4c3c4dd9c2f8",
+   "45dced7fe9d6f03f",
+   "462b50adec90c2d3",
+   "4651b35806142c10",
+   "465dbce5735da90f",
+   "4685954665538f56",
+   "46a2cd1c87f91c8a",
+   "46cd7253414563ac",
+   "46f512080c108a9c",
+   "476fb35519da98a4",
+   "478043e90d699ddb",
+   "481f718e984bc319",
+   "4844d89c43d40eca",
+   "485cf151cf819358",
+   "48669525be875cd2",
+   "486b04f0804f2878",
+   "486d3e436b8c66b7",
+   "48835dd7a64c56bf",
+   "489efa4c3f26b98e",
+   "489f4a393feba513",
+   "48e043097bd0f13a",
+   "491bd43d75519ff1",
+   "4922e739ff166edf",
+   "4947fb6237894495",
+   "4963a393265c6ca2",
+   "49ac9b4f99195cc3",
+   "49b7c331d2904430",
+   "49c96aae6facd228",
+   "4a1c98bb3a6efc62",
+   "4a2dd116c4ac62a5",
+   "4a6870e5671d2497",
+   "4a69c8f7fda86cf1",
+   "4a6cb2322f6dbf82",
+   "4b0d0c118856df1e",
+   "4b121351f7f8f43e",
+   "4b53bc610f4ecbe2",
+   "4b7fc83932aa75f2",
+   "4b81a585725908a2",
+   "4ba403e6095315f1",
+   "4bc17cb3f3cdc739",
+   "4bcc4b1aa7f29c5c",
+   "4bdbec420513dbdc",
+   "4bde759abafa9de8",
+   "4c27789261fe97dd",
+   "4c5303e37d7fbd17",
+   "4c77d0787c63801f",
+   "4c7a008cb7e26d24",
+   "4cb9148193e2430f",
+   "4cd41b21e71869f5",
+   "4cfee9c72267756f",
+   "4d31fc851c5bd9f6",
+   "4d543ba0109c55cc",
+   "4d785c4c16b595a0",
+   "4d91e267236e8533",
+   "4d98222c9c074007",
+   "4d9908f0eab2f877",
+   "4d9df3649a201f42",
+   "4ddcc2ab33f7a711",
+   "4de9b13418ce7704",
+   "4e2649e59cdedc8a",
+   "4ec2d6062fe85f89",
+   "4edb34fa11788325",
+   "4f3895936e4de8fa",
+   "4f423958a06e68dc",
+   "4f5c4f513e663cdc",
+   "4f7c34c7a0e841e5",
+   "4f9a29005bf69259",
+   "4fd6591b1a52b492",
+   "4fd71432bdde942a",
+   "501fdf05ff945ad0",
+   "502932a599df2c21",
+   "50774c8aeb16c98c",
+   "50ac76ab10ecbb00",
+   "50ae5becda379246",
+   "50cd96ccd246157d",
+   "512650e85960aec5",
+   "51552b9dd24256c7",
+   "516057fe10c04543",
+   "517d62bf9fef1608",
+   "5194f0ba1c61e54a",
+   "51c6974a1eae65f2",
+   "522d38f89fc3ab2f",
+   "5239069a10bba5b8",
+   "52605fcbc4e2b069",
+   "5260a755dac71cae",
+   "5285fc942ddb3c96",
+   "529c988aecde06f6",
+   "52a5eac46287ac4a",
+   "52a9a0b3f58b5847",
+   "52e487f7e52f20dc",
+   "52f9f23c02a6d9d0",
+   "53047c89f668d714",
+   "535e9a1ec7fc1c3c",
+   "5362c802eb2e6a14",
+   "5367f6962fac2ffe",
+   "53a1b9bd0539d2f2",
+   "53ce47192d49d075",
+   "53d20e78dfa7098b",
+   "541c4fa442ebd4e8",
+   "5434b43b7a1848b2",
+   "54abd27d51950629",
+   "54cd9d0b6ee2dd75",
+   "54e305e8f40a0f7e",
+   "54eea91970fafd4f",
+   "550d550392f0a8ea",
+   "5515cf5e5e4851d3",
+   "553aa475a8bdf956",
+   "5543b5c826ff785f",
+   "554424e28c284e46",
+   "554c86ef81f7b181",
+   "555945f1f5a1c7f5",
+   "555ea114beeb9362",
+   "55b0a1c3f633dc55",
+   "55b10f17ee1003c5",
+   "55d291db55629465",
+   "5605933a58b5a33c",
+   "560d2f96fef50fa9",
+   "56227bb561cd3aeb",
+   "566550356fca910d",
+   "569b7626cb92c06f",
+   "56dcae435d3151e8",
+   "56e37745d2d46bb4",
+   "56fc6f4ece024e31",
+   "571cf87775dc7387",
+   "572f8ab64f62ada4",
+   "57466f751982a645",
+   "576b51c5ac9bd403",
+   "57a02d5889298c5c",
+   "57acefd7b2e6730d",
+   "58224855f3e93a13",
+   "5842721941901d09",
+   "584abdb593ae6969",
+   "588676ee0fe19991",
+   "5887e010669dad5a",
+   "5915e2f3bcf2ab15",
+   "591fc39930426ffc",
+   "593ba42b5e64346f",
+   "59663e9af31e95fe",
+   "5974342a527c9caf",
+   "59e82402eef7db74",
+   "59f6374711373bc5",
+   "5a1f28f59b545b93",
+   "5a4f54e25103685b",
+   "5a6d5ccd56727460",
+   "5afc8fb8cabc6641",
+   "5afdac147823d8f9",
+   "5b1ccb6aa4f87f2e",
+   "5b345d927dc4b907",
+   "5b5a2f9b56e0e017",
+   "5b6199a5bec667f5",
+   "5b8b3049071eb168",
+   "5b8e635bf933331f",
+   "5bac71b512acc9f8",
+   "5bc2806c16822428",
+   "5c03d70140a3ced6",
+   "5c6f9d4fabfa4bd8",
+   "5cce1e483e340be7",
+   "5cda7ef1e1b15cad",
+   "5ce6780231be20f4",
+   "5d170dd7424d7ce7",
+   "5d2ae57d7347e183",
+   "5d715061dc5f0c85",
+   "5da086ecfd18d6c7",
+   "5dfe4f32f54471bf",
+   "5e26305af3df13c9",
+   "5e2f73cc71a94c1c",
+   "5e5c122f61bb9075",
+   "5ebd5abb99c4daad",
+   "5ec96a92a3335b27",
+   "5ef80054067cad02",
+   "5f36ce11f49dd24f",
+   "5f3d5023ab7e9ccf",
+   "5f772bdc757febac",
+   "5f7d2209b36da26a",
+   "5f82bbe617d7b924",
+   "5f92e0c17da7305f",
+   "5f9be1adccb5141a",
+   "5fa2456278a81e74",
+   "5fa7935ef4e0c1fc",
+   "5fa873a04e21025e",
+   "5fbd76ebc898b11c",
+   "603adc2cae791584",
+   "605fec7f391294d3",
+   "6071cbadbd01ec51",
+   "6073a02942347625",
+   "607575605a984104",
+   "607ef0692b7dc691",
+   "60a8d181f4aea72e",
+   "60b4124c42cf730e",
+   "60bb631198df25fe",
+   "60c32e432ef40fb8",
+   "60c3b9a6591b48c0",
+   "60fae9a17814494c",
+   "617a53ddb103e344",
+   "61910dac5bb8af8d",
+   "61c119cb191e49a2",
+   "61c9ab7df81ef049",
+   "6224c4a4ef73e085",
+   "62346438b25335ef",
+   "625eabb758fd777b",
+   "6268c46bb2bcd0ba",
+   "62874048ba227aeb",
+   "62d594e24577c5c1",
+   "62ecf137714b9343",
+   "6357dd7712635431",
+   "636fa25923c50539",
+   "6381674bb2c361a0",
+   "6398435f15f76f2a",
+   "63f0d5427259887b",
+   "643e62f2f3536154",
+   "6466e3a0301c8bd1",
+   "646a309506a220b9",
+   "646e787260076e01",
+   "649feea5d2ed1670",
+   "64db9681da29c6a4",
+   "64fac8e82da594e7",
+   "651e418325c9d5a7",
+   "654752adace6fcb4",
+   "65a1a7c0838bc23c",
+   "65c01109cf1c5a84",
+   "65f88436de84b13e",
+   "661e4b14405fbfc1",
+   "6633e39b2ab3c05a",
+   "667a506cefd2971e",
+   "66c5b1fe24ef97af",
+   "66d4824f50d16b82",
+   "66d80cf67fc7c14c",
+   "67014a4007663f9a",
+   "673b0d23722b2b9d",
+   "678aa5e838140306",
+   "678b801a72816746",
+   "67ef22a83b6b47f9",
+   "67f63a34c9ca7de5",
+   "6808d3748d0a1946",
+   "68423586d497926b",
+   "68a0a3789f373c7c",
+   "68a7eef9fab255e0",
+   "68b2b6608bdd6e6e",
+   "68f4ff76f7bd5043",
+   "693c231827862f96",
+   "6950ef1a40947fa5",
+   "69972a78c7675cc5",
+   "69a354344283eca3",
+   "69b7c1d0b8067d99",
+   "69c3ffc686b79ff5",
+   "69fa207bbd729eeb",
+   "6a576c9530b64951",
+   "6a5f100427c46b9a",
+   "6aa4a5538ad4366d",
+   "6ab58b218fd94475",
+   "6af264f11a770712",
+   "6b352d7b2627a8de",
+   "6b4698121e3804d5",
+   "6b48e01613766a63",
+   "6b9e47003bb0cb3a",
+   "6bc6b0087f843909",
+   "6bd2932edbe9ee3f",
+   "6be78528d99449e3",
+   "6bfed5953827c8f3",
+   "6c000d02aebba196",
+   "6c14d23f3269ac87",
+   "6c4d7bc15fc1a4c7",
+   "6c7bea901e2eb33a",
+   "6cecd49a6fb63c17",
+   "6d2740821af3f5d8",
+   "6d4e071ed2e7006d",
+   "6da5b0f0799a6cb0",
+   "6ddc1b3bb9f4ece3",
+   "6de1c177ea052fe9",
+   "6e33f7cffd665c8d",
+   "6e3ca530b34cf400",
+   "6e7d02761fbfaa23",
+   "6e8ae1cf04a48199",
+   "6ebb985f675333bc",
+   "6ed7e20c250dd315",
+   "6ef25bbdd5d08f0f",
+   "6f02e0c673c11a09",
+   "6f35edda4f18e825",
+   "6f465fd8f4dfb617",
+   "6f514c7e3a7351a2",
+   "6f8eac613678202f",
+   "6fdae4ecadbb1f29",
+   "6fdd8dd86ff1cace",
+   "70594637de1130b3",
+   "706e89e35d11e41f",
+   "708b4cb5047cf70d",
+   "70ef1ccc31689e21",
+   "71007064e7ca0e25",
+   "710b752a7edd52b2",
+   "7112fcb53ec36bee",
+   "7170ee286be529b8",
+   "7184547ca6e65be5",
+   "71c31d6a2332869c",
+   "71d021cbb27600e9",
+   "72098d360cc8e225",
+   "72f56cb76a4669b7",
+   "73070780d912527c",
+   "7338853b0b3a63c0",
+   "73805c45cced4aa5",
+   "73945ed729b92c4c",
+   "73e3a938e206c357",
+   "73e3c7ded9128b3a",
+   "741c4202c80da433",
+   "74667cd06bc9bc5b",
+   "748ecbce37647a26",
+   "74cdb6b39b396c74",
+   "74d4f6acd6ab1a47",
+   "74ddcb6b5d6492fd",
+   "75be3a6ae96d8a2d",
+   "75dab137896f61b3",
+   "75fd9747b57c9560",
+   "761612f6d0e428c7",
+   "7648c2517d01c249",
+   "7661e4f4d5454753",
+   "76be99a0c9b13f02",
+   "76c6044471c6f09f",
+   "76d5a312f987f265",
+   "77150f51f1247960",
+   "771740ffbcaf6707",
+   "7722444c530efb59",
+   "7727748cdbeed59f",
+   "77f6a383f2196536",
+   "77fc3220126afe12",
+   "780870b45f36033a",
+   "78360fdfbada0c8b",
+   "784e88fe06011112",
+   "785675cb47ea47bf",
+   "785c9778877c1f66",
+   "785f97d878f1d076",
+   "787e11c0ed144177",
+   "7885d82efa9665fd",
+   "788c7297cfa473ed",
+   "78bdd186eb517129",
+   "78e9535eafbb66f1",
+   "792c4f628cce36a6",
+   "79566652a8ac3396",
+   "798ad010b01c3c01",
+   "79ea5ec17831e35a",
+   "79efee846093676d",
+   "79fd7e8418d0a033",
+   "7a19e3d9aee0594e",
+   "7a24c39e68c7b04c",
+   "7a4d4e8519ea7c1c",
+   "7a6d6d85fc471c1b",
+   "7a869967ca7a7dfc",
+   "7ab4419bbb2f7cb3",
+   "7aba253a7371f989",
+   "7ac239783dfec071",
+   "7b0031995069f1b3",
+   "7b063227b91d84e9",
+   "7b13db20471f36ab",
+   "7b47236f0ac1fd0e",
+   "7b5a13135d872d66",
+   "7b7769b5b51cdc69",
+   "7b82acfd5a65d4a4",
+   "7b89c843c34f1dfb",
+   "7b8d661cfe7fb94d",
+   "7be6c471949982fe",
+   "7c0fbcdf06cf5d44",
+   "7c386fda7e77c714",
+   "7c61cb176d186d81",
+   "7c9595a6cdfece11",
+   "7c97b2a147e3558c",
+   "7d06ee0e8290eadd",
+   "7d3162e5a9b00fcb",
+   "7d598e779639d818",
+   "7db09fe8ee091948",
+   "7e190a51b2e83331",
+   "7e299ff20e828a60",
+   "7e59eee131dafdf2",
+   "7e601537601eecbd",
+   "7e9de284022d5681",
+   "7f218f2ef76b6ab4",
+   "7f9cab5fc8f7e7f8",
+   "7fbbbd0efc5c3cef",
+   "8016b9525032c236",
+   "80275dab790b70e2",
+   "805b9c4af6aaef24",
+   "808d805c1010da5d",
+   "811cf03d95db2068",
+   "81698aee1953d7e6",
+   "8191310f269bf626",
+   "81adc96bde672e34",
+   "81b639e9a8688544",
+   "81c35568bc497c85",
+   "81c8877940f43ca9",
+   "81fb422b76d7da9d",
+   "8241b2b9405446fd",
+   "825260c0dfe0b776",
+   "8266afb34d135e36",
+   "82676eea90babd41",
+   "827cd3ccd79a8ca1",
+   "8337196d1d5aecab",
+   "8363b1c808ea5d4d",
+   "839fa364698cae4e",
+   "83dedbc202bf7180",
+   "83ef1e83b98619d3",
+   "84351bd55b05155a",
+   "84fef3b9029d1dd7",
+   "85496397b46ac2ee",
+   "854d2bfd600650c0",
+   "8570718ca3b9e47f",
+   "85eb1b753c3cac5e",
+   "8611245ddde172fe",
+   "86ceb1899bab3d92",
+   "86e8d09cf23e9550",
+   "86fef9ffe9976077",
+   "87021d6b48266a61",
+   "874dc8ade095549d",
+   "87986c308e6f144e",
+   "87a6ea30d4fb2e64",
+   "87b381b7292826f8",
+   "87c4fa675a0e3860",
+   "87d72f739b01eeec",
+   "87fba9156697dfde",
+   "87fe367a1756340d",
+   "87ff034e4f991492",
+   "8810c3230d3913ba",
+   "8814615dea6a68a3",
+   "881ddca993d0a91d",
+   "8862a7ad415eced9",
+   "887058e1f85c87bb",
+   "88adaf5c8b34d869",
+   "88f515d6ae541d41",
+   "88fceb4b374bfb56",
+   "890b5c8455cb2733",
+   "89167977af55c3c9",
+   "89184103cedc17cc",
+   "8944d45fe607c246",
+   "8948f2f415b54f70",
+   "89683b73cf2c8790",
+   "89c02a7ee76ea270",
+   "89ca32c100645d6b",
+   "89cbab82d72bbbc7",
+   "89fd998a9784635f",
+   "8a5ee32f83230799",
+   "8a83f8489f4a110d",
+   "8a9250e14cdb173b",
+   "8ab475c5b90f959e",
+   "8ada315003e1b03e",
+   "8ae8124ba14662a0",
+   "8af122514d558495",
+   "8af45ce5fb0604db",
+   "8b879ab4ef4adbed",
+   "8bb8f2b68fc7ae4a",
+   "8c05163d41c9cf1c",
+   "8c133fa5009d9462",
+   "8c224ec156d4f332",
+   "8c40152eb5eb6efd",
+   "8ce638297ebda7e0",
+   "8d1017470abf4b18",
+   "8d3b357d44734daf",
+   "8d3ba016bdac2728",
+   "8d5288724999f5c6",
+   "8d8a9e479a2aa119",
+   "8dbbafbf69a72b81",
+   "8dd8bbf4405b787b",
+   "8dfd4c49956f7e7e",
+   "8e5e999b3df048df",
+   "8e9c3de55b484cb8",
+   "8eb7f927e635c63d",
+   "8eeb3d4d39151cbc",
+   "8f78b53093e907bf",
+   "90e96b2f419496c9",
+   "9114c1b77a2e50a8",
+   "920593c9aed3f011",
+   "920d012082b299be",
+   "92235d489b3d8990",
+   "9256a6fef12d7a16",
+   "926bfd5d962a9e62",
+   "926dd46992e2a12a",
+   "928e7991630f8067",
+   "930c412011a055e8",
+   "931d2e41f665dcd9",
+   "931f0c4cf7e80174",
+   "936d35e566c655e0",
+   "93ac81f6e3077d0c",
+   "93d3779c72b68cde",
+   "93e269455f23561e",
+   "93f910aa1ec27973",
+   "943df72908e8d4f5",
+   "946b9bd46d45c2e5",
+   "9481096126d8856e",
+   "94aee9bf243032f1",
+   "94f1bb6449c38995",
+   "94fca824385dda6f",
+   "950f4309051d8377",
+   "951f3eada56aea9c",
+   "95976a495221ea24",
+   "95a08c036992969c",
+   "95dbdc395f498e57",
+   "95e6e8b251b3f53c",
+   "960f99a60067380c",
+   "9620abc6e78e853c",
+   "9657bbd8a37d0e8b",
+   "96a9c79a6e1e0c5f",
+   "96aa479f7fa6317d",
+   "96b118d354bb23fb",
+   "96d8d8c21dc3efe2",
+   "97124d6785d831ee",
+   "974e59a5b91af71c",
+   "9756d8e76f94f1a4",
+   "978c4be0981cb711",
+   "97959a91899d0a49",
+   "97af7e33d0fc9529",
+   "97eaf256aa9a765b",
+   "984bd52d777523ff",
+   "98e18f72dd85f85b",
+   "98ec28579ddab5b9",
+   "993515a0383a7038",
+   "993f775ca93d8556",
+   "995b4a832d9e8642",
+   "9998db4fc07c5996",
+   "99fcc3f1cbacc8ad",
+   "9a51d04f512c55eb",
+   "9a56403c8ac1a038",
+   "9a835e4c07468dd5",
+   "9a8a6f237a7821bd",
+   "9aa6121f0dc3cf7c",
+   "9b1d4c4d858bb641",
+   "9c00c65b5eacfbb8",
+   "9c3590861a687b4d",
+   "9c7db94ece238e5f",
+   "9c8b9f85b23cf5a9",
+   "9c997fa573ef8d8f",
+   "9c9d625fbd3206da",
+   "9cb0dc9435aa8562",
+   "9cc1ce562f13b0ab",
+   "9d0b6dd586e88e24",
+   "9d14fa1bc82b7e76",
+   "9d2f118be8512839",
+   "9d5cbd907f6dbe7d",
+   "9de75c99689cb431",
+   "9e1fe5a326fa7d7b",
+   "9e48dd85f5aa7fc7",
+   "9e5b65f0a0584d4c",
+   "9ea2abd8cc8b582c",
+   "9ea78a289f267d66",
+   "9ec000a02393a46b",
+   "9ee619028d9bdc30",
+   "9eef0147562e53d1",
+   "9efdf93c9ec72115",
+   "9f27cff567a0f748",
+   "9f40100e2fc20d92",
+   "9f8d90a134fa304c",
+   "a0150c4991e8e69a",
+   "a02a388e167aab1d",
+   "a09d99bea0f5ea35",
+   "a0cc971c9e5d78dc",
+   "a10acf3c91a8eb9a",
+   "a151ead051ae31d0",
+   "a16fb8d4f3f992cc",
+   "a17f769eb08fcec2",
+   "a180dbc6f4eb204d",
+   "a19587b97178e854",
+   "a1d2ef03a735d1f6",
+   "a1fef7948329f18b",
+   "a289b83165e88a69",
+   "a2b93d5f5dfaae57",
+   "a38f79a584030e21",
+   "a398906c9a172a35",
+   "a3a47248aa30ce9a",
+   "a3a556bf0790367e",
+   "a42a62d815413311",
+   "a44bfc3fe0deb96c",
+   "a45280495a27c7eb",
+   "a492a7fe7c3910c2",
+   "a4adb609378c1b6e",
+   "a4c9b71299c1fa7c",
+   "a4ddcaf30b764fd9",
+   "a503a18aaea8db70",
+   "a51d2438f6d43fe4",
+   "a52280292050a0cd",
+   "a523d52d00bfa70c",
+   "a53a088f852407dc",
+   "a5460e2110e972e5",
+   "a5559a20d4ed6bf0",
+   "a555b7b7ad9853e7",
+   "a556c72915332aae",
+   "a57f6c87c80f88c7",
+   "a595fe2b2f9fd94b",
+   "a5c72a338bc85b81",
+   "a5cf5d6aaa0ef6e8",
+   "a60ed4cdd442d8d6",
+   "a60f5161a26b8f9d",
+   "a66a3203cf33d69b",
+   "a70d0edbda540122",
+   "a74469ad2b7ba3e4",
+   "a7cef67078584ff9",
+   "a7cf800106d22b35",
+   "a7e831a71d37ce3b",
+   "a80b135e06576f73",
+   "a884ead2f1061554",
+   "a895fdcbe590c0fe",
+   "a8b3838b2a917f9e",
+   "a917e3be0ec0eec9",
+   "a9254becb121e831",
+   "a96370423b5b16a0",
+   "a974c8886d57013d",
+   "a9cb3076d578baa2",
+   "aa511e5538117fe6",
+   "aa8d59915abd8514",
+   "aab454e929237d40",
+   "aab5723862bef325",
+   "ab49c36e4f92a684",
+   "ab5e35a0f344f4cc",
+   "ab7b31709259c68f",
+   "ab998c0f64f86387",
+   "abc8077db2ae5136",
+   "ac141ae91ca02751",
+   "ac3ca0ba4a74b95f",
+   "ac3fb82dfa2c2fa4",
+   "ac4352974950662e",
+   "ac6c2a81b729c79c",
+   "ac6eb58839c0f858",
+   "ac76f1ae2fa21d2f",
+   "ac9a852d3753b444",
+   "acdfdd191293cb6f",
+   "ad59e55fd929ed50",
+   "ad70ff6389a04c81",
+   "ad8f8d6998d7cdaf",
+   "ada360cb63bf7a3d",
+   "adc006922d13a94e",
+   "add04a886a78b6a1",
+   "add87ee31d2f145d",
+   "ae0112bc34da3d7c",
+   "ae45f7d19de5b0ce",
+   "aefdb9d148fdff1f",
+   "af19fada48ef6f0f",
+   "af8d6f4b2895f271",
+   "af8de02141ad5082",
+   "afa1afff8e9ae01a",
+   "afa4b7c670a172d8",
+   "afdbd91433ee0825",
+   "afe3040b22ae17cf",
+   "b0077cbd0b90fbf3",
+   "b023e10841c65d33",
+   "b057a68efba36361",
+   "b0dc33190443177f",
+   "b12dbcdf1a1d280a",
+   "b1c7cc51c15f55af",
+   "b201e6ae4f53677b",
+   "b21c5d35db804cce",
+   "b22935772a04aea4",
+   "b2431211d6be225c",
+   "b2af73779cc1e8b0",
+   "b2bd6a583d8578d1",
+   "b2becea862c27df6",
+   "b2d2c954272e633d",
+   "b305324a72db3dcc",
+   "b3236b2731137ffa",
+   "b382a3984d336dc5",
+   "b3abe870ff04a620",
+   "b3dcfe31f287170e",
+   "b3de4c51d4089d39",
+   "b43214f333672da8",
+   "b453fa2823d21df8",
+   "b4a7bdcc9a67de17",
+   "b54d7868db312e64",
+   "b57ac9dbbe3c78da",
+   "b585fea856dc0922",
+   "b5d8fc166591da05",
+   "b5f8fa45f8feb921",
+   "b5fab09d00afd0bb",
+   "b5feb9087e47854f",
+   "b63319746f3e349b",
+   "b6bb6dd16aee7e28",
+   "b706303c2c51b5cf",
+   "b70d723af3c8a0c1",
+   "b729d6d04a071487",
+   "b78d5d2ed99fd7d2",
+   "b79f271efdc0a613",
+   "b84a55f4d25a7490",
+   "b85138d36cc1ae93",
+   "b85e668a3781ed56",
+   "b88c9caecf219cd7",
+   "b8c10d140c462456",
+   "b92635d24a6ac66e",
+   "b932f165d38dda6f",
+   "b94dce104e056e61",
+   "b94efd690b3cda26",
+   "b95d7eacd0554e68",
+   "b9a9771a16aba8c6",
+   "b9f072bb82eef8f2",
+   "ba46143f0fff583a",
+   "ba6198f33618ae20",
+   "ba749bb36de81728",
+   "ba9fb6846e81050a",
+   "baf5aadfd33ea604",
+   "baf6f4b29da21684",
+   "bb1368deb58c3e75",
+   "bb16fc485ea91f56",
+   "bb567b8f200cc4d4",
+   "bbc49d31911e1159",
+   "bbecb23e80c2c357",
+   "bbf8c3d605d918e6",
+   "bc26abc6c294a0ab",
+   "bc570ffed8f39c61",
+   "bc5969954ae806b6",
+   "bc63849d006c4ab4",
+   "bc6f54d15b1ce9c4",
+   "bc72cb32a8deb78b",
+   "bcb446b18c88bd31",
+   "bcb4f93aa050e02f",
+   "bcd07541cc0bd3e9",
+   "bceede999e0cc943",
+   "bd2d5152296fa811",
+   "bd3ae0c4d07f6716",
+   "bd54979ca8f0f97d",
+   "bd5a8df2959cb717",
+   "be23ed767d59588c",
+   "be393fe06c35aa2a",
+   "be4a79b3020c174f",
+   "be8e41d8f9c0f84d",
+   "beecd88d9252dd23",
+   "bf06f722f8be1905",
+   "bf0ae1e8d3b74489",
+   "bf25494d7c777699",
+   "bf272ef933c6086e",
+   "bf52f15f8bd076e8",
+   "bf5eac1b027701f0",
+   "bf72eec1285a3a3d",
+   "bf92ca68c585a692",
+   "bf99ee2c12fb1ae2",
+   "bfda2e60cbeb6e1c",
+   "c004d78cfc813313",
+   "c01e179b3d9a24cb",
+   "c02fb45a21d891c3",
+   "c04f1ed7603472ff",
+   "c053f0d9f3005a90",
+   "c088675115ee6720",
+   "c0941b25912db7ad",
+   "c098cbf25ce46858",
+   "c11f8b153469e90c",
+   "c15741e50da8f432",
+   "c1bd8db77e430a16",
+   "c1d169e82be94862",
+   "c1dac65ab4744dcb",
+   "c2051c7d14bb3dd6",
+   "c224791a4ec9e9d3",
+   "c2564b30d266a0a1",
+   "c2755c4fda15c517",
+   "c28a42c4122c4b09",
+   "c2b672b5e9c18c25",
+   "c2e5aa2a98e8ddfc",
+   "c328788181e7d0ff",
+   "c33a2616368f0c8d",
+   "c3464e4a994e0fa4",
+   "c3481db74d5a8554",
+   "c3a30a7e32c4e61a",
+   "c3c38784353939af",
+   "c3fb11dd3cfcbed0",
+   "c41717120f35a5e3",
+   "c43750042206c5cc",
+   "c44e5d68c713fe75",
+   "c44e88d895da5f53",
+   "c48b4ad2c49165c0",
+   "c4a3c71415a3e472",
+   "c4f25e7dc5d94f70",
+   "c51ed34d35465538",
+   "c53eee6d74bd36fe",
+   "c544aa4beaef6989",
+   "c5af280b3bb4d6fd",
+   "c5b4145597bdea71",
+   "c5baaf728dce3629",
+   "c5d02f8676d8bae4",
+   "c5d4a35a8a65f5d3",
+   "c5d4ce8c5cf0b1d7",
+   "c5e3d6d7ae71a469",
+   "c5faadddaa91e44c",
+   "c5fcc6a868f0b29d",
+   "c60695f12f3c2b4a",
+   "c63c0176f8813424",
+   "c678e869c0eefb8e",
+   "c6d48c899479a1d0",
+   "c6f8cbd7b9f902a5",
+   "c75a78b1ab6371eb",
+   "c7916eafee5d294c",
+   "c7956b509428080e",
+   "c7c53436d28fd0da",
+   "c85611daf9a86519",
+   "c85a33609a59caf6",
+   "c87de7368c524f30",
+   "c8adcbb84a647eb2",
+   "c8c9408844611cc6",
+   "c921480e37326d2a",
+   "c94629a688cd1f6b",
+   "c948de30599f6a80",
+   "c95d41c9d092fbf6",
+   "c98319131d41fb8f",
+   "c9c65b69b5f71e1d",
+   "ca3ff088040a0163",
+   "ca5c59442279b0d3",
+   "ca963b4abc8b6e42",
+   "caa02ee8f01ae76f",
+   "caa9e22124b9b693",
+   "caf7f25adf409dd3",
+   "cb19a8bb8de498f4",
+   "cb1a611f74771a76",
+   "cb340035d187707d",
+   "cb618091d484a4c8",
+   "cbf031aa38c97055",
+   "cc2bdfe7d8090f02",
+   "cc7f12293e4709e7",
+   "ccf7367115922a37",
+   "cd0f51e5a123d423",
+   "cd1d4a145efc5298",
+   "cd4f46d859e1593d",
+   "cd5397ff1d828e67",
+   "cdb927b26940215d",
+   "cddbee04cc7fb93e",
+   "ce117892f55f4081",
+   "ce3e80414b18e647",
+   "ce5389d1877a0f38",
+   "ce67f839fe9b7e4c",
+   "ce8b0fc79d190daa",
+   "cec69a08af39886c",
+   "cecd6819e3b7f729",
+   "cefebdf66d5cfaff",
+   "cf0e3958a25a7a8d",
+   "cf4800b329116203",
+   "cf4817ddbe68a6c6",
+   "cfbd24d8e813899f",
+   "cfcf3184cd1e71d7",
+   "d01c0f53abf38fc8",
+   "d043342f7c209daf",
+   "d0a78180270bdc71",
+   "d102df99a8125466",
+   "d112645cbfd914eb",
+   "d12666b81f176ae8",
+   "d147fdd6acea2da4",
+   "d1490d16dedfaedd",
+   "d174b270d1c0c89b",
+   "d1a78cbda59b9fdb",
+   "d1c0eda0839cf256",
+   "d20f77945e4eb843",
+   "d2279774a3ea9b33",
+   "d229b3d347308861",
+   "d24297d7c3836504",
+   "d2b9fcac3098e299",
+   "d2fd9b9b5b2c994b",
+   "d2fdf7e3cb16653e",
+   "d370dd51cca82f9e",
+   "d3711108d4d73023",
+   "d3b5b8e6feb9932e",
+   "d3dae2ba72925d25",
+   "d3eaeb28b49e5bf8",
+   "d3fbe1ea737514ca",
+   "d3fcea517cd06bea",
+   "d40136e82eac0b10",
+   "d44afe2b078aab7b",
+   "d44c8a0f249c21f1",
+   "d4b48d140616655b",
+   "d4c746780f6fa712",
+   "d4d3dc2c00fdac59",
+   "d4e3d7e787006ee4",
+   "d504844530447907",
+   "d533cac9557fa283",
+   "d54ab38c2a31643f",
+   "d55a7fd481ab1c80",
+   "d56b879fb50a2793",
+   "d5b8d1970ff9074d",
+   "d5d6ee7deaaa3d55",
+   "d6278246b251b94d",
+   "d68387274f6fd517",
+   "d6a99b6f45270297",
+   "d6d7b583963cedea",
+   "d6f994e4f5625eac",
+   "d70e020e44ddfbe4",
+   "d7181041fba80836",
+   "d71e012543fff190",
+   "d76b3a33e6c68350",
+   "d77e74098b8004dd",
+   "d79621527b5ae120",
+   "d7ea709d58544122",
+   "d8103ef2229233bc",
+   "d8753717f9bee748",
+   "d87e9688cf20a358",
+   "d91833b2ae766dea",
+   "d9581823ad37abe3",
+   "d97a2bbf2f83aedb",
+   "d9a4bfa9f1fe9b94",
+   "d9b64c33096e7aae",
+   "da3dd986ae3fce87",
+   "da51cb77d35efd79",
+   "da6ca136e0a421af",
+   "da7d67501f46cf96",
+   "da8724462bc628f6",
+   "dabc0204d159ae34",
+   "dac0990b81cd6b2d",
+   "db1b9bbb00b635de",
+   "db46798a7efb1b07",
+   "db9aaa3e986c24c6",
+   "dc12778153ca4a8c",
+   "dc188472c79ebeb0",
+   "dc2b7c73b53c8bd2",
+   "dc6fedf2fc51a498",
+   "dc70976b5d927330",
+   "dca62e1192fce106",
+   "dca75b79537641be",
+   "dcb5e5f6da6fabd2",
+   "dd0482708b6b7bbd",
+   "dd4e4ebac8f96615",
+   "dd72b06b9e94ab33",
+   "dd72e95d265195f9",
+   "ddbae5c30d11c3d0",
+   "de0e615c4e4c1642",
+   "de17f685efd1e0d2",
+   "de7da54de4c0d403",
+   "de83bcd856fb1d88",
+   "de9eed285e085db5",
+   "dea6e42690f75d09",
+   "defcf813727c5d74",
+   "df24add979af582a",
+   "df5d18a65dc9785b",
+   "df8a888218e9cd94",
+   "df9d1e528ecf622a",
+   "e04fd0d9e3abff86",
+   "e078eb441806a5b0",
+   "e0b3b891860bb342",
+   "e0b7cc3d06d5d638",
+   "e0e26db9e15d3bfa",
+   "e0ef2c1c9fee31fb",
+   "e0f070a4cbe08a21",
+   "e10799da9cce5ee3",
+   "e11f22dea96cbbd0",
+   "e12dae82d6325082",
+   "e138e9c525e9b83b",
+   "e16ddbbf335edd20",
+   "e1892d96021520ed",
+   "e1a16db3855099a1",
+   "e1a6a310428ae3fc",
+   "e1b63450b881df77",
+   "e1bc54ac50f02713",
+   "e1bcf518b2381deb",
+   "e1bed7a29acc15a4",
+   "e1d00dbdb2bbbf72",
+   "e1d159d9d0bb875b",
+   "e1d3b0a322be6f04",
+   "e1d610e7be7ab56d",
+   "e1f06c91e836d0a2",
+   "e1f1dcff30e951e2",
+   "e2197bb97b4a52d1",
+   "e21c2cb6b36a5a91",
+   "e2225aea8ddc35ae",
+   "e22a86e53fdba067",
+   "e2e155057cfbb9d8",
+   "e32cc946de835d38",
+   "e331f1095c281262",
+   "e36a683628127eb7",
+   "e39470a37632be3f",
+   "e39ac1c51aaaf861",
+   "e3a89c6257956eeb",
+   "e3aa18d07e834ab8",
+   "e3feb82313f5914b",
+   "e40a2e2eea1ba81f",
+   "e4611bafa928a3a0",
+   "e4f6d9f1fde97b74",
+   "e51660b77f71d136",
+   "e5198521300cf516",
+   "e534be9075d182b9",
+   "e53b438c0fb1fdae",
+   "e5650ef5a350c63c",
+   "e5814b8f98016806",
+   "e5a9c1712ab2962a",
+   "e5b9f67a2e7de57b",
+   "e5ccdef5aa79d9e2",
+   "e5dc8010ab81fd78",
+   "e671c88d22e781da",
+   "e68b583fd9b68e08",
+   "e6a6808197f31661",
+   "e6dbc53f236e421d",
+   "e70adf3fc5cdcbda",
+   "e71c139205a4f8e9",
+   "e7252eed21f52394",
+   "e73658b1c5a893c7",
+   "e757028b8723bf61",
+   "e760630612bf942d",
+   "e769c6cb07d557c4",
+   "e7806cc83eb904ee",
+   "e7933f92e037c4ab",
+   "e79df355cb165c1d",
+   "e7e06b022e25005d",
+   "e7f02c4dd77bab7f",
+   "e80847218a19a30b",
+   "e8662ec74f00e8c5",
+   "e8973dfc7d9d2aaa",
+   "e8decc87a43d7585",
+   "e8ea54b71036f8c9",
+   "e90658aa7fe91dc2",
+   "e90cc76fddc78451",
+   "e920ca8300626dab",
+   "e936f401d790999e",
+   "e97197c54b2fad61",
+   "e982b17c99aaf08e",
+   "e9b3bf1d3babfc6c",
+   "e9eea541a0b7103c",
+   "e9f7353b11a0ddf2",
+   "ea7f66748297f409",
+   "ea85c3c4b01ce485",
+   "ea92926f35493f84",
+   "eaca2b227eca4718",
+   "eaf1b6f93c429bcd",
+   "eb050ae603bdb176",
+   "eb45a6cb49acb95e",
+   "eb5d8a810608c4c5",
+   "eb6ccd1d12c06e89",
+   "ebc594faeaaf1b0e",
+   "ebe8cf5ffa45f4e0",
+   "ebef1c15ff82a9d1",
+   "ebfb1a66a4202327",
+   "ec05b89cea7428b6",
+   "ec05cd4f5e2a7773",
+   "ec1a53b34804d0f6",
+   "ec1e7b439550d881",
+   "ec35081243de3504",
+   "ec3da7063c89dd34",
+   "ec7d51c8008af016",
+   "ec80d4503ef16d4b",
+   "ec99310a7c01bcb8",
+   "eca63c88616091c0",
+   "ecd268c8d2aaa579",
+   "ecfa488fb16da261",
+   "ed0b54c7a62fe5cc",
+   "ed239857c2ddad6c",
+   "edac7a76974b8869",
+   "edbb9359851c196d",
+   "edf2c69eb9a36e44",
+   "ee497507eb91a29d",
+   "eeb3185ad8aa30b7",
+   "ef018788a03a7c63",
+   "ef093716e69608b8",
+   "ef093f328f86b7f4",
+   "ef11a3994c2e622a",
+   "ef2581ca64dc2188",
+   "efa9909f0870ae41",
+   "efef77e9a0d3a37f",
+   "f075b8d2aeb4a7ed",
+   "f0b9acdfd4d1592a",
+   "f1076fae8cc09795",
+   "f119d726f7b8ebac",
+   "f1524dc65fc43907",
+   "f1757e5c86aff58e",
+   "f1b7b281796587fe",
+   "f1c0a2d41beac0bf",
+   "f1d79e525fa6c56e",
+   "f1f0fe902161ac58",
+   "f20366cfb0fe855f",
+   "f236ea0b851b92b9",
+   "f27d7155410b6c16",
+   "f29a3b1766a2adf2",
+   "f2a089b2e4e7e964",
+   "f2ae43917dc4bd22",
+   "f2dc4a22fe3afe5f",
+   "f34787c36c00e805",
+   "f3a9b723de7252c5",
+   "f400aa7dfd2ff82d",
+   "f4379a21db209f95",
+   "f4437ad46ef7ab3e",
+   "f4586db7ca4986af",
+   "f45ca32e713d906b",
+   "f466007c8e46b804",
+   "f4d6e71454b45c1b",
+   "f540ed14fe8b152d",
+   "f54592e6f2c2b222",
+   "f568bd4dd9998aa2",
+   "f5a331f8897bad1c",
+   "f61bc542051a8401",
+   "f61f723333752957",
+   "f6626833b93e2472",
+   "f66442e79b5036e0",
+   "f6cd438b160bf428",
+   "f6dae50b94aa0513",
+   "f7384e4cba50e806",
+   "f748ce976e0995f9",
+   "f76f21b8798b313e",
+   "f79595be08e00d36",
+   "f7b5d2a30ab09793",
+   "f7cd96c401c49cd2",
+   "f7d0056a5095b9fc",
+   "f7d6c2ac7eedc273",
+   "f7e717d0022b8536",
+   "f809fc4558fdca73",
+   "f853f62101e6392a",
+   "f8606654ba42af7d",
+   "f87b8e0f2ac441a6",
+   "f8864235c1720832",
+   "f895c5c07ce51fcd",
+   "f8f963cac4ce8f1e",
+   "f935cbf7c3387113",
+   "f96907b3b01f65de",
+   "f9694867ac400cc6",
+   "f96a29cda0212c78",
+   "f994e4f69f6f67c2",
+   "f9a7f4e8a8d8f3ed",
+   "f9d8a4d974a1f9a4",
+   "fa3bea5d2424d27d",
+   "fa4ede8c47822e76",
+   "fab7bb08f30a5a65",
+   "fb4aad117b298adb",
+   "fb7593b4291a3360",
+   "fbbfdb8d1d8f13aa",
+   "fbd95c09917b6d85",
+   "fc0914581b9346e8",
+   "fc24cd4b628c96c0",
+   "fc553b641e344b47",
+   "fc9cef6793f9c83c",
+   "fcf2f084bfc03d09",
+   "fcf39352e64914c6",
+   "fd193d1ebfd8cbd8",
+   "fd4b8c3631ed285b",
+   "fd5eec4e0eace5f7",
+   "fda590386bfa79bf",
+   "fda59b6ff4feaeea",
+   "fda8988d5aee245d",
+   "fdc362ff508e4ad9",
+   "fdcf4f405c5a4eac",
+   "fe238fd9c1ef497e",
+   "fe3de97f9504f6c4",
+   "fe5950c8b5912193",
+   "fe97be44a4d8909b",
+   "fea01192778530e8",
+   "fedaa9e54a440c79",
+   "feecd245d8a0a73b",
+   "ff50bc9b3ebf2deb",
+   "ff8d7065d2880f1f",
+   "ff9310739fac0dd7",
+   "ffa8048c579967d0",
+   "ffaeccffad933ec0",
+   "ffc83e54f44dd92f",
+   "ffe8622a22e556c3"
+  ]
+ }
+}

@@ -1,5 +1,5 @@
 {
-  "registryVersion": "1.0.0",
+  "registryVersion": "2.0.0",
   "sourceIsRealCompany": true,
   "generationPolicies": {
     "may-generate-new": {
@@ -15,11 +15,15 @@
       "assetRefPattern": "^placeholder:"
     },
     "omit": {
-      "meaning": "The field must be absent from generated PageSpecs entirely.",
+      "meaning": "No placeholder or generated stand-in exists. Only the real file in clone mode (source:<path>); blocked in generation mode.",
       "assetRefPattern": null
+    },
+    "operator-supplied": {
+      "meaning": "The deploying operator supplies its own asset (its logo, its document, its verified emblem). assetRef must be user:<id> or placeholder:<id>; the generator never fabricates it.",
+      "assetRefPattern": "^(user|placeholder):"
     }
   },
-  "licensingNote": "Source is the live site of a real company (The Equator Company, equatorcompany.com). Real people's names/photos, partner/merger/member logos, client project slides, brand Lotties/videos, the PRR PDF and the National 2 font are not licensed for reuse in generated output.",
+  "licensingNote": "Source is the live site of a real company (The Equator Company, equatorcompany.com). Real people's names/photos, partner/merger/member logos, client project slides, brand Lotties/videos, the PRR PDF and the National 2 font are not licensed for reuse in generated output. A real logo or wordmark is never must-reuse-exact in generation mode: it is clone-only and generation uses placeholder-brand-mark or user-supplied-asset.",
   "roles": {
     "brand-wordmark": {
       "generationPolicy": "must-not-reproduce",
@@ -31,6 +35,17 @@
           "lines": "86-106",
           "quote": "<LogoWordmark />"
         }
+      ],
+      "kind": "media",
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "placeholder-brand-mark",
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "Use placeholder-brand-mark (neutral text-free shape) or the operator's own mark via user-supplied-asset. Never redraw, trace or imitate the Equator wordmark.",
+      "sourceFiles": [
+        "inline:LogoWordmark",
+        "inline:FooterWordmark"
       ]
     },
     "brand-lottie-splash": {
@@ -43,6 +58,16 @@
           "lines": "22-29",
           "quote": "/lottie/navbar.lottie"
         }
+      ],
+      "kind": "media",
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "placeholder-brand-mark",
+        "generated-illustration"
+      ],
+      "generatedModeGuidance": "A neutral placeholder mark or an original generated animation; never a recreation of navbar.lottie.",
+      "sourceFiles": [
+        "/lottie/navbar.lottie"
       ]
     },
     "brand-lottie-value": {
@@ -55,6 +80,19 @@
           "lines": "29-31",
           "quote": "LottiePlayer src={`/lottie/${value.lottie}.lottie`}"
         }
+      ],
+      "kind": "media",
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "generated-illustration"
+      ],
+      "generatedModeGuidance": "Original generated illustrations/animations per panel; never the five Equator value animations.",
+      "sourceFiles": [
+        "/lottie/sustainability.lottie",
+        "/lottie/global.lottie",
+        "/lottie/grounded.lottie",
+        "/lottie/curiosity.lottie",
+        "/lottie/difference.lottie"
       ]
     },
     "brand-lottie-footer": {
@@ -67,6 +105,16 @@
           "lines": "11-16",
           "quote": "/lottie/footer.lottie"
         }
+      ],
+      "kind": "media",
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "generated-illustration",
+        "placeholder-brand-mark"
+      ],
+      "generatedModeGuidance": "Original generated loop or a placeholder mark; never footer.lottie.",
+      "sourceFiles": [
+        "/lottie/footer.lottie"
       ]
     },
     "ambient-video": {
@@ -84,6 +132,16 @@
           "lines": "9-11",
           "quote": "/cloud_low.mp4"
         }
+      ],
+      "kind": "media",
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "generated-ambient-video"
+      ],
+      "generatedModeGuidance": "Use generated-ambient-video (new original footage, no identifiable people, places or brands); never bird_low.mp4 / cloud_low.mp4.",
+      "sourceFiles": [
+        "/bird_low.mp4",
+        "/cloud_low.mp4"
       ]
     },
     "merger-logo": {
@@ -96,6 +154,18 @@
           "lines": "17-22",
           "quote": "/logo_s317.png"
         }
+      ],
+      "kind": "media",
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "placeholder-company-logo"
+      ],
+      "generatedModeGuidance": "Fictional or placeholder company marks only; never the S317, Sair da Casca, Engidro or Factor Social logos.",
+      "sourceFiles": [
+        "/logo_s317.png",
+        "/logo_sairdacasca.png",
+        "/logo_engidro.png",
+        "/logo_factorsocial.png"
       ]
     },
     "member-logo": {
@@ -108,6 +178,23 @@
           "lines": "130",
           "quote": "/logos/logo${n}.png"
         }
+      ],
+      "kind": "media",
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "placeholder-company-logo"
+      ],
+      "generatedModeGuidance": "Placeholder association marks only; membership claims are operator-verified.",
+      "sourceFiles": [
+        "/logos/logo1.png",
+        "/logos/logo2.png",
+        "/logos/logo3.png",
+        "/logos/logo4.png",
+        "/logos/logo5.png",
+        "/logos/logo6.png",
+        "/logos/logo7.png",
+        "/logos/logo8.png",
+        "/logos/logo9.png"
       ]
     },
     "project-photo": {
@@ -120,6 +207,21 @@
           "lines": "12-26",
           "quote": "<LazyPicture base={slide.image}"
         }
+      ],
+      "kind": "media",
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "generated-illustration",
+        "placeholder-screenshot",
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "Generated original imagery with no identifiable person, client, brand or site, a placeholder, or the operator's own project photography; never slides/slide1-5.",
+      "sourceFiles": [
+        "/slides/slide1",
+        "/slides/slide2",
+        "/slides/slide3",
+        "/slides/slide4",
+        "/slides/slide5"
       ]
     },
     "team-portrait": {
@@ -132,6 +234,29 @@
           "lines": "51-53",
           "quote": "<LazyPicture base={`/team/${slug}`}"
         }
+      ],
+      "kind": "media",
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "fictional-avatar"
+      ],
+      "generatedModeGuidance": "Fictional avatars of fictional people only; never a real employee's photo or a generated likeness of one.",
+      "sourceFiles": [
+        "/team/ana-goncalves",
+        "/team/antonio-monteiro",
+        "/team/claudia-tapadas",
+        "/team/dalila-antunes",
+        "/team/filipe-de-morais-vasconcelos",
+        "/team/joao-guimaraes",
+        "/team/jose-palma",
+        "/team/marta-vian-santos",
+        "/team/miguel-feliz",
+        "/team/nathalie-ballan",
+        "/team/paulo-rosa",
+        "/team/raquel-almeida",
+        "/team/rita-campos",
+        "/team/rui-marques",
+        "/team/teresa-cordeiro"
       ]
     },
     "team-halftone": {
@@ -144,6 +269,29 @@
           "lines": "48-50",
           "quote": "-back.png"
         }
+      ],
+      "kind": "media",
+      "availability": "clone-only",
+      "generationSafeSubstitutes": [
+        "fictional-avatar"
+      ],
+      "generatedModeGuidance": "Fictional avatar treatment; never a halftone derived from a real portrait.",
+      "sourceFiles": [
+        "/team/ana-goncalves-back.png",
+        "/team/antonio-monteiro-back.png",
+        "/team/claudia-tapadas-back.png",
+        "/team/dalila-antunes-back.png",
+        "/team/filipe-de-morais-vasconcelos-back.png",
+        "/team/joao-guimaraes-back.png",
+        "/team/jose-palma-back.png",
+        "/team/marta-vian-santos-back.png",
+        "/team/miguel-feliz-back.png",
+        "/team/nathalie-ballan-back.png",
+        "/team/paulo-rosa-back.png",
+        "/team/raquel-almeida-back.png",
+        "/team/rita-campos-back.png",
+        "/team/rui-marques-back.png",
+        "/team/teresa-cordeiro-back.png"
       ]
     },
     "funding-emblem": {
@@ -156,6 +304,15 @@
           "lines": "75-86",
           "quote": "/mono.svg"
         }
+      ],
+      "kind": "media",
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "Absent unless the operator really holds public funding and supplies its own official emblem (user-supplied-asset). Never the PRR / Republica Portuguesa / EU strip.",
+      "sourceFiles": [
+        "/mono.svg"
       ]
     },
     "project-sheet-pdf": {
@@ -168,7 +325,119 @@
           "lines": "75-86",
           "quote": "/Equator-PRR-Investimentos.pdf"
         }
+      ],
+      "kind": "media",
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "user-supplied-asset"
+      ],
+      "generatedModeGuidance": "Absent unless the operator supplies its own document. Never link or bundle Equator-PRR-Investimentos.pdf.",
+      "sourceFiles": [
+        "/Equator-PRR-Investimentos.pdf"
       ]
+    },
+    "placeholder-brand-mark": {
+      "kind": "media",
+      "availability": "generation-safe",
+      "generationPolicy": "placeholder-only",
+      "pinned": true,
+      "description": "Neutral, text-free placeholder in the brand-mark slot (header logo, stacked footer wordmark, splash mark).",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Use a neutral shape; replace with the operator's own mark later.",
+      "sourceFiles": [],
+      "evidence": []
+    },
+    "user-supplied-asset": {
+      "kind": "media",
+      "availability": "generation-safe",
+      "generationPolicy": "operator-supplied",
+      "pinned": true,
+      "description": "An asset the deploying operator supplies and owns: its own logo, project photography, funding emblem or document.",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Reference it as user:<id>; never fabricate it.",
+      "sourceFiles": [],
+      "evidence": []
+    },
+    "generated-illustration": {
+      "kind": "media",
+      "availability": "generation-safe",
+      "generationPolicy": "may-generate-new",
+      "pinned": true,
+      "description": "Original generated illustration or animation (value panels, splash/footer loops, project imagery).",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Original artwork only: no tracing or imitation of Equator Lotties, no identifiable real person, client, brand or site.",
+      "sourceFiles": [],
+      "evidence": []
+    },
+    "generated-ambient-video": {
+      "kind": "media",
+      "availability": "generation-safe",
+      "generationPolicy": "may-generate-new",
+      "pinned": true,
+      "description": "Original generated ambient footage for the title and CTA background slots.",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Original abstract/nature footage; no identifiable people, places or brands; never the Equator bird/cloud clips.",
+      "sourceFiles": [],
+      "evidence": []
+    },
+    "placeholder-screenshot": {
+      "kind": "media",
+      "availability": "generation-safe",
+      "generationPolicy": "placeholder-only",
+      "pinned": true,
+      "description": "Neutral placeholder in an image slot (project slide image) when no original imagery exists yet.",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Neutral placeholder frame; replace with operator-supplied imagery.",
+      "sourceFiles": [],
+      "evidence": []
+    },
+    "fictional-avatar": {
+      "kind": "media",
+      "availability": "generation-safe",
+      "generationPolicy": "may-generate-new",
+      "pinned": true,
+      "description": "Avatar or portrait of a fictional person, used with a fictional name.",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Fictional people only; never a real employee's likeness or name.",
+      "sourceFiles": [],
+      "evidence": []
+    },
+    "placeholder-company-logo": {
+      "kind": "media",
+      "availability": "generation-safe",
+      "generationPolicy": "placeholder-only",
+      "pinned": true,
+      "description": "Placeholder company / association / customer logo slot (merger logos, member marquee).",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Neutral placeholder marks with fictional or placeholder labels; never real third-party trademarks.",
+      "sourceFiles": [],
+      "evidence": []
+    },
+    "placeholder-url": {
+      "kind": "link",
+      "availability": "generation-safe",
+      "generationPolicy": "placeholder-only",
+      "pinned": true,
+      "description": "Link targets in generation mode: placeholder:<id>, a relative path, an in-page anchor, or an absolute URL on a reserved .example / .invalid domain only.",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Never an Equator, partner, client, LinkedIn, Mailchimp or government URL.",
+      "sourceFiles": [],
+      "evidence": [],
+      "allowedHostSuffixes": [
+        ".example",
+        ".invalid"
+      ]
+    },
+    "original-copy": {
+      "kind": "copy",
+      "availability": "generation-safe",
+      "generationPolicy": "may-generate-new",
+      "pinned": true,
+      "description": "All text in generation mode: newly written copy for the operator's brand.",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Never Equator copy (checked as hashed 5-word shingles), names, claims or statistics.",
+      "sourceFiles": [],
+      "evidence": []
     }
   },
   "licensedResources": {
@@ -184,5 +453,20 @@
         }
       ]
     }
+  },
+  "modes": {
+    "clone": "Faithful reconstruction of the Equator site. A role whose availability is clone-only or blocked-for-generation may carry assetRef source:<path> naming one of its real sourceFiles (verified against ../public when the source tree is present), or a placeholder/generated ref allowed by its generationPolicy.",
+    "generation": "A new page for someone else. Only generation-safe roles are allowed (GENERATION_MODE_ASSET); source: refs, real file stems and real asset identifiers are rejected; the role's generationPolicy decides which ref prefix is allowed."
+  },
+  "availabilityValues": {
+    "clone-only": "Real Equator media. Usable only in clone mode; in generation mode use one of generationSafeSubstitutes.",
+    "generation-safe": "Safe for generation mode: placeholder, operator-supplied, generated-original or fictional content only.",
+    "blocked-for-generation": "Real media that would make a false or legally sensitive claim if reused (public-funding emblem, proprietary document). Clone mode only; absent from generation output unless the operator supplies its own verified equivalent (user-supplied-asset)."
+  },
+  "refPrefixes": {
+    "placeholder:": "neutral placeholder slot, filled later",
+    "generated:": "new original media created for this page (never traced from the source)",
+    "user:": "operator-supplied asset (the deployer's own)",
+    "source:": "a real Equator file (clone mode only); must be listed in the role's sourceFiles"
   }
 }

@@ -11,6 +11,8 @@ Citation drift is proven twice: against a synthetic fixture file created in the
 temp parent (works even in a standalone copy) and, when the real source is
 present, against real cited files.
 
+Usage: python3 extraction/prove_drift.py [--scratch DIR]   (scratch copies go under DIR; default: OS temp dir)
+
 Exit 0 only if every injection is caught and every clean control passes.
 """
 import json
@@ -24,6 +26,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REAL_PARENT = os.path.dirname(ROOT)
 MARKERS = ("src/App.jsx", "CLONE_SPEC.md", "package.json")
 SOURCE_AVAILABLE = all(os.path.exists(os.path.join(REAL_PARENT, m)) for m in MARKERS)
+SCRATCH = None
 
 
 def jedit(repo, rel, fn):
@@ -46,7 +49,7 @@ def tedit(repo, rel, fn):
 
 
 def fresh(with_source):
-    tmp = tempfile.mkdtemp(prefix="equator-drift-")
+    tmp = tempfile.mkdtemp(prefix="equator-drift-", dir=SCRATCH)
     repo = os.path.join(tmp, "design-repo")
     shutil.copytree(ROOT, repo, ignore=shutil.ignore_patterns("__pycache__"))
     if with_source:
@@ -72,13 +75,13 @@ def inj_orphan_primitive(repo, parent):
     jedit(repo, "tokens/llm/component-allowlist.json", lambda d: d["primitives"].remove("primitive.pill"))
 
 def inj_allowlist_version(repo, parent):
-    jedit(repo, "tokens/llm/component-allowlist.json", lambda d: d.__setitem__("allowlistVersion", "1.0.1"))
+    jedit(repo, "tokens/llm/component-allowlist.json", lambda d: d.__setitem__("allowlistVersion", "2.0.1"))
 
 def inj_readme_version(repo, parent):
-    tedit(repo, "README.md", lambda t: t.replace("allowlistVersion 1.0.0", "allowlistVersion 1.0.1"))
+    tedit(repo, "README.md", lambda t: t.replace("allowlistVersion 2.0.0", "allowlistVersion 2.0.1"))
 
 def inj_manifest_count(repo, parent):
-    jedit(repo, "registry.manifest.json", lambda d: d["counts"].__setitem__("sections", 14))
+    jedit(repo, "registry.manifest.json", lambda d: d["counts"].__setitem__("sections", 99))
 
 def inj_readme_count(repo, parent):
     tedit(repo, "README.md", lambda t: t.replace("| `routes` | 3 |", "| `routes` | 4 |"))
@@ -140,11 +143,11 @@ def inj_theme_ref(repo, parent):
     jedit(repo, "tokens/10-semantic/semantic.json", lambda d: d["text"]["primary"].__setitem__("$value", "{color.ink}"))
 
 def inj_catalog_phantom(repo, parent):
-    jedit(repo, "tokens/llm/token-catalog.json", lambda d: d["semantic"].append("text.phantom"))
+    jedit(repo, "tokens/llm/token-catalog.json", lambda d: d["tokens"].__setitem__("text.phantom", {"category": "semantic", "layer": "10-semantic", "file": "tokens/10-semantic/semantic.json", "type": "color", "value": "{color.ink}"}))
 
 def inj_policy_key(repo, parent):
     def f(d):
-        d["rawValueRestrictions"]["shadow"] = d["rawValueRestrictions"].pop("motion")
+        d["rawValueRestrictions"]["shadow"] = d["rawValueRestrictions"].pop("elevation")
     jedit(repo, "tokens/llm/token-policy.json", f)
 
 def inj_asset_pin(repo, parent):
@@ -157,10 +160,10 @@ def inj_responsive(repo, parent):
     jedit(repo, "sections/hero.title.json", lambda d: d["responsive"].__setitem__("changes", []))
 
 def inj_example_maxwords(repo, parent):
-    jedit(repo, "schema/example.pagespec.json", lambda d: d["nodes"][2]["content"].__setitem__("subtitle", " ".join(["word"] * 30)))
+    jedit(repo, "schema/examples/home.clone.pagespec.json", lambda d: d["nodes"][2]["content"].__setitem__("subtitle", " ".join(["word"] * 30)))
 
 def inj_example_schema(repo, parent):
-    jedit(repo, "schema/example.pagespec.json", lambda d: d["nodes"][2]["motion"].__setitem__("inventedAnimation", "parallax"))
+    jedit(repo, "schema/examples/home.clone.pagespec.json", lambda d: d["nodes"][2]["motion"].__setitem__("inventedAnimation", "parallax"))
 
 def inj_status(repo, parent):
     jedit(repo, "registry.manifest.json", lambda d: d.__setitem__("productionApproved", True))
@@ -174,6 +177,96 @@ def inj_framework(repo, parent):
 def inj_validator_neutered(repo, parent):
     tedit(repo, "schema/semantic_validate.py", lambda t: t.replace(
         'n = _types(spec).count("hero.title")', 'n = min(1, _types(spec).count("hero.title"))'))
+
+
+def inj_mode_example_missing(repo, parent):
+    os.remove(os.path.join(repo, "schema", "examples", "legal.generated.pagespec.json"))
+
+def inj_mode_example_mislabelled(repo, parent):
+    jedit(repo, "schema/examples/not-found.generated.pagespec.json", lambda d: d.__setitem__("mode", "clone"))
+
+def inj_contract_open_key(repo, parent):
+    jedit(repo, "sections/team.roster.json", lambda d: d.__setitem__("aiHint", "free text"))
+
+def inj_provenance_taxonomy(repo, parent):
+    jedit(repo, "sections/hero.title.json", lambda d: d["source"].__setitem__("id", "hero.title"))
+
+def inj_provenance_semantic_id(repo, parent):
+    jedit(repo, "sections/hero.title.json", lambda d: d["semantic"].__setitem__("id", "hero.banner"))
+
+def inj_provenance_range(repo, parent):
+    jedit(repo, "sections/team.roster.json", lambda d: d["source"].__setitem__("lines", "70-81"))
+
+def inj_retrieval_allowlist(repo, parent):
+    jedit(repo, "tokens/llm/component-allowlist.json", lambda d: d.__setitem__("retrievalIneligibleSections", []))
+
+def inj_retrieval_contract_and_allowlist(repo, parent):
+    jedit(repo, "sections/chrome.splash.json", lambda d: (d.__setitem__("retrievalEligible", True), d.pop("retrievalReason")))
+    jedit(repo, "tokens/llm/component-allowlist.json", lambda d: d.__setitem__("retrievalIneligibleSections", []))
+
+def inj_retrieval_pin_removed(repo, parent):
+    tedit(repo, "schema/semantic_validate.py", lambda t: t.replace('RETRIEVAL_INELIGIBLE = {"chrome.splash"}', "RETRIEVAL_INELIGIBLE = set()"))
+
+def inj_leakage_person_dropped(repo, parent):
+    jedit(repo, "schema/leakage-patterns.json", lambda d: d["persons"].pop(0))
+
+def inj_leakage_shingles_dropped(repo, parent):
+    jedit(repo, "schema/leakage-patterns.json", lambda d: d["copyShingles"].__setitem__("hashes", d["copyShingles"]["hashes"][:10]))
+
+def inj_gate_whole_article(repo, parent):
+    def f(d):
+        rows = d["sectionHeights"]["templates"]["template.legal-prose"]["sections"]
+        next(r for r in rows if r["section"] == "content.legal-header")["height"] = 3476.4
+    jedit(repo, "extraction/measured-values.json", f)
+
+def inj_gate_measurement_missing(repo, parent):
+    jedit(repo, "extraction/measured-values.json", lambda d: d["sectionHeights"]["templates"].pop("template.home"))
+
+def inj_gate_threshold_loosened(repo, parent):
+    tedit(repo, "extraction/wrapper_gate.py", lambda t: t.replace("HERO_ERROR_PX = 3000", "HERO_ERROR_PX = 9000"))
+
+def inj_gate_whitelist_unattested(repo, parent):
+    jedit(repo, "extraction/wrapper-whitelist.json", lambda d: d["entries"].append({"template": "template.home", "section": "values.sticky-stack", "maxHeightPx": 4000, "reviewedBy": "review agent", "justification": "x" * 40}))
+
+def inj_policy_saas_bound(repo, parent):
+    jedit(repo, "registry.manifest.json", lambda d: d["designPolicy"].__setitem__("policyId", "n0-saas-design-constraints-common"))
+
+def inj_policy_hash_stale(repo, parent):
+    jedit(repo, "assets/asset-roles.json", lambda d: d["roles"]["fictional-avatar"].__setitem__("description", "edited without re-binding the policy hash"))
+
+def inj_policy_is_saas(repo, parent):
+    jedit(repo, "policy/design-policy.json", lambda d: d["classification"].__setitem__("isSaaS", True))
+
+def inj_policy_category(repo, parent):
+    jedit(repo, "registry.manifest.json", lambda d: d.pop("category"))
+
+def inj_availability_registry(repo, parent):
+    jedit(repo, "assets/asset-roles.json", lambda d: d["roles"]["team-portrait"].__setitem__("availability", "generation-safe"))
+
+def inj_availability_pin_removed_validator(repo, parent):
+    tedit(repo, "schema/semantic_validate.py", lambda t: t.replace('    "merger-logo": "clone-only",\n', "", 1))
+
+def inj_availability_contract_and_registry(repo, parent):
+    # loosen registry AND the verify_all pin together: the semantic_validate pin must still catch it
+    jedit(repo, "assets/asset-roles.json", lambda d: d["roles"]["member-logo"].__setitem__("availability", "generation-safe"))
+    tedit(repo, "extraction/verify_all.py", lambda t: t.replace('"member-logo": "clone-only"', '"member-logo": "generation-safe"', 1))
+
+def inj_substitute_missing_from_field(repo, parent):
+    def f(d):
+        d["content"]["properties"]["members"]["items"]["properties"]["portrait"]["properties"]["assetRole"]["enum"].remove("fictional-avatar")
+    jedit(repo, "sections/team.roster.json", f)
+
+def inj_source_file_unreal(repo, parent):
+    jedit(repo, "assets/asset-roles.json", lambda d: d["roles"]["merger-logo"]["sourceFiles"].append("/logo_invented.png"))
+
+def inj_token_value_drift(repo, parent):
+    jedit(repo, "tokens/00-foundation/color.json", lambda d: d["color"]["coral"].__setitem__("$value", "#ff9d6a"))
+
+def inj_token_slot_unknown_category(repo, parent):
+    jedit(repo, "tokens/llm/token-policy.json", lambda d: d["slots"]["surface"].__setitem__("categories", ["shadow"]))
+
+def inj_mode_rule_neutered(repo, parent):
+    tedit(repo, "schema/semantic_validate.py", lambda t: t.replace('    "GENERATION_MODE_PERSON": ("generation", "error", m_person),\n', ""))
 
 
 # (name, target check, inject, needs real source, run adversarial suite)
@@ -207,10 +300,41 @@ INJECTIONS = [
     ("productionApproved flipped", "status_flags", inj_status, False, False),
     ("framework version drift vs package.json", "framework_versions", inj_framework, True, False),
     ("validator rule neutered", "adversarial_suite", inj_validator_neutered, False, True),
+    ("generation-mode person rule removed", "adversarial_suite", inj_mode_rule_neutered, False, True),
+    ("a family loses its generation example", "mode_examples", inj_mode_example_missing, False, False),
+    ("generation example relabelled clone", "mode_examples", inj_mode_example_mislabelled, False, False),
+    ("open key added to a section contract", "section_contracts", inj_contract_open_key, False, False),
+    ("source.id copied from the taxonomy id", "provenance", inj_provenance_taxonomy, False, False),
+    ("semantic.id differs from the contract id", "provenance", inj_provenance_semantic_id, False, False),
+    ("source range shifted off the tag line (real source)", "provenance", inj_provenance_range, True, False),
+    ("allowlist ineligible list emptied", "retrieval_eligibility", inj_retrieval_allowlist, False, False),
+    ("contract + allowlist flipped together", "retrieval_eligibility", inj_retrieval_contract_and_allowlist, False, False),
+    ("retrieval pin removed from semantic_validate", "retrieval_eligibility", inj_retrieval_pin_removed, False, False),
+    ("leakage person pattern dropped (real source)", "leakage_patterns", inj_leakage_person_dropped, True, False),
+    ("leakage copy shingles truncated (real source)", "leakage_patterns", inj_leakage_shingles_dropped, True, False),
+    ("whole-article legal section re-measured", "wrapper_gate", inj_gate_whole_article, False, False),
+    ("a template's measurement missing", "wrapper_gate", inj_gate_measurement_missing, False, False),
+    ("HERO error threshold loosened in code", "wrapper_gate", inj_gate_threshold_loosened, False, False),
+    ("whitelist entry without agent attestation", "wrapper_gate", inj_gate_whitelist_unattested, False, False),
+    ("non-SaaS site bound to the SaaS policy", "design_policy", inj_policy_saas_bound, False, False),
+    ("enforcing file edited, hash not re-bound", "design_policy", inj_policy_hash_stale, False, False),
+    ("policy classification flipped to SaaS", "design_policy", inj_policy_is_saas, False, False),
+    ("manifest category removed", "design_policy", inj_policy_category, False, False),
+    ("registry availability loosened", "asset_roles", inj_availability_registry, False, False),
+    ("availability pin removed from semantic_validate", "asset_roles", inj_availability_pin_removed_validator, False, False),
+    ("registry + verify_all pin loosened together", "asset_roles", inj_availability_contract_and_registry, False, False),
+    ("field loses its generation-safe substitute", "asset_roles", inj_substitute_missing_from_field, False, False),
+    ("sourceFile that is not a real file (real source)", "asset_roles", inj_source_file_unreal, True, False),
+    ("token file value changed, catalog not rebuilt", "token_catalog", inj_token_value_drift, False, False),
+    ("policy slot names an unknown category", "token_catalog", inj_token_slot_unknown_category, False, False),
 ]
 
 
-def main():
+def main(argv):
+    global SCRATCH
+    if "--scratch" in argv:
+        SCRATCH = os.path.abspath(argv[argv.index("--scratch") + 1])
+        os.makedirs(SCRATCH, exist_ok=True)
     rows, failures = [], 0
     controls = [("clean copy, standalone (no sibling source)", False)]
     if SOURCE_AVAILABLE:
@@ -247,4 +371,4 @@ def main():
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(main(sys.argv[1:]))

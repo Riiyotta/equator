@@ -1,5 +1,7 @@
 {
-  "pageSpecVersion": "1.0.0",
+  "pageSpecVersion": "2.0.0",
+  "mode": "clone",
+  "theme": "light",
   "template": "template.home",
   "route": "/",
   "meta": {
@@ -13,7 +15,7 @@
         "caption": "Scroll to explore",
         "animation": {
           "assetRole": "brand-lottie-splash",
-          "assetRef": "placeholder:splash-animation"
+          "assetRef": "source:/lottie/navbar.lottie"
         }
       },
       "motion": {
@@ -28,7 +30,7 @@
       "content": {
         "logo": {
           "assetRole": "brand-wordmark",
-          "assetRef": "placeholder:wordmark"
+          "assetRef": "source:inline:LogoWordmark"
         },
         "navItems": [
           {
@@ -72,13 +74,19 @@
         "subtitle": "Made to endure, designed to adapt: we help organizations and places deliver sustainable, resilient and profitable impact.",
         "backgroundVideo": {
           "assetRole": "ambient-video",
-          "assetRef": "placeholder:ambient-video-title"
+          "assetRef": "source:/bird_low.mp4"
         }
       },
       "motion": {
         "pattern": "ambient-video-loop",
         "trigger": "autoplay",
         "reducedMotionFallback": "video-poster-still"
+      },
+      "tokens": {
+        "surface": "surface.hero",
+        "text": "text.primary",
+        "headingType": "type.headline1",
+        "fontFamily": "font.family.national"
       }
     },
     {
@@ -90,34 +98,34 @@
           {
             "logo": {
               "assetRole": "merger-logo",
-              "assetRef": "placeholder:merger-logo-1",
-              "alt": "Founding company logo"
+              "assetRef": "source:/logo_s317.png",
+              "alt": "S317"
             },
-            "label": "Founding company one"
+            "label": "S317"
           },
           {
             "logo": {
               "assetRole": "merger-logo",
-              "assetRef": "placeholder:merger-logo-2",
-              "alt": "Founding company logo"
+              "assetRef": "source:/logo_sairdacasca.png",
+              "alt": "Sair da Casca"
             },
-            "label": "Founding company two"
+            "label": "Sair da Casca"
           },
           {
             "logo": {
               "assetRole": "merger-logo",
-              "assetRef": "placeholder:merger-logo-3",
-              "alt": "Founding company logo"
+              "assetRef": "source:/logo_engidro.png",
+              "alt": "Engidro"
             },
-            "label": "Founding company three"
+            "label": "Engidro"
           },
           {
             "logo": {
               "assetRole": "merger-logo",
-              "assetRef": "placeholder:merger-logo-4",
-              "alt": "Founding company logo"
+              "assetRef": "source:/logo_factorsocial.png",
+              "alt": "Factor Social"
             },
-            "label": "Founding company four"
+            "label": "Factor Social"
           }
         ],
         "statements": [
@@ -162,7 +170,7 @@
             ],
             "animation": {
               "assetRole": "brand-lottie-value",
-              "assetRef": "placeholder:value-animation-1"
+              "assetRef": "source:/lottie/sustainability.lottie"
             }
           },
           {
@@ -176,7 +184,7 @@
             ],
             "animation": {
               "assetRole": "brand-lottie-value",
-              "assetRef": "placeholder:value-animation-2"
+              "assetRef": "source:/lottie/global.lottie"
             }
           },
           {
@@ -190,7 +198,7 @@
             ],
             "animation": {
               "assetRole": "brand-lottie-value",
-              "assetRef": "placeholder:value-animation-3"
+              "assetRef": "source:/lottie/grounded.lottie"
             }
           },
           {
@@ -204,7 +212,7 @@
             ],
             "animation": {
               "assetRole": "brand-lottie-value",
-              "assetRef": "placeholder:value-animation-4"
+              "assetRef": "source:/lottie/curiosity.lottie"
             }
           },
           {
@@ -218,7 +226,7 @@
             ],
             "animation": {
               "assetRole": "brand-lottie-value",
-              "assetRef": "placeholder:value-animation-5"
+              "assetRef": "source:/lottie/difference.lottie"
             }
           }
         ]
@@ -288,11 +296,11 @@
         "slides": [
           {
             "title": "Forests, Carbon, and Natural Capital",
-            "text": "A short, generic summary of the programme's scope and outcome.",
+            "text": "We support governments and companies in reforestation and conservation programs, such as the 550,000-hectare project in Malawi developed with Mamaland (Mota-Engil), which generates high-quality carbon credits.",
             "image": {
               "assetRole": "project-photo",
-              "assetRef": "generated:project-photo-1",
-              "alt": "Project landscape"
+              "assetRef": "source:/slides/slide1",
+              "alt": "Forests, Carbon, and Natural Capital"
             }
           },
           {
@@ -300,8 +308,8 @@
             "text": "A short, generic summary of the programme's scope and outcome.",
             "image": {
               "assetRole": "project-photo",
-              "assetRef": "generated:project-photo-2",
-              "alt": "Project landscape"
+              "assetRef": "source:/slides/slide2",
+              "alt": "Energy and Energy Efficiency"
             }
           },
           {
@@ -309,8 +317,8 @@
             "text": "A short, generic summary of the programme's scope and outcome.",
             "image": {
               "assetRole": "project-photo",
-              "assetRef": "generated:project-photo-3",
-              "alt": "Project landscape"
+              "assetRef": "source:/slides/slide3",
+              "alt": "Consumer Goods and Social Impact"
             }
           },
           {
@@ -318,8 +326,8 @@
             "text": "A short, generic summary of the programme's scope and outcome.",
             "image": {
               "assetRole": "project-photo",
-              "assetRef": "generated:project-photo-4",
-              "alt": "Project landscape"
+              "assetRef": "source:/slides/slide4",
+              "alt": "Water, Sanitation, and Resilient Cities"
             }
           },
           {
@@ -327,8 +335,8 @@
             "text": "A short, generic summary of the programme's scope and outcome.",
             "image": {
               "assetRole": "project-photo",
-              "assetRef": "generated:project-photo-5",
-              "alt": "Project landscape"
+              "assetRef": "source:/slides/slide5",
+              "alt": "Resilience and Impact"
             }
           }
         ],
@@ -336,39 +344,39 @@
         "memberLogos": [
           {
             "assetRole": "member-logo",
-            "assetRef": "placeholder:member-logo-1"
+            "assetRef": "source:/logos/logo1.png"
           },
           {
             "assetRole": "member-logo",
-            "assetRef": "placeholder:member-logo-2"
+            "assetRef": "source:/logos/logo2.png"
           },
           {
             "assetRole": "member-logo",
-            "assetRef": "placeholder:member-logo-3"
+            "assetRef": "source:/logos/logo3.png"
           },
           {
             "assetRole": "member-logo",
-            "assetRef": "placeholder:member-logo-4"
+            "assetRef": "source:/logos/logo4.png"
           },
           {
             "assetRole": "member-logo",
-            "assetRef": "placeholder:member-logo-5"
+            "assetRef": "source:/logos/logo5.png"
           },
           {
             "assetRole": "member-logo",
-            "assetRef": "placeholder:member-logo-6"
+            "assetRef": "source:/logos/logo6.png"
           },
           {
             "assetRole": "member-logo",
-            "assetRef": "placeholder:member-logo-7"
+            "assetRef": "source:/logos/logo7.png"
           },
           {
             "assetRole": "member-logo",
-            "assetRef": "placeholder:member-logo-8"
+            "assetRef": "source:/logos/logo8.png"
           },
           {
             "assetRole": "member-logo",
-            "assetRef": "placeholder:member-logo-9"
+            "assetRef": "source:/logos/logo9.png"
           }
         ]
       },
@@ -386,43 +394,43 @@
         "subtitle": "Our executive team brings decades of experience in diverse areas such as infrastructure, strategy, social innovation, and policy.",
         "members": [
           {
-            "name": "Team Member One",
+            "name": "Filipe de Morais Vasconcelos",
             "role": "Management Team",
             "portrait": {
               "assetRole": "team-portrait",
-              "assetRef": "placeholder:portrait-1"
+              "assetRef": "source:/team/filipe-de-morais-vasconcelos"
             },
             "halftone": {
               "assetRole": "team-halftone",
-              "assetRef": "placeholder:halftone-1"
+              "assetRef": "source:/team/filipe-de-morais-vasconcelos-back.png"
             },
-            "profileUrl": "placeholder:profile-1"
+            "profileUrl": "https://www.linkedin.com/in/filipemoraisvasconcelos/"
           },
           {
-            "name": "Team Member Two",
-            "role": "Operations Division",
+            "name": "Miguel Feliz",
+            "role": "Management Team",
             "portrait": {
               "assetRole": "team-portrait",
-              "assetRef": "placeholder:portrait-2"
+              "assetRef": "source:/team/miguel-feliz"
             },
             "halftone": {
               "assetRole": "team-halftone",
-              "assetRef": "placeholder:halftone-2"
+              "assetRef": "source:/team/miguel-feliz-back.png"
             },
-            "profileUrl": "placeholder:profile-2"
+            "profileUrl": "https://www.linkedin.com/in/miguelfeliz/"
           },
           {
-            "name": "Team Member Three",
+            "name": "Paulo Rosa",
             "role": "Water & Sanitation",
             "portrait": {
               "assetRole": "team-portrait",
-              "assetRef": "placeholder:portrait-3"
+              "assetRef": "source:/team/paulo-rosa"
             },
             "halftone": {
               "assetRole": "team-halftone",
-              "assetRef": "placeholder:halftone-3"
+              "assetRef": "source:/team/paulo-rosa-back.png"
             },
-            "profileUrl": "placeholder:profile-3"
+            "profileUrl": "https://www.linkedin.com/in/paulo-rosa-9201b15/"
           }
         ]
       },
@@ -437,12 +445,12 @@
       "content": {
         "heading": "Let’s Build the Infrastructure of Change Together",
         "primaryLabel": "Sign up for updates",
-        "primaryHref": "placeholder:newsletter-signup",
+        "primaryHref": "https://mailchi.mp/960b9490730a/website-signup",
         "secondaryLabel": "Follow us on LinkedIn",
-        "secondaryHref": "placeholder:social-profile",
+        "secondaryHref": "https://www.linkedin.com/company/the-equator-company/",
         "backgroundVideo": {
           "assetRole": "ambient-video",
-          "assetRef": "placeholder:ambient-video-cta"
+          "assetRef": "source:/cloud_low.mp4"
         }
       },
       "motion": {
@@ -456,17 +464,17 @@
       "content": {
         "blurb": "Interdisciplinary sustainability consultancy with 45 years of experience.",
         "addressLine": "Lisbon, Portugal",
-        "email": "placeholder:contact-email",
+        "email": "mailto:info@equatorcompany.com",
         "socialLabel": "Follow us on LinkedIn",
         "copyrightHolder": "The Equator Company",
         "legalLinkLabel": "Privacy Policy",
         "animation": {
           "assetRole": "brand-lottie-footer",
-          "assetRef": "placeholder:footer-animation"
+          "assetRef": "source:/lottie/footer.lottie"
         },
         "wordmark": {
           "assetRole": "brand-wordmark",
-          "assetRef": "placeholder:wordmark-stacked"
+          "assetRef": "source:inline:FooterWordmark"
         }
       },
       "motion": {
@@ -477,7 +485,19 @@
     },
     {
       "type": "chrome.subfooter",
-      "content": {},
+      "content": {
+        "emblem": {
+          "assetRole": "funding-emblem",
+          "assetRef": "source:/mono.svg"
+        },
+        "projectSheet": {
+          "label": "Project sheet",
+          "document": {
+            "assetRole": "project-sheet-pdf",
+            "assetRef": "source:/Equator-PRR-Investimentos.pdf"
+          }
+        }
+      },
       "motion": {
         "pattern": "none",
         "trigger": "none",

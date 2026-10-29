@@ -1,0 +1,25 @@
+{
+  "pageSpecVersion": "2.0.0",
+  "mode": "clone",
+  "template": "template.not-found",
+  "route": "*",
+  "meta": {
+    "title": "The Equator Company",
+    "description": "Page not found on The Equator Company website."
+  },
+  "nodes": [
+    {
+      "type": "content.not-found",
+      "content": {
+        "code": "404",
+        "message": "Page not found",
+        "homeLinkLabel": "Go back home"
+      },
+      "motion": {
+        "pattern": "none",
+        "trigger": "none",
+        "reducedMotionFallback": "none"
+      }
+    }
+  ]
+}

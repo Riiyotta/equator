@@ -2,6 +2,17 @@
   "id": "work.carousel-marquee",
   "name": "Our Work",
   "category": "work",
+  "semantic": {
+    "id": "work.carousel-marquee",
+    "category": "PROOF"
+  },
+  "source": {
+    "id": "OurWork>section#our-work",
+    "tag": "section",
+    "file": "src/components/OurWork.jsx",
+    "lines": "274-282"
+  },
+  "retrievalEligible": true,
   "purpose": "Proof of delivery: draggable project carousel whose cards flip to a lime description, followed by a continuous 'Proud member of' logo marquee.",
   "evidenceLevel": "measured",
   "implementedBy": "src/components/OurWork.jsx",
@@ -56,12 +67,15 @@
               "properties": {
                 "assetRole": {
                   "enum": [
-                    "project-photo"
+                    "project-photo",
+                    "generated-illustration",
+                    "placeholder-screenshot",
+                    "user-supplied-asset"
                   ]
                 },
                 "assetRef": {
                   "type": "string",
-                  "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                  "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                 },
                 "alt": {
                   "type": "string",
@@ -92,12 +106,13 @@
           "properties": {
             "assetRole": {
               "enum": [
-                "member-logo"
+                "member-logo",
+                "placeholder-company-logo"
               ]
             },
             "assetRef": {
               "type": "string",
-              "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+              "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
             },
             "alt": {
               "type": "string",
@@ -112,6 +127,12 @@
   "constraints": {
     "maxPerPage": 1
   },
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "placeholder-company-logo",
+    "placeholder-screenshot",
+    "user-supplied-asset"
+  ],
   "motion": {
     "pattern": "carousel-snap-300ms+marquee-raf-0.5px",
     "trigger": "click-drag+raf-continuous",

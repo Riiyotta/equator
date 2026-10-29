@@ -2,6 +2,18 @@
   "id": "chrome.splash",
   "name": "Splash",
   "category": "chrome",
+  "semantic": {
+    "id": "chrome.splash",
+    "category": "INTRO"
+  },
+  "source": {
+    "id": "Splash>section.splash",
+    "tag": "section",
+    "file": "src/components/Splash.jsx",
+    "lines": "23-28"
+  },
+  "retrievalEligible": false,
+  "retrievalReason": "Preloader-style brand intro: a full-viewport brand animation plus a 'Scroll to explore' prompt that the logo collapses out of on scroll. It carries no retrievable content, so it is not a retrieval exemplar.",
   "purpose": "Brand moment before the content: full-viewport coral field with the brand animation and a scroll prompt.",
   "evidenceLevel": "measured",
   "implementedBy": "src/components/Splash.jsx",
@@ -33,12 +45,14 @@
         "properties": {
           "assetRole": {
             "enum": [
-              "brand-lottie-splash"
+              "brand-lottie-splash",
+              "placeholder-brand-mark",
+              "generated-illustration"
             ]
           },
           "assetRef": {
             "type": "string",
-            "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+            "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
           },
           "alt": {
             "type": "string",
@@ -56,6 +70,10 @@
       "template.home"
     ]
   },
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "placeholder-brand-mark"
+  ],
   "motion": {
     "pattern": "lottie-intro-then-loop",
     "trigger": "mount-delay-1000ms",

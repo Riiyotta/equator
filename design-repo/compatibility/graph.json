@@ -1,5 +1,5 @@
 {
-  "graphVersion": "1.0.0",
+  "graphVersion": "2.0.0",
   "enforcedBy": "schema/semantic_validate.py (GRAPH_RULES registry; verify_all.py checks the ids and severities match)",
   "rules": [
     {
@@ -101,7 +101,7 @@
     {
       "id": "ONE_PER_PAGE",
       "severity": "error",
-      "description": "Every section type has maxPerPage 1 (constraints.maxPerPage in its contract).",
+      "description": "Every section type has maxPerPage 1 (constraints.maxPerPage in its contract) except content.legal-section (repeatable, maxPerPage 12: 8 measured on /privacy-policy, ceiling inferred).",
       "exceptions": [],
       "evidence": []
     },
@@ -234,9 +234,10 @@
     {
       "id": "MAX_WORDS",
       "severity": "error",
-      "description": "Every text field respects its contract x-maxWords (and maxWordsByKind for legal blocks), counted per instance.",
+      "description": "Every text field respects its contract x-maxWords (including each legal paragraph and part heading), counted per instance.",
       "exceptions": [],
       "evidence": []
     }
-  ]
+  ],
+  "modeRulesNote": "Composition rules only. Mode (GENERATION_MODE_*, CLONE_MODE_SOURCE_REF), token (TOKEN_*) and repo-integrity pins are enforced by schema/semantic_validate.py and documented in policy/design-policy.json and tokens/llm/token-policy.json; they apply in addition to every rule here."
 }

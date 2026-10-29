@@ -1,22 +1,41 @@
 {
   "repositoryId": "equator-company-design-repo",
-  "repositoryVersion": "1.0.0",
-  "pageSpecVersion": "1.0.0",
-  "allowlistVersion": "1.0.0",
-  "versionFieldNote": "Only allowlistVersion is machine-checked: extraction/verify_all.py fails if it differs from tokens/llm/component-allowlist.json or from the version stated in README.md and CHANGELOG.md. pageSpecVersion is enforced only inside PageSpecs (schema const 1.0.0); nothing checks this manifest copy against it. repositoryVersion is documentation-only and hand-maintained. The counts block IS machine-checked (recomputed from disk by verify_all.py).",
+  "repositoryVersion": "2.0.0",
+  "pageSpecVersion": "2.0.0",
+  "allowlistVersion": "2.0.0",
+  "versionFieldNote": "Only allowlistVersion is machine-checked against the allowlist, README and CHANGELOG (verify_all.py allowlist_version_parity). pageSpecVersion is enforced inside PageSpecs (schema const 2.0.0); nothing checks this manifest copy against it. repositoryVersion is documentation-only and hand-maintained. The counts block IS machine-checked (recomputed from disk by verify_all.py).",
   "status": "design-review-pending",
   "productionApproved": false,
   "publishRecommended": false,
   "statusNote": "Not approved for production. The source is a real, live company's site: do not publish this package or make any repository holding it public.",
   "defaultTheme": "light",
-  "schemaValidatedThemes": ["light"],
+  "schemaValidatedThemes": [
+    "light"
+  ],
+  "modes": {
+    "clone": "faithful Equator reconstruction; real assets/copy allowed as evidence",
+    "generation": "a page for another organisation; every Equator brand/person/customer/copy/claim/URL/embed/asset is rejected (GENERATION_MODE_*)"
+  },
+  "category": "professional-services",
+  "designPolicy": {
+    "ref": "policy/design-policy.json",
+    "policyId": "n0-professional-services-consultancy-web",
+    "policyVersion": "1.0.0",
+    "commonIrVersion": "0.5",
+    "enforcementMode": "hard-and-soft",
+    "contentHash": "sha256:a685b23f64af0dcf77de29459b6753af6b778fedbc813741736405c433df01cf",
+    "notBoundTo": [
+      "n0-saas-design-constraints-common"
+    ],
+    "contentHashScope": "sha256 over policy/design-policy.json enforcedBy files (extraction/policy_hash.py); verify_all.py check design_policy recomputes it."
+  },
   "source": {
     "originalSite": "https://equatorcompany.com/",
     "realCompany": true,
     "originalStack": "Nuxt 3 / Vue 3, Locomotive Scroll v5 (Lenis 1.1.9), dotlottie-web 0.54.1, vue3-carousel, marquee3k",
     "cloneStack": "React 18.3 + Vite 5.4 + Tailwind 3.4, lenis, dotlottie-web",
-    "isGitRepo": false,
-    "gitNote": "The source project is not a git repository. If it ever becomes one, add design-repo.zip to .gitignore and never commit it next to the live design-repo/ folder."
+    "isGitRepo": true,
+    "gitNote": "The source project is a git repository. design-repo.zip is listed in .gitignore and is never committed next to the live design-repo/ folder."
   },
   "sourceProject": {
     "framework": {
@@ -32,20 +51,31 @@
     "tokens": 114,
     "primitives": 12,
     "components": 8,
-    "sections": 13,
+    "sections": 14,
     "templates": 3,
     "routes": 3,
-    "assetRoles": 12,
+    "assetRoles": 21,
     "graphRules": 19,
-    "adversarialMutations": 66,
-    "adversarialControls": 5,
-    "citations": 247
+    "modeRules": 9,
+    "tokenRules": 7,
+    "examples": 6,
+    "adversarialMutations": 144,
+    "adversarialControls": 14,
+    "citations": 253
   },
   "entryPoints": {
     "readme": "README.md",
     "changelog": "CHANGELOG.md",
     "schema": "schema/pagespec.schema.json",
-    "example": "schema/example.pagespec.json",
+    "sectionContractSchema": "schema/section-contract.schema.json",
+    "example:home.clone": "schema/examples/home.clone.pagespec.json",
+    "example:home.generated": "schema/examples/home.generated.pagespec.json",
+    "example:legal.clone": "schema/examples/legal.clone.pagespec.json",
+    "example:legal.generated": "schema/examples/legal.generated.pagespec.json",
+    "example:not-found.clone": "schema/examples/not-found.clone.pagespec.json",
+    "example:not-found.generated": "schema/examples/not-found.generated.pagespec.json",
+    "leakagePatterns": "schema/leakage-patterns.json",
+    "textNormalisation": "schema/textnorm.py",
     "validator": "schema/semantic_validate.py",
     "adversarialTests": "schema/tests/adversarial_test.py",
     "verify": "extraction/verify_all.py",
@@ -58,12 +88,23 @@
     "templates": "templates/templates.json",
     "routes": "templates/routes.json",
     "graph": "compatibility/graph.json",
-    "assetRoles": "assets/asset-roles.json"
+    "assetRoles": "assets/asset-roles.json",
+    "wrapperGate": "extraction/wrapper_gate.py",
+    "wrapperWhitelist": "extraction/wrapper-whitelist.json",
+    "measureSections": "extraction/measure_sections.mjs",
+    "buildLeakagePatterns": "extraction/build_leakage_patterns.py",
+    "buildProvenance": "extraction/build_provenance.py",
+    "buildTokenCatalog": "extraction/build_token_catalog.py",
+    "policyHash": "extraction/policy_hash.py",
+    "designPolicy": "policy/design-policy.json"
   },
   "knownLimitations": [
     "template.not-found / route * / content.not-found are inferred-unmeasured: NotFound.jsx was added after QA and never compared with the original's Nuxt 404.",
     "reducedMotionFallback values are prescriptive: the source has no prefers-reduced-motion handling.",
     "Lottie and video artwork is canvas/video content and was never measured; it is also policy must-not-reproduce / may-generate-new-only.",
-    "Known accessibility parity defects are preserved as source-site behaviour (see sections/capabilities.accordion.json, team.roster.json, chrome.header.json)."
+    "Known accessibility parity defects are preserved as source-site behaviour (see sections/capabilities.accordion.json, team.roster.json, chrome.header.json).",
+    "Generation-mode leakage detection is string-based on normalised text (hashed 5-word shingles, regexes from the real source). No human has reviewed the patterns; paraphrase, translation or text inside images evade it.",
+    "Visual parity of the clone against the live site was not re-measured in this revision; only section heights of the built clone at 1440px were measured.",
+    "The design-policy binding and the splash retrieval-ineligibility are agent attestation, not a human sign-off; policyDecision is defined-pending-architecture-review."
   ]
 }

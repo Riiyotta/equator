@@ -2,6 +2,17 @@
   "id": "chrome.footer",
   "name": "Footer",
   "category": "chrome",
+  "semantic": {
+    "id": "chrome.footer",
+    "category": "SHELL"
+  },
+  "source": {
+    "id": "Footer>footer",
+    "tag": "footer",
+    "file": "src/components/Footer.jsx",
+    "lines": "10-70"
+  },
+  "retrievalEligible": true,
   "purpose": "Company sign-off: brand animation and stacked wordmark, one-paragraph description, address/email/social links, copyright and legal links.",
   "evidenceLevel": "measured",
   "implementedBy": "src/components/Footer.jsx",
@@ -31,7 +42,7 @@
       },
       "email": {
         "type": "string",
-        "pattern": "^placeholder:[a-z0-9-]+$"
+        "pattern": "^(placeholder:[a-z0-9-]+|mailto:[^\\s@]+@[^\\s@]+)$"
       },
       "socialLabel": {
         "type": "string",
@@ -63,12 +74,14 @@
         "properties": {
           "assetRole": {
             "enum": [
-              "brand-lottie-footer"
+              "brand-lottie-footer",
+              "generated-illustration",
+              "placeholder-brand-mark"
             ]
           },
           "assetRef": {
             "type": "string",
-            "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+            "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
           },
           "alt": {
             "type": "string",
@@ -87,12 +100,14 @@
         "properties": {
           "assetRole": {
             "enum": [
-              "brand-wordmark"
+              "brand-wordmark",
+              "placeholder-brand-mark",
+              "user-supplied-asset"
             ]
           },
           "assetRef": {
             "type": "string",
-            "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+            "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
           },
           "alt": {
             "type": "string",
@@ -109,6 +124,11 @@
       "chrome.subfooter"
     ]
   },
+  "generatedAssetRoles": [
+    "generated-illustration",
+    "placeholder-brand-mark",
+    "user-supplied-asset"
+  ],
   "motion": {
     "pattern": "lottie-autoplay-loop",
     "trigger": "autoplay",

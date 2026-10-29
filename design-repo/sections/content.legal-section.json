@@ -1,0 +1,117 @@
+{
+  "id": "content.legal-section",
+  "name": "Legal page part",
+  "category": "content",
+  "semantic": {
+    "id": "content.legal-section",
+    "category": "LEGAL"
+  },
+  "source": {
+    "id": "privacyBody>p>strong|h2 (heading-bounded run)",
+    "tag": "p",
+    "file": "src/lib/privacyBody.js",
+    "lines": "2"
+  },
+  "retrievalEligible": true,
+  "purpose": "One heading-bounded part of a legal document: its heading and the paragraphs up to the next heading.",
+  "evidenceLevel": "measured",
+  "implementedBy": "src/lib/privacyBody.js",
+  "surface": "transparent",
+  "scrollStage": false,
+  "ambientVideoCount": 0,
+  "anchor": null,
+  "variants": null,
+  "content": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "heading",
+      "headingStyle",
+      "paragraphs"
+    ],
+    "properties": {
+      "heading": {
+        "type": "string",
+        "minLength": 1,
+        "x-maxWords": 8
+      },
+      "headingStyle": {
+        "enum": [
+          "bold-paragraph",
+          "headline4"
+        ]
+      },
+      "paragraphs": {
+        "type": "array",
+        "minItems": 1,
+        "maxItems": 16,
+        "items": {
+          "type": "string",
+          "minLength": 1,
+          "x-maxWords": 90
+        }
+      }
+    }
+  },
+  "constraints": {
+    "maxPerPage": 12,
+    "templates": [
+      "template.legal-prose"
+    ]
+  },
+  "generatedAssetRoles": [],
+  "motion": {
+    "pattern": "none",
+    "trigger": "none",
+    "reducedMotionFallback": "none",
+    "distinctive": false,
+    "fallbackIsPrescriptive": true,
+    "timings": {},
+    "evidence": []
+  },
+  "responsive": {
+    "primaryBreakpoint": 768,
+    "changes": [
+      {
+        "maxWidth": 768,
+        "aspect": "layout",
+        "desktop": "12-col grid, body col 1/span 7, padding 400px/200px",
+        "mobile": "flex column, gap 40px, padding 190px/120px",
+        "evidence": {
+          "path": "src/index.css",
+          "lines": "692-696",
+          "quote": "padding: 190px var(--margin-page) 120px"
+        }
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "path": "src/lib/privacyBody.js",
+      "lines": "2",
+      "quote": "<p><strong>1. Data collection</strong></p>"
+    },
+    {
+      "path": "src/lib/privacyBody.js",
+      "lines": "2",
+      "quote": "<h2 class=\\\"text-headline4\\\">Data Treatment</h2>"
+    },
+    {
+      "path": "CLONE_SPEC.md",
+      "lines": "496-508",
+      "quote": "`strong{font-weight:500}`"
+    }
+  ],
+  "fixtures": {
+    "default": {
+      "content": {
+        "heading": "1. Scope",
+        "headingStyle": "bold-paragraph",
+        "paragraphs": [
+          "This part describes which data the page covers."
+        ]
+      }
+    }
+  },
+  "notes": "Measured: 8 parts (7 bold-paragraph headings, 1 headline4 heading), 1-13 paragraphs per part, longest paragraph 70 words, longest heading 8 words; part heights 181-1150px at 1440. Budgets above the measured instance (up to 16 paragraphs, 12 parts per page) are inferred. Do not copy the source policy text."
+}

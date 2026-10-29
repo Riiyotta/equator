@@ -1,0 +1,483 @@
+{
+  "pageSpecVersion": "2.0.0",
+  "mode": "generation",
+  "theme": "light",
+  "template": "template.home",
+  "route": "/",
+  "meta": {
+    "title": "Northwind Field Partners",
+    "description": "A fictional advisory studio that helps towns plan cleaner rivers and quieter streets."
+  },
+  "nodes": [
+    {
+      "type": "chrome.splash",
+      "content": {
+        "caption": "Begin the tour",
+        "animation": {
+          "assetRole": "placeholder-brand-mark",
+          "assetRef": "placeholder:brand-mark-intro"
+        }
+      },
+      "motion": {
+        "pattern": "lottie-intro-then-loop",
+        "trigger": "mount-delay-1000ms",
+        "reducedMotionFallback": "static-first-frame-caption-visible"
+      }
+    },
+    {
+      "type": "chrome.header",
+      "variant": "home",
+      "content": {
+        "logo": {
+          "assetRole": "placeholder-brand-mark",
+          "assetRef": "placeholder:brand-mark"
+        },
+        "navItems": [
+          {
+            "label": "About",
+            "anchor": "our-story"
+          },
+          {
+            "label": "Principles",
+            "anchor": "what-we-stand-for"
+          },
+          {
+            "label": "Services",
+            "anchor": "capabilities"
+          },
+          {
+            "label": "Projects",
+            "anchor": "our-work"
+          },
+          {
+            "label": "People",
+            "anchor": "team"
+          }
+        ],
+        "emailLabel": "Write to us",
+        "socialLabel": "Social"
+      },
+      "motion": {
+        "pattern": "scroll-scrub-logo-scale",
+        "trigger": "scroll-scrub",
+        "reducedMotionFallback": "logo-static-small-scale-menu-instant"
+      }
+    },
+    {
+      "type": "hero.title",
+      "content": {
+        "headingLines": [
+          "Planning calmer",
+          "towns and",
+          "cleaner rivers"
+        ],
+        "subtitle": "We work beside councils and co-ops to turn local plans into lasting works.",
+        "backgroundVideo": {
+          "assetRole": "generated-ambient-video",
+          "assetRef": "generated:drifting-reeds-loop"
+        }
+      },
+      "motion": {
+        "pattern": "ambient-video-loop",
+        "trigger": "autoplay",
+        "reducedMotionFallback": "video-poster-still"
+      },
+      "tokens": {
+        "surface": "surface.hero",
+        "text": "text.primary",
+        "headingType": "type.headline1"
+      }
+    },
+    {
+      "type": "narrative.story-reveal",
+      "anchorId": "our-story",
+      "content": {
+        "intro": "Three small practices with their own crafts joined into one studio:",
+        "mergerLogos": [
+          {
+            "logo": {
+              "assetRole": "placeholder-company-logo",
+              "assetRef": "placeholder:founding-practice-1",
+              "alt": "Founding practice 1"
+            },
+            "label": "Practice Alder"
+          },
+          {
+            "logo": {
+              "assetRole": "placeholder-company-logo",
+              "assetRef": "placeholder:founding-practice-2",
+              "alt": "Founding practice 2"
+            },
+            "label": "Practice Birch"
+          },
+          {
+            "logo": {
+              "assetRole": "placeholder-company-logo",
+              "assetRef": "placeholder:founding-practice-3",
+              "alt": "Founding practice 3"
+            },
+            "label": "Practice Cedar"
+          },
+          {
+            "logo": {
+              "assetRole": "placeholder-company-logo",
+              "assetRef": "placeholder:founding-practice-4",
+              "alt": "Founding practice 4"
+            },
+            "label": "Practice Dune"
+          }
+        ],
+        "statements": [
+          {
+            "text": "The result is one team with wider reach.",
+            "indent": false
+          },
+          {
+            "text": "We plan, we build, and we stay to measure.",
+            "indent": true
+          },
+          {
+            "text": "Every brief starts with the people who live there.",
+            "indent": false
+          },
+          {
+            "text": "Say hello to Northwind Field Partners today",
+            "indent": true,
+            "emphasisFromWord": 3
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "scroll-scrub-word-reveal",
+        "trigger": "scroll-scrub",
+        "reducedMotionFallback": "all-words-visible"
+      }
+    },
+    {
+      "type": "values.sticky-stack",
+      "anchorId": "what-we-stand-for",
+      "content": {
+        "panels": [
+          {
+            "titleLines": [
+              "Rivers first,",
+              "always"
+            ],
+            "columns": [
+              "Clean water shapes every plan we draw.",
+              "Small fixes add up across a catchment."
+            ],
+            "animation": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:principle-loop-1"
+            }
+          },
+          {
+            "titleLines": [
+              "Local roots,",
+              "open doors"
+            ],
+            "columns": [
+              "We hire nearby and share what we learn.",
+              "Partners keep the work honest."
+            ],
+            "animation": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:principle-loop-2"
+            }
+          },
+          {
+            "titleLines": [
+              "Plans that",
+              "get built"
+            ],
+            "columns": [
+              "Drawings matter only once they stand.",
+              "We track each step to the finish."
+            ],
+            "animation": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:principle-loop-3"
+            }
+          },
+          {
+            "titleLines": [
+              "Ask more,",
+              "then listen"
+            ],
+            "columns": [
+              "Workshops come before blueprints.",
+              "Residents correct our first guesses."
+            ],
+            "animation": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:principle-loop-4"
+            }
+          },
+          {
+            "titleLines": [
+              "Measure, then",
+              "measure again"
+            ],
+            "columns": [
+              "Results are checked a year later.",
+              "Reports stay public and plain."
+            ],
+            "animation": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:principle-loop-5"
+            }
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "sticky-stack-scrub-fade",
+        "trigger": "scroll-scrub",
+        "reducedMotionFallback": "panels-static-sequential-all-visible"
+      }
+    },
+    {
+      "type": "capabilities.accordion",
+      "anchorId": "capabilities",
+      "content": {
+        "heading": "What we can help with",
+        "subtitle": "Pick a service below to see how a typical engagement runs from first visit to handover.",
+        "cards": [
+          {
+            "title": "River Restoration",
+            "text": "Bank repair and wetland buffers."
+          },
+          {
+            "title": "Street Calming",
+            "text": "Narrower lanes and safer crossings."
+          },
+          {
+            "title": "Rain Gardens",
+            "text": "Planting that soaks up storm water."
+          },
+          {
+            "title": "Heat Planning",
+            "text": "Shade maps and cool routes."
+          },
+          {
+            "title": "Community Workshops",
+            "text": "Listening sessions before design."
+          },
+          {
+            "title": "Grant Writing",
+            "text": "Help with public funding forms."
+          },
+          {
+            "title": "Site Surveys",
+            "text": "Measured drawings of existing ground."
+          },
+          {
+            "title": "Materials Reuse",
+            "text": "Salvage plans for old structures."
+          },
+          {
+            "title": "Progress Reporting",
+            "text": "Plain yearly reports for residents."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "accordion-expand-120ms",
+        "trigger": "click",
+        "reducedMotionFallback": "accordion-instant-expand"
+      }
+    },
+    {
+      "type": "work.carousel-marquee",
+      "anchorId": "our-work",
+      "content": {
+        "heading": "Recent projects in brief",
+        "slides": [
+          {
+            "title": "Millbrook Wetland",
+            "text": "A fictional sample project used to show the slide layout.",
+            "image": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:project-scene-1",
+              "alt": "Illustrated landscape"
+            }
+          },
+          {
+            "title": "Harbor Lane Crossing",
+            "text": "A fictional sample project used to show the slide layout.",
+            "image": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:project-scene-2",
+              "alt": "Illustrated landscape"
+            }
+          },
+          {
+            "title": "Elm Square Rain Garden",
+            "text": "A fictional sample project used to show the slide layout.",
+            "image": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:project-scene-3",
+              "alt": "Illustrated landscape"
+            }
+          },
+          {
+            "title": "Riverside Shade Walk",
+            "text": "A fictional sample project used to show the slide layout.",
+            "image": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:project-scene-4",
+              "alt": "Illustrated landscape"
+            }
+          },
+          {
+            "title": "Old Depot Reuse",
+            "text": "A fictional sample project used to show the slide layout.",
+            "image": {
+              "assetRole": "generated-illustration",
+              "assetRef": "generated:project-scene-5",
+              "alt": "Illustrated landscape"
+            }
+          }
+        ],
+        "memberCaption": "Member networks",
+        "memberLogos": [
+          {
+            "assetRole": "placeholder-company-logo",
+            "assetRef": "placeholder:network-logo-1"
+          },
+          {
+            "assetRole": "placeholder-company-logo",
+            "assetRef": "placeholder:network-logo-2"
+          },
+          {
+            "assetRole": "placeholder-company-logo",
+            "assetRef": "placeholder:network-logo-3"
+          },
+          {
+            "assetRole": "placeholder-company-logo",
+            "assetRef": "placeholder:network-logo-4"
+          },
+          {
+            "assetRole": "placeholder-company-logo",
+            "assetRef": "placeholder:network-logo-5"
+          },
+          {
+            "assetRole": "placeholder-company-logo",
+            "assetRef": "placeholder:network-logo-6"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "carousel-snap-300ms+marquee-raf-0.5px",
+        "trigger": "click-drag+raf-continuous",
+        "reducedMotionFallback": "carousel-instant-jump+marquee-static-row"
+      }
+    },
+    {
+      "type": "team.roster",
+      "anchorId": "team",
+      "content": {
+        "heading": "The people on site",
+        "subtitle": "A small fictional team of planners, engineers and facilitators.",
+        "members": [
+          {
+            "name": "Avery Quill",
+            "role": "Lead Planner",
+            "portrait": {
+              "assetRole": "fictional-avatar",
+              "assetRef": "generated:avatar-1"
+            },
+            "halftone": {
+              "assetRole": "fictional-avatar",
+              "assetRef": "generated:avatar-tone-1"
+            },
+            "profileUrl": "https://northwind.example/people/1"
+          },
+          {
+            "name": "Jun Okafor-Lind",
+            "role": "Water Engineer",
+            "portrait": {
+              "assetRole": "fictional-avatar",
+              "assetRef": "generated:avatar-2"
+            },
+            "halftone": {
+              "assetRole": "fictional-avatar",
+              "assetRef": "generated:avatar-tone-2"
+            },
+            "profileUrl": "https://northwind.example/people/2"
+          },
+          {
+            "name": "Mara Td Vey",
+            "role": "Facilitator",
+            "portrait": {
+              "assetRole": "fictional-avatar",
+              "assetRef": "generated:avatar-3"
+            },
+            "halftone": {
+              "assetRole": "fictional-avatar",
+              "assetRef": "generated:avatar-tone-3"
+            },
+            "profileUrl": "https://northwind.example/people/3"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "viewport-band-activation",
+        "trigger": "intersection-band",
+        "reducedMotionFallback": "overlay-instant-show"
+      }
+    },
+    {
+      "type": "conversion.cta-video",
+      "content": {
+        "heading": "Bring us your next local project",
+        "primaryLabel": "Get the newsletter",
+        "primaryHref": "https://northwind.example/newsletter",
+        "secondaryLabel": "Visit our profile",
+        "secondaryHref": "placeholder:social-profile",
+        "backgroundVideo": {
+          "assetRole": "generated-ambient-video",
+          "assetRef": "generated:slow-clouds-loop"
+        }
+      },
+      "motion": {
+        "pattern": "ambient-video-loop",
+        "trigger": "autoplay",
+        "reducedMotionFallback": "video-poster-still"
+      }
+    },
+    {
+      "type": "chrome.footer",
+      "content": {
+        "blurb": "Northwind Field Partners is a fictional planning studio used to demonstrate this layout.",
+        "addressLine": "1 Sample Street, Exampletown",
+        "email": "mailto:hello@northwind.example",
+        "socialLabel": "Visit our profile",
+        "copyrightHolder": "Northwind Field Partners",
+        "legalLinkLabel": "Privacy notice",
+        "animation": {
+          "assetRole": "generated-illustration",
+          "assetRef": "generated:footer-loop"
+        },
+        "wordmark": {
+          "assetRole": "placeholder-brand-mark",
+          "assetRef": "placeholder:brand-mark-stacked"
+        }
+      },
+      "motion": {
+        "pattern": "lottie-autoplay-loop",
+        "trigger": "autoplay",
+        "reducedMotionFallback": "static-first-frame"
+      }
+    },
+    {
+      "type": "chrome.subfooter",
+      "content": {},
+      "motion": {
+        "pattern": "none",
+        "trigger": "none",
+        "reducedMotionFallback": "none"
+      }
+    }
+  ]
+}

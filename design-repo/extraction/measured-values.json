@@ -1,5 +1,5 @@
 {
-  "ledgerVersion": "1.0.0",
+  "ledgerVersion": "2.0.0",
   "description": "Citations to build-time evidence outside this package (the clone source, CLONE_SPEC.md, the saved original CSS, Playwright QA dumps). Paths are relative to the design-repo's parent folder. verify_all.py checks every {path, lines, quote} object in the repo: range within file length and quote present in the cited lines. When the sibling source tree is absent (standalone copy), these degrade to warnings.",
   "sourceProject": {
     "name": "equator clone",
@@ -17,7 +17,7 @@
       "CLONE_SPEC.md",
       "package.json"
     ],
-    "isGitRepo": false
+    "isGitRepo": true
   },
   "entries": [
     {
@@ -294,6 +294,218 @@
           "quote": "Total `c = 60`"
         }
       ]
+    },
+    {
+      "id": "legal-whole-article-decomposed",
+      "claim": "Before this revision template.legal-prose was header + one content.legal-prose section holding the whole article. Measured on the original: article [0,0,1440x3476.4] in a 4423px document = 79% of the page, above the 60% wrapper-gate error threshold. It is now content.legal-header + 8 heading-bounded content.legal-section units (largest 1150.4px = 26%).",
+      "evidenceLevel": "measured",
+      "evidence": [
+        {
+          "path": ".playwright-mcp/orig-pp-1440.txt.n",
+          "lines": "27",
+          "quote": "article [0,0,1440x3476.4]"
+        },
+        {
+          "path": "CLONE_SPEC.md",
+          "lines": "498",
+          "quote": "Document height 4423 at 1440x900"
+        }
+      ]
     }
-  ]
+  ],
+  "sectionHeights": {
+    "viewport": 1440,
+    "viewportHeight": 900,
+    "measuredOn": "built clone (npm ci; npx vite build --outDir <scratch>; npx vite preview --port 5732), headless Chromium via Playwright, 2026-10-29",
+    "tool": "extraction/measure_sections.mjs",
+    "method": "getBoundingClientRect of the real DOM nodes after networkidle + 1.5s; legal article split at its real heading elements; sticky header recorded with inFlow:false (margin-bottom:-68px, adds no page height).",
+    "templates": {
+      "template.home": {
+        "route": "/",
+        "pageHeight": 14521,
+        "sections": [
+          {
+            "section": "chrome.splash",
+            "index": 0,
+            "top": 0,
+            "height": 900,
+            "inFlow": true
+          },
+          {
+            "section": "chrome.header",
+            "index": 1,
+            "top": 900,
+            "height": 68,
+            "inFlow": false
+          },
+          {
+            "section": "hero.title",
+            "index": 2,
+            "top": 900,
+            "height": 900,
+            "inFlow": true
+          },
+          {
+            "section": "narrative.story-reveal",
+            "index": 3,
+            "top": 1800,
+            "height": 2115.3,
+            "inFlow": true
+          },
+          {
+            "section": "values.sticky-stack",
+            "index": 4,
+            "top": 3915.3,
+            "height": 3900,
+            "inFlow": true
+          },
+          {
+            "section": "capabilities.accordion",
+            "index": 5,
+            "top": 7815.3,
+            "height": 1353.6,
+            "inFlow": true
+          },
+          {
+            "section": "work.carousel-marquee",
+            "index": 6,
+            "top": 9168.8,
+            "height": 1391.4,
+            "inFlow": true
+          },
+          {
+            "section": "team.roster",
+            "index": 7,
+            "top": 10560.3,
+            "height": 2113.6,
+            "inFlow": true
+          },
+          {
+            "section": "conversion.cta-video",
+            "index": 8,
+            "top": 12673.8,
+            "height": 900,
+            "inFlow": true
+          },
+          {
+            "section": "chrome.footer",
+            "index": 9,
+            "top": 13573.8,
+            "height": 731,
+            "inFlow": true
+          },
+          {
+            "section": "chrome.subfooter",
+            "index": 10,
+            "top": 14304.8,
+            "height": 216,
+            "inFlow": true
+          }
+        ]
+      },
+      "template.legal-prose": {
+        "route": "/privacy-policy",
+        "pageHeight": 4423,
+        "sections": [
+          {
+            "section": "chrome.header",
+            "index": 0,
+            "top": 0,
+            "height": 68,
+            "inFlow": false
+          },
+          {
+            "section": "content.legal-header",
+            "index": 1,
+            "top": 0,
+            "height": 740.4,
+            "inFlow": true
+          },
+          {
+            "section": "content.legal-section",
+            "index": 2,
+            "top": 740.4,
+            "height": 266.7,
+            "inFlow": true
+          },
+          {
+            "section": "content.legal-section",
+            "index": 3,
+            "top": 1007.1,
+            "height": 191.1,
+            "inFlow": true
+          },
+          {
+            "section": "content.legal-section",
+            "index": 4,
+            "top": 1198.2,
+            "height": 181.1,
+            "inFlow": true
+          },
+          {
+            "section": "content.legal-section",
+            "index": 5,
+            "top": 1379.3,
+            "height": 291.9,
+            "inFlow": true
+          },
+          {
+            "section": "content.legal-section",
+            "index": 6,
+            "top": 1671.2,
+            "height": 206.3,
+            "inFlow": true
+          },
+          {
+            "section": "content.legal-section",
+            "index": 7,
+            "top": 1877.5,
+            "height": 266.7,
+            "inFlow": true
+          },
+          {
+            "section": "content.legal-section",
+            "index": 8,
+            "top": 2144.2,
+            "height": 181.1,
+            "inFlow": true
+          },
+          {
+            "section": "content.legal-section",
+            "index": 9,
+            "top": 2325.3,
+            "height": 1150.4,
+            "inFlow": true
+          },
+          {
+            "section": "chrome.footer",
+            "index": 10,
+            "top": 3475.7,
+            "height": 731,
+            "inFlow": true
+          },
+          {
+            "section": "chrome.subfooter",
+            "index": 11,
+            "top": 4206.8,
+            "height": 216,
+            "inFlow": true
+          }
+        ]
+      },
+      "template.not-found": {
+        "route": "/this-route-does-not-exist",
+        "pageHeight": 900,
+        "sections": [
+          {
+            "section": "content.not-found",
+            "index": 0,
+            "top": 0,
+            "height": 900,
+            "inFlow": true
+          }
+        ]
+      }
+    }
+  }
 }

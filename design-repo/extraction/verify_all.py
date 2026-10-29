@@ -2,8 +2,16 @@
 """One-shot verification for the Equator design-repo.
 
 Checks (each prints PASS/WARN/FAIL <name>):
-  schema_example            Draft-07 meta-check of the schema + example validates with 0 errors
-  semantic_example          semantic_validate.py on the example: 0 errors (incl. per-instance maxWords)
+  schema_example            Draft-07 meta-check of the schema + every schema/examples/*.pagespec.json validates
+  semantic_example          semantic_validate.py on every example: 0 errors, 0 warnings
+  mode_examples             every template family has <family>.clone and <family>.generated (mode generation) examples
+  section_contracts         every sections/*.json validates against the closed schema/section-contract.schema.json
+  provenance                R7: closed source{id,tag,file,lines} + semantic{id,category}; semantic.id == id != source.id;
+                            every range re-read from the real file with <tag on its first line; build_provenance --check
+  retrieval_eligibility     R8: RETRIEVAL_INELIGIBLE pinned here == semantic_validate == contracts == allowlist
+  leakage_patterns          schema/leakage-patterns.json == a fresh build from the real source (WARN when absent)
+  wrapper_gate              R9: extraction/wrapper_gate.py on the measured sectionHeights (errors fail)
+  design_policy             manifest category + designPolicy binding, policy file, non-SaaS notBoundTo, contentHash
   adversarial_suite         schema/tests/adversarial_test.py exits 0 (skip with --skip-adversarial)
   allowlist_parity          allowlist ids == contract files / templates / asset roles / schema properties
   allowlist_version_parity  allowlistVersion equal in allowlist, manifest, README and CHANGELOG
@@ -16,8 +24,11 @@ Checks (each prints PASS/WARN/FAIL <name>):
   graph_validator_parity    graph.json rule ids/severities == semantic_validate.GRAPH_RULES; exception prose agrees
   template_route_coverage   every route -> exactly one template, every template has a route, nodes resolve
   theme_resolution          every semantic token resolves to a foundation token; light theme agrees
-  token_catalog             token-catalog.json lists == real token leaves; token-policy keys == catalog keys
-  asset_roles               registry == schema enum == field roles == allowlist; pinned values hold
+  token_catalog             token-catalog.json == build_token_catalog fresh build; policy categories/slots resolve
+                            against the catalog; schema token slots == policy slots
+  asset_roles               registry == schema enum == field roles == allowlist; pinned policies hold;
+                            PINNED_AVAILABILITY here == semantic_validate == registry; substitutes sit in the same field
+                            enums; every clone sourceFile exists in ../public (when present)
   responsive_768            every section has a structured 768 entry or a cited noChangeAt768
   evidence_levels           closed evidence vocabulary; not-found pinned to inferred-unmeasured
   status_flags              design-review-pending, productionApproved false, publishRecommended false
@@ -38,8 +49,24 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PARENT = os.path.dirname(ROOT)
 sys.path.insert(0, os.path.join(ROOT, "schema"))
 sys.path.insert(0, os.path.join(ROOT, "schema", "tests"))
+sys.path.insert(0, os.path.join(ROOT, "extraction"))
+
+import wrapper_gate  # noqa: E402
 
 RESULTS = []
+# Pinned copies (independent of semantic_validate.py and of the registries; drift between any two fails).
+PINNED_AVAILABILITY = {
+    "brand-wordmark": "clone-only", "brand-lottie-splash": "clone-only", "brand-lottie-value": "clone-only",
+    "brand-lottie-footer": "clone-only", "ambient-video": "clone-only", "merger-logo": "clone-only",
+    "member-logo": "clone-only", "project-photo": "clone-only", "team-portrait": "clone-only", "team-halftone": "clone-only",
+    "funding-emblem": "blocked-for-generation", "project-sheet-pdf": "blocked-for-generation",
+    "placeholder-brand-mark": "generation-safe", "user-supplied-asset": "generation-safe", "generated-illustration": "generation-safe",
+    "generated-ambient-video": "generation-safe", "placeholder-screenshot": "generation-safe", "fictional-avatar": "generation-safe",
+    "placeholder-company-logo": "generation-safe", "placeholder-url": "generation-safe", "original-copy": "generation-safe",
+}
+RETRIEVAL_INELIGIBLE = {"chrome.splash"}
+SAAS_POLICY_ID = "n0-saas-design-constraints-common"
+TEMPLATE_FAMILIES = {"template.home": "home", "template.legal-prose": "legal", "template.not-found": "not-found"}
 EVIDENCE_LEVELS = {"measured", "inferred-unmeasured"}
 PINNED_EVIDENCE = {("template", "template.not-found"), ("route", "*"), ("section", "content.not-found")}
 # Built by concatenation so this file never contains the literal patterns it hunts for.
@@ -71,6 +98,10 @@ def walk_json(obj):
     elif isinstance(obj, list):
         for v in obj:
             yield from walk_json(v)
+
+
+def is_cite(o):
+    return isinstance(o, dict) and {"path", "lines", "quote"} <= set(o) and all(isinstance(o[k], str) for k in ("path", "lines", "quote"))
 
 
 def all_json_files():
@@ -114,7 +145,7 @@ def compute_counts():
                 tokens += count_leaves(load(os.path.join("tokens", layer, fn)))
     import adversarial_test as at
     cites = sum(1 for p in all_json_files() for o in walk_json(json.load(open(p, encoding="utf-8")))
-                if isinstance(o, dict) and {"path", "lines", "quote"} <= set(o))
+                if is_cite(o))
     return {
         "tokens": tokens,
         "primitives": len(ids_in("primitives")),
@@ -124,10 +155,18 @@ def compute_counts():
         "routes": len(load("templates/routes.json")["routes"]),
         "assetRoles": len(load("assets/asset-roles.json")["roles"]),
         "graphRules": len(load("compatibility/graph.json")["rules"]),
-        "adversarialMutations": len(at.CASES) + len(at.RULE_CASES) + len(at.REPO_CASES),
-        "adversarialControls": len(at.CONTROLS) + 1,
+        "modeRules": len(__import__("semantic_validate").MODE_RULES),
+        "tokenRules": len(__import__("semantic_validate").TOKEN_RULES),
+        "examples": len(example_files()),
+        "adversarialMutations": at.N_MUTATIONS,
+        "adversarialControls": at.N_CONTROLS,
         "citations": cites,
     }
+
+
+def example_files():
+    d = os.path.join(ROOT, "schema", "examples")
+    return sorted(f for f in os.listdir(d) if f.endswith(".pagespec.json"))
 
 
 # ------------------------------------------------------------------ checks
@@ -135,15 +174,183 @@ def check_schema_example():
     from jsonschema import Draft7Validator
     schema = load("schema/pagespec.schema.json")
     Draft7Validator.check_schema(schema)
-    errs = list(Draft7Validator(schema).iter_errors(load("schema/example.pagespec.json")))
-    res("schema_example", "FAIL" if errs else "PASS", f"{len(errs)} error(s)" + (f": {errs[0].message[:120]}" if errs else ""))
+    bad = []
+    for fn in example_files():
+        errs = list(Draft7Validator(schema).iter_errors(load(f"schema/examples/{fn}")))
+        if errs:
+            bad.append(f"{fn}: {len(errs)} error(s): {errs[0].message[:100]}")
+    res("schema_example", "FAIL" if bad else "PASS", "; ".join(bad) or f"{len(example_files())} examples, 0 schema errors")
 
 
 def check_semantic_example():
     import semantic_validate as sv
-    iss = sv.validate(load("schema/example.pagespec.json"), root=ROOT)
-    errs = [i for i in iss if i.severity == "error"]
-    res("semantic_example", "FAIL" if errs else "PASS", f"{len(errs)} error(s), {len(iss) - len(errs)} warning(s)" + (f": {errs[0]}" if errs else ""))
+    bad, n = [], 0
+    for fn in example_files():
+        iss = sv.validate(load(f"schema/examples/{fn}"), root=ROOT)
+        n += 1
+        if iss:
+            bad.append(f"{fn}: {iss[0]}")
+    res("semantic_example", "FAIL" if bad else "PASS", "; ".join(bad) or f"{n} examples: 0 errors, 0 warnings")
+
+
+def check_mode_examples():
+    bad, seen = [], {}
+    for fn in example_files():
+        d = load(f"schema/examples/{fn}")
+        fam, label = fn[: -len(".pagespec.json")].split(".")
+        mode = {"clone": "clone", "generated": "generation"}.get(label, label)
+        if TEMPLATE_FAMILIES.get(d.get("template")) != fam:
+            bad.append(f"{fn}: template {d.get('template')} is not family '{fam}'")
+        if d.get("mode") != mode:
+            bad.append(f"{fn}: mode {d.get('mode')} != file name mode '{mode}'")
+        seen.setdefault(fam, set()).add(d.get("mode"))
+    tpls = {t["id"]: t.get("family") for t in load("templates/templates.json")["templates"]}
+    if tpls != TEMPLATE_FAMILIES:
+        bad.append(f"templates families {tpls} != pinned {TEMPLATE_FAMILIES}")
+    for fam in sorted(set(TEMPLATE_FAMILIES.values())):
+        if seen.get(fam) != {"clone", "generation"}:
+            bad.append(f"family {fam}: modes {sorted(seen.get(fam, []))}, need clone + generation")
+    res("mode_examples", "FAIL" if bad else "PASS", "; ".join(bad) or f"{len(seen)} families x {{clone, generation}} examples")
+
+
+def check_section_contracts():
+    from jsonschema import Draft7Validator
+    sch = load("schema/section-contract.schema.json")
+    Draft7Validator.check_schema(sch)
+    v = Draft7Validator(sch)
+    bad = []
+    if sch.get("additionalProperties") is not False:
+        bad.append("section-contract.schema.json is not closed")
+    for i in ids_in("sections"):
+        for e in v.iter_errors(load(f"sections/{i}.json")):
+            bad.append(f"{i}: {'/'.join(map(str, e.absolute_path))}: {e.message[:90]}")
+    res("section_contracts", "FAIL" if bad else "PASS", "; ".join(bad[:5]) or f"{len(ids_in('sections'))} contracts validate against the closed contract schema")
+
+
+def check_provenance():
+    bad, verified = [], 0
+    src_present = os.path.isfile(os.path.join(PARENT, "src", "App.jsx"))
+    for i in ids_in("sections"):
+        d = load(f"sections/{i}.json")
+        s, sem = d.get("source"), d.get("semantic")
+        if not isinstance(s, dict) or set(s) != {"id", "tag", "file", "lines"}:
+            bad.append(f"{i}: source must be exactly {{id, tag, file, lines}}")
+            continue
+        if not isinstance(sem, dict) or set(sem) != {"id", "category"}:
+            bad.append(f"{i}: semantic must be exactly {{id, category}}")
+            continue
+        if sem["id"] != i:
+            bad.append(f"{i}: semantic.id {sem['id']} != contract id")
+        if s["id"] == i:
+            bad.append(f"{i}: source.id must not equal the contract id (provenance is not taxonomy)")
+        if not src_present:
+            continue
+        full = os.path.join(PARENT, s["file"])
+        if not os.path.isfile(full):
+            bad.append(f"{i}: source file {s['file']} missing")
+            continue
+        with open(full, encoding="utf-8") as f:
+            lines = f.read().split("\n")
+        m = re.fullmatch(r"(\d+)(?:-(\d+))?", s["lines"])
+        a, b = int(m.group(1)), int(m.group(2) or m.group(1))
+        if b > len(lines) or a < 1 or b < a:
+            bad.append(f"{i}: range {s['lines']} outside {s['file']} ({len(lines)} lines)")
+        elif "<" + s["tag"] not in lines[a - 1]:
+            bad.append(f"{i}: <{s['tag']} not on {s['file']}:{a}")
+        else:
+            verified += 1
+    if src_present:
+        p = subprocess.run([sys.executable, os.path.join(ROOT, "extraction", "build_provenance.py"), "--check"], capture_output=True, text=True)
+        if p.returncode:
+            bad.append(p.stdout.strip()[:200])
+    if bad:
+        res("provenance", "FAIL", "; ".join(bad[:5]))
+    elif not src_present:
+        res("provenance", "WARN", "source/semantic objects closed; ranges unverifiable: sibling source tree absent")
+    else:
+        res("provenance", "PASS", f"{verified} source ranges re-read from the real files, tag on the first line; build_provenance --check clean")
+
+
+def check_retrieval():
+    import semantic_validate as sv
+    al = load("tokens/llm/component-allowlist.json")
+    contracts = {i for i in ids_in("sections") if load(f"sections/{i}.json").get("retrievalEligible") is False}
+    bad = []
+    for name, got in (("semantic_validate.RETRIEVAL_INELIGIBLE", set(sv.RETRIEVAL_INELIGIBLE)), ("contracts", contracts),
+                      ("allowlist.retrievalIneligibleSections", set(al.get("retrievalIneligibleSections", [])))):
+        if got != RETRIEVAL_INELIGIBLE:
+            bad.append(f"{name} {sorted(got)} != pinned {sorted(RETRIEVAL_INELIGIBLE)}")
+    for i in ids_in("sections"):
+        d = load(f"sections/{i}.json")
+        if not isinstance(d.get("retrievalEligible"), bool):
+            bad.append(f"{i}: retrievalEligible must be a closed boolean")
+        if sv.RUNTIME_UI_RX.search(i + " " + d.get("name", "").lower()) and i not in RETRIEVAL_INELIGIBLE:
+            bad.append(f"{i}: looks like runtime UI but is not pinned ineligible")
+    res("retrieval_eligibility", "FAIL" if bad else "PASS", "; ".join(bad) or f"ineligible {sorted(RETRIEVAL_INELIGIBLE)} pinned in both validators, contracts and allowlist")
+
+
+def check_leakage():
+    reg = load("schema/leakage-patterns.json")
+    bad = []
+    for k in ("brand", "persons", "customers", "claims", "domains", "embeds", "assets", "copyShingles"):
+        if not reg.get(k):
+            bad.append(f"registry section '{k}' empty")
+    if reg.get("humanReviewed") is not False:
+        bad.append("humanReviewed must stay false (no human has reviewed the patterns)")
+    if not os.path.isfile(os.path.join(PARENT, "src", "App.jsx")):
+        res("leakage_patterns", "FAIL" if bad else "WARN", "; ".join(bad) or "registry present; source tree absent, rebuild not checkable")
+        return
+    p = subprocess.run([sys.executable, os.path.join(ROOT, "extraction", "build_leakage_patterns.py"), "--check"], capture_output=True, text=True)
+    if p.returncode:
+        bad.append(p.stdout.strip()[:200])
+    res("leakage_patterns", "FAIL" if bad else "PASS", "; ".join(bad) or f"registry == fresh build from source ({reg['copyShingles']['count']} shingles, {len(reg['persons'])} person patterns)")
+
+
+def check_wrapper_gate():
+    src = open(os.path.join(ROOT, "extraction", "wrapper_gate.py"), encoding="utf-8").read()
+    bad = [f"threshold {k} not pinned in wrapper_gate.py" for k in ("HERO_WARN_PX = 1800", "HERO_ERROR_PX = 3000", "SHARE_WARN = 0.50", "SHARE_ERROR = 0.60", "VIEWPORT = 1440") if k not in src]
+    errs, warns = wrapper_gate.run(ROOT)
+    bad += errs
+    res("wrapper_gate", "FAIL" if bad else "PASS", "; ".join(bad[:5]) or f"0 errors, {len(warns)} warnings over {len(load('templates/templates.json')['templates'])} measured templates at 1440px")
+
+
+def check_design_policy():
+    import policy_hash
+    m = load("registry.manifest.json")
+    dp = m.get("designPolicy") or {}
+    bad = []
+    if not m.get("category"):
+        bad.append("manifest category missing")
+    for k in ("ref", "policyId", "policyVersion", "commonIrVersion", "enforcementMode", "contentHash"):
+        if not dp.get(k):
+            bad.append(f"designPolicy.{k} missing")
+    if bad:
+        res("design_policy", "FAIL", "; ".join(bad))
+        return
+    if not os.path.isfile(os.path.join(ROOT, dp["ref"])):
+        res("design_policy", "FAIL", f"policy file {dp['ref']} missing")
+        return
+    pol = load(dp["ref"])
+    if dp["commonIrVersion"] != "0.5" or pol.get("commonIrVersion") != "0.5":
+        bad.append("commonIrVersion must be 0.5 in manifest and policy")
+    if dp["enforcementMode"] != "hard-and-soft":
+        bad.append("enforcementMode must be hard-and-soft")
+    if (dp["policyId"], dp["policyVersion"]) != (pol.get("policyId"), pol.get("policyVersion")):
+        bad.append("manifest policyId/policyVersion != policy file")
+    cls = pol.get("classification", {})
+    if cls.get("isSaaS") is not False or m["category"] != cls.get("productCategory"):
+        bad.append("classification must be non-SaaS and match the manifest category")
+    if dp["policyId"] == SAAS_POLICY_ID or SAAS_POLICY_ID not in pol.get("notBoundTo", {}) or SAAS_POLICY_ID not in dp.get("notBoundTo", []):
+        bad.append(f"a non-SaaS site must record notBoundTo {SAAS_POLICY_ID} (policy + manifest) and never bind it")
+    ap = pol.get("approval", {})
+    if ap.get("policyDecision") != "defined-pending-architecture-review" or ap.get("architectureDecisionRecorded") is not False:
+        bad.append("approval must be defined-pending-architecture-review / architectureDecisionRecorded false")
+    for rel in pol.get("enforcedBy", []):
+        if not os.path.isfile(os.path.join(ROOT, rel)):
+            bad.append(f"enforcedBy {rel} missing")
+    if not bad and policy_hash.compute(ROOT) != dp["contentHash"]:
+        bad.append(f"contentHash {dp['contentHash'][:19]}... != recomputed {policy_hash.compute(ROOT)[:19]}... (run extraction/policy_hash.py --write)")
+    res("design_policy", "FAIL" if bad else "PASS", "; ".join(bad) or f"category {m['category']} -> {dp['policyId']} {dp['policyVersion']} (not {SAAS_POLICY_ID}); contentHash matches")
 
 
 def check_adversarial():
@@ -170,6 +377,8 @@ def check_allowlist_parity():
         "nodeProperties": (al["nodeProperties"], props),
         "motionProperties": (al["motionProperties"], motion),
         "pageProperties": (al["pageProperties"], schema["properties"]),
+        "modes": (al.get("modes", []), schema["properties"]["mode"]["enum"]),
+        "tokenSlots": (al.get("tokenSlots", []), schema["definitions"]["tokens"]["properties"]),
     }
     bad = []
     for k, (a, b) in pairs.items():
@@ -190,7 +399,9 @@ def check_allowlist_version():
     for doc in ("README.md", "CHANGELOG.md"):
         with open(os.path.join(ROOT, doc), encoding="utf-8") as f:
             text = f.read()
-        found = set(re.findall(r"allowlistVersion\W+(\d+\.\d+\.\d+)", text))
+        found = re.findall(r"allowlistVersion\W+(\d+\.\d+\.\d+)", text)
+        # README: every statement must agree; CHANGELOG: the newest (first) entry is the current one
+        found = set(found[:1]) if doc == "CHANGELOG.md" else set(found)
         if found != {v}:
             bad.append(f"{doc} states {sorted(found) or 'nothing'}, allowlist is {v}")
     res("allowlist_version_parity", "FAIL" if bad else "PASS", "; ".join(bad) or f"allowlistVersion {v} everywhere")
@@ -226,7 +437,7 @@ def check_citations():
         with open(p, encoding="utf-8") as f:
             doc = json.load(f)
         for o in walk_json(doc):
-            if not (isinstance(o, dict) and {"path", "lines", "quote"} <= set(o)):
+            if not is_cite(o):
                 continue
             path, lines, quote = o["path"], str(o["lines"]), o["quote"]
             where = f"{rel} -> {path}:{lines}"
@@ -410,29 +621,30 @@ def check_theme_resolution():
 
 
 def check_token_catalog():
+    import build_token_catalog as btc
     cat = load("tokens/llm/token-catalog.json")
     pol = load("tokens/llm/token-policy.json")
-    motion = load("tokens/00-foundation/motion.json")
-    real = {
-        "semantic": leaf_values(load("tokens/10-semantic/semantic.json")),
-        "component": leaf_values(load("tokens/20-component/component.json")),
-        "layout": leaf_values(load("tokens/30-layout/layout.json")),
-        "typography": leaf_values(load("tokens/00-foundation/typography.json")["type"]),
-        "breakpoint": leaf_values(load("tokens/00-foundation/breakpoint.json")["breakpoint"]),
-        "motion": {**{"duration." + k: 1 for k in leaf_values(motion["duration"])}, **{"easing." + k: 1 for k in leaf_values(motion["easing"])}},
-    }
+    schema = load("schema/pagespec.schema.json")
     bad = []
-    for k, leaves in real.items():
-        listed = set(cat.get(k, []))
-        if listed - set(leaves):
-            bad.append(f"catalog.{k} phantom {sorted(listed - set(leaves))}")
-        if set(leaves) - listed:
-            bad.append(f"catalog.{k} missing {sorted(set(leaves) - listed)}")
-    cat_keys = {k for k in cat if k not in ("catalogVersion", "description")}
-    pol_keys = set(pol["rawValueRestrictions"])
-    if pol_keys != cat_keys:
-        bad.append(f"policy categories {sorted(pol_keys ^ cat_keys)} do not match catalog keys")
-    res("token_catalog", "FAIL" if bad else "PASS", "; ".join(bad) or f"{sum(len(v) for v in real.values())} catalog entries resolve; policy keys == catalog keys")
+    if cat != btc.build(ROOT):
+        bad.append("token-catalog.json differs from a fresh build of the token files (run extraction/build_token_catalog.py)")
+    cats = set(cat["categories"])
+    if set(pol["rawValueRestrictions"]) != cats:
+        bad.append(f"policy categories {sorted(set(pol['rawValueRestrictions']) ^ cats)} do not match catalog categories")
+    for slot, sp in pol["slots"].items():
+        if not set(sp["categories"]) <= cats:
+            bad.append(f"slot {slot}: unknown categories {sorted(set(sp['categories']) - cats)}")
+        if not any(tid.startswith(tuple(sp["idPrefixes"])) and cat["tokens"][tid]["category"] in sp["categories"] for tid in cat["tokens"]):
+            bad.append(f"slot {slot}: no catalog token matches its prefixes")
+    if set(schema["definitions"]["tokens"]["properties"]) != set(pol["slots"]):
+        bad.append("schema token slots != token-policy slots")
+    m = load("registry.manifest.json")
+    if sorted(cat["themes"]) != sorted(m["schemaValidatedThemes"]) or pol["themes"]["validated"] != m["schemaValidatedThemes"]:
+        bad.append("catalog/policy themes != manifest schemaValidatedThemes")
+    import semantic_validate as sv
+    if set(pol["rules"]) != set(sv.TOKEN_RULES):
+        bad.append(f"token-policy rules {sorted(set(pol['rules']) ^ set(sv.TOKEN_RULES))} differ from semantic_validate.TOKEN_RULES")
+    res("token_catalog", "FAIL" if bad else "PASS", "; ".join(bad) or f"{len(cat['tokens'])} tokens == fresh build; {len(pol['slots'])} slots and {len(pol['rules'])} rules resolve")
 
 
 def check_asset_roles():
@@ -440,25 +652,54 @@ def check_asset_roles():
     reg = load("assets/asset-roles.json")
     schema = load("schema/pagespec.schema.json")
     al = load("tokens/llm/component-allowlist.json")
-    field_roles = set()
+    field_enums = []
     for i in ids_in("sections"):
         for o in walk_json(load(f"sections/{i}.json")["content"]):
             if isinstance(o, dict) and "assetRole" in o.get("properties", {}):
-                field_roles |= set(o["properties"]["assetRole"]["enum"])
+                field_enums.append((i, o["properties"]["assetRole"]["enum"]))
+    field_roles = {r for _, e in field_enums for r in e}
     roles = set(reg["roles"])
+    media = {k for k, r in reg["roles"].items() if r.get("kind") == "media"}
     bad = []
     if roles != set(schema["definitions"]["assetRole"]["enum"]):
         bad.append("registry != schema assetRole enum")
-    if roles != field_roles:
-        bad.append(f"registry vs fields: unused {sorted(roles - field_roles)}, unregistered {sorted(field_roles - roles)}")
+    if media != field_roles:
+        bad.append(f"media roles vs fields: unused {sorted(media - field_roles)}, unregistered {sorted(field_roles - media)}")
     if roles != set(al["assetRoles"]):
         bad.append("registry != allowlist")
     for name, r in reg["roles"].items():
         if r["generationPolicy"] not in reg["generationPolicies"]:
             bad.append(f"{name}: unknown policy {r['generationPolicy']}")
+    if PINNED_AVAILABILITY != sv.PINNED_AVAILABILITY:
+        bad.append("verify_all.PINNED_AVAILABILITY != semantic_validate.PINNED_AVAILABILITY")
+    for name, r in reg["roles"].items():
+        if PINNED_AVAILABILITY.get(name) != r.get("availability"):
+            bad.append(f"{name}: availability {r.get('availability')} != pinned {PINNED_AVAILABILITY.get(name)}")
+    for sid, enum in field_enums:
+        for r in enum:
+            if PINNED_AVAILABILITY.get(r) != "generation-safe" and not set(reg["roles"][r]["generationSafeSubstitutes"]) & set(enum):
+                bad.append(f"{sid}: field allows {r} but none of its substitutes")
+        if not any(PINNED_AVAILABILITY.get(r) == "generation-safe" for r in enum):
+            bad.append(f"{sid}: a media field has no generation-safe role")
+    for sid in ids_in("sections"):
+        d = load(f"sections/{sid}.json")
+        want = sorted({r for o in walk_json(d["content"]) if isinstance(o, dict) and "assetRole" in o.get("properties", {}) for r in o["properties"]["assetRole"]["enum"] if PINNED_AVAILABILITY.get(r) == "generation-safe"})
+        if d.get("generatedAssetRoles") != want:
+            bad.append(f"{sid}: generatedAssetRoles {d.get('generatedAssetRoles')} != generation-safe field roles {want}")
+    pub = os.path.join(PARENT, "public")
+    checked = 0
+    if os.path.isdir(pub):
+        for name, r in reg["roles"].items():
+            for f in r.get("sourceFiles", []):
+                if f.startswith("inline:"):
+                    continue
+                cand = [os.path.join(pub, f.lstrip("/"))] + [os.path.join(pub, f.lstrip("/") + ext) for ext in (".jpg", ".webp", ".png")]
+                if not any(os.path.isfile(c) for c in cand):
+                    bad.append(f"{name}: sourceFile {f} not in ../public")
+                checked += 1
     pins = sv.check_pins(sv.load_context(ROOT))
     bad += [f"{i.path}: {i.message}" for i in pins]
-    res("asset_roles", "FAIL" if bad else "PASS", "; ".join(bad) or f"{len(roles)} roles closed and wired; {len(sv.PINNED_ASSET_POLICIES)} pinned policies + {len(sv.PINNED_LICENCES)} licence hold")
+    res("asset_roles", "FAIL" if bad else "PASS", "; ".join(bad[:6]) or f"{len(roles)} roles closed and wired; {len(sv.PINNED_ASSET_POLICIES)} policy pins + {len(PINNED_AVAILABILITY)} availability pins + {len(sv.PINNED_LICENCES)} licence hold; {checked} sourceFiles exist")
 
 
 def check_responsive():
@@ -520,7 +761,8 @@ def check_framework():
 
 
 def main(argv):
-    checks = [check_schema_example, check_semantic_example, check_allowlist_parity, check_allowlist_version, check_counts,
+    checks = [check_schema_example, check_semantic_example, check_mode_examples, check_section_contracts, check_provenance,
+              check_retrieval, check_leakage, check_wrapper_gate, check_design_policy, check_allowlist_parity, check_allowlist_version, check_counts,
               check_citations, check_absolute_paths, check_entrypoints, check_schema_contract_parity, check_graph_validator_parity,
               check_template_route_coverage, check_theme_resolution, check_token_catalog, check_asset_roles, check_responsive, check_evidence_levels,
               check_status, check_framework]

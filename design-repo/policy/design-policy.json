@@ -1,0 +1,83 @@
+{
+  "policyId": "n0-professional-services-consultancy-web",
+  "policyVersion": "1.0.0",
+  "commonIrVersion": "0.5",
+  "title": "Professional-services (sustainability / ESG consultancy) marketing-site generation policy",
+  "classification": {
+    "productCategory": "professional-services",
+    "productDomain": "sustainability-and-esg-consulting",
+    "marketModel": "B2B / public-sector advisory and engineering consultancy selling bespoke engagements; no software product, no self-serve plans",
+    "isSaaS": false,
+    "surfaces": [
+      "marketing-site",
+      "legal",
+      "error"
+    ],
+    "audiences": [
+      "companies, utilities and investors seeking sustainability / ESG advice",
+      "governments and public institutions",
+      "prospective partners and hires"
+    ]
+  },
+  "classificationEvidence": {
+    "consultancySignals": [
+      {
+        "claim": "the company describes itself as an interdisciplinary sustainability consultancy",
+        "cite": "src/components/Footer.jsx:19",
+        "anchor": "Interdisciplinary sustainability consultancy with 45 years of experience."
+      },
+      {
+        "claim": "the offer is a set of advisory capabilities (strategy, energy/carbon, water, finance, crisis communications, capacity building), not software features",
+        "cite": "src/lib/content.js:76",
+        "anchor": "['Sustainability Strategy', 'We design ESG strategies"
+      },
+      {
+        "claim": "proof is client engagements for utilities, governments and retailers (case-study slides), not product screenshots or integrations",
+        "cite": "src/lib/content.js:106",
+        "anchor": "We support EDP in developing and implementing renewable generation solutions"
+      },
+      {
+        "claim": "the people are an executive/consulting team presented as a roster",
+        "cite": "src/components/Team.jsx:72",
+        "anchor": "Our executive team brings decades of experience"
+      },
+      {
+        "claim": "the only conversion is a newsletter signup and a LinkedIn follow; no trial, demo, login or purchase",
+        "cite": "src/components/Cta.jsx:21",
+        "anchor": "<span>Sign up for updates</span>"
+      }
+    ],
+    "saasSignalsAbsent": "grep of src/ (excluding the privacy text), 2026-10-29: 0 matches for pricing|price|per month|subscription|sign in|log in|dashboard|free trial|demo|integration|per seat. The clone serves 3 routes (/, /privacy-policy, catch-all 404); there is no app, account or pricing surface."
+  },
+  "notBoundTo": {
+    "n0-saas-design-constraints-common": "Explicitly NOT applied. That policy assumes a B2B SaaS product (pricing tiers, product dashboards and screenshots, feature matrices, integrations, trial/demo funnels). Equator is a consultancy whose site is a single long-form brand page plus a privacy policy; binding it to the SaaS policy would require a recorded architecture decision, which has not been made."
+  },
+  "generationRules": [
+    "Pages are drawn only from the 3 templates (home, legal, not-found) and 14 section contracts in this repo; no new section types and no SaaS constructs (pricing tables, product screenshots, feature matrices, integrations, trial/demo CTAs).",
+    "Mode is explicit: clone reproduces Equator for fidelity work; generation builds a page for another organisation and must contain no Equator identity or content.",
+    "Brand: no Equator / The Equator Company / S317 name, spelling variant or domain (GENERATION_MODE_BRAND).",
+    "People: no real employee names, slugs or likenesses; team rosters use fictional people with fictional-avatar media (GENERATION_MODE_PERSON, GENERATION_MODE_ASSET).",
+    "Customers and partners: no merged-company, client, programme or design-studio names, and no real logos; placeholder-company-logo only (GENERATION_MODE_CUSTOMER).",
+    "Claims: no Equator experience figures, project statistics, awards or public-funding claims (PRR / Recuperar Portugal / EU strip); funding emblems and project sheets appear only if the operator supplies its own verified ones (GENERATION_MODE_CLAIM, blocked-for-generation roles).",
+    "Copy: no Equator copy, checked as hashed 5-word shingles after normalisation (GENERATION_MODE_COPY).",
+    "Links: placeholder:, relative, in-page anchors or reserved .example / .invalid hosts only; no Equator, LinkedIn, Mailchimp, Google Maps, partner or government URL or email (GENERATION_MODE_URL, GENERATION_MODE_EMBED).",
+    "Assets: only generation-safe roles; no source: refs, no real file names or asset stems (GENERATION_MODE_ASSET). There are no product screenshots in the source, so no separate screenshot rule exists; slide photography is covered by the asset rule.",
+    "Tokens: only catalog token ids in policy-allowed slots, theme 'light' only (TOKEN_* rules); National 2 needs the deployer's own licence."
+  ],
+  "enforcedBy": [
+    "policy/design-policy.json",
+    "schema/pagespec.schema.json",
+    "schema/semantic_validate.py",
+    "schema/textnorm.py",
+    "schema/leakage-patterns.json",
+    "assets/asset-roles.json",
+    "compatibility/graph.json",
+    "tokens/llm/token-policy.json",
+    "tokens/llm/token-catalog.json"
+  ],
+  "approval": {
+    "policyDecision": "defined-pending-architecture-review",
+    "architectureDecisionRecorded": false,
+    "note": "Classification and rules were written by an agent (agent attestation, not a human sign-off). A human architecture owner must ratify the non-SaaS binding; licensing of real assets and the National 2 font remains open."
+  }
+}

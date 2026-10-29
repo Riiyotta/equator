@@ -2,6 +2,17 @@
   "id": "hero.title",
   "name": "Title",
   "category": "hero",
+  "semantic": {
+    "id": "hero.title",
+    "category": "HERO"
+  },
+  "source": {
+    "id": "Title>section.titleSection",
+    "tag": "section",
+    "file": "src/components/Title.jsx",
+    "lines": "6-27"
+  },
+  "retrievalEligible": true,
   "purpose": "Positioning statement: three-line headline with a one-sentence promise over an ambient looping video.",
   "evidenceLevel": "measured",
   "implementedBy": "src/components/Title.jsx",
@@ -43,12 +54,13 @@
         "properties": {
           "assetRole": {
             "enum": [
-              "ambient-video"
+              "ambient-video",
+              "generated-ambient-video"
             ]
           },
           "assetRef": {
             "type": "string",
-            "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+            "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
           },
           "alt": {
             "type": "string",
@@ -62,6 +74,9 @@
   "constraints": {
     "maxPerPage": 1
   },
+  "generatedAssetRoles": [
+    "generated-ambient-video"
+  ],
   "motion": {
     "pattern": "ambient-video-loop",
     "trigger": "autoplay",

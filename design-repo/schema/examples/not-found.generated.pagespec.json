@@ -1,0 +1,25 @@
+{
+  "pageSpecVersion": "2.0.0",
+  "mode": "generation",
+  "template": "template.not-found",
+  "route": "*",
+  "meta": {
+    "title": "Northwind: page missing",
+    "description": "The fictional Northwind studio could not find this address."
+  },
+  "nodes": [
+    {
+      "type": "content.not-found",
+      "content": {
+        "code": "404",
+        "message": "This address leads nowhere",
+        "homeLinkLabel": "Return to start"
+      },
+      "motion": {
+        "pattern": "none",
+        "trigger": "none",
+        "reducedMotionFallback": "none"
+      }
+    }
+  ]
+}

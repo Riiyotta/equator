@@ -1,0 +1,5 @@
+{
+  "whitelistVersion": "1.0.0",
+  "description": "Reviewed exceptions to the wrapper-height gate (extraction/wrapper_gate.py). Each entry: template, section, maxHeightPx (above the measured height), reviewedBy, justification (30+ chars). An agent reviewer must state 'agent attestation, not a human sign-off'. Empty: after the legal-article decomposition no section trips a gate threshold at 1440.",
+  "entries": []
+}

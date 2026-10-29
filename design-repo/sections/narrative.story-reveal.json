@@ -2,6 +2,17 @@
   "id": "narrative.story-reveal",
   "name": "Our Story",
   "category": "narrative",
+  "semantic": {
+    "id": "narrative.story-reveal",
+    "category": "NARRATIVE"
+  },
+  "source": {
+    "id": "Story>section#our-story",
+    "tag": "section",
+    "file": "src/components/Story.jsx",
+    "lines": "29-51"
+  },
+  "retrievalEligible": true,
   "purpose": "Origin story told as a scroll-scrubbed word-by-word reveal, with the merged companies' logos counted as reveal units.",
   "evidenceLevel": "measured",
   "implementedBy": "src/components/Story.jsx",
@@ -46,12 +57,13 @@
               "properties": {
                 "assetRole": {
                   "enum": [
-                    "merger-logo"
+                    "merger-logo",
+                    "placeholder-company-logo"
                   ]
                 },
                 "assetRef": {
                   "type": "string",
-                  "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                  "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                 },
                 "alt": {
                   "type": "string",
@@ -101,6 +113,9 @@
   "constraints": {
     "maxPerPage": 1
   },
+  "generatedAssetRoles": [
+    "placeholder-company-logo"
+  ],
   "motion": {
     "pattern": "scroll-scrub-word-reveal",
     "trigger": "scroll-scrub",

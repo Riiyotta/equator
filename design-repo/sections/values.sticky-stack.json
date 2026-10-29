@@ -2,6 +2,17 @@
   "id": "values.sticky-stack",
   "name": "What we stand for",
   "category": "values",
+  "semantic": {
+    "id": "values.sticky-stack",
+    "category": "VALUES"
+  },
+  "source": {
+    "id": "Values>section#what-we-stand-for",
+    "tag": "section",
+    "file": "src/components/Values.jsx",
+    "lines": "114-135"
+  },
+  "retrievalEligible": true,
   "purpose": "Five brand values presented as pinned full-viewport panels that cross-fade as the next one scrolls in, with an N/5 counter.",
   "evidenceLevel": "measured",
   "implementedBy": "src/components/Values.jsx",
@@ -59,12 +70,13 @@
               "properties": {
                 "assetRole": {
                   "enum": [
-                    "brand-lottie-value"
+                    "brand-lottie-value",
+                    "generated-illustration"
                   ]
                 },
                 "assetRef": {
                   "type": "string",
-                  "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                  "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                 },
                 "alt": {
                   "type": "string",
@@ -82,6 +94,9 @@
     "maxPerPage": 1,
     "exactPanels": 5
   },
+  "generatedAssetRoles": [
+    "generated-illustration"
+  ],
   "motion": {
     "pattern": "sticky-stack-scrub-fade",
     "trigger": "scroll-scrub",

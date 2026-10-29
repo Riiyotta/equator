@@ -2,11 +2,12 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://design-repo.local/equator/pagespec.schema.json",
   "title": "Equator design-repo PageSpec",
-  "description": "Machine contract for a generated page composition. Per-section-type node schemas are closed if/then branches (each a full independent schema). x-maxWords annotations are enforced by semantic_validate.py.",
+  "description": "Machine contract for a page composition (pageSpecVersion 2.0.0). `mode` (clone|generation) is required; its consequences are enforced by semantic_validate.py. Per-section-type node schemas are closed if/then branches. x-maxWords annotations are enforced by semantic_validate.py.",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "pageSpecVersion",
+    "mode",
     "template",
     "route",
     "meta",
@@ -14,7 +15,19 @@
   ],
   "properties": {
     "pageSpecVersion": {
-      "const": "1.0.0"
+      "const": "2.0.0"
+    },
+    "mode": {
+      "enum": [
+        "clone",
+        "generation"
+      ],
+      "description": "clone = faithful Equator reconstruction (real assets/copy allowed as evidence); generation = a new page for another brand: semantic_validate.py rejects every Equator brand, person, customer, copy, claim, URL, embed and asset (GENERATION_MODE_* rules)."
+    },
+    "theme": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Optional; defaults to the manifest defaultTheme. Validated semantically (TOKEN_THEME_COMBINATION)."
     },
     "template": {
       "enum": [
@@ -69,7 +82,16 @@
         "team-portrait",
         "team-halftone",
         "funding-emblem",
-        "project-sheet-pdf"
+        "project-sheet-pdf",
+        "placeholder-brand-mark",
+        "user-supplied-asset",
+        "generated-illustration",
+        "generated-ambient-video",
+        "placeholder-screenshot",
+        "fictional-avatar",
+        "placeholder-company-logo",
+        "placeholder-url",
+        "original-copy"
       ]
     },
     "node": {
@@ -93,7 +115,8 @@
             "conversion.cta-video",
             "chrome.footer",
             "chrome.subfooter",
-            "content.legal-prose",
+            "content.legal-header",
+            "content.legal-section",
             "content.not-found"
           ]
         }
@@ -145,12 +168,14 @@
                     "properties": {
                       "assetRole": {
                         "enum": [
-                          "brand-lottie-splash"
+                          "brand-lottie-splash",
+                          "placeholder-brand-mark",
+                          "generated-illustration"
                         ]
                       },
                       "assetRef": {
                         "type": "string",
-                        "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                        "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                       },
                       "alt": {
                         "type": "string",
@@ -180,6 +205,13 @@
                     "const": "static-first-frame-caption-visible"
                   }
                 }
+              },
+              "tokens": {
+                "$ref": "#/definitions/tokens"
+              },
+              "retrievalEligible": {
+                "type": "boolean",
+                "description": "Optional echo of the contract flag; must equal the pinned value (RETRIEVAL_ELIGIBILITY_PIN)."
               }
             }
           }
@@ -226,12 +258,14 @@
                     "properties": {
                       "assetRole": {
                         "enum": [
-                          "brand-wordmark"
+                          "brand-wordmark",
+                          "placeholder-brand-mark",
+                          "user-supplied-asset"
                         ]
                       },
                       "assetRef": {
                         "type": "string",
-                        "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                        "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                       },
                       "alt": {
                         "type": "string",
@@ -347,6 +381,13 @@
                     }
                   }
                 ]
+              },
+              "tokens": {
+                "$ref": "#/definitions/tokens"
+              },
+              "retrievalEligible": {
+                "type": "boolean",
+                "description": "Optional echo of the contract flag; must equal the pinned value (RETRIEVAL_ELIGIBILITY_PIN)."
               }
             }
           }
@@ -407,12 +448,13 @@
                     "properties": {
                       "assetRole": {
                         "enum": [
-                          "ambient-video"
+                          "ambient-video",
+                          "generated-ambient-video"
                         ]
                       },
                       "assetRef": {
                         "type": "string",
-                        "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                        "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                       },
                       "alt": {
                         "type": "string",
@@ -442,6 +484,13 @@
                     "const": "video-poster-still"
                   }
                 }
+              },
+              "tokens": {
+                "$ref": "#/definitions/tokens"
+              },
+              "retrievalEligible": {
+                "type": "boolean",
+                "description": "Optional echo of the contract flag; must equal the pinned value (RETRIEVAL_ELIGIBILITY_PIN)."
               }
             }
           }
@@ -506,12 +555,13 @@
                           "properties": {
                             "assetRole": {
                               "enum": [
-                                "merger-logo"
+                                "merger-logo",
+                                "placeholder-company-logo"
                               ]
                             },
                             "assetRef": {
                               "type": "string",
-                              "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                              "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                             },
                             "alt": {
                               "type": "string",
@@ -581,6 +631,13 @@
               "anchorId": {
                 "type": "string",
                 "pattern": "^[a-z][a-z0-9-]{1,40}$"
+              },
+              "tokens": {
+                "$ref": "#/definitions/tokens"
+              },
+              "retrievalEligible": {
+                "type": "boolean",
+                "description": "Optional echo of the contract flag; must equal the pinned value (RETRIEVAL_ELIGIBILITY_PIN)."
               }
             }
           }
@@ -658,12 +715,13 @@
                           "properties": {
                             "assetRole": {
                               "enum": [
-                                "brand-lottie-value"
+                                "brand-lottie-value",
+                                "generated-illustration"
                               ]
                             },
                             "assetRef": {
                               "type": "string",
-                              "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                              "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                             },
                             "alt": {
                               "type": "string",
@@ -700,6 +758,13 @@
               "anchorId": {
                 "type": "string",
                 "pattern": "^[a-z][a-z0-9-]{1,40}$"
+              },
+              "tokens": {
+                "$ref": "#/definitions/tokens"
+              },
+              "retrievalEligible": {
+                "type": "boolean",
+                "description": "Optional echo of the contract flag; must equal the pinned value (RETRIEVAL_ELIGIBILITY_PIN)."
               }
             }
           }
@@ -797,6 +862,13 @@
               "anchorId": {
                 "type": "string",
                 "pattern": "^[a-z][a-z0-9-]{1,40}$"
+              },
+              "tokens": {
+                "$ref": "#/definitions/tokens"
+              },
+              "retrievalEligible": {
+                "type": "boolean",
+                "description": "Optional echo of the contract flag; must equal the pinned value (RETRIEVAL_ELIGIBILITY_PIN)."
               }
             }
           }
@@ -871,12 +943,15 @@
                           "properties": {
                             "assetRole": {
                               "enum": [
-                                "project-photo"
+                                "project-photo",
+                                "generated-illustration",
+                                "placeholder-screenshot",
+                                "user-supplied-asset"
                               ]
                             },
                             "assetRef": {
                               "type": "string",
-                              "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                              "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                             },
                             "alt": {
                               "type": "string",
@@ -907,12 +982,13 @@
                       "properties": {
                         "assetRole": {
                           "enum": [
-                            "member-logo"
+                            "member-logo",
+                            "placeholder-company-logo"
                           ]
                         },
                         "assetRef": {
                           "type": "string",
-                          "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                          "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                         },
                         "alt": {
                           "type": "string",
@@ -947,6 +1023,13 @@
               "anchorId": {
                 "type": "string",
                 "pattern": "^[a-z][a-z0-9-]{1,40}$"
+              },
+              "tokens": {
+                "$ref": "#/definitions/tokens"
+              },
+              "retrievalEligible": {
+                "type": "boolean",
+                "description": "Optional echo of the contract flag; must equal the pinned value (RETRIEVAL_ELIGIBILITY_PIN)."
               }
             }
           }
@@ -1027,12 +1110,13 @@
                           "properties": {
                             "assetRole": {
                               "enum": [
-                                "team-portrait"
+                                "team-portrait",
+                                "fictional-avatar"
                               ]
                             },
                             "assetRef": {
                               "type": "string",
-                              "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                              "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                             },
                             "alt": {
                               "type": "string",
@@ -1051,12 +1135,13 @@
                           "properties": {
                             "assetRole": {
                               "enum": [
-                                "team-halftone"
+                                "team-halftone",
+                                "fictional-avatar"
                               ]
                             },
                             "assetRef": {
                               "type": "string",
-                              "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                              "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                             },
                             "alt": {
                               "type": "string",
@@ -1067,7 +1152,7 @@
                         },
                         "profileUrl": {
                           "type": "string",
-                          "pattern": "^placeholder:[a-z0-9-]+$"
+                          "pattern": "^(placeholder:[a-z0-9-]+|https://[^\\s]{1,200})$"
                         }
                       }
                     }
@@ -1097,6 +1182,13 @@
               "anchorId": {
                 "type": "string",
                 "pattern": "^[a-z][a-z0-9-]{1,40}$"
+              },
+              "tokens": {
+                "$ref": "#/definitions/tokens"
+              },
+              "retrievalEligible": {
+                "type": "boolean",
+                "description": "Optional echo of the contract flag; must equal the pinned value (RETRIEVAL_ELIGIBILITY_PIN)."
               }
             }
           }
@@ -1145,7 +1237,7 @@
                   },
                   "primaryHref": {
                     "type": "string",
-                    "pattern": "^(placeholder:[a-z0-9-]+|/[a-z0-9/#-]*|#[a-z0-9-]+)$"
+                    "pattern": "^(placeholder:[a-z0-9-]+|/[a-z0-9/#-]*|#[a-z0-9-]+|https://[^\\s]{1,200}|mailto:[^\\s@]+@[^\\s@]+)$"
                   },
                   "secondaryLabel": {
                     "type": "string",
@@ -1154,7 +1246,7 @@
                   },
                   "secondaryHref": {
                     "type": "string",
-                    "pattern": "^(placeholder:[a-z0-9-]+|/[a-z0-9/#-]*|#[a-z0-9-]+)$"
+                    "pattern": "^(placeholder:[a-z0-9-]+|/[a-z0-9/#-]*|#[a-z0-9-]+|https://[^\\s]{1,200}|mailto:[^\\s@]+@[^\\s@]+)$"
                   },
                   "backgroundVideo": {
                     "type": "object",
@@ -1166,12 +1258,13 @@
                     "properties": {
                       "assetRole": {
                         "enum": [
-                          "ambient-video"
+                          "ambient-video",
+                          "generated-ambient-video"
                         ]
                       },
                       "assetRef": {
                         "type": "string",
-                        "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                        "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                       },
                       "alt": {
                         "type": "string",
@@ -1201,6 +1294,13 @@
                     "const": "video-poster-still"
                   }
                 }
+              },
+              "tokens": {
+                "$ref": "#/definitions/tokens"
+              },
+              "retrievalEligible": {
+                "type": "boolean",
+                "description": "Optional echo of the contract flag; must equal the pinned value (RETRIEVAL_ELIGIBILITY_PIN)."
               }
             }
           }
@@ -1249,7 +1349,7 @@
                   },
                   "email": {
                     "type": "string",
-                    "pattern": "^placeholder:[a-z0-9-]+$"
+                    "pattern": "^(placeholder:[a-z0-9-]+|mailto:[^\\s@]+@[^\\s@]+)$"
                   },
                   "socialLabel": {
                     "type": "string",
@@ -1281,12 +1381,14 @@
                     "properties": {
                       "assetRole": {
                         "enum": [
-                          "brand-lottie-footer"
+                          "brand-lottie-footer",
+                          "generated-illustration",
+                          "placeholder-brand-mark"
                         ]
                       },
                       "assetRef": {
                         "type": "string",
-                        "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                        "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                       },
                       "alt": {
                         "type": "string",
@@ -1305,12 +1407,14 @@
                     "properties": {
                       "assetRole": {
                         "enum": [
-                          "brand-wordmark"
+                          "brand-wordmark",
+                          "placeholder-brand-mark",
+                          "user-supplied-asset"
                         ]
                       },
                       "assetRef": {
                         "type": "string",
-                        "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                        "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                       },
                       "alt": {
                         "type": "string",
@@ -1340,6 +1444,13 @@
                     "const": "static-first-frame"
                   }
                 }
+              },
+              "tokens": {
+                "$ref": "#/definitions/tokens"
+              },
+              "retrievalEligible": {
+                "type": "boolean",
+                "description": "Optional echo of the contract flag; must equal the pinned value (RETRIEVAL_ELIGIBILITY_PIN)."
               }
             }
           }
@@ -1382,12 +1493,13 @@
                     "properties": {
                       "assetRole": {
                         "enum": [
-                          "funding-emblem"
+                          "funding-emblem",
+                          "user-supplied-asset"
                         ]
                       },
                       "assetRef": {
                         "type": "string",
-                        "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                        "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                       },
                       "alt": {
                         "type": "string",
@@ -1419,12 +1531,13 @@
                         "properties": {
                           "assetRole": {
                             "enum": [
-                              "project-sheet-pdf"
+                              "project-sheet-pdf",
+                              "user-supplied-asset"
                             ]
                           },
                           "assetRef": {
                             "type": "string",
-                            "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                            "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
                           },
                           "alt": {
                             "type": "string",
@@ -1456,6 +1569,13 @@
                     "const": "none"
                   }
                 }
+              },
+              "tokens": {
+                "$ref": "#/definitions/tokens"
+              },
+              "retrievalEligible": {
+                "type": "boolean",
+                "description": "Optional echo of the contract flag; must equal the pinned value (RETRIEVAL_ELIGIBILITY_PIN)."
               }
             }
           }
@@ -1464,7 +1584,7 @@
           "if": {
             "properties": {
               "type": {
-                "const": "content.legal-prose"
+                "const": "content.legal-header"
               }
             },
             "required": [
@@ -1481,14 +1601,13 @@
             ],
             "properties": {
               "type": {
-                "const": "content.legal-prose"
+                "const": "content.legal-header"
               },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
                 "required": [
-                  "heading",
-                  "blocks"
+                  "heading"
                 ],
                 "properties": {
                   "heading": {
@@ -1496,31 +1615,14 @@
                     "minLength": 1,
                     "x-maxWords": 4
                   },
-                  "blocks": {
+                  "intro": {
                     "type": "array",
                     "minItems": 1,
-                    "maxItems": 60,
+                    "maxItems": 2,
                     "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "required": [
-                        "kind",
-                        "text"
-                      ],
-                      "properties": {
-                        "kind": {
-                          "enum": [
-                            "paragraph",
-                            "subheading",
-                            "heading"
-                          ]
-                        },
-                        "text": {
-                          "type": "string",
-                          "minLength": 1,
-                          "x-maxWords": 90
-                        }
-                      }
+                      "type": "string",
+                      "minLength": 1,
+                      "x-maxWords": 90
                     }
                   }
                 }
@@ -1544,6 +1646,98 @@
                     "const": "none"
                   }
                 }
+              },
+              "tokens": {
+                "$ref": "#/definitions/tokens"
+              },
+              "retrievalEligible": {
+                "type": "boolean",
+                "description": "Optional echo of the contract flag; must equal the pinned value (RETRIEVAL_ELIGIBILITY_PIN)."
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "content.legal-section"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type",
+              "content",
+              "motion"
+            ],
+            "properties": {
+              "type": {
+                "const": "content.legal-section"
+              },
+              "content": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "heading",
+                  "headingStyle",
+                  "paragraphs"
+                ],
+                "properties": {
+                  "heading": {
+                    "type": "string",
+                    "minLength": 1,
+                    "x-maxWords": 8
+                  },
+                  "headingStyle": {
+                    "enum": [
+                      "bold-paragraph",
+                      "headline4"
+                    ]
+                  },
+                  "paragraphs": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 16,
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "x-maxWords": 90
+                    }
+                  }
+                }
+              },
+              "motion": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "pattern",
+                  "trigger",
+                  "reducedMotionFallback"
+                ],
+                "properties": {
+                  "pattern": {
+                    "const": "none"
+                  },
+                  "trigger": {
+                    "const": "none"
+                  },
+                  "reducedMotionFallback": {
+                    "const": "none"
+                  }
+                }
+              },
+              "tokens": {
+                "$ref": "#/definitions/tokens"
+              },
+              "retrievalEligible": {
+                "type": "boolean",
+                "description": "Optional echo of the contract flag; must equal the pinned value (RETRIEVAL_ELIGIBILITY_PIN)."
               }
             }
           }
@@ -1614,11 +1808,62 @@
                     "const": "none"
                   }
                 }
+              },
+              "tokens": {
+                "$ref": "#/definitions/tokens"
+              },
+              "retrievalEligible": {
+                "type": "boolean",
+                "description": "Optional echo of the contract flag; must equal the pinned value (RETRIEVAL_ELIGIBILITY_PIN)."
               }
             }
           }
         }
       ]
+    },
+    "tokens": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "description": "Optional per-node token selection. Values must be catalog token ids allowed for the slot by tokens/llm/token-policy.json (TOKEN_* semantic rules).",
+      "properties": {
+        "surface": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "accent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "headingType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bodyType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "spacingY": {
+          "type": "string",
+          "minLength": 1
+        },
+        "gap": {
+          "type": "string",
+          "minLength": 1
+        },
+        "radius": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fontFamily": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
     }
   }
 }

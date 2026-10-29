@@ -1,0 +1,137 @@
+{
+  "pageSpecVersion": "2.0.0",
+  "mode": "generation",
+  "theme": "light",
+  "template": "template.legal-prose",
+  "route": "/privacy-policy",
+  "meta": {
+    "title": "Northwind privacy notice",
+    "description": "How the fictional Northwind Field Partners studio handles contact details."
+  },
+  "nodes": [
+    {
+      "type": "chrome.header",
+      "variant": "legal",
+      "content": {
+        "logo": {
+          "assetRole": "placeholder-brand-mark",
+          "assetRef": "placeholder:brand-mark"
+        },
+        "navItems": [
+          {
+            "label": "About",
+            "anchor": "our-story"
+          },
+          {
+            "label": "Principles",
+            "anchor": "what-we-stand-for"
+          },
+          {
+            "label": "Services",
+            "anchor": "capabilities"
+          },
+          {
+            "label": "Projects",
+            "anchor": "our-work"
+          },
+          {
+            "label": "People",
+            "anchor": "team"
+          }
+        ],
+        "emailLabel": "Write to us",
+        "socialLabel": "Social"
+      },
+      "motion": {
+        "pattern": "menu-slide-200ms",
+        "trigger": "click",
+        "reducedMotionFallback": "menu-instant-toggle"
+      }
+    },
+    {
+      "type": "content.legal-header",
+      "content": {
+        "heading": "Privacy Notice",
+        "intro": [
+          "This sample notice belongs to a fictional studio and shows the layout only; an operator replaces it with its own reviewed text."
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "trigger": "none",
+        "reducedMotionFallback": "none"
+      }
+    },
+    {
+      "type": "content.legal-section",
+      "content": {
+        "heading": "A. What we keep",
+        "headingStyle": "bold-paragraph",
+        "paragraphs": [
+          "When you write to us we store your name and reply address so we can answer.",
+          "Nothing else is gathered by this sample page."
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "trigger": "none",
+        "reducedMotionFallback": "none"
+      }
+    },
+    {
+      "type": "content.legal-section",
+      "content": {
+        "heading": "B. How long we keep it",
+        "headingStyle": "bold-paragraph",
+        "paragraphs": [
+          "Messages are removed twelve months after the last reply."
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "trigger": "none",
+        "reducedMotionFallback": "none"
+      }
+    },
+    {
+      "type": "content.legal-section",
+      "content": {
+        "heading": "Your choices",
+        "headingStyle": "headline4",
+        "paragraphs": [
+          "Ask us at any time to show or erase what we hold about you.",
+          "Requests go to the address in the footer."
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "trigger": "none",
+        "reducedMotionFallback": "none"
+      }
+    },
+    {
+      "type": "chrome.footer",
+      "content": {
+        "blurb": "Northwind Field Partners is a fictional planning studio used to demonstrate this layout.",
+        "addressLine": "1 Sample Street, Exampletown",
+        "email": "mailto:hello@northwind.example",
+        "socialLabel": "Visit our profile",
+        "copyrightHolder": "Northwind Field Partners",
+        "legalLinkLabel": "Privacy notice",
+        "animation": {
+          "assetRole": "generated-illustration",
+          "assetRef": "generated:footer-loop"
+        },
+        "wordmark": {
+          "assetRole": "placeholder-brand-mark",
+          "assetRef": "placeholder:brand-mark-stacked"
+        }
+      },
+      "motion": {
+        "pattern": "lottie-autoplay-loop",
+        "trigger": "autoplay",
+        "reducedMotionFallback": "static-first-frame"
+      }
+    }
+  ]
+}

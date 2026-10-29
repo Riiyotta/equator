@@ -1,5 +1,5 @@
 {
-  "allowlistVersion": "1.0.0",
+  "allowlistVersion": "2.0.0",
   "description": "Closed set an AI generator may instantiate or set. verify_all.py checks parity against sections/, primitives/, components/, templates.json, asset-roles.json and the schema.",
   "sections": [
     "chrome.splash",
@@ -13,8 +13,9 @@
     "conversion.cta-video",
     "chrome.footer",
     "chrome.subfooter",
-    "content.legal-prose",
-    "content.not-found"
+    "content.not-found",
+    "content.legal-header",
+    "content.legal-section"
   ],
   "primitives": [
     "primitive.wordmark",
@@ -57,12 +58,23 @@
     "team-portrait",
     "team-halftone",
     "funding-emblem",
-    "project-sheet-pdf"
+    "project-sheet-pdf",
+    "placeholder-brand-mark",
+    "user-supplied-asset",
+    "generated-illustration",
+    "generated-ambient-video",
+    "placeholder-screenshot",
+    "fictional-avatar",
+    "placeholder-company-logo",
+    "placeholder-url",
+    "original-copy"
   ],
   "nodeProperties": [
     "anchorId",
     "content",
     "motion",
+    "retrievalEligible",
+    "tokens",
     "type",
     "variant"
   ],
@@ -73,9 +85,29 @@
   ],
   "pageProperties": [
     "meta",
+    "mode",
     "nodes",
     "pageSpecVersion",
     "route",
-    "template"
+    "template",
+    "theme"
+  ],
+  "modes": [
+    "clone",
+    "generation"
+  ],
+  "retrievalIneligibleSections": [
+    "chrome.splash"
+  ],
+  "tokenSlots": [
+    "surface",
+    "text",
+    "accent",
+    "headingType",
+    "bodyType",
+    "spacingY",
+    "gap",
+    "radius",
+    "fontFamily"
   ]
 }

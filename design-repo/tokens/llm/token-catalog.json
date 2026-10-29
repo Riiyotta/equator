@@ -1,86 +1,1102 @@
 {
-  "catalogVersion": "1.0.0",
-  "description": "Referenceable tokens for generators: semantic intent first, component/layout second. Foundation values are listed only for documentation; reference them through semantic roles.",
-  "semantic": [
-    "accent.card-open",
-    "accent.pill-capability",
-    "accent.pill-capability-open",
-    "accent.pill-slide",
-    "accent.pill-slide-active",
-    "accent.role-chip",
-    "overlay.photo-scrim",
-    "surface.card",
-    "surface.cta",
-    "surface.footer",
-    "surface.hero",
-    "surface.page",
-    "surface.values",
-    "text.credits",
-    "text.inverse",
-    "text.muted",
-    "text.on-footer",
-    "text.primary"
+ "catalogVersion": "2.0.0",
+ "generatedBy": "extraction/build_token_catalog.py (verify_all.py re-runs it with --check)",
+ "description": "Every approved token id. PageSpec `tokens` slots may reference only ids listed here, in the categories tokens/llm/token-policy.json allows for that slot; values come straight from the token files.",
+ "themes": {
+  "light": {
+   "file": "tokens/themes/light.json",
+   "isDefault": true
+  }
+ },
+ "categories": {
+  "breakpoint": [
+   "breakpoint.capabilities-1col",
+   "breakpoint.compact",
+   "breakpoint.footer-stack",
+   "breakpoint.footer-wide",
+   "breakpoint.mobile",
+   "breakpoint.small",
+   "breakpoint.values-text"
+  ],
+  "color": [
+   "color.black",
+   "color.coral",
+   "color.coral-light",
+   "color.earth",
+   "color.earth-light",
+   "color.footer-credits",
+   "color.footer-text",
+   "color.lime",
+   "color.lime-dark",
+   "color.nav-hover",
+   "color.oat",
+   "color.scrim",
+   "color.white"
   ],
   "component": [
-    "cta-button.height",
-    "dropdown.min-height.desktop",
-    "dropdown.min-height.mobile",
-    "logo.small-scale",
-    "pill.size.desktop",
-    "pill.size.mobile",
-    "portrait.width.desktop",
-    "portrait.width.mobile",
-    "slide.aspect.compact",
-    "slide.aspect.desktop",
-    "slide.aspect.mobile"
+   "cta-button.height",
+   "dropdown.min-height.desktop",
+   "dropdown.min-height.mobile",
+   "logo.small-scale",
+   "pill.size.desktop",
+   "pill.size.mobile",
+   "portrait.width.desktop",
+   "portrait.width.mobile",
+   "slide.aspect.compact",
+   "slide.aspect.desktop",
+   "slide.aspect.mobile"
+  ],
+  "elevation": [
+   "z.content",
+   "z.header",
+   "z.logo",
+   "z.menu-overlay",
+   "z.pill",
+   "z.team-overlay"
+  ],
+  "fontFamily": [
+   "font.family.national"
+  ],
+  "fontWeight": [
+   "font.weight.medium",
+   "font.weight.regular"
+  ],
+  "iconSize": [
+   "icon.md",
+   "icon.sm",
+   "icon.xs"
   ],
   "layout": [
-    "grid.column-gap",
-    "grid.columns",
-    "legal.body-span",
-    "measure.cta-heading",
-    "measure.section-heading",
-    "measure.story",
-    "measure.subtitle",
-    "measure.team-heading",
-    "measure.title-subtitle"
-  ],
-  "typography": [
-    "bodyL",
-    "bodyM",
-    "bodyS",
-    "caption",
-    "credits",
-    "headline1",
-    "headline2",
-    "headline2Medium",
-    "headline3",
-    "headline4"
+   "grid.column-gap",
+   "grid.columns",
+   "legal.body-span",
+   "measure.cta-heading",
+   "measure.section-heading",
+   "measure.story",
+   "measure.subtitle",
+   "measure.team-heading",
+   "measure.title-subtitle"
   ],
   "motion": [
-    "duration.carousel",
-    "duration.hamburger",
-    "duration.image-fade",
-    "duration.menu",
-    "duration.reveal",
-    "duration.team-bg-delay",
-    "duration.ui",
-    "duration.ui-half",
-    "duration.word",
-    "easing.anchor-scroll",
-    "easing.in",
-    "easing.out",
-    "easing.squeeze-in",
-    "easing.squeeze-out",
-    "easing.standard"
+   "duration.carousel",
+   "duration.hamburger",
+   "duration.image-fade",
+   "duration.menu",
+   "duration.reveal",
+   "duration.team-bg-delay",
+   "duration.ui",
+   "duration.ui-half",
+   "duration.word",
+   "easing.anchor-scroll",
+   "easing.in",
+   "easing.out",
+   "easing.squeeze-in",
+   "easing.squeeze-out",
+   "easing.standard",
+   "scroll.lerp",
+   "scroll.lottie-cadence",
+   "scroll.marquee-speed"
   ],
-  "breakpoint": [
-    "capabilities-1col",
-    "compact",
-    "footer-stack",
-    "footer-wide",
-    "mobile",
-    "small",
-    "values-text"
+  "radius": [
+   "radius.card",
+   "radius.circle",
+   "radius.dot",
+   "radius.none",
+   "radius.pill-lg",
+   "radius.pill-sm"
+  ],
+  "semantic": [
+   "accent.card-open",
+   "accent.pill-capability",
+   "accent.pill-capability-open",
+   "accent.pill-slide",
+   "accent.pill-slide-active",
+   "accent.role-chip",
+   "overlay.photo-scrim",
+   "surface.card",
+   "surface.cta",
+   "surface.footer",
+   "surface.hero",
+   "surface.page",
+   "surface.values",
+   "text.credits",
+   "text.inverse",
+   "text.muted",
+   "text.on-footer",
+   "text.primary"
+  ],
+  "spacing": [
+   "space.grid-gap.desktop",
+   "space.grid-gap.mobile",
+   "space.header-height",
+   "space.page-margin.compact",
+   "space.page-margin.desktop",
+   "space.page-margin.mobile",
+   "space.section-y.desktop",
+   "space.section-y.mobile",
+   "space.stack-gap.desktop",
+   "space.stack-gap.mobile"
+  ],
+  "typography": [
+   "type.bodyL",
+   "type.bodyM",
+   "type.bodyS",
+   "type.caption",
+   "type.credits",
+   "type.headline1",
+   "type.headline2",
+   "type.headline2Medium",
+   "type.headline3",
+   "type.headline4"
   ]
+ },
+ "tokens": {
+  "accent.card-open": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.coral}",
+   "resolvedIn": {
+    "light": "#ff9d69"
+   }
+  },
+  "accent.pill-capability": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.coral}",
+   "resolvedIn": {
+    "light": "#ff9d69"
+   }
+  },
+  "accent.pill-capability-open": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.coral-light}",
+   "resolvedIn": {
+    "light": "#feb891"
+   }
+  },
+  "accent.pill-slide": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.lime}",
+   "resolvedIn": {
+    "light": "#c8fdab"
+   }
+  },
+  "accent.pill-slide-active": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.lime-dark}",
+   "resolvedIn": {
+    "light": "#c1f2a3"
+   }
+  },
+  "accent.role-chip": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.lime}",
+   "resolvedIn": {
+    "light": "#c8fdab"
+   }
+  },
+  "breakpoint.capabilities-1col": {
+   "category": "breakpoint",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/breakpoint.json",
+   "type": "dimension",
+   "value": "620px"
+  },
+  "breakpoint.compact": {
+   "category": "breakpoint",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/breakpoint.json",
+   "type": "dimension",
+   "value": "1180px"
+  },
+  "breakpoint.footer-stack": {
+   "category": "breakpoint",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/breakpoint.json",
+   "type": "dimension",
+   "value": "1024px"
+  },
+  "breakpoint.footer-wide": {
+   "category": "breakpoint",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/breakpoint.json",
+   "type": "dimension",
+   "value": "1366px"
+  },
+  "breakpoint.mobile": {
+   "category": "breakpoint",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/breakpoint.json",
+   "type": "dimension",
+   "value": "768px"
+  },
+  "breakpoint.small": {
+   "category": "breakpoint",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/breakpoint.json",
+   "type": "dimension",
+   "value": "520px"
+  },
+  "breakpoint.values-text": {
+   "category": "breakpoint",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/breakpoint.json",
+   "type": "dimension",
+   "value": "920px"
+  },
+  "color.black": {
+   "category": "color",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/color.json",
+   "type": "color",
+   "value": "#000000"
+  },
+  "color.coral": {
+   "category": "color",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/color.json",
+   "type": "color",
+   "value": "#ff9d69"
+  },
+  "color.coral-light": {
+   "category": "color",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/color.json",
+   "type": "color",
+   "value": "#feb891"
+  },
+  "color.earth": {
+   "category": "color",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/color.json",
+   "type": "color",
+   "value": "#3e2002"
+  },
+  "color.earth-light": {
+   "category": "color",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/color.json",
+   "type": "color",
+   "value": "rgba(62,32,2,.7)"
+  },
+  "color.footer-credits": {
+   "category": "color",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/color.json",
+   "type": "color",
+   "value": "#6d543c"
+  },
+  "color.footer-text": {
+   "category": "color",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/color.json",
+   "type": "color",
+   "value": "#9d8c79"
+  },
+  "color.lime": {
+   "category": "color",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/color.json",
+   "type": "color",
+   "value": "#c8fdab"
+  },
+  "color.lime-dark": {
+   "category": "color",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/color.json",
+   "type": "color",
+   "value": "#c1f2a3"
+  },
+  "color.nav-hover": {
+   "category": "color",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/color.json",
+   "type": "color",
+   "value": "#090f207f"
+  },
+  "color.oat": {
+   "category": "color",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/color.json",
+   "type": "color",
+   "value": "#fcf8f0"
+  },
+  "color.scrim": {
+   "category": "color",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/color.json",
+   "type": "color",
+   "value": "rgba(0,0,0,.7)"
+  },
+  "color.white": {
+   "category": "color",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/color.json",
+   "type": "color",
+   "value": "#ffffff"
+  },
+  "cta-button.height": {
+   "category": "component",
+   "layer": "20-component",
+   "file": "tokens/20-component/component.json",
+   "type": "dimension",
+   "value": "40px"
+  },
+  "dropdown.min-height.desktop": {
+   "category": "component",
+   "layer": "20-component",
+   "file": "tokens/20-component/component.json",
+   "type": "dimension",
+   "value": "120px"
+  },
+  "dropdown.min-height.mobile": {
+   "category": "component",
+   "layer": "20-component",
+   "file": "tokens/20-component/component.json",
+   "type": "dimension",
+   "value": "84px"
+  },
+  "duration.carousel": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "duration",
+   "value": "300ms"
+  },
+  "duration.hamburger": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "duration",
+   "value": "75ms"
+  },
+  "duration.image-fade": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "duration",
+   "value": "160ms"
+  },
+  "duration.menu": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "duration",
+   "value": "200ms"
+  },
+  "duration.reveal": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "duration",
+   "value": "240ms"
+  },
+  "duration.team-bg-delay": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "duration",
+   "value": "480ms"
+  },
+  "duration.ui": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "duration",
+   "value": "120ms"
+  },
+  "duration.ui-half": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "duration",
+   "value": "60ms"
+  },
+  "duration.word": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "duration",
+   "value": "250ms"
+  },
+  "easing.anchor-scroll": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "string",
+   "value": "easeOutSine sin(p*PI/2)"
+  },
+  "easing.in": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "cubicBezier",
+   "value": "ease-in"
+  },
+  "easing.out": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "cubicBezier",
+   "value": "ease-out"
+  },
+  "easing.squeeze-in": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "cubicBezier",
+   "value": [
+    0.55,
+    0.055,
+    0.675,
+    0.19
+   ]
+  },
+  "easing.squeeze-out": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "cubicBezier",
+   "value": [
+    0.215,
+    0.61,
+    0.355,
+    1
+   ]
+  },
+  "easing.standard": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "cubicBezier",
+   "value": "ease-in-out"
+  },
+  "font.family.national": {
+   "category": "fontFamily",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/typography.json",
+   "type": "fontFamily",
+   "value": [
+    "National",
+    "Arial",
+    "Helvetica",
+    "sans-serif"
+   ]
+  },
+  "font.weight.medium": {
+   "category": "fontWeight",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/typography.json",
+   "type": "fontWeight",
+   "value": 500
+  },
+  "font.weight.regular": {
+   "category": "fontWeight",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/typography.json",
+   "type": "fontWeight",
+   "value": 400
+  },
+  "grid.column-gap": {
+   "category": "layout",
+   "layer": "30-layout",
+   "file": "tokens/30-layout/layout.json",
+   "type": "dimension",
+   "value": "20px"
+  },
+  "grid.columns": {
+   "category": "layout",
+   "layer": "30-layout",
+   "file": "tokens/30-layout/layout.json",
+   "type": "number",
+   "value": 12
+  },
+  "icon.md": {
+   "category": "iconSize",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/icon-size.json",
+   "type": "dimension",
+   "value": "24px"
+  },
+  "icon.sm": {
+   "category": "iconSize",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/icon-size.json",
+   "type": "dimension",
+   "value": "16px"
+  },
+  "icon.xs": {
+   "category": "iconSize",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/icon-size.json",
+   "type": "dimension",
+   "value": "13px"
+  },
+  "legal.body-span": {
+   "category": "layout",
+   "layer": "30-layout",
+   "file": "tokens/30-layout/layout.json",
+   "type": "number",
+   "value": 7
+  },
+  "logo.small-scale": {
+   "category": "component",
+   "layer": "20-component",
+   "file": "tokens/20-component/component.json",
+   "type": "number",
+   "value": 0.6666
+  },
+  "measure.cta-heading": {
+   "category": "layout",
+   "layer": "30-layout",
+   "file": "tokens/30-layout/layout.json",
+   "type": "dimension",
+   "value": "800px"
+  },
+  "measure.section-heading": {
+   "category": "layout",
+   "layer": "30-layout",
+   "file": "tokens/30-layout/layout.json",
+   "type": "dimension",
+   "value": "700px"
+  },
+  "measure.story": {
+   "category": "layout",
+   "layer": "30-layout",
+   "file": "tokens/30-layout/layout.json",
+   "type": "dimension",
+   "value": "1100px"
+  },
+  "measure.subtitle": {
+   "category": "layout",
+   "layer": "30-layout",
+   "file": "tokens/30-layout/layout.json",
+   "type": "dimension",
+   "value": "570px"
+  },
+  "measure.team-heading": {
+   "category": "layout",
+   "layer": "30-layout",
+   "file": "tokens/30-layout/layout.json",
+   "type": "dimension",
+   "value": "940px"
+  },
+  "measure.title-subtitle": {
+   "category": "layout",
+   "layer": "30-layout",
+   "file": "tokens/30-layout/layout.json",
+   "type": "dimension",
+   "value": "630px"
+  },
+  "overlay.photo-scrim": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.scrim}",
+   "resolvedIn": {
+    "light": "rgba(0,0,0,.7)"
+   }
+  },
+  "pill.size.desktop": {
+   "category": "component",
+   "layer": "20-component",
+   "file": "tokens/20-component/component.json",
+   "type": "dimension",
+   "value": "120x60"
+  },
+  "pill.size.mobile": {
+   "category": "component",
+   "layer": "20-component",
+   "file": "tokens/20-component/component.json",
+   "type": "dimension",
+   "value": "60x30"
+  },
+  "portrait.width.desktop": {
+   "category": "component",
+   "layer": "20-component",
+   "file": "tokens/20-component/component.json",
+   "type": "dimension",
+   "value": "450px"
+  },
+  "portrait.width.mobile": {
+   "category": "component",
+   "layer": "20-component",
+   "file": "tokens/20-component/component.json",
+   "type": "dimension",
+   "value": "285px"
+  },
+  "radius.card": {
+   "category": "radius",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/radius.json",
+   "type": "dimension",
+   "value": "5px"
+  },
+  "radius.circle": {
+   "category": "radius",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/radius.json",
+   "type": "dimension",
+   "value": "50%"
+  },
+  "radius.dot": {
+   "category": "radius",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/radius.json",
+   "type": "dimension",
+   "value": "7px"
+  },
+  "radius.none": {
+   "category": "radius",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/radius.json",
+   "type": "dimension",
+   "value": "0"
+  },
+  "radius.pill-lg": {
+   "category": "radius",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/radius.json",
+   "type": "dimension",
+   "value": "60px 60px 0 0"
+  },
+  "radius.pill-sm": {
+   "category": "radius",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/radius.json",
+   "type": "dimension",
+   "value": "30px 30px 0 0"
+  },
+  "scroll.lerp": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "number",
+   "value": 0.1
+  },
+  "scroll.lottie-cadence": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "string",
+   "value": "30fps whole frames"
+  },
+  "scroll.marquee-speed": {
+   "category": "motion",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/motion.json",
+   "type": "string",
+   "value": "0.5px/frame"
+  },
+  "slide.aspect.compact": {
+   "category": "component",
+   "layer": "20-component",
+   "file": "tokens/20-component/component.json",
+   "type": "string",
+   "value": "46/44"
+  },
+  "slide.aspect.desktop": {
+   "category": "component",
+   "layer": "20-component",
+   "file": "tokens/20-component/component.json",
+   "type": "string",
+   "value": "66/50"
+  },
+  "slide.aspect.mobile": {
+   "category": "component",
+   "layer": "20-component",
+   "file": "tokens/20-component/component.json",
+   "type": "string",
+   "value": "31/38"
+  },
+  "space.grid-gap.desktop": {
+   "category": "spacing",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/spacing.json",
+   "type": "dimension",
+   "value": "20px"
+  },
+  "space.grid-gap.mobile": {
+   "category": "spacing",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/spacing.json",
+   "type": "dimension",
+   "value": "12px"
+  },
+  "space.header-height": {
+   "category": "spacing",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/spacing.json",
+   "type": "dimension",
+   "value": "68px"
+  },
+  "space.page-margin.compact": {
+   "category": "spacing",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/spacing.json",
+   "type": "dimension",
+   "value": "30px"
+  },
+  "space.page-margin.desktop": {
+   "category": "spacing",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/spacing.json",
+   "type": "dimension",
+   "value": "50px"
+  },
+  "space.page-margin.mobile": {
+   "category": "spacing",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/spacing.json",
+   "type": "dimension",
+   "value": "20px"
+  },
+  "space.section-y.desktop": {
+   "category": "spacing",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/spacing.json",
+   "type": "dimension",
+   "value": "150px"
+  },
+  "space.section-y.mobile": {
+   "category": "spacing",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/spacing.json",
+   "type": "dimension",
+   "value": "75px"
+  },
+  "space.stack-gap.desktop": {
+   "category": "spacing",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/spacing.json",
+   "type": "dimension",
+   "value": "40px"
+  },
+  "space.stack-gap.mobile": {
+   "category": "spacing",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/spacing.json",
+   "type": "dimension",
+   "value": "30px"
+  },
+  "surface.card": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.white}",
+   "resolvedIn": {
+    "light": "#ffffff"
+   }
+  },
+  "surface.cta": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.white}",
+   "resolvedIn": {
+    "light": "#ffffff"
+   }
+  },
+  "surface.footer": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.earth}",
+   "resolvedIn": {
+    "light": "#3e2002"
+   }
+  },
+  "surface.hero": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.coral}",
+   "resolvedIn": {
+    "light": "#ff9d69"
+   }
+  },
+  "surface.page": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.oat}",
+   "resolvedIn": {
+    "light": "#fcf8f0"
+   }
+  },
+  "surface.values": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.lime}",
+   "resolvedIn": {
+    "light": "#c8fdab"
+   }
+  },
+  "text.credits": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.footer-credits}",
+   "resolvedIn": {
+    "light": "#6d543c"
+   }
+  },
+  "text.inverse": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.oat}",
+   "resolvedIn": {
+    "light": "#fcf8f0"
+   }
+  },
+  "text.muted": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.earth-light}",
+   "resolvedIn": {
+    "light": "rgba(62,32,2,.7)"
+   }
+  },
+  "text.on-footer": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.footer-text}",
+   "resolvedIn": {
+    "light": "#9d8c79"
+   }
+  },
+  "text.primary": {
+   "category": "semantic",
+   "layer": "10-semantic",
+   "file": "tokens/10-semantic/semantic.json",
+   "type": "color",
+   "value": "{color.earth}",
+   "resolvedIn": {
+    "light": "#3e2002"
+   }
+  },
+  "type.bodyL": {
+   "category": "typography",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/typography.json",
+   "type": "typography",
+   "value": {
+    "fontSize": {
+     "desktop": "1.5rem",
+     "mobile": "1.3125rem"
+    },
+    "lineHeight": 1.2,
+    "letterSpacing": "-0.03em",
+    "fontWeight": 400
+   }
+  },
+  "type.bodyM": {
+   "category": "typography",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/typography.json",
+   "type": "typography",
+   "value": {
+    "fontSize": {
+     "desktop": "1.3125rem",
+     "mobile": "1rem"
+    },
+    "lineHeight": 1.2,
+    "letterSpacing": "-0.02em",
+    "fontWeight": 400
+   }
+  },
+  "type.bodyS": {
+   "category": "typography",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/typography.json",
+   "type": "typography",
+   "value": {
+    "fontSize": {
+     "desktop": "1.125rem",
+     "mobile": "1.125rem"
+    },
+    "lineHeight": 1.18,
+    "letterSpacing": "-0.02em",
+    "fontWeight": 400
+   }
+  },
+  "type.caption": {
+   "category": "typography",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/typography.json",
+   "type": "typography",
+   "value": {
+    "fontSize": {
+     "desktop": "1rem",
+     "mobile": "1rem"
+    },
+    "lineHeight": "normal",
+    "letterSpacing": "-0.03em",
+    "fontWeight": 400
+   }
+  },
+  "type.credits": {
+   "category": "typography",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/typography.json",
+   "type": "typography",
+   "value": {
+    "fontSize": {
+     "desktop": "0.875rem",
+     "mobile": "0.875rem"
+    },
+    "lineHeight": 1,
+    "letterSpacing": "normal",
+    "fontWeight": 400
+   }
+  },
+  "type.headline1": {
+   "category": "typography",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/typography.json",
+   "type": "typography",
+   "value": {
+    "fontSize": {
+     "desktop": "6rem",
+     "mobile": "3.25rem"
+    },
+    "lineHeight": 0.98,
+    "letterSpacing": "-0.03em",
+    "fontWeight": 500
+   }
+  },
+  "type.headline2": {
+   "category": "typography",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/typography.json",
+   "type": "typography",
+   "value": {
+    "fontSize": {
+     "desktop": "4.5rem",
+     "mobile": "2.25rem"
+    },
+    "lineHeight": 1.1,
+    "letterSpacing": "-0.04em",
+    "fontWeight": 400
+   }
+  },
+  "type.headline2Medium": {
+   "category": "typography",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/typography.json",
+   "type": "typography",
+   "value": {
+    "fontSize": {
+     "desktop": "4.5rem",
+     "mobile": "2.25rem"
+    },
+    "lineHeight": 1.1,
+    "letterSpacing": "-0.04em",
+    "fontWeight": 500
+   }
+  },
+  "type.headline3": {
+   "category": "typography",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/typography.json",
+   "type": "typography",
+   "value": {
+    "fontSize": {
+     "desktop": "3.75rem",
+     "mobile": "2rem"
+    },
+    "lineHeight": 1,
+    "letterSpacing": "-0.03em",
+    "fontWeight": 400
+   }
+  },
+  "type.headline4": {
+   "category": "typography",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/typography.json",
+   "type": "typography",
+   "value": {
+    "fontSize": {
+     "desktop": "2.25rem",
+     "mobile": "1.5rem"
+    },
+    "lineHeight": 1.1,
+    "letterSpacing": "-0.02em",
+    "fontWeight": 500
+   }
+  },
+  "z.content": {
+   "category": "elevation",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/elevation.json",
+   "type": "number",
+   "value": 1
+  },
+  "z.header": {
+   "category": "elevation",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/elevation.json",
+   "type": "number",
+   "value": 10
+  },
+  "z.logo": {
+   "category": "elevation",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/elevation.json",
+   "type": "number",
+   "value": 11
+  },
+  "z.menu-overlay": {
+   "category": "elevation",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/elevation.json",
+   "type": "number",
+   "value": 9
+  },
+  "z.pill": {
+   "category": "elevation",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/elevation.json",
+   "type": "number",
+   "value": 3
+  },
+  "z.team-overlay": {
+   "category": "elevation",
+   "layer": "00-foundation",
+   "file": "tokens/00-foundation/elevation.json",
+   "type": "number",
+   "value": 5
+  }
+ }
 }

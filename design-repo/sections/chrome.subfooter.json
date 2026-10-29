@@ -2,6 +2,17 @@
   "id": "chrome.subfooter",
   "name": "Subfooter (funding notice)",
   "category": "chrome",
+  "semantic": {
+    "id": "chrome.subfooter",
+    "category": "SHELL"
+  },
+  "source": {
+    "id": "Subfooter>div.subfooter",
+    "tag": "div",
+    "file": "src/components/Footer.jsx",
+    "lines": "77-84"
+  },
+  "retrievalEligible": true,
   "purpose": "Public-funding disclosure band. On the source it holds only the PRR/EU emblem and the project-sheet PDF, both policy 'omit', so generated output keeps an empty band or drops the node.",
   "evidenceLevel": "measured",
   "implementedBy": "src/components/Footer.jsx",
@@ -25,12 +36,13 @@
         "properties": {
           "assetRole": {
             "enum": [
-              "funding-emblem"
+              "funding-emblem",
+              "user-supplied-asset"
             ]
           },
           "assetRef": {
             "type": "string",
-            "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+            "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
           },
           "alt": {
             "type": "string",
@@ -62,12 +74,13 @@
             "properties": {
               "assetRole": {
                 "enum": [
-                  "project-sheet-pdf"
+                  "project-sheet-pdf",
+                  "user-supplied-asset"
                 ]
               },
               "assetRef": {
                 "type": "string",
-                "pattern": "^(placeholder|generated):[a-z0-9][a-z0-9-]{0,60}$"
+                "pattern": "^((placeholder|generated|user):[a-z0-9][a-z0-9-]{0,60}|source:(/[A-Za-z0-9._/-]{1,120}|inline:[A-Za-z]{1,40}))$"
               },
               "alt": {
                 "type": "string",
@@ -84,6 +97,9 @@
     "maxPerPage": 1,
     "mustBeLast": true
   },
+  "generatedAssetRoles": [
+    "user-supplied-asset"
+  ],
   "motion": {
     "pattern": "none",
     "trigger": "none",

@@ -1,11 +1,22 @@
 {
-  "id": "content.legal-prose",
-  "name": "Legal prose article",
+  "id": "content.legal-header",
+  "name": "Legal page header",
   "category": "content",
-  "purpose": "Long-form legal text (privacy policy) in a 7-of-12 column measure under a large headline.",
+  "semantic": {
+    "id": "content.legal-header",
+    "category": "LEGAL"
+  },
+  "source": {
+    "id": "PrivacyPolicy>article>h1",
+    "tag": "h1",
+    "file": "src/pages/PrivacyPolicy.jsx",
+    "lines": "46"
+  },
+  "retrievalEligible": true,
+  "purpose": "Opening of a legal page: the large page headline plus the preamble paragraph that precedes the first numbered part.",
   "evidenceLevel": "measured",
   "implementedBy": "src/pages/PrivacyPolicy.jsx",
-  "surface": "oat",
+  "surface": "transparent",
   "scrollStage": false,
   "ambientVideoCount": 0,
   "anchor": null,
@@ -14,8 +25,7 @@
     "type": "object",
     "additionalProperties": false,
     "required": [
-      "heading",
-      "blocks"
+      "heading"
     ],
     "properties": {
       "heading": {
@@ -23,43 +33,25 @@
         "minLength": 1,
         "x-maxWords": 4
       },
-      "blocks": {
+      "intro": {
         "type": "array",
         "minItems": 1,
-        "maxItems": 60,
+        "maxItems": 2,
         "items": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "kind",
-            "text"
-          ],
-          "properties": {
-            "kind": {
-              "enum": [
-                "paragraph",
-                "subheading",
-                "heading"
-              ]
-            },
-            "text": {
-              "type": "string",
-              "minLength": 1,
-              "x-maxWords": 90
-            }
-          }
+          "type": "string",
+          "minLength": 1,
+          "x-maxWords": 90
         }
       }
     }
   },
   "constraints": {
     "maxPerPage": 1,
-    "maxWordsByKind": {
-      "paragraph": 90,
-      "subheading": 8,
-      "heading": 6
-    }
+    "templates": [
+      "template.legal-prose"
+    ]
   },
+  "generatedAssetRoles": [],
   "motion": {
     "pattern": "none",
     "trigger": "none",
@@ -88,32 +80,29 @@
   "evidence": [
     {
       "path": "src/pages/PrivacyPolicy.jsx",
-      "lines": "35-52",
+      "lines": "45-46",
       "quote": "<h1 className=\"text-headline1\">Privacy Policy</h1>"
     },
     {
-      "path": ".playwright-mcp/orig-pp-1440.txt.n",
-      "lines": "27",
-      "quote": "article [0,0,1440x3476.4]"
+      "path": "src/lib/privacyBody.js",
+      "lines": "2",
+      "quote": "<p>This Privacy Policy presents the process of collecting"
     },
     {
       "path": "CLONE_SPEC.md",
       "lines": "496-508",
-      "quote": "Route `/privacy-policy`"
+      "quote": "`h1.textHeadline1` \"Privacy Policy\" (`grid-column:span 12`): x50 y400, 96px."
     }
   ],
   "fixtures": {
     "default": {
       "content": {
         "heading": "Privacy Policy",
-        "blocks": [
-          {
-            "kind": "paragraph",
-            "text": "This page explains how personal data is collected and used."
-          }
+        "intro": [
+          "This page explains how personal data is collected and used."
         ]
       }
     }
   },
-  "notes": "Budgets: the measured article has 41 blocks; the longest paragraph is 78 words. Do not copy the source policy text: it is a legal document of a specific company."
+  "notes": "Decomposed from the former whole-article content.legal-prose (R6): the article measured 3476px of a 4423px page (79%). This unit runs from the article top (400px padding + 96px h1) to the first part heading; measured 740.4px at 1440. The page surface (oat) is painted by the page wrapper, not by this section, hence surface transparent. Do not copy the source policy text."
 }
